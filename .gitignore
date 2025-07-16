@@ -3,6 +3,10 @@ syntax: regexp
 # Files matching these patterns will be ignored by hg
 # if they are not tracked already
 
+### User-added ignores ###
+# Large SPEC 2017 run directory
+spec2017_run_dir_rate/
+
 # experiment result directories
 out/
 results/
