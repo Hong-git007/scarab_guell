@@ -42,7 +42,7 @@ add_subdirectory(ramulator)
 add_subdirectory(pin/pin_lib)
 add_subdirectory(pin/pin_exec/testing)
 
-set(scarab_dirs bp debug bp/template_lib dvfs frontend globals isa libs memory power prefetcher .)
+set(scarab_dirs bp debug bp/template_lib dvfs frontend globals isa libs memory power prefetcher . log)
 if(DEFINED ENV{SCARAB_ENABLE_MEMTRACE})
   set(scarab_dirs ${scarab_dirs} frontend/memtrace)
 endif()

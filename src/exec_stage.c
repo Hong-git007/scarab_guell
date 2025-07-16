@@ -38,7 +38,9 @@
 #include "bp/bp.h"
 #include "exec_ports.h"
 #include "exec_stage.h"
+#include "log/recovery_log.h" //추가
 #include "map.h"
+#include "node_stage.h" //추가
 
 #include "bp/bp.param.h"
 #include "cmp_model.h"
@@ -363,6 +365,7 @@ void update_exec_stage(Stage_Data* src_sd) {
       if(op->oracle_info.mispred || op->oracle_info.misfetch) {
         bp_sched_recovery(bp_recovery_info, op, op->exec_cycle,
                           /*late_bp_recovery=*/FALSE, /*force_offpath=*/FALSE);
+        log_misprediction(op, node, op->exec_cycle, bp_recovery_info); // 추가
         if(!op->off_path)
           op->recovery_scheduled = TRUE;
       } else if(op->table_info->cf_type >= CF_IBR &&

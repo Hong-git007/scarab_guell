@@ -398,6 +398,40 @@ void print_func_op(Op* op) {
   fprintf(GLOBAL_DEBUG_STREAM, "\n");
 }
 
+
+/**************************************************************************************/
+/* sprint_func_op: */
+
+int sprint_func_op(char* buf, Op* op) {
+  char* orig_buf = buf;
+  char  opcode[MAX_STR_LENGTH + 1];
+  if(op->table_info->op_type == OP_CF) {
+    sprintf(opcode, "%s", cf_type_names[op->table_info->cf_type]);
+  } else if(op->table_info->op_type == OP_IMEM ||
+            op->table_info->op_type == OP_FMEM) {
+    sprintf(opcode, "%s", mem_type_names[op->table_info->mem_type]);
+  } else {
+    sprintf(opcode, "%s", Op_Type_str(op->table_info->op_type));
+  }
+
+  buf += sprintf(buf, "%2d  %08x  %10s", op->proc_id,
+                 (uns32)op->inst_info->addr, opcode);
+
+  char reg_buf[MAX_STR_LENGTH + 1];
+  print_reg_array(reg_buf, op->inst_info->srcs, op->table_info->num_src_regs);
+  buf += sprintf(buf, "  in: %-30s", reg_buf);
+
+  print_reg_array(reg_buf, op->inst_info->dests, op->table_info->num_dest_regs);
+  buf += sprintf(buf, "  out: %-30s", reg_buf);
+
+  if(op->oracle_info.mem_size) {
+    buf += sprintf(buf, "  %2d @ %08x", op->oracle_info.mem_size,
+                   (uns32)op->oracle_info.va);
+  }
+  return buf - orig_buf;
+}
+
+
 static int compare_reg_ids(const void* p1, const void* p2) {
   uns16 v1 = *((uns16*)p1);
   uns16 v2 = *((uns16*)p2);

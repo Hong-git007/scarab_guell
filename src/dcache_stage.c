@@ -57,7 +57,6 @@
 #define DEBUG(proc_id, args...) _DEBUG(proc_id, DEBUG_DCACHE_STAGE, ##args)
 #define STAGE_MAX_OP_COUNT NUM_FUS
 
-
 /**************************************************************************************/
 /* Global Variables */
 

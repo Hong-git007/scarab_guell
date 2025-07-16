@@ -27,6 +27,8 @@
  ***************************************************************************************/
 
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "debug/debug_macros.h"
 #include "debug/debug_print.h"
@@ -39,6 +41,7 @@
 #include "op_pool.h"
 
 #include "bp/bp.h"
+#include "log/op_trace_log.h"
 #include "exec_ports.h"
 #include "frontend/frontend.h"
 #include "memory/memory.h"
@@ -54,6 +57,9 @@
 #include "statistics.h"
 
 #include "bp/tagescl.h"
+
+#include "log/log_params.h"
+extern char* OUTPUT_DIR;
 
 /* Macros */
 
@@ -469,6 +475,8 @@ void node_issue(Stage_Data* src_sd) {
 
     op->state = OS_ISSUED;
 
+    log_issued_op(op, cycle_count);
+
     /* always stop issuing after a synchronizing op */
     if(op->table_info->bar_type & BAR_ISSUE)
       break;
@@ -837,6 +845,8 @@ void node_retire() {
   }
 
   STAT_EVENT(node->proc_id, ROW_SIZE_0 + ret_count);
+
+  log_retired_ops(cycle_count, ret_count);
 
   // op should be pointing to first op that was not retired because of the above
   // for-loop

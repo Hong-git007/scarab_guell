@@ -48,6 +48,8 @@
 #include "statistics.h"
 
 #include "freq.h"
+#include "log/recovery_log.h"
+#include "log/op_trace_log.h"
 
 Flag perf_pred_started = FALSE;
 
@@ -120,6 +122,9 @@ void cmp_init(uns mode) {
 
   // init_memory will call init_uncores, which setup the partition stuffs
   init_memory();
+
+  init_op_trace_log();
+  init_recovery_log();
 
   if(DVFS_ON)
     dvfs_init();
@@ -346,6 +351,8 @@ void cmp_recover() {
   recover_exec_stage();
   recover_dcache_stage();
   recover_memory();
+
+  log_recovery_end(node, cycle_count, bp_recovery_info);
 }
 
 /**************************************************************************************/

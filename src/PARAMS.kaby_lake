@@ -33,10 +33,10 @@
 --icache_line_size              64
 
 ### Branch Predictor
---extra_recovery_cycles         0                         # Number of cycles before the fetching of the first instructions after recovery.
---extra_redirect_cycles         0                         # Number of cycles before the fetching of the first instructions after redirect.
+--extra_recovery_cycles         15                          # Number of cycles before the fetching of the first instructions after recovery.
+--extra_redirect_cycles         0                        # Number of cycles before the fetching of the first instructions after redirect.
 --cfs_per_cycle                 6                         # Number of branches that can be predicted in a single cycle
---bp_update_at_retire           0                         # Update the BP at retire. If false, update at the end of exec.
+--bp_update_at_retire           FALSE                      # Update the BP at retire. If false, update at the end of exec.
 --update_bp_off_path            1                         # Allow off path ops to update branch predictor state (e.g., ops when they complete exec stage).
 --bp_mech                       tagescl                   
 
@@ -51,6 +51,8 @@
 # Allow the BTB to be updated by off path ops. 
 --btb_off_path_writes           1
 
+#### Branch Confidence
+--enable_bp_conf                1
 
 #### CRS
 
@@ -206,17 +208,31 @@
 
 
 ### Debug
---debug_inst_start              0
+--debug_inst_start             0
 --debug_inst_stop              -1
---debug_cycle_start             0
+--debug_cycle_start            0
 --debug_cycle_stop             -1
+
+#--debug_model                      1  # debug Every pipleline (targeting at retiring)
+#--debug_map                         1
+#--debug_node_stage              1       # showing what CPU is doing now / show ROB and RS at before recovery and after recovery
+#--debug_thread                      1
+#--debug_icache_stage            1
+#--debug_exec_stage               1
+#--debug_pin_exec_driven       1
+#--debug_retired_uops    1
+#--debug_bp  1
+#--debug_crs 1
+#--debug_btb 1
+#--debug_bp_dir 1
+#--debug_retired_uops    1
 
 
 ## Stats and Params
 --dump_params                   1
 --dump_stats                    1
---dump_trace                    0
-
+#--dump_trace                    1
+#--pipeview _file                1
 ####################################
 --set_off_path_confirmed        1
 

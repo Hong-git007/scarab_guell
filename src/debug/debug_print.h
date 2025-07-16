@@ -55,6 +55,7 @@ void  print_op_field(FILE*, Op*, uns);
 void  print_field_tail(FILE*, uns);
 void  print_field_head(FILE*, uns);
 char* disasm_op(Op*, Flag wide);
+int   sprint_func_op(char* buf, Op* op); //추가
 char* disasm_reg(uns);
 
 

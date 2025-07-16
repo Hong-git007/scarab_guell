@@ -36,7 +36,9 @@
 
 #include "bp/bp.h"
 #include "icache_stage.h"
+#include "log/recovery_log.h"
 #include "map.h"
+#include "node_stage.h"
 #include "op_pool.h"
 #include "packet_build.h"
 #include "thread.h"
@@ -614,6 +616,7 @@ static inline Icache_State icache_issue_ops(Break_Reason* break_fetch,
               bp_sched_recovery(bp_recovery_info, op, cycle_count,
                                 /*late_bp_recovery=*/TRUE,
                                 /*force_offpath=*/FALSE);
+              log_misprediction(op, node, cycle_count, bp_recovery_info);
               DEBUG(ic->proc_id,
                     "Scheduled a recovery to correct addr for cycle %llu\n",
                     cycle_count + LATE_BP_LATENCY);
@@ -623,6 +626,7 @@ static inline Icache_State icache_issue_ops(Break_Reason* break_fetch,
               bp_sched_recovery(bp_recovery_info, op, cycle_count,
                                 /*late_bp_recovery=*/TRUE,
                                 /*force_offpath=*/TRUE);
+              log_misprediction(op, node, cycle_count, bp_recovery_info);
               DEBUG(ic->proc_id,
                     "Scheduled a recovery to wrong addr for cycle %llu\n",
                     cycle_count + LATE_BP_LATENCY);

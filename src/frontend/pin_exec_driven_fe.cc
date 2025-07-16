@@ -46,7 +46,7 @@ extern "C" {
 #include <time.h>
 
 #define DEBUG(proc_id, args...) _DEBUG(proc_id, DEBUG_PIN_EXEC_DRIVEN, ##args)
-
+#define DEBUG_PIN_EXEC_DRIVEN TRUE
 Server*                          server;
 std::vector<ScarabOpBuffer_type> cached_cop_buffers;
 

@@ -1884,4 +1884,5 @@ void init_pin_opcode_convert(void) {
                                             NONE};
   iclass_to_scarab_map[XED_ICLASS_XSAVEC]   = {OP_NOTPIPELINED_VERY_SLOW, -1, 1,
                                              NONE};
+  iclass_to_scarab_map[XED_ICLASS_IN] = {OP_NOTPIPELINED_MEDIUM, -1, 1, NONE};                                          
 }
