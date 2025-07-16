@@ -1,0 +1,232 @@
+import os
+
+perlbench_17_r_ref0_ckpt4 = Checkpoint("perlbench_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/perlbench_17_r/ref/perlbench_17_r_ref0_checkpoint4_0.23190367340391405_757600019616", scarab_args="--inst_limit 200000001 ", weight=0.23190367340391405)
+perlbench_17_r_ref0_ckpt5 = Checkpoint("perlbench_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/perlbench_17_r/ref/perlbench_17_r_ref0_checkpoint5_0.30253448829002244_527600013844", scarab_args="--inst_limit 200000003 ", weight=0.30253448829002244)
+perlbench_17_r_ref0_ckpt2 = Checkpoint("perlbench_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/perlbench_17_r/ref/perlbench_17_r_ref0_checkpoint2_0.3049306223933269_849600021784", scarab_args="--inst_limit 200000008 ", weight=0.3049306223933269)
+perlbench_17_r_ref0_ckpt1 = Checkpoint("perlbench_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/perlbench_17_r/ref/perlbench_17_r_ref0_checkpoint1_0.16063121591273663_477400012581", scarab_args="--inst_limit 200000011 ", weight=0.16063121591273663)
+perlbench_17_r_ref0 = Benchmark("perlbench_17_r_ref0", [perlbench_17_r_ref0_ckpt4, perlbench_17_r_ref0_ckpt5, perlbench_17_r_ref0_ckpt2, perlbench_17_r_ref0_ckpt1], weight=1251900925091)
+
+perlbench_17_r_ref1_ckpt4 = Checkpoint("perlbench_17_r_ref1_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/perlbench_17_r/ref/perlbench_17_r_ref1_checkpoint4_0.5047717018221076_115200002486", scarab_args="--inst_limit 200000000 ", weight=0.5047717018221076)
+perlbench_17_r_ref1_ckpt2 = Checkpoint("perlbench_17_r_ref1_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/perlbench_17_r/ref/perlbench_17_r_ref1_checkpoint2_0.4952282981778923_334200007494", scarab_args="--inst_limit 200000000 ", weight=0.4952282981778923)
+perlbench_17_r_ref1 = Benchmark("perlbench_17_r_ref1", [perlbench_17_r_ref1_ckpt4, perlbench_17_r_ref1_ckpt2], weight=726382673905)
+
+perlbench_17_r_ref2_ckpt1 = Checkpoint("perlbench_17_r_ref2_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/perlbench_17_r/ref/perlbench_17_r_ref2_checkpoint1_1.0_470600011838", scarab_args="--inst_limit 200000001 ", weight=1.0)
+perlbench_17_r_ref2 = Benchmark("perlbench_17_r_ref2", [perlbench_17_r_ref2_ckpt1], weight=689921491972)
+
+gcc_17_r_ref0_ckpt4 = Checkpoint("gcc_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref0_checkpoint4_1.0_143000002766", scarab_args="--inst_limit 200000006 ", weight=1.0)
+gcc_17_r_ref0 = Benchmark("gcc_17_r_ref0", [gcc_17_r_ref0_ckpt4], weight=209653325139)
+
+gcc_17_r_ref1_ckpt2 = Checkpoint("gcc_17_r_ref1_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref1_checkpoint2_1.0_40400000815", scarab_args="--inst_limit 200000005 ", weight=1.0)
+gcc_17_r_ref1 = Benchmark("gcc_17_r_ref1", [gcc_17_r_ref1_ckpt2], weight=261175137164)
+
+gcc_17_r_ref2_ckpt4 = Checkpoint("gcc_17_r_ref2_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref2_checkpoint4_0.7795904566682867_116400002198", scarab_args="--inst_limit 200000000 ", weight=0.7795904566682867)
+gcc_17_r_ref2_ckpt1 = Checkpoint("gcc_17_r_ref2_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref2_checkpoint1_0.2204095433317132_22000000549", scarab_args="--inst_limit 200000005 ", weight=0.2204095433317132)
+gcc_17_r_ref2 = Benchmark("gcc_17_r_ref2", [gcc_17_r_ref2_ckpt4, gcc_17_r_ref2_ckpt1], weight=246325826226)
+
+gcc_17_r_ref3_ckpt2 = Checkpoint("gcc_17_r_ref3_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref3_checkpoint2_0.8724317798733543_16400000337", scarab_args="--inst_limit 200000001 ", weight=0.8724317798733543)
+gcc_17_r_ref3_ckpt4 = Checkpoint("gcc_17_r_ref3_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref3_checkpoint4_0.12756822012664573_212200003966", scarab_args="--inst_limit 200000000 ", weight=0.12756822012664573)
+gcc_17_r_ref3 = Benchmark("gcc_17_r_ref3", [gcc_17_r_ref3_ckpt2, gcc_17_r_ref3_ckpt4], weight=221243849598)
+
+gcc_17_r_ref4_ckpt4 = Checkpoint("gcc_17_r_ref4_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref4_checkpoint4_0.29313_16000000306", scarab_args="--inst_limit 200000001 ", weight=0.29313)
+gcc_17_r_ref4_ckpt2 = Checkpoint("gcc_17_r_ref4_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref4_checkpoint2_0.10513_413000004440", scarab_args="--inst_limit 200000000 ", weight=0.10513)
+gcc_17_r_ref4_ckpt3 = Checkpoint("gcc_17_r_ref4_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref4_checkpoint3_0.42889_528200005613", scarab_args="--inst_limit 200000000 ", weight=0.42889)
+gcc_17_r_ref4_ckpt1 = Checkpoint("gcc_17_r_ref4_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/gcc_17_r/ref/gcc_17_r_ref4_checkpoint1_0.17285_543400005691", scarab_args="--inst_limit 200000000 ", weight=0.17285)
+gcc_17_r_ref4 = Benchmark("gcc_17_r_ref4", [gcc_17_r_ref4_ckpt4, gcc_17_r_ref4_ckpt2, gcc_17_r_ref4_ckpt3, gcc_17_r_ref4_ckpt1], weight=620079486769)
+
+mcf_17_r_ref0_ckpt4 = Checkpoint("mcf_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/mcf_17_r/ref/mcf_17_r_ref0_checkpoint4_0.2218828519397893_863800021081", scarab_args="--inst_limit 200000002 ", weight=0.2218828519397893)
+mcf_17_r_ref0_ckpt1 = Checkpoint("mcf_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/mcf_17_r/ref/mcf_17_r_ref0_checkpoint1_0.11010580668956456_553800013368", scarab_args="--inst_limit 200000002 ", weight=0.11010580668956456)
+mcf_17_r_ref0_ckpt2 = Checkpoint("mcf_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/mcf_17_r/ref/mcf_17_r_ref0_checkpoint2_0.6680113413706462_484200011781", scarab_args="--inst_limit 200000000 ", weight=0.6680113413706462)
+mcf_17_r_ref0 = Benchmark("mcf_17_r_ref0", [mcf_17_r_ref0_ckpt4, mcf_17_r_ref0_ckpt1, mcf_17_r_ref0_ckpt2], weight=971208381278)
+
+omnetpp_17_r_ref0_ckpt1 = Checkpoint("omnetpp_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/omnetpp_17_r/ref/omnetpp_17_r_ref0_checkpoint1_1.0_485600010360", scarab_args="--inst_limit 200000001 ", weight=1.0)
+omnetpp_17_r_ref0 = Benchmark("omnetpp_17_r_ref0", [omnetpp_17_r_ref0_ckpt1], weight=1076585570004)
+
+xalancbmk_17_r_ref0_ckpt1 = Checkpoint("xalancbmk_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/xalancbmk_17_r/ref/xalancbmk_17_r_ref0_checkpoint1_0.11570822915534298_750400010436", scarab_args="--inst_limit 200000002 ", weight=0.11570822915534298)
+xalancbmk_17_r_ref0_ckpt2 = Checkpoint("xalancbmk_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/xalancbmk_17_r/ref/xalancbmk_17_r_ref0_checkpoint2_0.6484835308185672_985600013821", scarab_args="--inst_limit 200000000 ", weight=0.6484835308185672)
+xalancbmk_17_r_ref0_ckpt3 = Checkpoint("xalancbmk_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/xalancbmk_17_r/ref/xalancbmk_17_r_ref0_checkpoint3_0.2358082400260898_135600001740", scarab_args="--inst_limit 200000004 ", weight=0.2358082400260898)
+xalancbmk_17_r_ref0 = Benchmark("xalancbmk_17_r_ref0", [xalancbmk_17_r_ref0_ckpt1, xalancbmk_17_r_ref0_ckpt2, xalancbmk_17_r_ref0_ckpt3], weight=1283306641619)
+
+x264_17_r_ref0_ckpt1 = Checkpoint("x264_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref0_checkpoint1_0.43404_46800006106", scarab_args="--inst_limit 200000061 ", weight=0.43404)
+x264_17_r_ref0_ckpt3 = Checkpoint("x264_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref0_checkpoint3_0.11889_39000005102", scarab_args="--inst_limit 200000012 ", weight=0.11889)
+x264_17_r_ref0_ckpt2 = Checkpoint("x264_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref0_checkpoint2_0.29723_290200034120", scarab_args="--inst_limit 200000019 ", weight=0.29723)
+x264_17_r_ref0_ckpt4 = Checkpoint("x264_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref0_checkpoint4_0.14984_140400016949", scarab_args="--inst_limit 200000066 ", weight=0.14984)
+x264_17_r_ref0 = Benchmark("x264_17_r_ref0", [x264_17_r_ref0_ckpt1, x264_17_r_ref0_ckpt3, x264_17_r_ref0_ckpt2, x264_17_r_ref0_ckpt4], weight=491109943982)
+
+x264_17_r_ref1_ckpt2 = Checkpoint("x264_17_r_ref1_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref1_checkpoint2_0.1726_948600123157", scarab_args="--inst_limit 200000021 ", weight=0.1726)
+x264_17_r_ref1_ckpt1 = Checkpoint("x264_17_r_ref1_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref1_checkpoint1_0.19131_1307600169425", scarab_args="--inst_limit 200000015 ", weight=0.19131)
+x264_17_r_ref1_ckpt3 = Checkpoint("x264_17_r_ref1_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref1_checkpoint3_0.19301_591400076741", scarab_args="--inst_limit 200000055 ", weight=0.19301)
+x264_17_r_ref1_ckpt4 = Checkpoint("x264_17_r_ref1_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref1_checkpoint4_0.44309_117400015552", scarab_args="--inst_limit 200000016 ", weight=0.44309)
+x264_17_r_ref1 = Benchmark("x264_17_r_ref1", [x264_17_r_ref1_ckpt2, x264_17_r_ref1_ckpt1, x264_17_r_ref1_ckpt3, x264_17_r_ref1_ckpt4], weight=1881604550437)
+
+x264_17_r_ref2_ckpt1 = Checkpoint("x264_17_r_ref2_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref2_checkpoint1_0.1062_158600021078", scarab_args="--inst_limit 200000069 ", weight=0.1062)
+x264_17_r_ref2_ckpt2 = Checkpoint("x264_17_r_ref2_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref2_checkpoint2_0.18103_86800011606", scarab_args="--inst_limit 200000045 ", weight=0.18103)
+x264_17_r_ref2_ckpt4 = Checkpoint("x264_17_r_ref2_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref2_checkpoint4_0.29279_705600093331", scarab_args="--inst_limit 200000003 ", weight=0.29279)
+x264_17_r_ref2_ckpt3 = Checkpoint("x264_17_r_ref2_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/x264_17_r/ref/x264_17_r_ref2_checkpoint3_0.41998_488400064533", scarab_args="--inst_limit 200000009 ", weight=0.41998)
+x264_17_r_ref2 = Benchmark("x264_17_r_ref2", [x264_17_r_ref2_ckpt1, x264_17_r_ref2_ckpt2, x264_17_r_ref2_ckpt4, x264_17_r_ref2_ckpt3], weight=1905718883640)
+
+deepsjeng_17_r_ref0_ckpt2 = Checkpoint("deepsjeng_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/deepsjeng_17_r/ref/deepsjeng_17_r_ref0_checkpoint2_0.5408794919205725_550600021694", scarab_args="--inst_limit 200000003 ", weight=0.5408794919205725)
+deepsjeng_17_r_ref0_ckpt3 = Checkpoint("deepsjeng_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/deepsjeng_17_r/ref/deepsjeng_17_r_ref0_checkpoint3_0.4591205080794276_980600038363", scarab_args="--inst_limit 200000002 ", weight=0.4591205080794276)
+deepsjeng_17_r_ref0 = Benchmark("deepsjeng_17_r_ref0", [deepsjeng_17_r_ref0_ckpt2, deepsjeng_17_r_ref0_ckpt3], weight=1968874843889)
+
+leela_17_r_ref0_ckpt4 = Checkpoint("leela_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/leela_17_r/ref/leela_17_r_ref0_checkpoint4_0.14616_51800002539", scarab_args="--inst_limit 200000000 ", weight=0.14616)
+leela_17_r_ref0_ckpt1 = Checkpoint("leela_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/leela_17_r/ref/leela_17_r_ref0_checkpoint1_0.29842_1967800086595", scarab_args="--inst_limit 200000007 ", weight=0.29842)
+leela_17_r_ref0_ckpt3 = Checkpoint("leela_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/leela_17_r/ref/leela_17_r_ref0_checkpoint3_0.11885_84200003937", scarab_args="--inst_limit 200000003 ", weight=0.11885)
+leela_17_r_ref0_ckpt2 = Checkpoint("leela_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/leela_17_r/ref/leela_17_r_ref0_checkpoint2_0.43656_1407400061434", scarab_args="--inst_limit 200000000 ", weight=0.43656)
+leela_17_r_ref0 = Benchmark("leela_17_r_ref0", [leela_17_r_ref0_ckpt4, leela_17_r_ref0_ckpt1, leela_17_r_ref0_ckpt3, leela_17_r_ref0_ckpt2], weight=2094830454397)
+
+exchange2_17_r_ref0_ckpt1 = Checkpoint("exchange2_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/exchange2_17_r/ref/exchange2_17_r_ref0_checkpoint1_0.4893044747640778_2116200042569", scarab_args="--inst_limit 200000001 ", weight=0.4893044747640778)
+exchange2_17_r_ref0_ckpt5 = Checkpoint("exchange2_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/exchange2_17_r/ref/exchange2_17_r_ref0_checkpoint5_0.2711525419832412_1076800021649", scarab_args="--inst_limit 200000000 ", weight=0.2711525419832412)
+exchange2_17_r_ref0_ckpt3 = Checkpoint("exchange2_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/exchange2_17_r/ref/exchange2_17_r_ref0_checkpoint3_0.23954298325268109_1497400030166", scarab_args="--inst_limit 200000005 ", weight=0.23954298325268109)
+exchange2_17_r_ref0 = Benchmark("exchange2_17_r_ref0", [exchange2_17_r_ref0_ckpt1, exchange2_17_r_ref0_ckpt5, exchange2_17_r_ref0_ckpt3], weight=2428848721597)
+
+xz_17_r_ref0_ckpt2 = Checkpoint("xz_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref0_checkpoint2_0.8567033013350756_368800015643", scarab_args="--inst_limit 200000003 ", weight=0.8567033013350756)
+xz_17_r_ref0_ckpt3 = Checkpoint("xz_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref0_checkpoint3_0.1432966986649245_402600016892", scarab_args="--inst_limit 200000004 ", weight=0.1432966986649245)
+xz_17_r_ref0 = Benchmark("xz_17_r_ref0", [xz_17_r_ref0_ckpt2, xz_17_r_ref0_ckpt3], weight=411772350867)
+
+xz_17_r_ref1_ckpt3 = Checkpoint("xz_17_r_ref1_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref1_checkpoint3_0.3172388470717826_1000800027833", scarab_args="--inst_limit 200000003 ", weight=0.3172388470717826)
+xz_17_r_ref1_ckpt2 = Checkpoint("xz_17_r_ref1_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref1_checkpoint2_0.22835199804173553_500400014694", scarab_args="--inst_limit 200000001 ", weight=0.22835199804173553)
+xz_17_r_ref1_ckpt4 = Checkpoint("xz_17_r_ref1_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref1_checkpoint4_0.15957815719152235_613800017777", scarab_args="--inst_limit 200000009 ", weight=0.15957815719152235)
+xz_17_r_ref1_ckpt5 = Checkpoint("xz_17_r_ref1_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref1_checkpoint5_0.2948309976949595_805000022871", scarab_args="--inst_limit 200000001 ", weight=0.2948309976949595)
+xz_17_r_ref1 = Benchmark("xz_17_r_ref1", [xz_17_r_ref1_ckpt3, xz_17_r_ref1_ckpt2, xz_17_r_ref1_ckpt4, xz_17_r_ref1_ckpt5], weight=1064748617824)
+
+xz_17_r_ref2_ckpt1 = Checkpoint("xz_17_r_ref2_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref2_checkpoint1_0.23396810953680836_428800016714", scarab_args="--inst_limit 200000051 ", weight=0.23396810953680836)
+xz_17_r_ref2_ckpt5 = Checkpoint("xz_17_r_ref2_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref2_checkpoint5_0.31870964946488145_309200012504", scarab_args="--inst_limit 200000005 ", weight=0.31870964946488145)
+xz_17_r_ref2_ckpt4 = Checkpoint("xz_17_r_ref2_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/xz_17_r/ref/xz_17_r_ref2_checkpoint4_0.44732224099831014_430600016842", scarab_args="--inst_limit 200000003 ", weight=0.44732224099831014)
+xz_17_r_ref2 = Benchmark("xz_17_r_ref2", [xz_17_r_ref2_ckpt1, xz_17_r_ref2_ckpt5, xz_17_r_ref2_ckpt4], weight=577697967609)
+
+bwaves_17_r_ref0_ckpt4 = Checkpoint("bwaves_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref0_checkpoint4_0.27473577628869494_1081600060013", scarab_args="--inst_limit 200000002 ", weight=0.27473577628869494)
+bwaves_17_r_ref0_ckpt2 = Checkpoint("bwaves_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref0_checkpoint2_0.6079932649973264_160800005420", scarab_args="--inst_limit 200000004 ", weight=0.6079932649973264)
+bwaves_17_r_ref0_ckpt3 = Checkpoint("bwaves_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref0_checkpoint3_0.11727095871397855_775800031286", scarab_args="--inst_limit 200000003 ", weight=0.11727095871397855)
+bwaves_17_r_ref0 = Benchmark("bwaves_17_r_ref0", [bwaves_17_r_ref0_ckpt4, bwaves_17_r_ref0_ckpt2, bwaves_17_r_ref0_ckpt3], weight=1103813177587)
+
+bwaves_17_r_ref1_ckpt4 = Checkpoint("bwaves_17_r_ref1_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref1_checkpoint4_0.11109238208615585_838600034892", scarab_args="--inst_limit 200000035 ", weight=0.11109238208615585)
+bwaves_17_r_ref1_ckpt1 = Checkpoint("bwaves_17_r_ref1_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref1_checkpoint1_0.12863328452081202_789400030195", scarab_args="--inst_limit 200000012 ", weight=0.12863328452081202)
+bwaves_17_r_ref1_ckpt2 = Checkpoint("bwaves_17_r_ref1_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref1_checkpoint2_0.4568114537352113_145000004996", scarab_args="--inst_limit 200000019 ", weight=0.4568114537352113)
+bwaves_17_r_ref1_ckpt3 = Checkpoint("bwaves_17_r_ref1_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref1_checkpoint3_0.30346287965782065_992200048657", scarab_args="--inst_limit 200000002 ", weight=0.30346287965782065)
+bwaves_17_r_ref1 = Benchmark("bwaves_17_r_ref1", [bwaves_17_r_ref1_ckpt4, bwaves_17_r_ref1_ckpt1, bwaves_17_r_ref1_ckpt2, bwaves_17_r_ref1_ckpt3], weight=1441358185899)
+
+bwaves_17_r_ref2_ckpt4 = Checkpoint("bwaves_17_r_ref2_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref2_checkpoint4_0.1473505308251071_745800027755", scarab_args="--inst_limit 200000000 ", weight=0.1473505308251071)
+bwaves_17_r_ref2_ckpt3 = Checkpoint("bwaves_17_r_ref2_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref2_checkpoint3_0.5658642205252374_140400004846", scarab_args="--inst_limit 200000001 ", weight=0.5658642205252374)
+bwaves_17_r_ref2_ckpt1 = Checkpoint("bwaves_17_r_ref2_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref2_checkpoint1_0.2867852486496555_904800042063", scarab_args="--inst_limit 200000001 ", weight=0.2867852486496555)
+bwaves_17_r_ref2 = Benchmark("bwaves_17_r_ref2", [bwaves_17_r_ref2_ckpt4, bwaves_17_r_ref2_ckpt3, bwaves_17_r_ref2_ckpt1], weight=1237153873081)
+
+bwaves_17_r_ref3_ckpt1 = Checkpoint("bwaves_17_r_ref3_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref3_checkpoint1_0.5887542736513619_359200011687", scarab_args="--inst_limit 200000009 ", weight=0.5887542736513619)
+bwaves_17_r_ref3_ckpt5 = Checkpoint("bwaves_17_r_ref3_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref3_checkpoint5_0.14512058006929623_1490400080697", scarab_args="--inst_limit 200000000 ", weight=0.14512058006929623)
+bwaves_17_r_ref3_ckpt2 = Checkpoint("bwaves_17_r_ref3_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/bwaves_17_r/ref/bwaves_17_r_ref3_checkpoint2_0.2661251462793419_777600024108", scarab_args="--inst_limit 200000001 ", weight=0.2661251462793419)
+bwaves_17_r_ref3 = Benchmark("bwaves_17_r_ref3", [bwaves_17_r_ref3_ckpt1, bwaves_17_r_ref3_ckpt5, bwaves_17_r_ref3_ckpt2], weight=1579582548059)
+
+cactuBSSN_17_r_ref0_ckpt2 = Checkpoint("cactuBSSN_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/cactuBSSN_17_r/ref/cactuBSSN_17_r_ref0_checkpoint2_0.5994905835134301_753800096069", scarab_args="--inst_limit 200000005 ", weight=0.5994905835134301)
+cactuBSSN_17_r_ref0_ckpt3 = Checkpoint("cactuBSSN_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/cactuBSSN_17_r/ref/cactuBSSN_17_r_ref0_checkpoint3_0.28492038989105983_1301800165550", scarab_args="--inst_limit 200000003 ", weight=0.28492038989105983)
+cactuBSSN_17_r_ref0_ckpt5 = Checkpoint("cactuBSSN_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/cactuBSSN_17_r/ref/cactuBSSN_17_r_ref0_checkpoint5_0.11558902659551008_1187000151678", scarab_args="--inst_limit 200000009 ", weight=0.11558902659551008)
+cactuBSSN_17_r_ref0 = Benchmark("cactuBSSN_17_r_ref0", [cactuBSSN_17_r_ref0_ckpt2, cactuBSSN_17_r_ref0_ckpt3, cactuBSSN_17_r_ref0_ckpt5], weight=1547194591442)
+
+namd_17_r_ref0_ckpt1 = Checkpoint("namd_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/namd_17_r/ref/namd_17_r_ref0_checkpoint1_0.23233685707414495_2529000383890", scarab_args="--inst_limit 200000017 ", weight=0.23233685707414495)
+namd_17_r_ref0_ckpt5 = Checkpoint("namd_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/namd_17_r/ref/namd_17_r_ref0_checkpoint5_0.1411692127523866_2308800350265", scarab_args="--inst_limit 200000035 ", weight=0.1411692127523866)
+namd_17_r_ref0_ckpt4 = Checkpoint("namd_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/namd_17_r/ref/namd_17_r_ref0_checkpoint4_0.470225958572519_1576600237724", scarab_args="--inst_limit 200000064 ", weight=0.470225958572519)
+namd_17_r_ref0_ckpt2 = Checkpoint("namd_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/namd_17_r/ref/namd_17_r_ref0_checkpoint2_0.1562679716009494_1029400155717", scarab_args="--inst_limit 200000015 ", weight=0.1562679716009494)
+namd_17_r_ref0 = Benchmark("namd_17_r_ref0", [namd_17_r_ref0_ckpt1, namd_17_r_ref0_ckpt5, namd_17_r_ref0_ckpt4, namd_17_r_ref0_ckpt2], weight=2630887468120)
+
+parest_17_r_ref0_ckpt1 = Checkpoint("parest_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/parest_17_r/ref/parest_17_r_ref0_checkpoint1_0.12353241449719245_1322200028957", scarab_args="--inst_limit 200000000 ", weight=0.12353241449719245)
+parest_17_r_ref0_ckpt4 = Checkpoint("parest_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/parest_17_r/ref/parest_17_r_ref0_checkpoint4_0.8764675855028076_2185800047928", scarab_args="--inst_limit 200000005 ", weight=0.8764675855028076)
+parest_17_r_ref0 = Benchmark("parest_17_r_ref0", [parest_17_r_ref0_ckpt1, parest_17_r_ref0_ckpt4], weight=3937361417012)
+
+povray_17_r_ref0_ckpt5 = Checkpoint("povray_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/povray_17_r/ref/povray_17_r_ref0_checkpoint5_0.3775324292774463_2630000115253", scarab_args="--inst_limit 200000005 ", weight=0.3775324292774463)
+povray_17_r_ref0_ckpt3 = Checkpoint("povray_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/povray_17_r/ref/povray_17_r_ref0_checkpoint3_0.12766607390275037_1989200085401", scarab_args="--inst_limit 200000000 ", weight=0.12766607390275037)
+povray_17_r_ref0_ckpt4 = Checkpoint("povray_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/povray_17_r/ref/povray_17_r_ref0_checkpoint4_0.1344410381732689_1946800083406", scarab_args="--inst_limit 200000006 ", weight=0.1344410381732689)
+povray_17_r_ref0_ckpt1 = Checkpoint("povray_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/povray_17_r/ref/povray_17_r_ref0_checkpoint1_0.36036045864653454_2303400100230", scarab_args="--inst_limit 200000002 ", weight=0.36036045864653454)
+povray_17_r_ref0 = Benchmark("povray_17_r_ref0", [povray_17_r_ref0_ckpt5, povray_17_r_ref0_ckpt3, povray_17_r_ref0_ckpt4, povray_17_r_ref0_ckpt1], weight=3479645514412)
+
+lbm_17_r_ref0_ckpt2 = Checkpoint("lbm_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/lbm_17_r/ref/lbm_17_r_ref0_checkpoint2_0.38990996804016653_703200109600", scarab_args="--inst_limit 200000011 ", weight=0.38990996804016653)
+lbm_17_r_ref0_ckpt1 = Checkpoint("lbm_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/lbm_17_r/ref/lbm_17_r_ref0_checkpoint1_0.23707743958381644_710000110631", scarab_args="--inst_limit 200000011 ", weight=0.23707743958381644)
+lbm_17_r_ref0_ckpt5 = Checkpoint("lbm_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/lbm_17_r/ref/lbm_17_r_ref0_checkpoint5_0.373012592376017_1174000182746", scarab_args="--inst_limit 200000040 ", weight=0.373012592376017)
+lbm_17_r_ref0 = Benchmark("lbm_17_r_ref0", [lbm_17_r_ref0_ckpt2, lbm_17_r_ref0_ckpt1, lbm_17_r_ref0_ckpt5], weight=1598845159557)
+
+wrf_17_r_ref0_ckpt2 = Checkpoint("wrf_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/wrf_17_r/ref/wrf_17_r_ref0_checkpoint2_0.10871_2635200184420", scarab_args="--inst_limit 200000000 ", weight=0.10871)
+wrf_17_r_ref0_ckpt4 = Checkpoint("wrf_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/wrf_17_r/ref/wrf_17_r_ref0_checkpoint4_0.35777_2731200190637", scarab_args="--inst_limit 200000001 ", weight=0.35777)
+wrf_17_r_ref0_ckpt3 = Checkpoint("wrf_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/wrf_17_r/ref/wrf_17_r_ref0_checkpoint3_0.15249_240800017392", scarab_args="--inst_limit 200000008 ", weight=0.15249)
+wrf_17_r_ref0_ckpt5 = Checkpoint("wrf_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/wrf_17_r/ref/wrf_17_r_ref0_checkpoint5_0.18493_3353800235374", scarab_args="--inst_limit 200000054 ", weight=0.18493)
+wrf_17_r_ref0_ckpt1 = Checkpoint("wrf_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/wrf_17_r/ref/wrf_17_r_ref0_checkpoint1_0.1961_2421400169096", scarab_args="--inst_limit 200000019 ", weight=0.1961)
+wrf_17_r_ref0 = Benchmark("wrf_17_r_ref0", [wrf_17_r_ref0_ckpt2, wrf_17_r_ref0_ckpt4, wrf_17_r_ref0_ckpt3, wrf_17_r_ref0_ckpt5, wrf_17_r_ref0_ckpt1], weight=3705100474935)
+
+blender_17_r_ref0_ckpt3 = Checkpoint("blender_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/blender_17_r/ref/blender_17_r_ref0_checkpoint3_0.4056820895846452_1313600050237", scarab_args="--inst_limit 200000014 ", weight=0.4056820895846452)
+blender_17_r_ref0_ckpt2 = Checkpoint("blender_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/blender_17_r/ref/blender_17_r_ref0_checkpoint2_0.5943179104153549_1333600051100", scarab_args="--inst_limit 200000009 ", weight=0.5943179104153549)
+blender_17_r_ref0 = Benchmark("blender_17_r_ref0", [blender_17_r_ref0_ckpt3, blender_17_r_ref0_ckpt2], weight=1795426475032)
+
+cam4_17_r_ref0_ckpt5 = Checkpoint("cam4_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/cam4_17_r/ref/cam4_17_r_ref0_checkpoint5_0.10318_2114000112822", scarab_args="--inst_limit 200000012 ", weight=0.10318)
+cam4_17_r_ref0_ckpt1 = Checkpoint("cam4_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/cam4_17_r/ref/cam4_17_r_ref0_checkpoint1_0.13058_2282400124424", scarab_args="--inst_limit 200000003 ", weight=0.13058)
+cam4_17_r_ref0_ckpt3 = Checkpoint("cam4_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/cam4_17_r/ref/cam4_17_r_ref0_checkpoint3_0.3486_1944800105082", scarab_args="--inst_limit 200000000 ", weight=0.3486)
+cam4_17_r_ref0_ckpt2 = Checkpoint("cam4_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/cam4_17_r/ref/cam4_17_r_ref0_checkpoint2_0.22666_163600010911", scarab_args="--inst_limit 200000002 ", weight=0.22666)
+cam4_17_r_ref0_ckpt4 = Checkpoint("cam4_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/cam4_17_r/ref/cam4_17_r_ref0_checkpoint4_0.19099_2173800116651", scarab_args="--inst_limit 200000001 ", weight=0.19099)
+cam4_17_r_ref0 = Benchmark("cam4_17_r_ref0", [cam4_17_r_ref0_ckpt5, cam4_17_r_ref0_ckpt1, cam4_17_r_ref0_ckpt3, cam4_17_r_ref0_ckpt2, cam4_17_r_ref0_ckpt4], weight=2707921499995)
+
+imagick_17_r_ref0_ckpt1 = Checkpoint("imagick_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/imagick_17_r/ref/imagick_17_r_ref0_checkpoint1_0.48365_4963800215072", scarab_args="--inst_limit 200000006 ", weight=0.48365)
+imagick_17_r_ref0_ckpt2 = Checkpoint("imagick_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/imagick_17_r/ref/imagick_17_r_ref0_checkpoint2_0.51635_1624400075134", scarab_args="--inst_limit 200000000 ", weight=0.51635)
+imagick_17_r_ref0 = Benchmark("imagick_17_r_ref0", [imagick_17_r_ref0_ckpt1, imagick_17_r_ref0_ckpt2], weight=5377378973261)
+
+nab_17_r_ref0_ckpt4 = Checkpoint("nab_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/nab_17_r/ref/nab_17_r_ref0_checkpoint4_0.10262_1906800103389", scarab_args="--inst_limit 200000005 ", weight=0.10262)
+nab_17_r_ref0_ckpt2 = Checkpoint("nab_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/nab_17_r/ref/nab_17_r_ref0_checkpoint2_0.23577_1596600088188", scarab_args="--inst_limit 200000006 ", weight=0.23577)
+nab_17_r_ref0_ckpt3 = Checkpoint("nab_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/nab_17_r/ref/nab_17_r_ref0_checkpoint3_0.18041_29000001340", scarab_args="--inst_limit 200000003 ", weight=0.18041)
+nab_17_r_ref0_ckpt1 = Checkpoint("nab_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/nab_17_r/ref/nab_17_r_ref0_checkpoint1_0.14382_1918400104045", scarab_args="--inst_limit 200000004 ", weight=0.14382)
+nab_17_r_ref0_ckpt5 = Checkpoint("nab_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/nab_17_r/ref/nab_17_r_ref0_checkpoint5_0.33738_1019600055986", scarab_args="--inst_limit 200000002 ", weight=0.33738)
+nab_17_r_ref0 = Benchmark("nab_17_r_ref0", [nab_17_r_ref0_ckpt4, nab_17_r_ref0_ckpt2, nab_17_r_ref0_ckpt3, nab_17_r_ref0_ckpt1, nab_17_r_ref0_ckpt5], weight=2174955014532)
+
+fotonik3d_17_r_ref0_ckpt1 = Checkpoint("fotonik3d_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/fotonik3d_17_r/ref/fotonik3d_17_r_ref0_checkpoint1_0.30515_39200001911", scarab_args="--inst_limit 200000017 ", weight=0.30515)
+fotonik3d_17_r_ref0_ckpt4 = Checkpoint("fotonik3d_17_r_ref0_ckpt4", "/home/hong/scarab/spec2017_run_dir_rate/fotonik3d_17_r/ref/fotonik3d_17_r_ref0_checkpoint4_0.29999_30800000781", scarab_args="--inst_limit 200000068 ", weight=0.29999)
+fotonik3d_17_r_ref0_ckpt3 = Checkpoint("fotonik3d_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/fotonik3d_17_r/ref/fotonik3d_17_r_ref0_checkpoint3_0.19743_2359400308441", scarab_args="--inst_limit 200000005 ", weight=0.19743)
+fotonik3d_17_r_ref0_ckpt2 = Checkpoint("fotonik3d_17_r_ref0_ckpt2", "/home/hong/scarab/spec2017_run_dir_rate/fotonik3d_17_r/ref/fotonik3d_17_r_ref0_checkpoint2_0.19743_36200001486", scarab_args="--inst_limit 200000050 ", weight=0.19743)
+fotonik3d_17_r_ref0 = Benchmark("fotonik3d_17_r_ref0", [fotonik3d_17_r_ref0_ckpt1, fotonik3d_17_r_ref0_ckpt4, fotonik3d_17_r_ref0_ckpt3, fotonik3d_17_r_ref0_ckpt2], weight=2363341619850)
+
+roms_17_r_ref0_ckpt3 = Checkpoint("roms_17_r_ref0_ckpt3", "/home/hong/scarab/spec2017_run_dir_rate/roms_17_r/ref/roms_17_r_ref0_checkpoint3_0.25164836433759424_784600053761", scarab_args="--inst_limit 200000019 ", weight=0.25164836433759424)
+roms_17_r_ref0_ckpt5 = Checkpoint("roms_17_r_ref0_ckpt5", "/home/hong/scarab/spec2017_run_dir_rate/roms_17_r/ref/roms_17_r_ref0_checkpoint5_0.4252375838616182_2916800198621", scarab_args="--inst_limit 200000000 ", weight=0.4252375838616182)
+roms_17_r_ref0_ckpt1 = Checkpoint("roms_17_r_ref0_ckpt1", "/home/hong/scarab/spec2017_run_dir_rate/roms_17_r/ref/roms_17_r_ref0_checkpoint1_0.3231140518007875_1597200109220", scarab_args="--inst_limit 200000004 ", weight=0.3231140518007875)
+roms_17_r_ref0 = Benchmark("roms_17_r_ref0", [roms_17_r_ref0_ckpt3, roms_17_r_ref0_ckpt5, roms_17_r_ref0_ckpt1], weight=2937599432562)
+
+# Group benchmarks with different inputs
+perlbench_17_r_ref = Benchmark("perlbench_17_r_ref", [perlbench_17_r_ref0, perlbench_17_r_ref1, perlbench_17_r_ref2])
+
+gcc_17_r_ref = Benchmark("gcc_17_r_ref", [gcc_17_r_ref0, gcc_17_r_ref1, gcc_17_r_ref2, gcc_17_r_ref3, gcc_17_r_ref4])
+
+mcf_17_r_ref = Benchmark("mcf_17_r_ref", [mcf_17_r_ref0])
+
+omnetpp_17_r_ref = Benchmark("omnetpp_17_r_ref", [omnetpp_17_r_ref0])
+
+xalancbmk_17_r_ref = Benchmark("xalancbmk_17_r_ref", [xalancbmk_17_r_ref0])
+
+x264_17_r_ref = Benchmark("x264_17_r_ref", [x264_17_r_ref0, x264_17_r_ref1, x264_17_r_ref2])
+
+deepsjeng_17_r_ref = Benchmark("deepsjeng_17_r_ref", [deepsjeng_17_r_ref0])
+
+leela_17_r_ref = Benchmark("leela_17_r_ref", [leela_17_r_ref0])
+
+exchange2_17_r_ref = Benchmark("exchange2_17_r_ref", [exchange2_17_r_ref0])
+
+xz_17_r_ref = Benchmark("xz_17_r_ref", [xz_17_r_ref0, xz_17_r_ref1, xz_17_r_ref2])
+
+bwaves_17_r_ref = Benchmark("bwaves_17_r_ref", [bwaves_17_r_ref0, bwaves_17_r_ref1, bwaves_17_r_ref2, bwaves_17_r_ref3])
+
+cactuBSSN_17_r_ref = Benchmark("cactuBSSN_17_r_ref", [cactuBSSN_17_r_ref0])
+
+namd_17_r_ref = Benchmark("namd_17_r_ref", [namd_17_r_ref0])
+
+parest_17_r_ref = Benchmark("parest_17_r_ref", [parest_17_r_ref0])
+
+povray_17_r_ref = Benchmark("povray_17_r_ref", [povray_17_r_ref0])
+
+lbm_17_r_ref = Benchmark("lbm_17_r_ref", [lbm_17_r_ref0])
+
+wrf_17_r_ref = Benchmark("wrf_17_r_ref", [wrf_17_r_ref0])
+
+blender_17_r_ref = Benchmark("blender_17_r_ref", [blender_17_r_ref0])
+
+cam4_17_r_ref = Benchmark("cam4_17_r_ref", [cam4_17_r_ref0])
+
+imagick_17_r_ref = Benchmark("imagick_17_r_ref", [imagick_17_r_ref0])
+
+nab_17_r_ref = Benchmark("nab_17_r_ref", [nab_17_r_ref0])
+
+fotonik3d_17_r_ref = Benchmark("fotonik3d_17_r_ref", [fotonik3d_17_r_ref0])
+
+roms_17_r_ref = Benchmark("roms_17_r_ref", [roms_17_r_ref0])
+
+spec17_rate = Suite("spec17_rate", [perlbench_17_r_ref, gcc_17_r_ref, mcf_17_r_ref, omnetpp_17_r_ref, xalancbmk_17_r_ref, x264_17_r_ref, deepsjeng_17_r_ref, leela_17_r_ref, exchange2_17_r_ref, xz_17_r_ref, bwaves_17_r_ref, cactuBSSN_17_r_ref, namd_17_r_ref, parest_17_r_ref, povray_17_r_ref, lbm_17_r_ref, wrf_17_r_ref, blender_17_r_ref, cam4_17_r_ref, imagick_17_r_ref, nab_17_r_ref, fotonik3d_17_r_ref, roms_17_r_ref])
+
