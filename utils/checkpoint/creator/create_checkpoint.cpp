@@ -635,8 +635,8 @@ void dumpFpState(FILE* out, CONTEXT* ctxt) {
   FPSTATE fpstate;
   PIN_GetContextFPState(ctxt, &fpstate);
   startInlineChild(out, "FPSTATE");
-  std::cout << "xsave header mask: 0x" << std::hex
-            << fpstate._xstate._extendedHeader._mask << std::endl;
+  // std::cout << "xsave header mask: 0x" << std::hex
+  //           << fpstate._xstate._extendedHeader._mask << std::endl;
   std::cout << "xsave header xcomp: 0x" << std::hex
             << fpstate._xstate._extendedHeader._xcomp_bv << std::endl;
   fprintf(out, "0x");

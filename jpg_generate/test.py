@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import re
 
 # 사용자가 지정한 파일 경로
-file_path = '/home/hong/scarab/results/Baseline/leela_17_r_ref/leela_17_r_ref0/leela_17_r_ref0_ckpt1/retired_op_per_cycle.txt.out'
+file_path = '/home/hong/scarab/results/Baseline/leela_17_r_ref/leela_17_r_ref0/leela_17_r_ref0_ckpt2/retired_op_per_cycle.out'
 
 try:
     with open(file_path, 'r') as file:
@@ -12,8 +12,8 @@ except FileNotFoundError:
     exit()
 
 # --- 사이클 구간 설정 ---
-start_cycle = 1000800
-end_cycle = 1000900
+start_cycle = 1042000
+end_cycle = 1042500
 # -------------------------
 
 # (이전과 동일한 데이터 파싱 및 필터링 로직)

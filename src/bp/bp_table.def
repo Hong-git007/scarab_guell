@@ -65,6 +65,7 @@ Br_Conf br_conf_table [] = {
     /* Enum            Name          init                     pred                     update                     recover                    */
     /* ----------------------------------------------------------------------------------- */
     { ONPATH_CONF,      "onpath_conf",       init_bp_conf,           pred_onpath_conf,         update_onpath_conf,        recover_onpath_conf  },	
-    { PERCEPTRON_CONF,  "perceptron_conf",   conf_perceptron_init,   conf_perceptron_pred,     conf_perceptron_update,     NULL  },                   /* based on perceptron Akkary's paper*/ 	
+    { PERCEPTRON_CONF,  "perceptron_conf",   conf_perceptron_init,   conf_perceptron_pred,     conf_perceptron_update,    NULL  },   /* based on perceptron Akkary's paper*/ 
+    { ORIGINAL,         "Original",          init_bp_conf,           bp_conf_pred,             bp_update_conf,            NULL } ,              	
     { NUM_BR_CONF,     0,            NULL,                   NULL,                     NULL,                      NULL, }
 };

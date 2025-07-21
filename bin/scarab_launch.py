@@ -134,6 +134,13 @@ class Scarab:
     self.__copy_params_file_to_simdir()
     self.__get_scarab_command()
     
+    # [DEBUG] Print the full command for GDB
+    print("\n--- GDB Command ---\n")
+    # The command in self.cmd is already a string, so we just prepend gdb --args
+    gdb_command = self.cmd.replace(args.scarab, f"gdb --args {args.scarab}", 1)
+    print(gdb_command)
+    print("\n--- End GDB Command ---\n")
+    
     print('\nLaunching Scarab:\n' + self.cmd + '\n')
 
     cmd = command.Command(self.cmd, run_dir=args.simdir, stdout=args.scarab_stdout, stderr=args.scarab_stderr)

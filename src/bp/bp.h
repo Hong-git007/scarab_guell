@@ -199,6 +199,7 @@ typedef enum Ibtb_Id_enum {
 typedef enum Br_Conf_Id_eunm {
   ONPATH_CONF,
   PERCEPTRON_CONF,
+  ORIGINAL,
   NUM_BR_CONF,
 } Br_Conf_Id;
 

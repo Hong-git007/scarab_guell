@@ -203,9 +203,9 @@
 
 
 ### Debug
---debug_inst_start              0
+--debug_inst_start              1
 --debug_inst_stop              -1
---debug_cycle_start             0
+--debug_cycle_start             1
 --debug_cycle_stop             -1
 
 

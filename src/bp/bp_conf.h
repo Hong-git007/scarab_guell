@@ -84,7 +84,6 @@ void recover_onpath_conf(void);
 uns  read_conf_head(void);
 uns8 compute_spawn_path_conf(uns);
 
-
 /**************************************************************************************/
 /* perceptron based confidece estimator */
 void conf_perceptron_init(void);
@@ -93,5 +92,9 @@ void conf_perceptron_update(Op*);
 
 
 /**************************************************************************************/
+uns get_bpc_counter_value(uns index);
+Bpc_Data* get_bpc_data(void); 
+
+extern Bpc_Data* local_bpc_data_ptr;
 
 #endif /* #ifndef __BP_CONF_H__ */

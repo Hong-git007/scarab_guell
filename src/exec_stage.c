@@ -365,7 +365,7 @@ void update_exec_stage(Stage_Data* src_sd) {
       if(op->oracle_info.mispred || op->oracle_info.misfetch) {
         bp_sched_recovery(bp_recovery_info, op, op->exec_cycle,
                           /*late_bp_recovery=*/FALSE, /*force_offpath=*/FALSE);
-        log_misprediction(op, node, op->exec_cycle, bp_recovery_info); // 추가
+        log_misprediction(op, node, cycle_count, bp_recovery_info); // 추가
         if(!op->off_path)
           op->recovery_scheduled = TRUE;
       } else if(op->table_info->cf_type >= CF_IBR &&

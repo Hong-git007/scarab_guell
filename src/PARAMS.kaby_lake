@@ -53,6 +53,8 @@
 
 #### Branch Confidence
 --enable_bp_conf                1
+--conf_mech                     Original
+--bpc_ctr_bits                  3
 
 #### CRS
 
@@ -210,8 +212,8 @@
 ### Debug
 --debug_inst_start             0
 --debug_inst_stop              -1
---debug_cycle_start            0
---debug_cycle_stop             -1
+--debug_cycle_start            10000000
+--debug_cycle_stop             10500000
 
 #--debug_model                      1  # debug Every pipleline (targeting at retiring)
 #--debug_map                         1
@@ -225,14 +227,16 @@
 #--debug_crs 1
 #--debug_btb 1
 #--debug_bp_dir 1
-#--debug_retired_uops    1
+--debug_oracle          1
+--debug_bp_conf         1
+--debug_exc_inserts     1
+--debug_retired_uops    1
 
-
-## Stats and Params
+## Stats and Params             
 --dump_params                   1
 --dump_stats                    1
 #--dump_trace                    1
-#--pipeview _file                1
+--pipeview _file                1
 ####################################
 --set_off_path_confirmed        1
 

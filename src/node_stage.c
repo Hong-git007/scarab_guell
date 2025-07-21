@@ -58,7 +58,6 @@
 
 #include "bp/tagescl.h"
 
-#include "log/log_params.h"
 extern char* OUTPUT_DIR;
 
 /* Macros */
