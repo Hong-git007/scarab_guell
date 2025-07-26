@@ -1,0 +1,272 @@
+# .github/workflows/compile-scarab.yml
+name: Compile PR in Container
+
+############################################################
+# 1 ─── Triggers ────────────────────────────────────────────
+############################################################
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch: # Allows manual triggering of the workflow to test before merging
+
+############################################################
+# 2 ─── Shared variables ───────────────────────────────────
+############################################################
+env:
+  # SHA of the code being tested (PR head or merge commit)
+  COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
+############################################################
+# 3 ─── Job 0: look up infra‑container tag ─────────────────
+############################################################
+jobs:
+
+  get_tag:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.short }}
+    steps:
+      - id: tag
+        name: Latest scarab‑infra SHA
+        run: |
+          LATEST=$(curl -s https://raw.githubusercontent.com/litz-lab/scarab-infra/main/last_built_tag.txt)
+          echo "short=${LATEST}" >>"$GITHUB_OUTPUT"
+
+############################################################
+# 4 ─── Job 1: build (opt) ─────────────────────────────────
+############################################################
+ 
+  build-opt:
+    runs-on: ubuntu-latest
+    needs: get_tag
+    if: github.event_name == 'pull_request'
+    container:
+      image: ghcr.io/litz-lab/scarab-infra/allbench_traces:${{ needs.get_tag.outputs.tag }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Mark Git repo as safe
+        run: git config --global --add safe.directory /__w/scarab_ll/scarab_ll
+
+      - name: Build Scarab Opt
+        working-directory: src
+        run: make opt -j
+
+############################################################
+# 5 ─── Job 2: build (dbg) ─────────────────────────────────
+############################################################ 
+
+  build-dbg:
+    runs-on: ubuntu-latest
+    needs: get_tag
+    if: github.event_name == 'pull_request'
+    container:
+      image: ghcr.io/litz-lab/scarab-infra/allbench_traces:${{ needs.get_tag.outputs.tag }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Mark Git repo as safe
+        run: git config --global --add safe.directory /__w/scarab_ll/scarab_ll
+
+      - name: Build Scarab Dbg
+        working-directory: src
+        run: make dbg -j
+
+############################################################
+# 6 ─── Job 3: run simulation & extract metrics ────────────
+############################################################
+  run-scarab:
+    needs: get_tag
+    runs-on: ubuntu-latest
+    outputs:
+      ipc:  ${{ steps.ipc.outputs.value }}
+      kips: ${{ steps.kips.outputs.value }}
+    env:
+      TAG: ${{ needs.get_tag.outputs.tag }}
+    steps:
+      # Traces ------------------------------------------------
+      - name: Fetch traces
+        run: |
+          curl -L -o traces.tar.gz \
+            https://github.com/litz-lab/scarab-infra/releases/download/top_simpoint_perlbench/traces_top_simpoint.tar.gz
+          tar -xzf traces.tar.gz
+
+      # Code --------------------------------------------------
+      - uses: actions/checkout@v4            # PR or main code
+        with:
+          path: scarab_ll
+      - name: Clone scarab‑infra
+        run: git clone https://github.com/litz-lab/scarab-infra.git
+
+      # Docker image -----------------------------------------
+      - name: Pull sim container
+        working-directory: scarab-infra
+        run: |
+          LATEST=$(curl -s https://api.github.com/repos/litz-lab/scarab-infra/commits/main | jq -r '.sha')
+          echo "Pulling image with tag $TAG"
+          docker pull ghcr.io/litz-lab/scarab-infra/allbench_traces:${TAG}
+          echo "Tagging it as ${LATEST:0:7}"
+          docker tag  ghcr.io/litz-lab/scarab-infra/allbench_traces:${TAG} allbench_traces:${LATEST:0:7}
+          echo "Local images:"
+          docker images | grep allbench_traces
+
+      # Conda Environment
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-activate-base: false
+          activate-environment: scarabinfra
+          environment-file: scarab-infra/quickstart_env.yaml
+          python-version: 3.12
+
+      # Simulation -------------------------------------------
+      - name: Run simulation
+        working-directory: scarab-infra
+        shell: bash -l {0}
+        run: |
+          set -e
+          chmod +x run.sh
+          ./run.sh --simulation top_simpoint
+
+      # Extract KIPS -----------------------------------------
+      - id: kips
+        name: Grab KIPS
+        working-directory: simulations
+        run: |
+          v=$(grep -oP '\(\K[0-9]+(?=\.[0-9]+\s*KIPS\))' \
+              github_top_simpoint_workflow/this_pr/spec2017/rate_int/perlbench/29229/sim.log | head -n1)
+          if ! [[ "$v" =~ ^[0-9]+$ ]]; then
+            echo "KIPS value is not a valid integer: '$v' Run failed!"
+            echo "Contents of sim.log for debugging:"
+            cat github_top_simpoint_workflow/this_pr/spec2017/rate_int/perlbench/29229/sim.log
+            exit 1
+          fi
+          echo "value=$v" >>"$GITHUB_OUTPUT"
+
+      # Extract IPC ------------------------------------------
+      - id: ipc
+        name: Grab IPC
+        working-directory: simulations
+        run: |
+          v=$(grep "Cumulative:" \
+               github_top_simpoint_workflow/this_pr/spec2017/rate_int/perlbench/29229/core.stat.0.out | \
+               sed -n 's/.*IPC: \([0-9.]*\).*/\1/p')
+          if ! [[ "$v" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
+            echo "IPC value is not a valid floating point number: '$v' Run failed!"
+            echo "Contents of core.stat.0.out for debugging:"
+            cat github_top_simpoint_workflow/this_pr/spec2017/rate_int/perlbench/29229/core.stat.0.out
+            exit 1
+          fi
+          echo "value=$v" >>"$GITHUB_OUTPUT"
+
+############################################################
+# 7 ─── Job 3A: compare & comment (PRs only) ───────────────
+############################################################
+  comment-pr:
+    if: github.event_name == 'pull_request'
+    needs: [run-scarab]
+    runs-on: ubuntu-latest
+    steps:
+      # Baseline file ---------------------------------------
+      - uses: actions/checkout@v4
+        with:
+          repository: litz-lab/scarab_perf
+          path: baseline
+
+      - id: base
+        name: Read last baseline line
+        run: |
+          last=$(tail -n1 baseline/scarab_perf.log | tr -d '\r')
+          IFS=',' read -r _ IPC KIPS <<<"$last"
+          echo "ipc=$IPC"   >>"$GITHUB_OUTPUT"
+          echo "kips=$KIPS" >>"$GITHUB_OUTPUT"
+
+      - name: Post PR comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const simKips  = parseFloat("${{ needs.run-scarab.outputs.kips }}");
+            const simIpc   = parseFloat("${{ needs.run-scarab.outputs.ipc  }}");
+            const baseKips = parseFloat("${{ steps.base.outputs.kips      }}");
+            const baseIpc  = parseFloat("${{ steps.base.outputs.ipc       }}");
+
+            // 1× → green, <1× → red, >1× → blue
+            function coloured(v) {
+              const EPS = 1e-3;          // tolerance for “equal”
+              let colour = 'green';
+              if (v > 1 + EPS) colour = 'blue';
+              else if (v < 1 - EPS) colour = 'red';
+              return `<span style="color:${colour};font-weight:bold">${v.toFixed(2)}×</span>`;
+            }
+
+            const body = `
+              📊 **Scarab simulation**
+
+              | Metric | PR | Baseline | Δ |
+              | ------ | --:| -------: | :- |
+              | **KIPS** | \`${simKips}\` | \`${baseKips}\` | ${coloured(simKips / baseKips)} |
+              | **IPC**  | \`${simIpc}\`  | \`${baseIpc}\`  | ${coloured(simIpc  / baseIpc )} |
+            `;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body
+            });
+
+############################################################
+# 8 ─── Job 3B: append to scarab_perf (push only) ──────────
+############################################################
+  update-baseline:
+    if: github.event_name == 'push'
+    needs: [run-scarab]
+    runs-on: ubuntu-latest
+    env:
+      PAT: ${{ secrets.SCARAB_PERF_PAT }}
+
+    steps:
+      # 1) Clone the perf repo (via HTTPS + PAT)
+      - name: Checkout perf baseline
+        uses: actions/checkout@v4
+        with:
+          repository: litz-lab/scarab_perf
+          token: ${{ secrets.SCARAB_PERF_PAT }}
+          path: perf
+
+      # 2) Ensure commits come from the GH‑actions bot
+      - name: Configure Git user
+        run: |
+          cd perf
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 3) “Force Authentication” remote add/set‑url exactly like your sync job
+      - name: Force Authentication with Fine‑Grained PAT
+        run: |
+          cd perf
+          if git remote get-url public > /dev/null 2>&1; then
+            git remote set-url public https://${PAT}@github.com/litz-lab/scarab_perf.git
+          else
+            git remote add public https://${PAT}@github.com/litz-lab/scarab_perf.git
+          fi
+          git credential reject https://github.com/ || true
+
+      # 4) Append the new line
+      - name: Append new metrics line
+        run: |
+          echo "${COMMIT_SHA},${{ needs.run-scarab.outputs.ipc }},${{ needs.run-scarab.outputs.kips }}" \
+            >> perf/scarab_perf.log
+
+      # 5) Commit & push back to the perf repo using the “public” remote
+      - name: Commit & Push perf update
+        run: |
+          cd perf
+          git add scarab_perf.log
+          git commit -m "Add perf result for ${COMMIT_SHA}"
+          git push public main
