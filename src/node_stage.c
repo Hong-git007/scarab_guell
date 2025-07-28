@@ -27,7 +27,7 @@
  ***************************************************************************************/
 
 #include "node_stage.h"
-#include "node_issue_queue.h"
+
 #include <unistd.h>
 
 #include "globals/assert.h"
@@ -81,7 +81,6 @@ Rob_Block_Issue_Reason rob_block_issue_reason = ROB_BLOCK_ISSUE_NONE;
 /**************************************************************************************/
 /* Prototypes */
 
-extern const char* debug_print_rs_mask(Reservation_Station* rs);
 void debug_print_retired_uop(Op* op);
 void flush_ready_list(void);
 void flush_scheduling_buffer(void);
@@ -241,18 +240,8 @@ void flush_window() {
       op->in_node_list = FALSE;
       *last = op->next_node;
       if (op->state == OS_IN_RS || op->state == OS_READY || op->state == OS_WAIT_FWD) {
-        Reservation_Station* rs = &node->rs[op->rs_id];
-        ASSERT(op->proc_id, rs->rs_op_count > 0);
-        rs->rs_op_count--;
-
-        // Clear the entry in the RS bitmask
-        if (rs->size > 0) {
-            size_t chunk_index = op->rs_entry_id / 64;
-            size_t bit_pos = op->rs_entry_id % 64;
-            ASSERTM(op->proc_id, (rs->entry_status[chunk_index] >> bit_pos) & 1, "Flushing an already free RS entry. op_num:%s rs_id:%llu rs_entry_id:%llu\n", unsstr64(op->op_num), op->rs_id, op->rs_entry_id);
-            rs->entry_status[chunk_index] &= ~(1ULL << bit_pos);
-            DEBUG(op->proc_id, "Flushing op_num:%s from rs_id:%llu, rs_entry_id:%llu op:%s mask:%s\n", unsstr64(op->op_num), op->rs_id, op->rs_entry_id, disasm_op(op, TRUE), debug_print_rs_mask(rs));
-        }
+        ASSERT(op->proc_id, node->rs[op->rs_id].rs_op_count > 0);
+        node->rs[op->rs_id].rs_op_count--;
       }
       free_op(op);
     } else {

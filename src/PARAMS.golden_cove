@@ -268,8 +268,6 @@
 --debug_power_utils     1
 --debug_fdip           1
 --debug_map             1
---debug_issue_queue       1
---debug_hbt                 1
 
 ## Stats and Params
 --dump_params                   1

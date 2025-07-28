@@ -13,7 +13,6 @@
 #include "debug/debug.param.h"
 #include "op_trace_log.h"
 #include "bp/bp_conf.h"
-#include "bp/hbt.h"
 #include "map_rename.h"
 #include "debug/debug_print.h"
 #include "inst_info.h"
@@ -27,7 +26,7 @@ static FILE* recovery_log_file = NULL;
 extern char* OUTPUT_DIR;
 
 // 이 파일 전용 로그 파일을 닫는 함수입니다.
-void close_recovery_log_file(void) {
+static void close_recovery_log_file(void) {
     if (recovery_log_file) {
         fclose(recovery_log_file);
         recovery_log_file = NULL;
@@ -44,27 +43,35 @@ void init_recovery_log(void) {
             atexit(close_recovery_log_file);
         }
     }
+    if (local_bpc_data_ptr == NULL) {
+        local_bpc_data_ptr = get_bpc_data();
+    }
 }
 
 /**
  * @brief RAT (Register Alias Table)의 현재 상태를 파일에 기록합니다.
  */
-void log_rat_state(FILE* log_file, const char* title, struct reg_table_entry* arch_entries, uns arch_size, struct reg_table_entry* physical_entries, uns physical_size) {
+void log_rat_state(FILE* log_file, const char* title, struct reg_table_entry* entries, uns size) {
     if (!log_file) return;
 
     fprintf(log_file, "  %s:\n", title);
-    for (uns i = 0; i < arch_size; ++i) {
-        struct reg_table_entry* arch_entry = &arch_entries[i];
+    for (uns i = 0; i <= size; ++i) { // 주요 GPR만 출력
+        if (i >= size) break;
+
+        struct reg_table_entry* entry = &entries[i];
         int logical_id = i;
-        int physical_id = arch_entry->child_reg_id;
+        int physical_id = entry->child_reg_id;
 
         if (physical_id != REG_TABLE_REG_ID_INVALID) {
-            //ASSERT(map_data->proc_id, physical_id < physical_size);
-            struct reg_table_entry* phys_entry = &physical_entries[physical_id];
-            const char* path_status = phys_entry->off_path ? "Off-Path" : "On-Path";
-            fprintf(log_file, "    - ArchReg: %-5s (r%2d) -> PhysReg: p%-3d (OpNum: %-7lld, Path: %s)\n",
-                    disasm_reg(logical_id), logical_id, physical_id,
-                    phys_entry->op_num, path_status);
+            if (entry->op) {
+                const char* path_status = entry->op->off_path ? "Off-Path" : "On-Path";
+                fprintf(log_file, "    - ArchReg: %-5s (r%2d) -> PhysReg: p%-3d (OpNum: %-7lld, Path: %s)\n",
+                        disasm_reg(logical_id), logical_id, physical_id,
+                        entry->op_num, path_status);
+            } else {
+                fprintf(log_file, "    - ArchReg: %-5s (r%2d) -> PhysReg: p%-3d (OpNum: N/A, Path: Unknown)\n",
+                        disasm_reg(logical_id), logical_id, physical_id);
+            }
         } else {
             fprintf(log_file, "    - ArchReg: %-5s (r%2d) -> Not Mapped\n",
                     disasm_reg(logical_id), logical_id);
@@ -117,8 +124,8 @@ void log_misprediction_detection_at_decode(Op* op, Node_Stage* node, Counter cyc
     }
 
     if (recovery_log_file) {
-        fprintf(recovery_log_file, "[Mispred Early Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s H2P:%s HBT_CTR:%-3u Target:0x%llx\n",
-                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"),  op->oracle_info.hbt_pred_is_hard ? "YES" : "NO",  op->oracle_info.hbt_misp_counter,  op->oracle_info.npc);
+        fprintf(recovery_log_file, "[Mispred Early Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s Conf:%d (Counter:%u) Target:0x%llx\n",
+                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.pred_conf, local_bpc_data_ptr->bpc_ctr_table[op->oracle_info.pred_conf_index], op->oracle_info.npc);
         fprintf(recovery_log_file, "  Next Fetch Addr: 0x%llx, Recovery Ends at Cycle: %-10llu\n",
                 bp_recovery_info->recovery_fetch_addr, bp_recovery_info->recovery_cycle);
         
@@ -131,7 +138,7 @@ void log_misprediction_detection_at_decode(Op* op, Node_Stage* node, Counter cyc
         for (int i = 0; i < NUM_RS; i++) {
             fprintf(recovery_log_file, "    - %-10s:", node->rs[i].name);
             int total_in_rs = 0;
-            for (int j = 0; j < OS_DONE; j++) {
+            for (int j = 0; j < OS_DONE+1; j++) {
                 int on_path_count = rs_state_counts[i][j][0];
                 int off_path_count = rs_state_counts[i][j][1];
                 if (on_path_count > 0 || off_path_count > 0) {
@@ -149,10 +156,9 @@ void log_misprediction_detection_at_decode(Op* op, Node_Stage* node, Counter cyc
         struct reg_file* rf_int = reg_file[REG_FILE_REG_TYPE_GENERAL_PURPOSE];
         if (rf_int) {
             struct reg_table* rat_int = rf_int->reg_table[REG_TABLE_TYPE_ARCHITECTURAL];
-            struct reg_table* prf_int = rf_int->reg_table[REG_TABLE_TYPE_PHYSICAL];
-            log_rat_state(recovery_log_file, "Current (Speculative) Integer RAT before recovery", rat_int->entries, rat_int->size, prf_int->entries, prf_int->size);
+            log_rat_state(recovery_log_file, "Current (Speculative) Integer RAT before recovery", rat_int->entries, rat_int->size);
             if (rf_int->reg_checkpoint->is_valid) {
-                log_rat_state(recovery_log_file, "Checkpoint Integer RAT for recovery", rf_int->reg_checkpoint->entries, rat_int->size, prf_int->entries, prf_int->size);
+                log_rat_state(recovery_log_file, "Checkpoint Integer RAT for recovery", rf_int->reg_checkpoint->entries, rat_int->size);
             }
         }
 
@@ -160,8 +166,8 @@ void log_misprediction_detection_at_decode(Op* op, Node_Stage* node, Counter cyc
     }
 
     if (retired_op_log_file) {
-       fprintf(retired_op_log_file, "[Mispred Early Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s H2P:%s HBT_CTR:%-3u Target:0x%llx\n",
-                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.hbt_pred_is_hard ? "YES" : "NO",  op->oracle_info.hbt_misp_counter, op->oracle_info.npc);
+       fprintf(retired_op_log_file, "[Mispred Early Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s Conf:%d (Counter:%u) Target:0x%llx\n",
+                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.pred_conf, local_bpc_data_ptr->bpc_ctr_table[op->oracle_info.pred_conf_index], op->oracle_info.npc);
         fprintf(retired_op_log_file, "  Next Fetch Addr: 0x%llx, Recovery Ends at Cycle: %-10llu\n",
                 bp_recovery_info->recovery_fetch_addr, bp_recovery_info->recovery_cycle);
         
@@ -174,7 +180,7 @@ void log_misprediction_detection_at_decode(Op* op, Node_Stage* node, Counter cyc
         for (int i = 0; i < NUM_RS; i++) {
             fprintf(retired_op_log_file, "    - %-10s:", node->rs[i].name);
             int total_in_rs = 0;
-            for (int j = 0; j < OS_DONE; j++) {
+            for (int j = 0; j < OS_DONE+1; j++) {
                 int on_path_count = rs_state_counts[i][j][0];
                 int off_path_count = rs_state_counts[i][j][1];
                 if (on_path_count > 0 || off_path_count > 0) {
@@ -191,12 +197,11 @@ void log_misprediction_detection_at_decode(Op* op, Node_Stage* node, Counter cyc
     }
 }
 
-
 void log_misprediction_detection_at_exec(Op* op, Node_Stage* node, Counter cycle_count, Bp_Recovery_Info* bp_recovery_info) {
     if ((!recovery_log_file && !retired_op_log_file) || cycle_count < DEBUG_CYCLE_START || cycle_count > DEBUG_CYCLE_STOP) return;
 
     Addr pc_val = op->inst_info->addr;
-
+    
     // RS 상태를 on/off path로 나누어 집계하기 위해 3D 배열로 변경
     int rs_state_counts[NUM_RS][OS_DONE+1][2];
     memset(rs_state_counts, 0, sizeof(rs_state_counts));
@@ -233,8 +238,8 @@ void log_misprediction_detection_at_exec(Op* op, Node_Stage* node, Counter cycle
     }
 
     if (recovery_log_file) {
-        fprintf(recovery_log_file, "[Mispred Late Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s H2P:%s HBT_CTR:%-3u Target:0x%llx\n",
-                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"),  op->oracle_info.hbt_pred_is_hard ? "YES" : "NO",  op->oracle_info.hbt_misp_counter,  op->oracle_info.npc);
+        fprintf(recovery_log_file, "[Mispred Late Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s Conf:%d (Counter:%u) Target:0x%llx\n",
+                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.pred_conf, local_bpc_data_ptr->bpc_ctr_table[op->oracle_info.pred_conf_index], op->oracle_info.npc);
         fprintf(recovery_log_file, "  Next Fetch Addr: 0x%llx, Recovery Ends at Cycle: %-10llu\n",
                 bp_recovery_info->recovery_fetch_addr, bp_recovery_info->recovery_cycle);
         
@@ -265,10 +270,9 @@ void log_misprediction_detection_at_exec(Op* op, Node_Stage* node, Counter cycle
         struct reg_file* rf_int = reg_file[REG_FILE_REG_TYPE_GENERAL_PURPOSE];
         if (rf_int) {
             struct reg_table* rat_int = rf_int->reg_table[REG_TABLE_TYPE_ARCHITECTURAL];
-            struct reg_table* prf_int = rf_int->reg_table[REG_TABLE_TYPE_PHYSICAL];
-            log_rat_state(recovery_log_file, "Current (Speculative) Integer RAT before recovery", rat_int->entries, rat_int->size, prf_int->entries, prf_int->size);
+            log_rat_state(recovery_log_file, "Current (Speculative) Integer RAT before recovery", rat_int->entries, rat_int->size);
             if (rf_int->reg_checkpoint->is_valid) {
-                log_rat_state(recovery_log_file, "Checkpoint Integer RAT for recovery", rf_int->reg_checkpoint->entries, rat_int->size, prf_int->entries, prf_int->size);
+                log_rat_state(recovery_log_file, "Checkpoint Integer RAT for recovery", rf_int->reg_checkpoint->entries, rat_int->size);
             }
         }
 
@@ -276,8 +280,8 @@ void log_misprediction_detection_at_exec(Op* op, Node_Stage* node, Counter cycle
     }
 
     if (retired_op_log_file) {
-       fprintf(retired_op_log_file, "[Mispred Late Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s H2P:%s HBT_CTR:%-3u Target:0x%llx\n",
-                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.hbt_pred_is_hard ? "YES" : "NO",  op->oracle_info.hbt_misp_counter, op->oracle_info.npc);
+       fprintf(retired_op_log_file, "[Mispred Late Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s Conf:%d (Counter:%u) Target:0x%llx\n",
+                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.pred_conf, local_bpc_data_ptr->bpc_ctr_table[op->oracle_info.pred_conf_index], op->oracle_info.npc);
         fprintf(retired_op_log_file, "  Next Fetch Addr: 0x%llx, Recovery Ends at Cycle: %-10llu\n",
                 bp_recovery_info->recovery_fetch_addr, bp_recovery_info->recovery_cycle);
         
@@ -353,10 +357,10 @@ void log_recovery_end(Node_Stage* node, Counter cycle_count, Bp_Recovery_Info* b
     }
     
     if (recovery_log_file) {
-        fprintf(recovery_log_file, "[Recovery End for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s H2P:%s HBT_CTR:%-3u Target:0x%llx\n",
-                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"),  op->oracle_info.hbt_pred_is_hard ? "YES" : "NO",  op->oracle_info.hbt_misp_counter, op->oracle_info.npc);
-        fprintf(recovery_log_file, "  Next Fetch Addr: 0x%llx, Recovery Ends at Cycle: %-10llu\n",
-                bp_recovery_info->recovery_fetch_addr, bp_recovery_info->recovery_cycle);
+        fprintf(recovery_log_file, "[Recovery End for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s Conf:%d (Counter:%u) Target:0x%llx\n",
+                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.pred_conf, local_bpc_data_ptr->bpc_ctr_table[op->oracle_info.pred_conf_index], op->oracle_info.npc);
+        fprintf(recovery_log_file, "  Next Fetch Addr: 0x%llx\n",
+                bp_recovery_info->recovery_fetch_addr);
         
         // ROB 상태를 Done/Pending 방식으로 출력
         fprintf(recovery_log_file, "  ROB state | Before op: Done=%-3d, Pending=%-3d | After op: Done=%-3d, Pending=%-3d | Miss (Off:%-3d, On:%-3d) | Total=%-3d\n",
@@ -385,21 +389,17 @@ void log_recovery_end(Node_Stage* node, Counter cycle_count, Bp_Recovery_Info* b
         struct reg_file* rf_int = reg_file[REG_FILE_REG_TYPE_GENERAL_PURPOSE];
         if (rf_int) {
             struct reg_table* rat_int = rf_int->reg_table[REG_TABLE_TYPE_ARCHITECTURAL];
-            struct reg_table* prf_int = rf_int->reg_table[REG_TABLE_TYPE_PHYSICAL];
-            log_rat_state(recovery_log_file, "Current (Speculative) Integer RAT before recovery", rat_int->entries, rat_int->size, prf_int->entries, prf_int->size);
-            if (rf_int->reg_checkpoint->is_valid) {
-                log_rat_state(recovery_log_file, "Checkpoint Integer RAT for recovery", rf_int->reg_checkpoint->entries, rat_int->size, prf_int->entries, prf_int->size);
-            }
+            log_rat_state(recovery_log_file, "Integer RAT State after recovery", rat_int->entries, rat_int->size);
         }
 
         fflush(recovery_log_file);
-    }
-
+    } 
+    
     if (retired_op_log_file) {
-       fprintf(retired_op_log_file, "[Recovery End Detection for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s H2P:%s HBT_CTR:%-3u Target:0x%llx\n",
-                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.hbt_pred_is_hard ? "YES" : "NO",  op->oracle_info.hbt_misp_counter, op->oracle_info.npc);
-        fprintf(retired_op_log_file, "  Next Fetch Addr: 0x%llx, Recovery Ends at Cycle: %-10llu\n",
-                bp_recovery_info->recovery_fetch_addr, bp_recovery_info->recovery_cycle);
+        fprintf(retired_op_log_file, "[Recovery End for PC 0x%llx] [Cycle %-10llu] op_num:%-10llu (off_path:%d) Mispred_Type:%-4s Conf:%d (Counter:%u) Target:0x%llx\n",
+                pc_val, cycle_count, op->op_num, op->off_path, op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"), op->oracle_info.pred_conf, local_bpc_data_ptr->bpc_ctr_table[op->oracle_info.pred_conf_index], op->oracle_info.npc);
+        fprintf(retired_op_log_file, "  Next Fetch Addr: 0x%llx\n",
+                bp_recovery_info->recovery_fetch_addr);
         
         // ROB 상태를 Done/Pending 방식으로 출력
         fprintf(retired_op_log_file, "  ROB state | Before op: Done=%-3d, Pending=%-3d | After op: Done=%-3d, Pending=%-3d | Miss (Off:%-3d, On:%-3d) | Total=%-3d\n",

@@ -127,8 +127,6 @@ struct Op_Info_struct {
   Flag pred_conf;
   Addr pred_conf_index;
   uns opc_index;
-  Flag  hbt_pred_is_hard;
-  uns32  hbt_misp_counter;
 
   Counter inst_sim_cycle;  // cycle oracle executes op
 

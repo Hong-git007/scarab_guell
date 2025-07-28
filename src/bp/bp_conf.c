@@ -63,6 +63,12 @@ static Flag compute_onpath_conf(Flag);
 static void print_onpath_conf(void);
 static uns count_zeros(uns, uns);
 
+Bpc_Data* get_bpc_data(void) {
+  return bpc_data;
+}
+
+Bpc_Data* local_bpc_data_ptr = NULL;
+
 /**************************************************************************************/
 // init_bp_conf:
 
@@ -109,7 +115,9 @@ void bp_conf_pred(Op* op) {
   entry = bpc_data->bpc_ctr_table[index];
 
   if (BPC_MECH) {  // counter
-    pred_conf = (entry == N_BIT_MASK(BPC_CTR_BITS)) ? TRUE : FALSE;
+    // A high counter value means many recent mispredictions, so we are NOT confident.
+    // Confidence is TRUE only if the counter is not at its max value.
+    pred_conf = (entry == N_BIT_MASK(BPC_CTR_BITS)) ? FALSE : TRUE;
   } else {  // majority vote
     uns8 ii, count = 0;
     uns32 mask = 1;
@@ -124,8 +132,8 @@ void bp_conf_pred(Op* op) {
   if (PERF_BP_CONF_PRED)
     pred_conf = !(op->oracle_info.mispred || op->oracle_info.misfetch);
 
-  _DEBUG(0, DEBUG_BP_CONF, "bp_conf_pred: op:%s mispred:%d, pred:%d,%d\n", unsstr64(op->op_num), mispred, pred_conf,
-         pred_conf != mispred);
+  _DEBUG(0, DEBUG_BP_CONF, "bp_conf_pred: op:%s pred_conf:%d, mispred:%d counter:%u\n",
+         unsstr64(op->op_num), pred_conf, mispred, entry);
 
   op->oracle_info.pred_conf_index = index;
   op->oracle_info.pred_conf = pred_conf;
@@ -144,9 +152,25 @@ void bp_update_conf(Op* op) {
   uns* entry = &bpc_data->bpc_ctr_table[index];
   Flag mispred = op->oracle_info.mispred | op->oracle_info.misfetch;
 
-  _DEBUG(0, DEBUG_BP_CONF, "bp_update_conf: op:%s mispred:%d\n", unsstr64(op->op_num), mispred);
-
+  _DEBUG(0, DEBUG_BP_CONF, "bp_update_conf: op:%s mispred:%d Before counter:%u\n",
+         unsstr64(op->op_num), mispred, *entry);
   // update the counters
+  if(BPC_MECH)
+    // counter
+    // On misprediction, increment the counter (saturating).
+    // On correct prediction, decrement the counter (saturating).
+    if(mispred)
+      *entry = SAT_INC(*entry, N_BIT_MASK(BPC_CTR_BITS));
+    else
+      *entry = SAT_DEC(*entry, 0);
+  else
+    // majority vote
+    *entry = ((*entry << 1) | !mispred) & N_BIT_MASK(BPC_CIT_BITS);
+
+  _DEBUG(0, DEBUG_BP_CONF, "bp_update_conf: op:%s mispred:%d After counter:%u\n",
+         unsstr64(op->op_num), mispred, *entry);
+         
+  /* update the counters
   if (BPC_MECH)
     // counter
     if (mispred)
@@ -160,6 +184,7 @@ void bp_update_conf(Op* op) {
   else
     // majority vote
     *entry = ((*entry << 1) | !mispred) & N_BIT_MASK(BPC_CIT_BITS);
+  */
 }
 
 /**************************************************************************************/
