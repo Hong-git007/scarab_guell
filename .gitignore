@@ -5,6 +5,7 @@ syntax: regexp
 spec2017_run_dir_rate/
 cpt_spec2017_s200/
 results/
+utils/qsort/
 # experiment result directories
 out/
 results/
