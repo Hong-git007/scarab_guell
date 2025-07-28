@@ -49,13 +49,64 @@ extern "C" {
 /**************************************************************************************/
 /* Macros */
 
-#define DEBUG(proc_id, args...) _DEBUG(proc_id, DEBUG_NODE_STAGE, ##args)
+#define DEBUG_NODE(proc_id, args...) _DEBUG(proc_id, DEBUG_NODE_STAGE, ##args)
+#define DEBUG_IQ(proc_id, args...)   _DEBUG(proc_id, DEBUG_ISSUE_QUEUE, ##args)
 
 /**************************************************************************************/
 /* Prototypes */
 
 int64 node_dispatch_find_emptiest_rs(Op*);
 void node_schedule_oldest_first_sched(Op*);
+
+const char* debug_print_rs_mask(Reservation_Station* rs) {
+  // RS가 유효하지 않거나, entry_status가 할당되지 않았거나, 크기가 0이면 기본값을 반환합니다.
+  if (!rs || !rs->entry_status || rs->size == 0) {
+    return "TAIL < ... > HEAD";
+  }
+
+  static char buffer[1024]; 
+  char* ptr = buffer;
+  size_t remaining = sizeof(buffer);
+
+  // 접두사를 추가합니다.
+  int written = snprintf(ptr, remaining, "TAIL< ");
+  if (written > 0) {
+      ptr += written;
+      remaining -= written;
+  }
+  
+  // TAIL(rs->size - 1)부터 HEAD(0)까지 슬롯 인덱스를 역순으로 순회합니다.
+  for (int abs_slot_id = rs->size - 1; abs_slot_id >= 0; --abs_slot_id) {
+    if (remaining <= 1) break;
+
+    // 현재 슬롯 인덱스(abs_slot_id)를 통해 청크 번호와 청크 내 비트 위치를 계산합니다.
+    size_t chunk_index = abs_slot_id / 64;
+    int bit_pos = abs_slot_id % 64;
+    uint64_t chunk = rs->entry_status[chunk_index];
+
+    // 해당 비트의 상태('1' 또는 '0')를 버퍼에 씁니다.
+    if ((chunk >> bit_pos) & 1) {
+      *ptr = '1';
+    } else {
+      *ptr = '0';
+    }
+    ptr++;
+    remaining--;
+
+    // 청크 경계에 도달하면 가독성을 위해 공백을 추가합니다. (맨 오른쪽 제외)
+    if (abs_slot_id > 0 && abs_slot_id % 64 == 0) {
+      if (remaining > 1) {
+        *ptr++ = ' ';
+        remaining--;
+      }
+    }
+  }
+
+  // 접미사를 추가합니다.
+  snprintf(ptr, remaining, " >HEAD");
+  
+  return buffer;
+}
 
 /**************************************************************************************/
 /* Issuers:
@@ -136,7 +187,7 @@ void node_schedule_oldest_first_sched(Op* op) {
 
     // nobody has been scheduled to this FU yet
     if (!s_op) {
-      DEBUG(node->proc_id, "Scheduler selecting    op_num:%s  fu_id:%d op:%s l1:%d\n", unsstr64(op->op_num), fu_id,
+      DEBUG_NODE(node->proc_id, "Scheduler selecting    op_num:%s  fu_id:%d op:%s l1:%d\n", unsstr64(op->op_num), fu_id,
             disasm_op(op, TRUE), op->engine_info.l1_miss);
       ASSERT(node->proc_id, fu_id < (uns32)node->sd.max_op_count);
       op->fu_num = fu_id;
@@ -171,7 +222,7 @@ void node_schedule_oldest_first_sched(Op* op) {
 
   /* Did not find an empty slot, but we did find a slot that is younger that us */
   uns32 fu_id = youngest_slot_op_id;
-  DEBUG(node->proc_id, "Scheduler selecting    op_num:%s  fu_id:%d op:%s l1:%d\n", unsstr64(op->op_num), fu_id,
+  DEBUG_NODE(node->proc_id, "Scheduler selecting    op_num:%s  fu_id:%d op:%s l1:%d\n", unsstr64(op->op_num), fu_id,
         disasm_op(op, TRUE), op->engine_info.l1_miss);
   ASSERT(node->proc_id, fu_id < (uns32)node->sd.max_op_count);
   op->fu_num = fu_id;
@@ -231,12 +282,24 @@ void node_issue_queue_clear() {
       continue;
     }
 
-    DEBUG(node->proc_id, "Removing from RS (and ready list)  op_num:%s op:%s l1:%d\n", unsstr64(op->op_num),
+    DEBUG_NODE(node->proc_id, "Removing from RS (and ready list)  op_num:%s op:%s l1:%d\n", unsstr64(op->op_num),
           disasm_op(op, TRUE), op->engine_info.l1_miss);
     *last = op->next_rdy;
     op->in_rdy_list = FALSE;
-    ASSERT(node->proc_id, node->rs[op->rs_id].rs_op_count > 0);
-    node->rs[op->rs_id].rs_op_count--;
+    
+    Reservation_Station* rs = &node->rs[op->rs_id];
+    ASSERT(node->proc_id, rs->rs_op_count > 0);
+    rs->rs_op_count--;
+
+    // Clear the entry in the RS bitmask
+    if (rs->size > 0) {
+        size_t chunk_index = op->rs_entry_id / 64;
+        size_t bit_pos = op->rs_entry_id % 64;
+        ASSERTM(node->proc_id, (rs->entry_status[chunk_index] >> bit_pos) & 1, "Clearing an already free RS entry. op_num:%s rs_id:%llu rs_entry_id:%llu\n", unsstr64(op->op_num), op->rs_id, op->rs_entry_id);
+        rs->entry_status[chunk_index] &= ~(1ULL << bit_pos);
+        DEBUG_IQ(node->proc_id, "Clearing op_num:%s from rs_id:%llu, rs_entry_id:%llu op:%-80s mask:%s\n", unsstr64(op->op_num), op->rs_id, op->rs_entry_id, disasm_op(op, TRUE), debug_print_rs_mask(rs));
+    }
+
     STAT_EVENT(node->proc_id, OP_ISSUED);
   }
 }
@@ -265,14 +328,37 @@ void node_issue_queue_dispatch() {
     ASSERT(node->proc_id, op->state == OS_IN_ROB);
     op->state = OS_IN_RS;
     op->rs_id = (Counter)rs_id;
+
+    // Find an empty entry in the RS using the bitmask
+    int64_t rs_entry_id = -1;
+    if (rs->size > 0) {
+        size_t num_chunks = (rs->size + 63) / 64;
+        for (size_t i = 0; i < num_chunks; ++i) {
+            if (rs->entry_status[i] != UINT64_MAX) { // If the chunk is not full
+                int free_bit_pos = __builtin_ffsll(~rs->entry_status[i]) - 1;
+                rs_entry_id = i * 64 + free_bit_pos;
+                if (rs_entry_id < rs->size) {
+                    rs->entry_status[i] |= (1ULL << free_bit_pos); // Mark as occupied
+                    break;
+                } else {
+                    rs_entry_id = -1; // Invalid entry
+                }
+            }
+        }
+    }
+    ASSERTM(node->proc_id, rs_entry_id != -1, "Could not find a free entry in RS %lld, but it was not full.", rs_id);
+    op->rs_entry_id = rs_entry_id;
+
+    DEBUG_IQ(node->proc_id, "Dispatching op_num:%s to rs_id:%llu, rs_entry_id:%llu op:%-80s mask:%s\n", unsstr64(op->op_num), op->rs_id, op->rs_entry_id, disasm_op(op, TRUE), debug_print_rs_mask(rs));
+
     rs->rs_op_count++;
     num_fill_rs++;
 
-    DEBUG(node->proc_id, "Filling %s with op_num:%s (%d)\n", rs->name, unsstr64(op->op_num), rs->rs_op_count);
+    DEBUG_NODE(node->proc_id, "Filling %s with op_num:%s (%d)\n", rs->name, unsstr64(op->op_num), rs->rs_op_count);
 
     if (op->srcs_not_rdy_vector == 0) {
       /* op is ready to issue right now */
-      DEBUG(node->proc_id, "Adding to ready list  op_num:%s op:%s l1:%d\n", unsstr64(op->op_num), disasm_op(op, TRUE),
+      DEBUG_NODE(node->proc_id, "Adding to ready list  op_num:%s op:%s l1:%d\n", unsstr64(op->op_num), disasm_op(op, TRUE),
             op->engine_info.l1_miss);
       op->state = (cycle_count + 1 >= op->rdy_cycle ? OS_READY : OS_WAIT_FWD);
       op->next_rdy = node->rdy_head;
@@ -327,14 +413,14 @@ void node_issue_queue_schedule() {
 
     ASSERTM(node->proc_id, op->state == OS_IN_RS || op->state == OS_READY || op->state == OS_WAIT_FWD,
             "op_num: %llu, op_state: %s\n", op->op_num, Op_State_str(op->state));
-    DEBUG(node->proc_id, "Scheduler examining    op_num:%s op:%s l1:%d st:%s rdy:%s exec:%s done:%s\n",
+    DEBUG_NODE(node->proc_id, "Scheduler examining    op_num:%s op:%s l1:%d st:%s rdy:%s exec:%s done:%s\n",
           unsstr64(op->op_num), disasm_op(op, TRUE), op->engine_info.l1_miss, Op_State_str(op->state),
           unsstr64(op->rdy_cycle), unsstr64(op->exec_cycle), unsstr64(op->done_cycle));
 
     /* op will be ready next cycle, try to schedule */
     if (cycle_count >= op->rdy_cycle - 1) {
       ASSERT(node->proc_id, op->srcs_not_rdy_vector == 0x0);
-      DEBUG(node->proc_id, "Scheduler considering  op_num:%s op:%s l1:%d\n", unsstr64(op->op_num), disasm_op(op, TRUE),
+      DEBUG_NODE(node->proc_id, "Scheduler considering  op_num:%s op:%s l1:%d\n", unsstr64(op->op_num), disasm_op(op, TRUE),
             op->engine_info.l1_miss);
 
       schedule_func_table[NODE_ISSUE_QUEUE_SCHEDULE_SCHEME](op);

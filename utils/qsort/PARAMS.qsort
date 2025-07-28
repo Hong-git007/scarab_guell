@@ -36,8 +36,8 @@
 --iprf_on_uop_cache_hit         1
 
 ### Branch Predictor
---extra_recovery_cycles         15                        # Number of cycles before the fetching of the first instructions after recovery.
---extra_redirect_cycles         5                         # Number of cycles before the fetching of the first instructions after redirect.
+--extra_late_recovery_cycles         15                   # Number of cycles before the fetching of the first instructions after late recovery.
+--extra_early_recovery_cycles         5                   # Number of cycles before the fetching of the first instructions after early recovery.
 --cfs_per_cycle                 6                         # Number of branches that can be predicted in a single cycle
 --bp_update_at_retire           0                         # Update the BP at retire. If false, update at the end of exec.
 --update_bp_off_path            1                         # Allow off path ops to update branch predictor state (e.g., ops when they complete exec stage).
@@ -261,13 +261,15 @@
 #--debug_crs 1
 #--debug_btb 1
 #--debug_bp_dir 1
---debug_oracle          1
---debug_bp_conf         1
---debug_exc_inserts     1
+#--debug_oracle          1
+#--debug_bp_conf         1
+#--debug_exc_inserts     1
 #--debug_decoupled_fe    1
---debug_power_utils     1
---debug_fdip           1
---debug_map             1
+#--debug_power_utils     1
+#--debug_fdip           1
+#--debug_map             1
+--debug_issue_queue       1
+--debug_hbt                 1
 
 ## Stats and Params
 --dump_params                   1
