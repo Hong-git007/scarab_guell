@@ -35,7 +35,6 @@ extern "C" {
 #endif
 
 #include "op.h"
-#include "node_stage.h" 
 
 /**************************************************************************************/
 /* Constexpr */
@@ -57,7 +56,7 @@ const static int32 NODE_ISSUE_QUEUE_FU_SLOT_INVALID = -1;
 /* External Methods */
 
 void node_issue_queue_update();
-const char* debug_print_rs_mask(Reservation_Station* rs);
+
 #ifdef __cplusplus
 }
 #endif

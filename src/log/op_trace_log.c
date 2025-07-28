@@ -8,20 +8,19 @@
 #include "debug/debug_print.h"
 #include "debug/debug.param.h"
 #include "bp/bp_conf.h"
-#include "bp/hbt.h"
 
 static FILE* op_asm_log_file = NULL;
 FILE* retired_op_log_file = NULL;
 extern char* OUTPUT_DIR;
 
-void close_op_asm_log_file(void) {
+static void close_op_asm_log_file(void) {
     if (op_asm_log_file) {
         fclose(op_asm_log_file);
         op_asm_log_file = NULL;
     }
 }
 
-void close_retired_op_log_file(void) {
+static void close_retired_op_log_file(void) {
     if (retired_op_log_file) {
         fclose(retired_op_log_file);
         retired_op_log_file = NULL;
@@ -45,28 +44,31 @@ void init_op_trace_log(void) {
             atexit(close_retired_op_log_file);
         }
     }
+
+    if (local_bpc_data_ptr == NULL) {
+        local_bpc_data_ptr = get_bpc_data();
+    }
 }
 
 void log_fill_rob_op(Op* op, Counter cycle_count) {
     if (op_asm_log_file && cycle_count >= DEBUG_CYCLE_START && cycle_count <= DEBUG_CYCLE_STOP) {
         const char* disasm_str = disasm_op(op, TRUE);
         if (op->table_info->cf_type) {
-
-            fprintf(op_asm_log_file, "Cycle:%-10llu OpNum:%-10llu PC:0x%-10llx OffPath:%d Disasm: %-80s H2P:%s HBT_CTR:%-3u Mispred_Type:%-4s Target:0x%-10llx Dir:%d PredNPC:0x%llx Pred:%d\n",
+            fprintf(op_asm_log_file, "Cycle:%-10llu OpNum:%-10llu PC:0x%-10llx OffPath:%d Disasm: %-80s Conf:%d (Counter:%u) Mispred_Type:%-4s Target:0x%-10llx Dir:%d PredNPC:0x%llx Pred:%d\n",
                     cycle_count,
                     op->op_num,
                     op->inst_info->addr,
                     op->off_path,
                     disasm_str,
-                    op->oracle_info.hbt_pred_is_hard ? "YES" : "NO", 
-                    op->oracle_info.hbt_misp_counter,
+                    op->oracle_info.pred_conf,
+                    local_bpc_data_ptr->bpc_ctr_table[op->oracle_info.pred_conf_index],
                     op->oracle_info.mispred ? "MISP" : (op->oracle_info.misfetch ? "MISF" : "----"),
                     op->oracle_info.npc,
                     op->oracle_info.dir,
                     op->oracle_info.pred_npc,
                     op->oracle_info.pred);
         } else {
-            fprintf(op_asm_log_file, "Cycle:%-10llu OpNum:%-10llu PC:0x%-10llx OffPath:%d Disasm: %-60s\n",
+            fprintf(op_asm_log_file, "Cycle:%-10llu OpNum:%-10llu PC:0x%-10llx OffPath:%d Disasm: %-80s\n",
                     cycle_count,
                     op->op_num,
                     op->inst_info->addr,

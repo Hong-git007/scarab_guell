@@ -91,7 +91,6 @@ DEF_PARAM(  debug_uop_queue_stage, DEBUG_UOP_QUEUE_STAGE, Flag,  Flag,  FALSE,  
 DEF_PARAM(  debug_idq_stage,       DEBUG_IDQ_STAGE,       Flag,  Flag,  FALSE,  )
 DEF_PARAM(  debug_map_stage,       DEBUG_MAP_STAGE,       Flag,  Flag,  FALSE,  )
 DEF_PARAM(  debug_node_stage,      DEBUG_NODE_STAGE,      Flag,  Flag,  FALSE,  )
-DEF_PARAM(  debug_issue_queue,     DEBUG_ISSUE_QUEUE,     Flag,  Flag,  FALSE,  )
 DEF_PARAM(  debug_exec_stage,      DEBUG_EXEC_STAGE,      Flag,  Flag,  FALSE,  )
 DEF_PARAM(  debug_dcache_stage,    DEBUG_DCACHE_STAGE,    Flag,  Flag,  FALSE,  )
 
@@ -100,7 +99,6 @@ DEF_PARAM(  debug_retired_uops,    DEBUG_RETIRED_UOPS,    Flag,  Flag,  FALSE,  
 DEF_PARAM(  debug_exc_inserts,     DEBUG_EXC_INSERTS,     Flag,  Flag,  FALSE,  )
 
 DEF_PARAM(  debug_bp_conf,         DEBUG_BP_CONF,         Flag,  Flag,  FALSE,  )
-DEF_PARAM(  debug_hbt,             DEBUG_HBT,             Flag,  Flag,  FALSE,  )
 DEF_PARAM(  debug_onpath_conf,     DEBUG_ONPATH_CONF,     Flag,  Flag,  FALSE,  )
 
 DEF_PARAM(  debug_stream,          DEBUG_STREAM,          Flag,  Flag,  FALSE,  )
