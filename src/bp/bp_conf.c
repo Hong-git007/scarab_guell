@@ -63,12 +63,6 @@ static Flag compute_onpath_conf(Flag);
 static void print_onpath_conf(void);
 static uns count_zeros(uns, uns);
 
-Bpc_Data* get_bpc_data(void) {
-  return bpc_data;
-}
-
-Bpc_Data* local_bpc_data_ptr = NULL;
-
 /**************************************************************************************/
 // init_bp_conf:
 

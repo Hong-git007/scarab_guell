@@ -1,13 +1,13 @@
 Core, 0, 0
-Cumulative_Cycles, 0, 2640857             
+Cumulative_Cycles, 0, 3018465             
 Cumulative_Instructions, 0, 5000002             
-Periodic_Cycles, 0, 2640857             
+Periodic_Cycles, 0, 3018465             
 Periodic_Instructions, 0, 5000002             
-EXECUTION_TIME_count, 0,  825267812500
-EXECUTION_TIME_total_count, 0,  825267812500
+EXECUTION_TIME_count, 0,  943270312500
+EXECUTION_TIME_total_count, 0,  943270312500
 
-NODE_CYCLE_count, 0,       2640857
-NODE_CYCLE_total_count, 0,       2640857
+NODE_CYCLE_count, 0,       3018465
+NODE_CYCLE_total_count, 0,       3018465
 
 NODE_INST_COUNT_count, 0,       5000002
 NODE_INST_COUNT_total_count, 0,       5000002
@@ -32,38 +32,38 @@ FULL_WINDOW_FP_OP_total_count, 390,             0
 FULL_WINDOW_OTHER_OP_count, 390,             0
 FULL_WINDOW_OTHER_OP_total_count, 390,             0
 
-RET_BLOCKED_DC_MISS_count, 0,        919610
-RET_BLOCKED_DC_MISS_pct, 0,       34.822
-RET_BLOCKED_DC_MISS_total_count, 0,        919610
-RET_BLOCKED_DC_MISS_total_pct, 0,       34.822
+RET_BLOCKED_DC_MISS_count, 0,        827110
+RET_BLOCKED_DC_MISS_pct, 0,       27.402
+RET_BLOCKED_DC_MISS_total_count, 0,        827110
+RET_BLOCKED_DC_MISS_total_pct, 0,       27.402
 
-RET_BLOCKED_L1_MISS_count, 0,          1032
-RET_BLOCKED_L1_MISS_pct, 0,        0.039
-RET_BLOCKED_L1_MISS_total_count, 0,          1032
-RET_BLOCKED_L1_MISS_total_pct, 0,        0.039
+RET_BLOCKED_L1_MISS_count, 0,          1067
+RET_BLOCKED_L1_MISS_pct, 0,        0.035
+RET_BLOCKED_L1_MISS_total_count, 0,          1067
+RET_BLOCKED_L1_MISS_total_pct, 0,        0.035
 
 RET_BLOCKED_L1_MISS_BW_PREF_count, 0,             0
 RET_BLOCKED_L1_MISS_BW_PREF_pct, 0,        0.000
 RET_BLOCKED_L1_MISS_BW_PREF_total_count, 0,             0
 RET_BLOCKED_L1_MISS_BW_PREF_total_pct, 0,        0.000
 
-RET_BLOCKED_L1_ACCESS_count, 0,        918578
-RET_BLOCKED_L1_ACCESS_pct, 0,       34.783
-RET_BLOCKED_L1_ACCESS_total_count, 0,        918578
-RET_BLOCKED_L1_ACCESS_total_pct, 0,       34.783
+RET_BLOCKED_L1_ACCESS_count, 0,        826043
+RET_BLOCKED_L1_ACCESS_pct, 0,       27.366
+RET_BLOCKED_L1_ACCESS_total_count, 0,        826043
+RET_BLOCKED_L1_ACCESS_total_pct, 0,       27.366
 
-RET_BLOCKED_MEM_STALL_count, 0,          1032
-RET_BLOCKED_MEM_STALL_pct, 0,        0.039
-RET_BLOCKED_MEM_STALL_total_count, 0,          1032
-RET_BLOCKED_MEM_STALL_total_pct, 0,        0.039
+RET_BLOCKED_MEM_STALL_count, 0,          1067
+RET_BLOCKED_MEM_STALL_pct, 0,        0.035
+RET_BLOCKED_MEM_STALL_total_count, 0,          1067
+RET_BLOCKED_MEM_STALL_total_pct, 0,        0.035
 
 RET_BLOCKED_OFFCHIP_DEMAND_count, 0,             0
 RET_BLOCKED_OFFCHIP_DEMAND_pct, 0,        0.000
 RET_BLOCKED_OFFCHIP_DEMAND_total_count, 0,             0
 RET_BLOCKED_OFFCHIP_DEMAND_total_pct, 0,        0.000
 
-OP_ISSUED_count, 0,       8886671
-OP_ISSUED_total_count, 0,       8886671
+OP_ISSUED_count, 0,      10637681
+OP_ISSUED_total_count, 0,      10637681
 
 OP_RETIRED_count, 0,       6539114
 OP_RETIRED_total_count, 0,       6539114
@@ -101,14 +101,14 @@ LD_EXEC_CYCLES_1_total_count, 393,             0
 LD_EXEC_CYCLES_2_count, 393,             0
 LD_EXEC_CYCLES_2_total_count, 393,             0
 
-LD_EXEC_CYCLES_3_count, 393,            83
-LD_EXEC_CYCLES_3_total_count, 393,            83
+LD_EXEC_CYCLES_3_count, 393,             6
+LD_EXEC_CYCLES_3_total_count, 393,             6
 
-LD_EXEC_CYCLES_4_count, 393,             7
-LD_EXEC_CYCLES_4_total_count, 393,             7
+LD_EXEC_CYCLES_4_count, 393,          1417
+LD_EXEC_CYCLES_4_total_count, 393,          1417
 
-ICACHE_STAGE_STARVED_count, 394,         29482
-ICACHE_STAGE_STARVED_total_count, 394,         29482
+ICACHE_STAGE_STARVED_count, 394,         29581
+ICACHE_STAGE_STARVED_total_count, 394,         29581
 
 ICACHE_STAGE_NOT_STARVED_count, 394,       1690661
 ICACHE_STAGE_NOT_STARVED_total_count, 394,       1690661
@@ -116,62 +116,62 @@ ICACHE_STAGE_NOT_STARVED_total_count, 394,       1690661
 ICACHE_STAGE_STALLED_count, 395,             0
 ICACHE_STAGE_STALLED_total_count, 395,             0
 
-ICACHE_STAGE_NOT_STALLED_count, 395,       1720143
-ICACHE_STAGE_NOT_STALLED_total_count, 395,       1720143
+ICACHE_STAGE_NOT_STALLED_count, 395,       1720242
+ICACHE_STAGE_NOT_STALLED_total_count, 395,       1720242
 
-ICACHE_STAGE_OFF_PATH_count, 395,        920714
-ICACHE_STAGE_OFF_PATH_total_count, 395,        920714
+ICACHE_STAGE_OFF_PATH_count, 395,       1298223
+ICACHE_STAGE_OFF_PATH_total_count, 395,       1298223
 
-DECODE_STAGE_STARVED_count, 396,       2640176
-DECODE_STAGE_STARVED_total_count, 396,       2640176
+DECODE_STAGE_STARVED_count, 396,       3017655
+DECODE_STAGE_STARVED_total_count, 396,       3017655
 
-DECODE_STAGE_NOT_STARVED_count, 396,            60
-DECODE_STAGE_NOT_STARVED_total_count, 396,            60
+DECODE_STAGE_NOT_STARVED_count, 396,            55
+DECODE_STAGE_NOT_STARVED_total_count, 396,            55
 
 DECODE_STAGE_STALLED_count, 397,             0
 DECODE_STAGE_STALLED_total_count, 397,             0
 
-DECODE_STAGE_NOT_STALLED_count, 397,       2640236
-DECODE_STAGE_NOT_STALLED_total_count, 397,       2640236
+DECODE_STAGE_NOT_STALLED_count, 397,       3017710
+DECODE_STAGE_NOT_STALLED_total_count, 397,       3017710
 
-DECODE_STAGE_OFF_PATH_count, 397,           621
-DECODE_STAGE_OFF_PATH_total_count, 397,           621
+DECODE_STAGE_OFF_PATH_count, 397,           755
+DECODE_STAGE_OFF_PATH_total_count, 397,           755
 
-UOPQ_STAGE_STARVED_count, 398,       2640504
-UOPQ_STAGE_STARVED_total_count, 398,       2640504
+UOPQ_STAGE_STARVED_count, 398,       3017887
+UOPQ_STAGE_STARVED_total_count, 398,       3017887
 
-UOPQ_STAGE_NOT_STARVED_count, 398,            55
-UOPQ_STAGE_NOT_STARVED_total_count, 398,            55
+UOPQ_STAGE_NOT_STARVED_count, 398,            40
+UOPQ_STAGE_NOT_STARVED_total_count, 398,            40
 
 UOPQ_STAGE_STALLED_count, 399,             0
 UOPQ_STAGE_STALLED_total_count, 399,             0
 
-UOPQ_STAGE_NOT_STALLED_count, 399,       2640559
-UOPQ_STAGE_NOT_STALLED_total_count, 399,       2640559
+UOPQ_STAGE_NOT_STALLED_count, 399,       3017927
+UOPQ_STAGE_NOT_STALLED_total_count, 399,       3017927
 
-UOPQ_STAGE_OFF_PATH_count, 399,           298
-UOPQ_STAGE_OFF_PATH_total_count, 399,           298
+UOPQ_STAGE_OFF_PATH_count, 399,           538
+UOPQ_STAGE_OFF_PATH_total_count, 399,           538
 
-MAP_STAGE_STARVED_count, 400,         87321
-MAP_STAGE_STARVED_total_count, 400,         87321
+MAP_STAGE_STARVED_count, 400,         87416
+MAP_STAGE_STARVED_total_count, 400,         87416
 
-MAP_STAGE_NOT_STARVED_count, 400,       1745691
-MAP_STAGE_NOT_STARVED_total_count, 400,       1745691
+MAP_STAGE_NOT_STARVED_count, 400,       1745690
+MAP_STAGE_NOT_STARVED_total_count, 400,       1745690
 
 MAP_STAGE_STALLED_count, 401,             0
 MAP_STAGE_STALLED_total_count, 401,             0
 
-MAP_STAGE_NOT_STALLED_count, 401,       1833012
-MAP_STAGE_NOT_STALLED_total_count, 401,       1833012
+MAP_STAGE_NOT_STALLED_count, 401,       1833106
+MAP_STAGE_NOT_STALLED_total_count, 401,       1833106
 
-MAP_STAGE_OFF_PATH_count, 401,        807663
-MAP_STAGE_OFF_PATH_total_count, 401,        807663
+MAP_STAGE_OFF_PATH_count, 401,       1171271
+MAP_STAGE_OFF_PATH_total_count, 401,       1171271
 
-MAP_STAGE_STALL_ITSELF_count, 402,           182
-MAP_STAGE_STALL_ITSELF_total_count, 402,           182
+MAP_STAGE_STALL_ITSELF_count, 402,         14088
+MAP_STAGE_STALL_ITSELF_total_count, 402,         14088
 
-MAP_STAGE_NOT_STALL_ITSELF_count, 402,       2640675
-MAP_STAGE_NOT_STALL_ITSELF_total_count, 402,       2640675
+MAP_STAGE_NOT_STALL_ITSELF_count, 402,       3004377
+MAP_STAGE_NOT_STALL_ITSELF_total_count, 402,       3004377
 
 MAP_STAGE_LATE_ALLOCATE_SEND_BACK_count, 0,             0
 MAP_STAGE_LATE_ALLOCATE_SEND_BACK_total_count, 0,             0
@@ -179,14 +179,14 @@ MAP_STAGE_LATE_ALLOCATE_SEND_BACK_total_count, 0,             0
 MAP_STAGE_RENAME_OP_ONPATH_count, 0,       6539141
 MAP_STAGE_RENAME_OP_ONPATH_total_count, 0,       6539141
 
-MAP_STAGE_RENAME_OP_OFFPATH_count, 0,       3048633
-MAP_STAGE_RENAME_OP_OFFPATH_total_count, 0,       3048633
+MAP_STAGE_RENAME_OP_OFFPATH_count, 0,       4498358
+MAP_STAGE_RENAME_OP_OFFPATH_total_count, 0,       4498358
 
 MAP_STAGE_RENAME_INT_REG_ONPATH_count, 0,       5043248
 MAP_STAGE_RENAME_INT_REG_ONPATH_total_count, 0,       5043248
 
-MAP_STAGE_RENAME_INT_REG_OFFPATH_count, 0,       2410177
-MAP_STAGE_RENAME_INT_REG_OFFPATH_total_count, 0,       2410177
+MAP_STAGE_RENAME_INT_REG_OFFPATH_count, 0,       3544796
+MAP_STAGE_RENAME_INT_REG_OFFPATH_total_count, 0,       3544796
 
 MAP_STAGE_RENAME_VEC_REG_ONPATH_count, 0,             0
 MAP_STAGE_RENAME_VEC_REG_ONPATH_total_count, 0,             0
@@ -206,8 +206,8 @@ MAP_STAGE_ONPATH_INT_REG_NUM_ALLOC_total_count, 0,       5043212
 MAP_STAGE_ONPATH_VEC_REG_NUM_ALLOC_count, 0,             0
 MAP_STAGE_ONPATH_VEC_REG_NUM_ALLOC_total_count, 0,             0
 
-MAP_STAGE_ONPATH_INT_REG_NUM_SHORTLIVE_count, 0,       1463507
-MAP_STAGE_ONPATH_INT_REG_NUM_SHORTLIVE_total_count, 0,       1463507
+MAP_STAGE_ONPATH_INT_REG_NUM_SHORTLIVE_count, 0,       1470803
+MAP_STAGE_ONPATH_INT_REG_NUM_SHORTLIVE_total_count, 0,       1470803
 
 MAP_STAGE_ONPATH_VEC_REG_NUM_SHORTLIVE_count, 0,             0
 MAP_STAGE_ONPATH_VEC_REG_NUM_SHORTLIVE_total_count, 0,             0
@@ -260,62 +260,62 @@ MAP_STAGE_ONPATH_INT_REG_USE_COUNT_USED_SEVENPLUS_total_count, 0,         43322
 MAP_STAGE_ONPATH_VEC_REG_USE_COUNT_USED_SEVENPLUS_count, 0,             0
 MAP_STAGE_ONPATH_VEC_REG_USE_COUNT_USED_SEVENPLUS_total_count, 0,             0
 
-MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_EMPTY_count, 0,      24564967
-MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_EMPTY_total_count, 0,      24564967
+MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_EMPTY_count, 0,      23319850
+MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_EMPTY_total_count, 0,      23319850
 
 MAP_STAGE_ONPATH_VEC_REG_LIFECYCLE_EMPTY_count, 0,             0
 MAP_STAGE_ONPATH_VEC_REG_LIFECYCLE_EMPTY_total_count, 0,             0
 
-MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_IN_USE_count, 0,      70283479
-MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_IN_USE_total_count, 0,      70283479
+MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_IN_USE_count, 0,      69168053
+MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_IN_USE_total_count, 0,      69168053
 
 MAP_STAGE_ONPATH_VEC_REG_LIFECYCLE_IN_USE_count, 0,             0
 MAP_STAGE_ONPATH_VEC_REG_LIFECYCLE_IN_USE_total_count, 0,             0
 
-MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_TOTAL_count, 0,     149962241
-MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_TOTAL_total_count, 0,     149962241
+MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_TOTAL_count, 0,     144135541
+MAP_STAGE_ONPATH_INT_REG_LIFECYCLE_TOTAL_total_count, 0,     144135541
 
 MAP_STAGE_ONPATH_VEC_REG_LIFECYCLE_TOTAL_count, 0,             0
 MAP_STAGE_ONPATH_VEC_REG_LIFECYCLE_TOTAL_total_count, 0,             0
 
-EXEC_STAGE_STARVED_count, 403,       1864894
-EXEC_STAGE_STARVED_total_count, 403,       1864894
+EXEC_STAGE_STARVED_count, 403,       1864320
+EXEC_STAGE_STARVED_total_count, 403,       1864320
 
-EXEC_STAGE_NOT_STARVED_count, 403,        146775
-EXEC_STAGE_NOT_STARVED_total_count, 403,        146775
+EXEC_STAGE_NOT_STARVED_count, 403,        147487
+EXEC_STAGE_NOT_STARVED_total_count, 403,        147487
 
-EXEC_STAGE_OFF_PATH_count, 403,        629188
-EXEC_STAGE_OFF_PATH_total_count, 403,        629188
+EXEC_STAGE_OFF_PATH_count, 403,       1006658
+EXEC_STAGE_OFF_PATH_total_count, 403,       1006658
 
-FU_BUSY_0_count, 0,       2299282
-FU_BUSY_0_total_count, 0,       2299282
+FU_BUSY_0_count, 0,       2672809
+FU_BUSY_0_total_count, 0,       2672809
 
-FU_BUSY_1_count, 0,       1509612
-FU_BUSY_1_total_count, 0,       1509612
+FU_BUSY_1_count, 0,       1814202
+FU_BUSY_1_total_count, 0,       1814202
 
-FU_BUSY_2_count, 0,       1115037
-FU_BUSY_2_total_count, 0,       1115037
+FU_BUSY_2_count, 0,       1317211
+FU_BUSY_2_total_count, 0,       1317211
 
-FU_BUSY_3_count, 0,        570544
-FU_BUSY_3_total_count, 0,        570544
+FU_BUSY_3_count, 0,        664816
+FU_BUSY_3_total_count, 0,        664816
 
-FU_BUSY_4_count, 0,        952034
-FU_BUSY_4_total_count, 0,        952034
+FU_BUSY_4_count, 0,       1152739
+FU_BUSY_4_total_count, 0,       1152739
 
-FU_BUSY_5_count, 0,       1290992
-FU_BUSY_5_total_count, 0,       1290992
+FU_BUSY_5_count, 0,       1523439
+FU_BUSY_5_total_count, 0,       1523439
 
-FU_BUSY_6_count, 0,        661503
-FU_BUSY_6_total_count, 0,        661503
+FU_BUSY_6_count, 0,        886369
+FU_BUSY_6_total_count, 0,        886369
 
-FU_BUSY_7_count, 0,        241247
-FU_BUSY_7_total_count, 0,        241247
+FU_BUSY_7_count, 0,        392036
+FU_BUSY_7_total_count, 0,        392036
 
-FU_BUSY_8_count, 0,        424287
-FU_BUSY_8_total_count, 0,        424287
+FU_BUSY_8_count, 0,        523251
+FU_BUSY_8_total_count, 0,        523251
 
-FU_BUSY_9_count, 0,           949
-FU_BUSY_9_total_count, 0,           949
+FU_BUSY_9_count, 0,          2745
+FU_BUSY_9_total_count, 0,          2745
 
 FU_BUSY_10_count, 0,             0
 FU_BUSY_10_total_count, 0,             0
@@ -386,14 +386,14 @@ FU_BUSY_31_total_count, 0,             0
 FU_REJECTED_OP_INV_NOT_SIMD_count, 404,             0
 FU_REJECTED_OP_INV_NOT_SIMD_total_count, 404,             0
 
-FU_REJECTED_OP_NOP_NOT_SIMD_count, 404,             4
-FU_REJECTED_OP_NOP_NOT_SIMD_total_count, 404,             4
+FU_REJECTED_OP_NOP_NOT_SIMD_count, 404,            19
+FU_REJECTED_OP_NOP_NOT_SIMD_total_count, 404,            19
 
-FU_REJECTED_OP_CF_NOT_SIMD_count, 404,             7
-FU_REJECTED_OP_CF_NOT_SIMD_total_count, 404,             7
+FU_REJECTED_OP_CF_NOT_SIMD_count, 404,            31
+FU_REJECTED_OP_CF_NOT_SIMD_total_count, 404,            31
 
-FU_REJECTED_OP_MOV_NOT_SIMD_count, 404,             7
-FU_REJECTED_OP_MOV_NOT_SIMD_total_count, 404,             7
+FU_REJECTED_OP_MOV_NOT_SIMD_count, 404,             3
+FU_REJECTED_OP_MOV_NOT_SIMD_total_count, 404,             3
 
 FU_REJECTED_OP_CMOV_NOT_SIMD_count, 404,             0
 FU_REJECTED_OP_CMOV_NOT_SIMD_total_count, 404,             0
@@ -401,11 +401,11 @@ FU_REJECTED_OP_CMOV_NOT_SIMD_total_count, 404,             0
 FU_REJECTED_OP_LDA_NOT_SIMD_count, 404,             0
 FU_REJECTED_OP_LDA_NOT_SIMD_total_count, 404,             0
 
-FU_REJECTED_OP_IMEM_NOT_SIMD_count, 404,           424
-FU_REJECTED_OP_IMEM_NOT_SIMD_total_count, 404,           424
+FU_REJECTED_OP_IMEM_NOT_SIMD_count, 404,           766
+FU_REJECTED_OP_IMEM_NOT_SIMD_total_count, 404,           766
 
-FU_REJECTED_OP_IADD_NOT_SIMD_count, 404,         65929
-FU_REJECTED_OP_IADD_NOT_SIMD_total_count, 404,         65929
+FU_REJECTED_OP_IADD_NOT_SIMD_count, 404,        148156
+FU_REJECTED_OP_IADD_NOT_SIMD_total_count, 404,        148156
 
 FU_REJECTED_OP_IMUL_NOT_SIMD_count, 404,             0
 FU_REJECTED_OP_IMUL_NOT_SIMD_total_count, 404,             0
@@ -419,8 +419,8 @@ FU_REJECTED_OP_ICMP_NOT_SIMD_total_count, 404,             0
 FU_REJECTED_OP_LOGIC_NOT_SIMD_count, 404,             0
 FU_REJECTED_OP_LOGIC_NOT_SIMD_total_count, 404,             0
 
-FU_REJECTED_OP_SHIFT_NOT_SIMD_count, 404,            13
-FU_REJECTED_OP_SHIFT_NOT_SIMD_total_count, 404,            13
+FU_REJECTED_OP_SHIFT_NOT_SIMD_count, 404,             0
+FU_REJECTED_OP_SHIFT_NOT_SIMD_total_count, 404,             0
 
 FU_REJECTED_OP_FMEM_NOT_SIMD_count, 404,             0
 FU_REJECTED_OP_FMEM_NOT_SIMD_total_count, 404,             0
@@ -566,35 +566,35 @@ LSQ_FULL_LOAD_QUEUE_total_count, 0,             0
 LSQ_FULL_STORE_QUEUE_count, 0,             0
 LSQ_FULL_STORE_QUEUE_total_count, 0,             0
 
-OP_WAIT_0_count, 0,       3279340
-OP_WAIT_0_total_count, 0,       3279340
+OP_WAIT_0_count, 0,       3296214
+OP_WAIT_0_total_count, 0,       3296214
 
-OP_WAIT_1_count, 0,       2731336
-OP_WAIT_1_total_count, 0,       2731336
+OP_WAIT_1_count, 0,       2720235
+OP_WAIT_1_total_count, 0,       2720235
 
-OP_WAIT_2_count, 0,        421235
-OP_WAIT_2_total_count, 0,        421235
+OP_WAIT_2_count, 0,        422608
+OP_WAIT_2_total_count, 0,        422608
 
-OP_WAIT_3_count, 0,         87536
-OP_WAIT_3_total_count, 0,         87536
+OP_WAIT_3_count, 0,         82322
+OP_WAIT_3_total_count, 0,         82322
 
-OP_WAIT_4_count, 0,          9534
-OP_WAIT_4_total_count, 0,          9534
+OP_WAIT_4_count, 0,          8031
+OP_WAIT_4_total_count, 0,          8031
 
-OP_WAIT_5_count, 0,            93
-OP_WAIT_5_total_count, 0,            93
+OP_WAIT_5_count, 0,          1294
+OP_WAIT_5_total_count, 0,          1294
 
-OP_WAIT_6_count, 0,          5316
-OP_WAIT_6_total_count, 0,          5316
+OP_WAIT_6_count, 0,          4439
+OP_WAIT_6_total_count, 0,          4439
 
-OP_WAIT_7_count, 0,          4721
-OP_WAIT_7_total_count, 0,          4721
+OP_WAIT_7_count, 0,          3970
+OP_WAIT_7_total_count, 0,          3970
 
 OP_WAIT_8_count, 0,             1
 OP_WAIT_8_total_count, 0,             1
 
-OP_WAIT_9_count, 0,             2
-OP_WAIT_9_total_count, 0,             2
+OP_WAIT_9_count, 0,             0
+OP_WAIT_9_total_count, 0,             0
 
 OP_WAIT_10_count, 0,             0
 OP_WAIT_10_total_count, 0,             0
@@ -662,32 +662,32 @@ OP_WAIT_30_total_count, 0,             0
 OP_WAIT_31_count, 0,             0
 OP_WAIT_31_total_count, 0,             0
 
-ROW_SIZE_0_count, 0,       1299250
-ROW_SIZE_0_total_count, 0,       1299250
+ROW_SIZE_0_count, 0,       1563239
+ROW_SIZE_0_total_count, 0,       1563239
 
-ROW_SIZE_1_count, 0,        245509
-ROW_SIZE_1_total_count, 0,        245509
+ROW_SIZE_1_count, 0,        282692
+ROW_SIZE_1_total_count, 0,        282692
 
-ROW_SIZE_2_count, 0,         71494
-ROW_SIZE_2_total_count, 0,         71494
+ROW_SIZE_2_count, 0,         72138
+ROW_SIZE_2_total_count, 0,         72138
 
-ROW_SIZE_3_count, 0,         95208
-ROW_SIZE_3_total_count, 0,         95208
+ROW_SIZE_3_count, 0,        102425
+ROW_SIZE_3_total_count, 0,        102425
 
-ROW_SIZE_4_count, 0,         14247
-ROW_SIZE_4_total_count, 0,         14247
+ROW_SIZE_4_count, 0,         13158
+ROW_SIZE_4_total_count, 0,         13158
 
-ROW_SIZE_5_count, 0,        128425
-ROW_SIZE_5_total_count, 0,        128425
+ROW_SIZE_5_count, 0,        137827
+ROW_SIZE_5_total_count, 0,        137827
 
-ROW_SIZE_6_count, 0,          5708
-ROW_SIZE_6_total_count, 0,          5708
+ROW_SIZE_6_count, 0,          5297
+ROW_SIZE_6_total_count, 0,          5297
 
-ROW_SIZE_7_count, 0,        104864
-ROW_SIZE_7_total_count, 0,        104864
+ROW_SIZE_7_count, 0,        108022
+ROW_SIZE_7_total_count, 0,        108022
 
-ROW_SIZE_8_count, 0,        549698
-ROW_SIZE_8_total_count, 0,        549698
+ROW_SIZE_8_count, 0,        534396
+ROW_SIZE_8_total_count, 0,        534396
 
 ROW_SIZE_9_count, 0,             0
 ROW_SIZE_9_total_count, 0,             0
@@ -857,11 +857,11 @@ RET_OP_EXEC_COUNT_31_total_count, 405,             0
 RET_OP_EXEC_COUNT_32_count, 405,             0
 RET_OP_EXEC_COUNT_32_total_count, 405,             0
 
-RET_STALL_LENGTH_0_count, 406,       6539107
-RET_STALL_LENGTH_0_total_count, 406,       6539107
+RET_STALL_LENGTH_0_count, 406,       6539109
+RET_STALL_LENGTH_0_total_count, 406,       6539109
 
-RET_STALL_LENGTH_100_count, 406,             6
-RET_STALL_LENGTH_100_total_count, 406,             6
+RET_STALL_LENGTH_100_count, 406,             4
+RET_STALL_LENGTH_100_total_count, 406,             4
 
 RET_STALL_LENGTH_200_count, 406,             0
 RET_STALL_LENGTH_200_total_count, 406,             0
@@ -869,11 +869,11 @@ RET_STALL_LENGTH_200_total_count, 406,             0
 RET_STALL_LENGTH_300_count, 406,             0
 RET_STALL_LENGTH_300_total_count, 406,             0
 
-RET_STALL_LENGTH_400_count, 406,             1
-RET_STALL_LENGTH_400_total_count, 406,             1
+RET_STALL_LENGTH_400_count, 406,             0
+RET_STALL_LENGTH_400_total_count, 406,             0
 
-RET_STALL_LENGTH_500_count, 406,             0
-RET_STALL_LENGTH_500_total_count, 406,             0
+RET_STALL_LENGTH_500_count, 406,             1
+RET_STALL_LENGTH_500_total_count, 406,             1
 
 RET_STALL_LENGTH_600_count, 406,             0
 RET_STALL_LENGTH_600_total_count, 406,             0
@@ -1010,8 +1010,8 @@ RET_STALL_LENGTH_4900_total_count, 406,             0
 RET_STALL_LENGTH_5000_count, 406,             0
 RET_STALL_LENGTH_5000_total_count, 406,             0
 
-MEM_BLOCK_LENGTH_0_count, 407,             1
-MEM_BLOCK_LENGTH_0_total_count, 407,             1
+MEM_BLOCK_LENGTH_0_count, 407,             0
+MEM_BLOCK_LENGTH_0_total_count, 407,             0
 
 MEM_BLOCK_LENGTH_100_count, 407,             0
 MEM_BLOCK_LENGTH_100_total_count, 407,             0
@@ -1163,35 +1163,35 @@ MEM_BLOCK_LENGTH_4900_total_count, 407,             0
 MEM_BLOCK_LENGTH_5000_count, 407,             0
 MEM_BLOCK_LENGTH_5000_total_count, 407,             0
 
-FUS_BUSY_ON_PATH_count, 0,       6690766
-FUS_BUSY_ON_PATH_pct, 0,        2.534
-FUS_BUSY_ON_PATH_total_count, 0,       6690766
-FUS_BUSY_ON_PATH_total_pct, 0,        2.534
+FUS_BUSY_ON_PATH_count, 0,       6691455
+FUS_BUSY_ON_PATH_pct, 0,        2.217
+FUS_BUSY_ON_PATH_total_count, 0,       6691455
+FUS_BUSY_ON_PATH_total_pct, 0,        2.217
 
-FUS_BUSY_OFF_PATH_count, 0,       2374721
-FUS_BUSY_OFF_PATH_pct, 0,        0.899
-FUS_BUSY_OFF_PATH_total_count, 0,       2374721
-FUS_BUSY_OFF_PATH_total_pct, 0,        0.899
+FUS_BUSY_OFF_PATH_count, 0,       4258162
+FUS_BUSY_OFF_PATH_pct, 0,        1.411
+FUS_BUSY_OFF_PATH_total_count, 0,       4258162
+FUS_BUSY_OFF_PATH_total_pct, 0,        1.411
 
-FU_BUSY_MEM_STALL_count, 0,        178797
-FU_BUSY_MEM_STALL_pct, 0,        0.068
-FU_BUSY_MEM_STALL_total_count, 0,        178797
-FU_BUSY_MEM_STALL_total_pct, 0,        0.068
+FU_BUSY_MEM_STALL_count, 0,        311917
+FU_BUSY_MEM_STALL_pct, 0,        0.103
+FU_BUSY_MEM_STALL_total_count, 0,        311917
+FU_BUSY_MEM_STALL_total_pct, 0,        0.103
 
-FUS_EMPTY_count, 0,      17343083
-FUS_EMPTY_pct, 0,        6.567
-FUS_EMPTY_total_count, 0,      17343083
-FUS_EMPTY_total_pct, 0,        6.567
+FUS_EMPTY_count, 0,      19235033
+FUS_EMPTY_pct, 0,        6.372
+FUS_EMPTY_total_count, 0,      19235033
+FUS_EMPTY_total_pct, 0,        6.372
 
-FU_UNAVAILABLE_count, 0,            37
+FU_UNAVAILABLE_count, 0,            53
 FU_UNAVAILABLE_pct, 0,        0.000
-FU_UNAVAILABLE_total_count, 0,            37
+FU_UNAVAILABLE_total_count, 0,            53
 FU_UNAVAILABLE_total_pct, 0,        0.000
 
-FU_MEM_UNAVAILABLE_count, 0,         66347
-FU_MEM_UNAVAILABLE_pct, 0,        0.025
-FU_MEM_UNAVAILABLE_total_count, 0,         66347
-FU_MEM_UNAVAILABLE_total_pct, 0,        0.025
+FU_MEM_UNAVAILABLE_count, 0,        148922
+FU_MEM_UNAVAILABLE_pct, 0,        0.049
+FU_MEM_UNAVAILABLE_total_count, 0,        148922
+FU_MEM_UNAVAILABLE_total_pct, 0,        0.049
 
 FU_OTHER_UNAVAILABLE_count, 0,             0
 FU_OTHER_UNAVAILABLE_pct, 0,        0.000
@@ -1203,10 +1203,10 @@ FU_REPLAY_pct, 0,        0.000
 FU_REPLAY_total_count, 0,             0
 FU_REPLAY_total_pct, 0,        0.000
 
-FU_STARVED_count, 0,      17232439
-FU_STARVED_pct, 0,        6.525
-FU_STARVED_total_count, 0,      17232439
-FU_STARVED_total_pct, 0,        6.525
+FU_STARVED_count, 0,      19111631
+FU_STARVED_pct, 0,        6.332
+FU_STARVED_total_count, 0,      19111631
+FU_STARVED_total_pct, 0,        6.332
 
 CHIP_UTILIZATION_count, 0,             0
 CHIP_UTILIZATION_pct, 0,        0.000
@@ -1277,23 +1277,23 @@ DVFS_CONFIG_SWITCH_total_count, 0,             0
 MAP_STAGE_RECEIVED_OPS_0_count, 408,             0
 MAP_STAGE_RECEIVED_OPS_0_total_count, 408,             0
 
-MAP_STAGE_RECEIVED_OPS_1_count, 408,             2
-MAP_STAGE_RECEIVED_OPS_1_total_count, 408,             2
+MAP_STAGE_RECEIVED_OPS_1_count, 408,             1
+MAP_STAGE_RECEIVED_OPS_1_total_count, 408,             1
 
-MAP_STAGE_RECEIVED_OPS_2_count, 408,        278562
-MAP_STAGE_RECEIVED_OPS_2_total_count, 408,        278562
+MAP_STAGE_RECEIVED_OPS_2_count, 408,        278561
+MAP_STAGE_RECEIVED_OPS_2_total_count, 408,        278561
 
 MAP_STAGE_RECEIVED_OPS_3_count, 408,        564928
 MAP_STAGE_RECEIVED_OPS_3_total_count, 408,        564928
 
-MAP_STAGE_RECEIVED_OPS_4_count, 408,        304630
-MAP_STAGE_RECEIVED_OPS_4_total_count, 408,        304630
+MAP_STAGE_RECEIVED_OPS_4_count, 408,        304631
+MAP_STAGE_RECEIVED_OPS_4_total_count, 408,        304631
 
 MAP_STAGE_RECEIVED_OPS_5_count, 408,        356928
 MAP_STAGE_RECEIVED_OPS_5_total_count, 408,        356928
 
-MAP_STAGE_RECEIVED_OPS_6_count, 408,        211781
-MAP_STAGE_RECEIVED_OPS_6_total_count, 408,        211781
+MAP_STAGE_RECEIVED_OPS_6_count, 408,        211780
+MAP_STAGE_RECEIVED_OPS_6_total_count, 408,        211780
 
 MAP_STAGE_RECEIVED_OPS_7_count, 408,             0
 MAP_STAGE_RECEIVED_OPS_7_total_count, 408,             0
@@ -1322,17 +1322,17 @@ FTQ_RECOVER_EXEC_total_count, 0,         28860
 FTQ_RECOVER_DECODE_count, 0,             2
 FTQ_RECOVER_DECODE_total_count, 0,             2
 
-FTQ_OFFPATH_CYCLES_count, 0,        956251
-FTQ_OFFPATH_CYCLES_total_count, 0,        956251
+FTQ_OFFPATH_CYCLES_count, 0,       1129641
+FTQ_OFFPATH_CYCLES_total_count, 0,       1129641
 
-FTQ_CYCLES_OFFPATH_count, 0,       1571369
-FTQ_CYCLES_OFFPATH_total_count, 0,       1571369
+FTQ_CYCLES_OFFPATH_count, 0,       1948977
+FTQ_CYCLES_OFFPATH_total_count, 0,       1948977
 
 FTQ_CYCLES_ONPATH_count, 0,       1069488
 FTQ_CYCLES_ONPATH_total_count, 0,       1069488
 
-FTQ_FETCHED_INS_OFFPATH_count, 0,       7245362
-FTQ_FETCHED_INS_OFFPATH_total_count, 0,       7245362
+FTQ_FETCHED_INS_OFFPATH_count, 0,       8683025
+FTQ_FETCHED_INS_OFFPATH_total_count, 0,       8683025
 
 FTQ_FETCHED_INS_ONPATH_count, 0,       6510407
 FTQ_FETCHED_INS_ONPATH_total_count, 0,       6510407
@@ -1352,14 +1352,14 @@ FTQ_BREAK_PRED_BR_ONPATH_total_count, 411,             0
 FTQ_BREAK_BAR_FETCH_ONPATH_count, 411,             0
 FTQ_BREAK_BAR_FETCH_ONPATH_total_count, 411,             0
 
-FTQ_BREAK_FULL_FT_OFFPATH_count, 412,       1472776
-FTQ_BREAK_FULL_FT_OFFPATH_total_count, 412,       1472776
+FTQ_BREAK_FULL_FT_OFFPATH_count, 412,       1850284
+FTQ_BREAK_FULL_FT_OFFPATH_total_count, 412,       1850284
 
-FTQ_BREAK_MAX_CFS_TAKEN_OFFPATH_count, 412,        127258
-FTQ_BREAK_MAX_CFS_TAKEN_OFFPATH_total_count, 412,        127258
+FTQ_BREAK_MAX_CFS_TAKEN_OFFPATH_count, 412,        127350
+FTQ_BREAK_MAX_CFS_TAKEN_OFFPATH_total_count, 412,        127350
 
-FTQ_BREAK_MAX_BYTES_OFFPATH_count, 412,           197
-FTQ_BREAK_MAX_BYTES_OFFPATH_total_count, 412,           197
+FTQ_BREAK_MAX_BYTES_OFFPATH_count, 412,           205
+FTQ_BREAK_MAX_BYTES_OFFPATH_total_count, 412,           205
 
 FTQ_BREAK_PRED_BR_OFFPATH_count, 412,             0
 FTQ_BREAK_PRED_BR_OFFPATH_total_count, 412,             0

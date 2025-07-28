@@ -53,7 +53,7 @@
 /* Macros */
 
 #define DEBUG(proc_id, args...) _DEBUG(proc_id, DEBUG_MAP, ##args)
-#define DEBUGU(proc_id, args...) _DEBUGU(proc_id, DEBUG_MAP, ##args)
+//#define DEBUGU(proc_id, args...) _DEBUGU(proc_id, DEBUG_MAP, ##args)
 
 #define WAKE_UP_ENTRIES_INC 256 /* default 256 */
 #define MEM_ADDR_SRC 0          /* address for memory instructions calculated off source 0 */
@@ -201,7 +201,7 @@ void recover_mem_map_entry(void* hash_entry, void* arg) {
    the seq_op_list first */
 
 void rebuild_offpath_map() {
-  DEBUGU(map_data->proc_id, "Rebuilding map\n");
+  //DEBUGU(map_data->proc_id, "Rebuilding map\n");
 
   ASSERT(map_data->proc_id, map_data->proc_id == td->proc_id);
 
@@ -227,7 +227,7 @@ static inline void expand_wake_up_entries() {
   Wake_Up_Entry* new_pool = (Wake_Up_Entry*)calloc(WAKE_UP_ENTRIES_INC, sizeof(Wake_Up_Entry));
   uns ii;
 
-  DEBUGU(map_data->proc_id, "Expanding wake up pool to size %d\n", (map_data->wake_up_entries + WAKE_UP_ENTRIES_INC));
+  //DEBUGU(map_data->proc_id, "Expanding wake up pool to size %d\n", (map_data->wake_up_entries + WAKE_UP_ENTRIES_INC));
   for (ii = 0; ii < WAKE_UP_ENTRIES_INC - 1; ii++)
     new_pool[ii].next = &new_pool[ii + 1];
   new_pool[ii].next = map_data->free_list_head;

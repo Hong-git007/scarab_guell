@@ -439,7 +439,7 @@ char* disasm_op(Op* op, Flag wide) {
     }
 
     if (op->table_info->num_dest_regs > 0 && op->table_info->num_src_regs > 0) {
-        i += sprintf(&buf[i], " -> ");
+        i += sprintf(&buf[i], " <- ");
     }
       
     for (int j = 0; j < op->table_info->num_src_regs; j++) {
