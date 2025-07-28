@@ -69,6 +69,9 @@
 #include "thread.h"
 #include "trigger.h"
 
+#include "log/op_trace_log.h"
+#include "log/recovery_log.h"
+  
 /**************************************************************************************/
 /* Macros */
 
@@ -767,8 +770,10 @@ void full_sim() {
       check_heartbeat(proc_id, TRUE);
     }
   }
-
   // fdip_print_hash_tables();
+  close_op_asm_log_file();
+  close_retired_op_log_file();
+  close_recovery_log_file();
 
   trigger_free(sim_limit);
   trigger_free(clear_stats);

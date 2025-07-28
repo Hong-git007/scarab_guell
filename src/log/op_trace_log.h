@@ -27,5 +27,7 @@ void log_fill_rob_op(Op* op, Counter cycle_count);
  * @param ret_count The number of ops retired in the current cycle.
  */
 void log_retired_ops(Counter cycle_count, uns ret_count);
+void close_op_asm_log_file(void);
+void close_retired_op_log_file(void);
 
 #endif // __OP_TRACE_LOG_H__

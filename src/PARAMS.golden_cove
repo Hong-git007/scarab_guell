@@ -261,13 +261,15 @@
 #--debug_crs 1
 #--debug_btb 1
 #--debug_bp_dir 1
---debug_oracle          1
---debug_bp_conf         1
---debug_exc_inserts     1
+#--debug_oracle          1
+#--debug_bp_conf         1
+#--debug_exc_inserts     1
 #--debug_decoupled_fe    1
---debug_power_utils     1
---debug_fdip           1
---debug_map             1
+#--debug_power_utils     1
+#--debug_fdip           1
+#--debug_map             1
+--debug_issue_queue       1
+--debug_hbt                 1
 
 ## Stats and Params
 --dump_params                   1
