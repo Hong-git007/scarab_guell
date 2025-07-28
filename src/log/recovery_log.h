@@ -13,7 +13,7 @@ void init_recovery_log(void);
 
 
 
-void log_rat_state(FILE* log_file, const char* title, struct reg_table_entry* entries, uns size);
+void log_rat_state(FILE* log_file, const char* title, struct reg_table_entry* arch_entries, uns arch_size, struct reg_table_entry* physical_entries, uns physical_size);
 /*
  * @brief Logs information at the time a misprediction is detected.
  *
@@ -33,5 +33,5 @@ void log_misprediction_detection_at_exec(Op* op, Node_Stage* node, Counter cycle
  * @param bp_recovery_info Information about the branch prediction recovery.
  */
 void log_recovery_end(Node_Stage* node, Counter cycle_count, Bp_Recovery_Info* bp_recovery_info);
-
+void close_recovery_log_file(void);
 #endif // __RECOVERY_LOG_H__

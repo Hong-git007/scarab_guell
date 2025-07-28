@@ -27,7 +27,7 @@
  ***************************************************************************************/
 
 #include "bp/bp.h"
-
+#include "bp/hbt.h" 
 #include "globals/assert.h"
 #include "globals/global_defs.h"
 #include "globals/global_types.h"
@@ -296,6 +296,8 @@ void init_bp_data(uns8 proc_id, Bp_Data* bp_data) {
     bp_data->br_conf = &br_conf_table[CONF_MECH];
     bp_data->br_conf->init_func();
   }
+
+  hbt_init();
 }
 
 Flag bp_is_predictable(Bp_Data* bp_data, uns proc_id) {
@@ -306,6 +308,12 @@ Flag bp_is_predictable(Bp_Data* bp_data, uns proc_id) {
 /* bp_predict_op:  predicts the target of a control flow instruction */
 
 Addr bp_predict_op(Bp_Data* bp_data, Op* op, uns br_num, Addr fetch_addr) {
+
+  if (op->table_info->cf_type) {
+     op->oracle_info.hbt_pred_is_hard = hbt_is_hard_branch(op->inst_info->addr);
+    op->oracle_info.hbt_misp_counter = hbt_get_counter(op->inst_info->addr);
+  }
+
   Addr* btb_target;
   Addr ibp_target;
   Addr pred_target;
@@ -835,6 +843,7 @@ Addr bp_predict_op(Bp_Data* bp_data, Op* op, uns br_num, Addr fetch_addr) {
       STAT_EVENT(0, BP_DECODE_RECOVERIES);
   }
   return op->oracle_info.pred_npc;
+
 }
 
 /* Separate performing branch prediction from evaluating the prediction into
@@ -1008,6 +1017,7 @@ void bp_retire_op(Bp_Data* bp_data, Op* op) {
   if (USE_LATE_BP) {
     bp_data->late_bp->retire_func(op);
   }
+  hbt_update(op);
 }
 
 /******************************************************************************/

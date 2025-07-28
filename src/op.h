@@ -180,8 +180,9 @@ struct Op_struct {
   // {{{ scheduler information
   uns fu_num;         // functional unit number the op will or did execute on
   Counter node_id;    // id for position in the node table
-  Counter rs_id;      // id for which Reservation Station (RS) this op is assigned to
-  Counter chkpt_num;  // id for chkpt (WARNING: this can change due to recoveries)
+  Counter rs_id;       // id for which Reservation Station (RS) this op is assigned to
+  Counter rs_entry_id; // id for the entry within the assigned RS
+  Counter chkpt_num;   // id for chkpt (WARNING: this can change due to recoveries)
 
   struct Op_struct* next_rdy;   // pointer to next ready op (node table)
   Flag in_rdy_list;             // is the op in the node stage's ready list?
