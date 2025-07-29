@@ -71,7 +71,9 @@
 
 #include "log/op_trace_log.h"
 #include "log/recovery_log.h"
-  
+#include "log/on_off_path_log.h"
+#include "log/dependency_chain_log.h"
+
 /**************************************************************************************/
 /* Macros */
 
@@ -771,10 +773,6 @@ void full_sim() {
     }
   }
   // fdip_print_hash_tables();
-  close_op_asm_log_file();
-  close_retired_op_log_file();
-  close_recovery_log_file();
-
   trigger_free(sim_limit);
   trigger_free(clear_stats);
 }

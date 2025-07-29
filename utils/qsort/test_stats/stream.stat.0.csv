@@ -1,7 +1,7 @@
 Core, 0, 0
-Cumulative_Cycles, 0, 3018574             
+Cumulative_Cycles, 0, 3018465             
 Cumulative_Instructions, 0, 5000002             
-Periodic_Cycles, 0, 3018574             
+Periodic_Cycles, 0, 3018465             
 Periodic_Instructions, 0, 5000002             
 DCACHE_PREF_HIT_count, 0,             0
 DCACHE_PREF_HIT_total_count, 0,             0
@@ -21,8 +21,8 @@ DEMAND_PASS_LOW_OP_SCHEDULE_total_count, 437,             0
 DEMAND_LAST_SCHEDULE_count, 437,             0
 DEMAND_LAST_SCHEDULE_total_count, 437,             0
 
-SEND_MISS_REQ_QUEUE_count, 0,         19334
-SEND_MISS_REQ_QUEUE_total_count, 0,         19334
+SEND_MISS_REQ_QUEUE_count, 0,         19333
+SEND_MISS_REQ_QUEUE_total_count, 0,         19333
 
 L1_DATA_EVICT_count, 0,             0
 L1_DATA_EVICT_total_count, 0,             0
@@ -39,8 +39,8 @@ PREF_SEND_TO_MEM_REQ_FAIL_total_count, 438,             0
 HIT_TRAIN_STREAM_count, 439,         19199
 HIT_TRAIN_STREAM_total_count, 439,         19199
 
-MISS_TRAIN_STREAM_count, 439,            16
-MISS_TRAIN_STREAM_total_count, 439,            16
+MISS_TRAIN_STREAM_count, 439,            17
+MISS_TRAIN_STREAM_total_count, 439,            17
 
 STREAM_TRAIN_CREATE_count, 0,             8
 STREAM_TRAIN_CREATE_total_count, 0,             8

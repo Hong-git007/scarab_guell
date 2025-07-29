@@ -2,7 +2,7 @@
 #include "fill_buffer.h"
 #include "core.param.h"
 #include "globals/assert.h"
-//#include "log/dependency_chain_log.h"
+#include "log/dependency_chain_log.h"
 #include <string.h>
 #include <stdbool.h>
 
@@ -39,57 +39,79 @@ static bool has_logical_dependency(Retired_Op_Info* current_op, Retired_Op_Info*
     return false;
 }
 
-void add_dependency_chain(uns proc_id, Op* h2p_op) {
+// Refactored function that only depends on proc_id
+void add_dependency_chain(uns proc_id) {
     ASSERT(proc_id < NUM_CORES, "proc_id out of bounds\n");
     
     Fill_Buffer* fb = retired_fill_buffers[proc_id];
-    if (!fb || fb->count < 2) return; // Need at least 2 ops to form a dependency
+    if (!fb || fb->count < 1) return;
 
-    // Find an entry in the dependency cache
+    int h2p_op_idx = fb->tail;
+    Retired_Op_Info* current_op_in_chain = &fb->entries[h2p_op_idx];
+
     Dependency_Chain_Cache_Entry* cache = dependency_chain_caches[proc_id];
-    int entry_index = h2p_op->inst_info->addr % DEPENDENCY_CHAIN_CACHE_SIZE;
+    int entry_index = current_op_in_chain->pc % DEPENDENCY_CHAIN_CACHE_SIZE;
     Dependency_Chain_Cache_Entry* entry = &cache[entry_index];
 
     entry->is_valid = TRUE;
-    entry->h2p_branch_pc = h2p_op->inst_info->addr;
-    entry->h2p_branch_op_num = h2p_op->op_num;
+    entry->h2p_branch_pc = current_op_in_chain->pc;
+    entry->h2p_branch_op_num = current_op_in_chain->op_num;
     entry->chain_length = 0;
 
-    // Start with the h2p_op itself, which is the last one added to the fill buffer
-    int h2p_op_idx = (fb->tail - 1 + fb->size) % fb->size;
-    Retired_Op_Info* current_op_in_chain = &fb->entries[h2p_op_idx];
-
-    // Add h2p_op to the chain as the first element
     Chain_Op_Info* chain_op = &entry->chain[entry->chain_length++];
     chain_op->op_num = current_op_in_chain->op_num;
     chain_op->pc = current_op_in_chain->pc;
-    chain_op->op_type = current_op_in_chain->inst_info->table_info->op_type;
+    chain_op->is_h2p = current_op_in_chain->hbt_pred_is_hard;
 
-    // Traverse the fill buffer backwards from the op before h2p_op
+    if (current_op_in_chain->table_info) {
+        chain_op->op_type = current_op_in_chain->table_info->op_type;
+        chain_op->cf_type = current_op_in_chain->cf_type;
+        chain_op->num_dests = current_op_in_chain->num_dest_regs;
+        chain_op->num_srcs = current_op_in_chain->num_src_regs;
+        memcpy(chain_op->dests, current_op_in_chain->dst_reg_id, current_op_in_chain->num_dest_regs * sizeof(Reg_Info));
+        memcpy(chain_op->srcs, current_op_in_chain->src_reg_id, current_op_in_chain->num_src_regs * sizeof(Reg_Info));
+    } else {
+        chain_op->op_type = OP_INV;
+        chain_op->num_dests = 0;
+        chain_op->num_srcs = 0;
+    }
+
+    if (fb->count < 2) {
+        log_dependency_chain_entry(proc_id, entry, cycle_count);
+        return;
+    }
+
     int current_idx = (h2p_op_idx - 1 + fb->size) % fb->size;
     for (int i = 0; i < fb->count - 1 && entry->chain_length < MAX_CHAIN_LENGTH; ++i) {
         Retired_Op_Info* prev_op = &fb->entries[current_idx];
 
         if (has_logical_dependency(current_op_in_chain, prev_op)) {
-            // Add prev_op to the chain
             chain_op = &entry->chain[entry->chain_length++];
             chain_op->op_num = prev_op->op_num;
             chain_op->pc = prev_op->pc;
-            chain_op->op_type = prev_op->inst_info->table_info->op_type;
-            
-            // The new "current" op for the next dependency check is the one we just added
+            chain_op->is_h2p = prev_op->hbt_pred_is_hard;
+            if (prev_op->table_info) {
+                chain_op->op_type = prev_op->table_info->op_type;
+                chain_op->num_dests = prev_op->num_dest_regs;
+                chain_op->num_srcs = prev_op->num_src_regs;
+                chain_op->cf_type = prev_op->cf_type;
+                memcpy(chain_op->dests, prev_op->dst_reg_id, prev_op->num_dest_regs * sizeof(Reg_Info));
+                memcpy(chain_op->srcs, prev_op->src_reg_id, prev_op->num_src_regs * sizeof(Reg_Info));
+            } else {
+                chain_op->op_type = OP_INV;
+                chain_op->num_dests = 0;
+                chain_op->num_srcs = 0;
+            }
             current_op_in_chain = prev_op;
         }
-
-        // Move to the previous element in the circular buffer
         current_idx = (current_idx - 1 + fb->size) % fb->size;
     }
-    // Reverse the chain to have it in program order
-    for(int i=0; i < entry->chain_length / 2; ++i) {
+
+    for(int i = 0; i < entry->chain_length / 2; ++i) {
         Chain_Op_Info temp = entry->chain[i];
         entry->chain[i] = entry->chain[entry->chain_length - 1 - i];
         entry->chain[entry->chain_length - 1 - i] = temp;
     }
 
-    //log_dependency_chain_entry(proc_id, entry);
+    log_dependency_chain_entry(proc_id, entry, cycle_count);
 }
