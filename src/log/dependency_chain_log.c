@@ -43,6 +43,12 @@ static char* disasm_cached_op(Chain_Op_Info* op) {
     for (int j = 0; j < op->num_srcs; j++) {
         i += sprintf(&buf[i], "r%u(%s)%s", op->srcs[j].id, reg_names[op->srcs[j].id], (j == op->num_srcs - 1) ? "" : ",");
     }
+    if (op->mem_type == MEM_LD && op->mem_size > 0) {
+      i += sprintf(&buf[i], " %d@%08x", op->mem_size, (int)op->va);
+    }
+    if (op->mem_type == MEM_ST && op->mem_size > 0) {
+      i += sprintf(&buf[i], " %d@%08x", op->mem_size, (int)op->va);
+    }
     
     buf[i] = '\0';
     return buf;
