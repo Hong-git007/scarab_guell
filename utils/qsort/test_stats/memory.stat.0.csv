@@ -1,10 +1,10 @@
 Core, 0, 0
-Cumulative_Cycles, 0, 3018465             
+Cumulative_Cycles, 0, 3018574             
 Cumulative_Instructions, 0, 5000002             
-Periodic_Cycles, 0, 3018465             
+Periodic_Cycles, 0, 3018574             
 Periodic_Instructions, 0, 5000002             
-ICACHE_MISS_count, 186,            10
-ICACHE_MISS_total_count, 186,            10
+ICACHE_MISS_count, 186,            15
+ICACHE_MISS_total_count, 186,            15
 
 ICACHE_HIT_count, 186,            88
 ICACHE_HIT_total_count, 186,            88
@@ -12,8 +12,8 @@ ICACHE_HIT_total_count, 186,            88
 ICACHE_MISS_ONPATH_count, 187,             5
 ICACHE_MISS_ONPATH_total_count, 187,             5
 
-ICACHE_MISS_OFFPATH_count, 187,             5
-ICACHE_MISS_OFFPATH_total_count, 187,             5
+ICACHE_MISS_OFFPATH_count, 187,            10
+ICACHE_MISS_OFFPATH_total_count, 187,            10
 
 ICACHE_MISS_NOT_PREFETCHED_count, 188,             0
 ICACHE_MISS_NOT_PREFETCHED_total_count, 188,             0
@@ -24,8 +24,8 @@ ICACHE_MISS_PREFETCHED_AND_EVICTED_BY_IFETCH_total_count, 188,             0
 ICACHE_MISS_PREFETCHED_AND_EVICTED_BY_FDIP_count, 188,             0
 ICACHE_MISS_PREFETCHED_AND_EVICTED_BY_FDIP_total_count, 188,             0
 
-ICACHE_MISS_MSHR_HIT_PREFETCHED_OFFPATH_count, 188,             5
-ICACHE_MISS_MSHR_HIT_PREFETCHED_OFFPATH_total_count, 188,             5
+ICACHE_MISS_MSHR_HIT_PREFETCHED_OFFPATH_count, 188,            10
+ICACHE_MISS_MSHR_HIT_PREFETCHED_OFFPATH_total_count, 188,            10
 
 ICACHE_MISS_MSHR_HIT_PREFETCHED_ONPATH_count, 188,             5
 ICACHE_MISS_MSHR_HIT_PREFETCHED_ONPATH_total_count, 188,             5
@@ -57,8 +57,8 @@ ICACHE_HIT_BY_FDIP_OFFPATH_total_count, 192,             4
 ICACHE_MISS_MSHR_HIT_BY_FDIP_ONPATH_count, 193,             1
 ICACHE_MISS_MSHR_HIT_BY_FDIP_ONPATH_total_count, 193,             1
 
-ICACHE_MISS_MSHR_HIT_BY_FDIP_OFFPATH_count, 193,             9
-ICACHE_MISS_MSHR_HIT_BY_FDIP_OFFPATH_total_count, 193,             9
+ICACHE_MISS_MSHR_HIT_BY_FDIP_OFFPATH_count, 193,            14
+ICACHE_MISS_MSHR_HIT_BY_FDIP_OFFPATH_total_count, 193,            14
 
 ICACHE_HIT_ONPATH_BY_FDIP_count, 194,             4
 ICACHE_HIT_ONPATH_BY_FDIP_total_count, 194,             4
@@ -69,8 +69,8 @@ ICACHE_HIT_OFFPATH_BY_FDIP_total_count, 194,            43
 ICACHE_MISS_MSHR_HIT_ONPATH_BY_FDIP_count, 194,             5
 ICACHE_MISS_MSHR_HIT_ONPATH_BY_FDIP_total_count, 194,             5
 
-ICACHE_MISS_MSHR_HIT_OFFPATH_BY_FDIP_count, 194,             5
-ICACHE_MISS_MSHR_HIT_OFFPATH_BY_FDIP_total_count, 194,             5
+ICACHE_MISS_MSHR_HIT_OFFPATH_BY_FDIP_count, 194,            10
+ICACHE_MISS_MSHR_HIT_OFFPATH_BY_FDIP_total_count, 194,            10
 
 ICACHE_MISS_TOO_EARLY_ONPATH_count, 194,             0
 ICACHE_MISS_TOO_EARLY_ONPATH_total_count, 194,             0
@@ -108,14 +108,14 @@ FT_UOP_CACHE_MISS_ICACHE_HIT_ON_PATH_total_count, 196,            29
 FT_UOP_CACHE_MISS_ICACHE_MISS_ON_PATH_count, 196,             5
 FT_UOP_CACHE_MISS_ICACHE_MISS_ON_PATH_total_count, 196,             5
 
-FT_UOP_CACHE_HIT_OFF_PATH_count, 197,       1268688
-FT_UOP_CACHE_HIT_OFF_PATH_total_count, 197,       1268688
+FT_UOP_CACHE_HIT_OFF_PATH_count, 197,       1268695
+FT_UOP_CACHE_HIT_OFF_PATH_total_count, 197,       1268695
 
 FT_UOP_CACHE_MISS_ICACHE_HIT_OFF_PATH_count, 197,            59
 FT_UOP_CACHE_MISS_ICACHE_HIT_OFF_PATH_total_count, 197,            59
 
-FT_UOP_CACHE_MISS_ICACHE_MISS_OFF_PATH_count, 197,             5
-FT_UOP_CACHE_MISS_ICACHE_MISS_OFF_PATH_total_count, 197,             5
+FT_UOP_CACHE_MISS_ICACHE_MISS_OFF_PATH_count, 197,            10
+FT_UOP_CACHE_MISS_ICACHE_MISS_OFF_PATH_total_count, 197,            10
 
 UOPS_SERVED_BY_ICACHE_ON_PATH_count, 198,           193
 UOPS_SERVED_BY_ICACHE_ON_PATH_total_count, 198,           193
@@ -123,11 +123,11 @@ UOPS_SERVED_BY_ICACHE_ON_PATH_total_count, 198,           193
 UOPS_SERVED_BY_UOP_CACHE_ON_PATH_count, 198,       6538969
 UOPS_SERVED_BY_UOP_CACHE_ON_PATH_total_count, 198,       6538969
 
-UOPS_SERVED_BY_ICACHE_OFF_PATH_count, 199,          1131
-UOPS_SERVED_BY_ICACHE_OFF_PATH_total_count, 199,          1131
+UOPS_SERVED_BY_ICACHE_OFF_PATH_count, 199,          1237
+UOPS_SERVED_BY_ICACHE_OFF_PATH_total_count, 199,          1237
 
-UOPS_SERVED_BY_UOP_CACHE_OFF_PATH_count, 199,       5226456
-UOPS_SERVED_BY_UOP_CACHE_OFF_PATH_total_count, 199,       5226456
+UOPS_SERVED_BY_UOP_CACHE_OFF_PATH_count, 199,       5226479
+UOPS_SERVED_BY_UOP_CACHE_OFF_PATH_total_count, 199,       5226479
 
 UOP_CACHE_FT_INSERTED_ONPATH_USED_ONPATH_count, 0,            16
 UOP_CACHE_FT_INSERTED_ONPATH_USED_ONPATH_total_count, 0,            16
@@ -165,8 +165,8 @@ UOP_CACHE_FT_INSERT_FAILED_FT_TOO_BIG_OFF_PATH_total_count, 201,             0
 UOP_CACHE_FT_INSERT_CONFLICTED_SHORT_REUSE_OFF_PATH_count, 201,             3
 UOP_CACHE_FT_INSERT_CONFLICTED_SHORT_REUSE_OFF_PATH_total_count, 201,             3
 
-UOP_CACHE_FT_INSERT_SUCCEEDED_OFF_PATH_count, 201,            43
-UOP_CACHE_FT_INSERT_SUCCEEDED_OFF_PATH_total_count, 201,            43
+UOP_CACHE_FT_INSERT_SUCCEEDED_OFF_PATH_count, 201,            48
+UOP_CACHE_FT_INSERT_SUCCEEDED_OFF_PATH_total_count, 201,            48
 
 UOP_CACHE_LINE_INSERT_FAILED_INST_TOO_BIG_ON_PATH_count, 202,             0
 UOP_CACHE_LINE_INSERT_FAILED_INST_TOO_BIG_ON_PATH_total_count, 202,             0
@@ -189,8 +189,8 @@ UOP_CACHE_LINE_INSERT_FAILED_FT_TOO_BIG_OFF_PATH_total_count, 203,             0
 UOP_CACHE_LINE_INSERT_CONFLICTED_SHORT_REUSE_OFF_PATH_count, 203,             3
 UOP_CACHE_LINE_INSERT_CONFLICTED_SHORT_REUSE_OFF_PATH_total_count, 203,             3
 
-UOP_CACHE_LINE_INSERT_SUCCEEDED_OFF_PATH_count, 203,           115
-UOP_CACHE_LINE_INSERT_SUCCEEDED_OFF_PATH_total_count, 203,           115
+UOP_CACHE_LINE_INSERT_SUCCEEDED_OFF_PATH_count, 203,           130
+UOP_CACHE_LINE_INSERT_SUCCEEDED_OFF_PATH_total_count, 203,           130
 
 RECOVER_AT_DECODE_BR_FROM_UOC_count, 0,             1
 RECOVER_AT_DECODE_BR_FROM_UOC_total_count, 0,             1
@@ -240,8 +240,8 @@ UOP_CACHE_FT_LINES_1_OFF_PATH_total_count, 206,             9
 UOP_CACHE_FT_LINES_2_OFF_PATH_count, 206,             2
 UOP_CACHE_FT_LINES_2_OFF_PATH_total_count, 206,             2
 
-UOP_CACHE_FT_LINES_3_OFF_PATH_count, 206,            35
-UOP_CACHE_FT_LINES_3_OFF_PATH_total_count, 206,            35
+UOP_CACHE_FT_LINES_3_OFF_PATH_count, 206,            40
+UOP_CACHE_FT_LINES_3_OFF_PATH_total_count, 206,            40
 
 UOP_CACHE_FT_LINES_4_OFF_PATH_count, 206,             0
 UOP_CACHE_FT_LINES_4_OFF_PATH_total_count, 206,             0
@@ -333,20 +333,20 @@ UOP_CACHE_PREFETCH_PW_LENGTH_23_total_count, 207,             0
 UOP_CACHE_PREFETCH_PW_LENGTH_24_count, 207,             0
 UOP_CACHE_PREFETCH_PW_LENGTH_24_total_count, 207,             0
 
-DCACHE_MISS_count, 208,        120864
-DCACHE_MISS_total_count, 208,        120864
+DCACHE_MISS_count, 208,        120860
+DCACHE_MISS_total_count, 208,        120860
 
 DCACHE_ST_BUFFER_HIT_count, 208,             5
 DCACHE_ST_BUFFER_HIT_total_count, 208,             5
 
-DCACHE_HIT_count, 208,       1555405
-DCACHE_HIT_total_count, 208,       1555405
+DCACHE_HIT_count, 208,       1555409
+DCACHE_HIT_total_count, 208,       1555409
 
-DCACHE_MISS_ONPATH_count, 209,        120864
-DCACHE_MISS_ONPATH_total_count, 209,        120864
+DCACHE_MISS_ONPATH_count, 209,        120860
+DCACHE_MISS_ONPATH_total_count, 209,        120860
 
-DCACHE_MISS_OFFPATH_count, 209,        166407
-DCACHE_MISS_OFFPATH_total_count, 209,        166407
+DCACHE_MISS_OFFPATH_count, 209,        166411
+DCACHE_MISS_OFFPATH_total_count, 209,        166411
 
 DCACHE_ST_BUFFER_HIT_ONPATH_count, 210,             5
 DCACHE_ST_BUFFER_HIT_ONPATH_total_count, 210,             5
@@ -354,8 +354,8 @@ DCACHE_ST_BUFFER_HIT_ONPATH_total_count, 210,             5
 DCACHE_ST_BUFFER_HIT_OFFPATH_count, 210,             1
 DCACHE_ST_BUFFER_HIT_OFFPATH_total_count, 210,             1
 
-DCACHE_HIT_ONPATH_count, 211,       1555405
-DCACHE_HIT_ONPATH_total_count, 211,       1555405
+DCACHE_HIT_ONPATH_count, 211,       1555409
+DCACHE_HIT_ONPATH_total_count, 211,       1555409
 
 DCACHE_HIT_OFFPATH_count, 211,       1065294
 DCACHE_HIT_OFFPATH_total_count, 211,       1065294
@@ -363,8 +363,8 @@ DCACHE_HIT_OFFPATH_total_count, 211,       1065294
 DCACHE_HIT_ONPATH_SAT_BY_OFFPATH_count, 212,          1207
 DCACHE_HIT_ONPATH_SAT_BY_OFFPATH_total_count, 212,          1207
 
-DCACHE_HIT_ONPATH_SAT_BY_ONPATH_count, 212,       1554198
-DCACHE_HIT_ONPATH_SAT_BY_ONPATH_total_count, 212,       1554198
+DCACHE_HIT_ONPATH_SAT_BY_ONPATH_count, 212,       1554202
+DCACHE_HIT_ONPATH_SAT_BY_ONPATH_total_count, 212,       1554202
 
 DCACHE_HIT_OFFPATH_SAT_BY_OFFPATH_count, 213,         12479
 DCACHE_HIT_OFFPATH_SAT_BY_OFFPATH_total_count, 213,         12479
@@ -375,23 +375,23 @@ DCACHE_HIT_OFFPATH_SAT_BY_ONPATH_total_count, 213,       1052815
 DCACHE_MISS_LD_count, 214,        120831
 DCACHE_MISS_LD_total_count, 214,        120831
 
-DCACHE_MISS_ST_count, 214,            33
-DCACHE_MISS_ST_total_count, 214,            33
+DCACHE_MISS_ST_count, 214,            29
+DCACHE_MISS_ST_total_count, 214,            29
 
 DCACHE_MISS_LD_ONPATH_count, 215,        120831
 DCACHE_MISS_LD_ONPATH_total_count, 215,        120831
 
-DCACHE_MISS_LD_OFFPATH_count, 215,        108776
-DCACHE_MISS_LD_OFFPATH_total_count, 215,        108776
+DCACHE_MISS_LD_OFFPATH_count, 215,        108780
+DCACHE_MISS_LD_OFFPATH_total_count, 215,        108780
 
-DCACHE_MISS_ST_ONPATH_count, 216,            33
-DCACHE_MISS_ST_ONPATH_total_count, 216,            33
+DCACHE_MISS_ST_ONPATH_count, 216,            29
+DCACHE_MISS_ST_ONPATH_total_count, 216,            29
 
 DCACHE_MISS_ST_OFFPATH_count, 216,         57631
 DCACHE_MISS_ST_OFFPATH_total_count, 216,         57631
 
-DCACHE_MISS_WAITMEM_count, 0,             0
-DCACHE_MISS_WAITMEM_total_count, 0,             0
+DCACHE_MISS_WAITMEM_count, 0,           202
+DCACHE_MISS_WAITMEM_total_count, 0,           202
 
 MEM_REQ_ROW_BUFFER_HITS_count, 217,             0
 MEM_REQ_ROW_BUFFER_HITS_total_count, 217,             0
@@ -518,8 +518,8 @@ RAMULATOR_QUEUE_ENQUEUED_total_count, 0,             0
 RAMULATOR_QUEUE_FULL_count, 0,             0
 RAMULATOR_QUEUE_FULL_total_count, 0,             0
 
-BUS_DEMAND_ACCESS_count, 0,           106
-BUS_DEMAND_ACCESS_total_count, 0,           106
+BUS_DEMAND_ACCESS_count, 0,           107
+BUS_DEMAND_ACCESS_total_count, 0,           107
 
 BUS_PREF_ACCESS_count, 0,         19227
 BUS_PREF_ACCESS_total_count, 0,         19227
@@ -527,44 +527,44 @@ BUS_PREF_ACCESS_total_count, 0,         19227
 BUS_ACCESS_count, 0,             0
 BUS_ACCESS_total_count, 0,             0
 
-L1_DEMAND_ACCESS_count, 0,         46414
-L1_DEMAND_ACCESS_total_count, 0,         46414
+L1_DEMAND_ACCESS_count, 0,         46409
+L1_DEMAND_ACCESS_total_count, 0,         46409
 
-L1_PREF_ACCESS_count, 0,         38976
-L1_PREF_ACCESS_total_count, 0,         38976
+L1_PREF_ACCESS_count, 0,         38988
+L1_PREF_ACCESS_total_count, 0,         38988
 
-L1_ACCESS_count, 0,         62216
-L1_ACCESS_total_count, 0,         62216
+L1_ACCESS_count, 0,         62225
+L1_ACCESS_total_count, 0,         62225
 
-MLC_DEMAND_ACCESS_count, 0,         34189
-MLC_DEMAND_ACCESS_total_count, 0,         34189
+MLC_DEMAND_ACCESS_count, 0,         34190
+MLC_DEMAND_ACCESS_total_count, 0,         34190
 
-MLC_PREF_ACCESS_count, 0,            85
-MLC_PREF_ACCESS_total_count, 0,            85
+MLC_PREF_ACCESS_count, 0,            87
+MLC_PREF_ACCESS_total_count, 0,            87
 
-MLC_ACCESS_count, 0,         34274
-MLC_ACCESS_total_count, 0,         34274
+MLC_ACCESS_count, 0,         34277
+MLC_ACCESS_total_count, 0,         34277
 
 L1_HIT_count, 220,         19195
 L1_HIT_total_count, 220,         19195
 
-L1_MISS_count, 220,            22
-L1_MISS_total_count, 220,            22
+L1_MISS_count, 220,            21
+L1_MISS_total_count, 220,            21
 
-L1_HIT_ALL_count, 221,         23142
-L1_HIT_ALL_total_count, 221,         23142
+L1_HIT_ALL_count, 221,         23140
+L1_HIT_ALL_total_count, 221,         23140
 
-L1_MISS_ALL_count, 221,         19333
-L1_MISS_ALL_total_count, 221,         19333
+L1_MISS_ALL_count, 221,         19334
+L1_MISS_ALL_total_count, 221,         19334
 
-L1_DEMAND_MISS_count, 222,            22
-L1_DEMAND_MISS_total_count, 222,            22
+L1_DEMAND_MISS_count, 222,            21
+L1_DEMAND_MISS_total_count, 222,            21
 
 L1_PREF_REQ_MISS_count, 222,         19227
 L1_PREF_REQ_MISS_total_count, 222,         19227
 
-L1_WB_MISS_count, 222,            84
-L1_WB_MISS_total_count, 222,            84
+L1_WB_MISS_count, 222,            86
+L1_WB_MISS_total_count, 222,            86
 
 L1_DEMAND_HIT_count, 223,         19195
 L1_DEMAND_HIT_total_count, 223,         19195
@@ -572,20 +572,20 @@ L1_DEMAND_HIT_total_count, 223,         19195
 L1_PREF_REQ_HIT_count, 223,             0
 L1_PREF_REQ_HIT_total_count, 223,             0
 
-L1_WB_HIT_count, 223,          3947
-L1_WB_HIT_total_count, 223,          3947
+L1_WB_HIT_count, 223,          3945
+L1_WB_HIT_total_count, 223,          3945
 
-L1_MISS_ONPATH_count, 224,            16
-L1_MISS_ONPATH_total_count, 224,            16
+L1_MISS_ONPATH_count, 224,            15
+L1_MISS_ONPATH_total_count, 224,            15
 
 L1_MISS_OFFPATH_count, 224,             6
 L1_MISS_OFFPATH_total_count, 224,             6
 
-L1_MISS_ALL_ONPATH_count, 225,         19243
-L1_MISS_ALL_ONPATH_total_count, 225,         19243
+L1_MISS_ALL_ONPATH_count, 225,         19242
+L1_MISS_ALL_ONPATH_total_count, 225,         19242
 
-L1_MISS_ALL_OFFPATH_count, 225,            90
-L1_MISS_ALL_OFFPATH_total_count, 225,            90
+L1_MISS_ALL_OFFPATH_count, 225,            92
+L1_MISS_ALL_OFFPATH_total_count, 225,            92
 
 L1_HIT_ONPATH_count, 226,         17991
 L1_HIT_ONPATH_total_count, 226,         17991
@@ -593,8 +593,8 @@ L1_HIT_ONPATH_total_count, 226,         17991
 L1_HIT_OFFPATH_count, 226,          1204
 L1_HIT_OFFPATH_total_count, 226,          1204
 
-L1_HIT_ALL_ONPATH_count, 227,         21938
-L1_HIT_ALL_ONPATH_total_count, 227,         21938
+L1_HIT_ALL_ONPATH_count, 227,         21936
+L1_HIT_ALL_ONPATH_total_count, 227,         21936
 
 L1_HIT_ALL_OFFPATH_count, 227,          1204
 L1_HIT_ALL_OFFPATH_total_count, 227,          1204
@@ -602,8 +602,8 @@ L1_HIT_ALL_OFFPATH_total_count, 227,          1204
 L1_HIT_ONPATH_SAT_BY_OFFPATH_count, 228,             0
 L1_HIT_ONPATH_SAT_BY_OFFPATH_total_count, 228,             0
 
-L1_HIT_ONPATH_SAT_BY_ONPATH_count, 228,         21938
-L1_HIT_ONPATH_SAT_BY_ONPATH_total_count, 228,         21938
+L1_HIT_ONPATH_SAT_BY_ONPATH_count, 228,         21936
+L1_HIT_ONPATH_SAT_BY_ONPATH_total_count, 228,         21936
 
 L1_HIT_OFFPATH_SAT_BY_OFFPATH_count, 229,             0
 L1_HIT_OFFPATH_SAT_BY_OFFPATH_total_count, 229,             0
@@ -629,8 +629,8 @@ L1_FILL_OFFPATH_IFETCH_total_count, 0,             0
 L1_FILL_OFFPATH_DATA_count, 0,             5
 L1_FILL_OFFPATH_DATA_total_count, 0,             5
 
-L1_FILL_OFFPATH_count, 0,            89
-L1_FILL_OFFPATH_total_count, 0,            89
+L1_FILL_OFFPATH_count, 0,            91
+L1_FILL_OFFPATH_total_count, 0,            91
 
 L1_USE_OFFPATH_IFETCH_count, 0,             6
 L1_USE_OFFPATH_IFETCH_pct, 0,          inf
@@ -643,23 +643,23 @@ L1_USE_OFFPATH_DATA_total_count, 0,             5
 L1_USE_OFFPATH_DATA_total_pct, 0,        1.000
 
 L1_USE_OFFPATH_count, 0,            11
-L1_USE_OFFPATH_pct, 0,        0.124
+L1_USE_OFFPATH_pct, 0,        0.121
 L1_USE_OFFPATH_total_count, 0,            11
-L1_USE_OFFPATH_total_pct, 0,        0.124
+L1_USE_OFFPATH_total_pct, 0,        0.121
 
 JUST_L1_USE_OFFPATH_count, 0,             5
-JUST_L1_USE_OFFPATH_pct, 0,        0.056
+JUST_L1_USE_OFFPATH_pct, 0,        0.055
 JUST_L1_USE_OFFPATH_total_count, 0,             5
-JUST_L1_USE_OFFPATH_total_pct, 0,        0.056
+JUST_L1_USE_OFFPATH_total_pct, 0,        0.055
 
 L1_FILL_ONPATH_IFETCH_count, 0,             1
 L1_FILL_ONPATH_IFETCH_total_count, 0,             1
 
-L1_FILL_ONPATH_DATA_count, 0,            16
-L1_FILL_ONPATH_DATA_total_count, 0,            16
+L1_FILL_ONPATH_DATA_count, 0,            15
+L1_FILL_ONPATH_DATA_total_count, 0,            15
 
-L1_FILL_ONPATH_count, 0,            17
-L1_FILL_ONPATH_total_count, 0,            17
+L1_FILL_ONPATH_count, 0,            16
+L1_FILL_ONPATH_total_count, 0,            16
 
 L1_USE_ONPATH_IFETCH_count, 0,             0
 L1_USE_ONPATH_IFETCH_pct, 0,        0.000
@@ -667,85 +667,85 @@ L1_USE_ONPATH_IFETCH_total_count, 0,             0
 L1_USE_ONPATH_IFETCH_total_pct, 0,        0.000
 
 L1_USE_ONPATH_DATA_count, 0,         17991
-L1_USE_ONPATH_DATA_pct, 0,     1124.438
+L1_USE_ONPATH_DATA_pct, 0,     1199.400
 L1_USE_ONPATH_DATA_total_count, 0,         17991
-L1_USE_ONPATH_DATA_total_pct, 0,     1124.438
+L1_USE_ONPATH_DATA_total_pct, 0,     1199.400
 
-L1_USE_ONPATH_count, 0,         21938
-L1_USE_ONPATH_pct, 0,     1290.471
-L1_USE_ONPATH_total_count, 0,         21938
-L1_USE_ONPATH_total_pct, 0,     1290.471
+L1_USE_ONPATH_count, 0,         21936
+L1_USE_ONPATH_pct, 0,     1371.000
+L1_USE_ONPATH_total_count, 0,         21936
+L1_USE_ONPATH_total_pct, 0,     1371.000
 
-L1_CYCLE_count, 0,       3018465
-L1_CYCLE_total_count, 0,       3018465
+L1_CYCLE_count, 0,       3018574
+L1_CYCLE_total_count, 0,       3018574
 
-L1_LINES_count, 0,   29246328164
-L1_LINES_pct, 0,     9689.139
-L1_LINES_total_count, 0,   29246328164
-L1_LINES_total_pct, 0,     9689.139
+L1_LINES_count, 0,   29253096539
+L1_LINES_pct, 0,     9691.032
+L1_LINES_total_count, 0,   29253096539
+L1_LINES_total_pct, 0,     9691.032
 
-MLC_HIT_count, 232,             0
-MLC_HIT_total_count, 232,             0
+MLC_HIT_count, 232,             3
+MLC_HIT_total_count, 232,             3
 
-MLC_MISS_count, 232,         19217
-MLC_MISS_total_count, 232,         19217
+MLC_MISS_count, 232,         19216
+MLC_MISS_total_count, 232,         19216
 
-MLC_HIT_ALL_count, 233,         14973
-MLC_HIT_ALL_total_count, 233,         14973
+MLC_HIT_ALL_count, 233,         14975
+MLC_HIT_ALL_total_count, 233,         14975
 
-MLC_MISS_ALL_count, 233,         19301
-MLC_MISS_ALL_total_count, 233,         19301
+MLC_MISS_ALL_count, 233,         19302
+MLC_MISS_ALL_total_count, 233,         19302
 
-MLC_DEMAND_MISS_count, 234,         19217
-MLC_DEMAND_MISS_total_count, 234,         19217
+MLC_DEMAND_MISS_count, 234,         19216
+MLC_DEMAND_MISS_total_count, 234,         19216
 
 MLC_PREF_REQ_MISS_count, 234,             0
 MLC_PREF_REQ_MISS_total_count, 234,             0
 
-MLC_WB_MISS_count, 234,            84
-MLC_WB_MISS_total_count, 234,            84
+MLC_WB_MISS_count, 234,            86
+MLC_WB_MISS_total_count, 234,            86
 
-MLC_DEMAND_HIT_count, 235,             0
-MLC_DEMAND_HIT_total_count, 235,             0
+MLC_DEMAND_HIT_count, 235,             3
+MLC_DEMAND_HIT_total_count, 235,             3
 
 MLC_PREF_REQ_HIT_count, 235,             0
 MLC_PREF_REQ_HIT_total_count, 235,             0
 
-MLC_WB_HIT_count, 235,         14973
-MLC_WB_HIT_total_count, 235,         14973
+MLC_WB_HIT_count, 235,         14972
+MLC_WB_HIT_total_count, 235,         14972
 
-MLC_MISS_ONPATH_count, 236,         14521
-MLC_MISS_ONPATH_total_count, 236,         14521
+MLC_MISS_ONPATH_count, 236,         14520
+MLC_MISS_ONPATH_total_count, 236,         14520
 
 MLC_MISS_OFFPATH_count, 236,          4696
 MLC_MISS_OFFPATH_total_count, 236,          4696
 
-MLC_MISS_ALL_ONPATH_count, 237,         14521
-MLC_MISS_ALL_ONPATH_total_count, 237,         14521
+MLC_MISS_ALL_ONPATH_count, 237,         14520
+MLC_MISS_ALL_ONPATH_total_count, 237,         14520
 
-MLC_MISS_ALL_OFFPATH_count, 237,          4780
-MLC_MISS_ALL_OFFPATH_total_count, 237,          4780
+MLC_MISS_ALL_OFFPATH_count, 237,          4782
+MLC_MISS_ALL_OFFPATH_total_count, 237,          4782
 
 MLC_HIT_ONPATH_count, 238,             0
 MLC_HIT_ONPATH_total_count, 238,             0
 
-MLC_HIT_OFFPATH_count, 238,             0
-MLC_HIT_OFFPATH_total_count, 238,             0
+MLC_HIT_OFFPATH_count, 238,             3
+MLC_HIT_OFFPATH_total_count, 238,             3
 
-MLC_HIT_ALL_ONPATH_count, 239,         14973
-MLC_HIT_ALL_ONPATH_total_count, 239,         14973
+MLC_HIT_ALL_ONPATH_count, 239,         14972
+MLC_HIT_ALL_ONPATH_total_count, 239,         14972
 
-MLC_HIT_ALL_OFFPATH_count, 239,             0
-MLC_HIT_ALL_OFFPATH_total_count, 239,             0
+MLC_HIT_ALL_OFFPATH_count, 239,             3
+MLC_HIT_ALL_OFFPATH_total_count, 239,             3
 
-L1_QUEUE_OCCUPANCY_count, 0,       1595189
+L1_QUEUE_OCCUPANCY_count, 0,       1595159
 L1_QUEUE_OCCUPANCY_pct, 0,        0.528
-L1_QUEUE_OCCUPANCY_total_count, 0,       1595189
+L1_QUEUE_OCCUPANCY_total_count, 0,       1595159
 L1_QUEUE_OCCUPANCY_total_pct, 0,        0.528
 
-MLC_QUEUE_OCCUPANCY_count, 0,       1552714
+MLC_QUEUE_OCCUPANCY_count, 0,       1552685
 MLC_QUEUE_OCCUPANCY_pct, 0,        0.514
-MLC_QUEUE_OCCUPANCY_total_count, 0,       1552714
+MLC_QUEUE_OCCUPANCY_total_count, 0,       1552685
 MLC_QUEUE_OCCUPANCY_total_pct, 0,        0.514
 
 DCACHE_FILL_PORT_UNAVAILABLE_ONPATH_count, 0,             0
@@ -754,29 +754,29 @@ DCACHE_FILL_PORT_UNAVAILABLE_ONPATH_total_count, 0,             0
 DCACHE_FILL_PORT_UNAVAILABLE_OFFPATH_count, 0,             0
 DCACHE_FILL_PORT_UNAVAILABLE_OFFPATH_total_count, 0,             0
 
-DCACHE_FILL_OFFPATH_count, 0,          1207
-DCACHE_FILL_OFFPATH_total_count, 0,          1207
+DCACHE_FILL_OFFPATH_count, 0,          1210
+DCACHE_FILL_OFFPATH_total_count, 0,          1210
 
 DCACHE_USE_OFFPATH_count, 0,          1207
-DCACHE_USE_OFFPATH_pct, 0,        1.000
+DCACHE_USE_OFFPATH_pct, 0,        0.998
 DCACHE_USE_OFFPATH_total_count, 0,          1207
-DCACHE_USE_OFFPATH_total_pct, 0,        1.000
+DCACHE_USE_OFFPATH_total_pct, 0,        0.998
 
-DCACHE_FILL_ONPATH_count, 0,         18009
-DCACHE_FILL_ONPATH_total_count, 0,         18009
+DCACHE_FILL_ONPATH_count, 0,         18008
+DCACHE_FILL_ONPATH_total_count, 0,         18008
 
-DCACHE_USE_ONPATH_count, 0,       1554198
-DCACHE_USE_ONPATH_pct, 0,       86.301
-DCACHE_USE_ONPATH_total_count, 0,       1554198
-DCACHE_USE_ONPATH_total_pct, 0,       86.301
+DCACHE_USE_ONPATH_count, 0,       1554202
+DCACHE_USE_ONPATH_pct, 0,       86.306
+DCACHE_USE_ONPATH_total_count, 0,       1554202
+DCACHE_USE_ONPATH_total_pct, 0,       86.306
 
-ICACHE_FILL_OFFPATH_count, 0,            84
-ICACHE_FILL_OFFPATH_total_count, 0,            84
+ICACHE_FILL_OFFPATH_count, 0,            86
+ICACHE_FILL_OFFPATH_total_count, 0,            86
 
 ICACHE_USE_OFFPATH_count, 0,             6
-ICACHE_USE_OFFPATH_pct, 0,        0.071
+ICACHE_USE_OFFPATH_pct, 0,        0.070
 ICACHE_USE_OFFPATH_total_count, 0,             6
-ICACHE_USE_OFFPATH_total_pct, 0,        0.071
+ICACHE_USE_OFFPATH_total_pct, 0,        0.070
 
 ICACHE_FILL_ONPATH_count, 0,             1
 ICACHE_FILL_ONPATH_total_count, 0,             1
@@ -786,16 +786,16 @@ ICACHE_USE_ONPATH_pct, 0,       23.000
 ICACHE_USE_ONPATH_total_count, 0,            23
 ICACHE_USE_ONPATH_total_pct, 0,       23.000
 
-REQBUF_CREATE_ONPATH_count, 0,         52667
-REQBUF_CREATE_ONPATH_total_count, 0,         52667
+REQBUF_CREATE_ONPATH_count, 0,         52663
+REQBUF_CREATE_ONPATH_total_count, 0,         52663
 
 REQBUF_ONPATH_MATCH_OFFPATH_count, 0,          3490
 REQBUF_ONPATH_MATCH_OFFPATH_pct, 0,        0.066
 REQBUF_ONPATH_MATCH_OFFPATH_total_count, 0,          3490
 REQBUF_ONPATH_MATCH_OFFPATH_total_pct, 0,        0.066
 
-REQBUF_CREATE_ONPATH_DATA_count, 0,         14519
-REQBUF_CREATE_ONPATH_DATA_total_count, 0,         14519
+REQBUF_CREATE_ONPATH_DATA_count, 0,         14518
+REQBUF_CREATE_ONPATH_DATA_total_count, 0,         14518
 
 REQBUF_ONPATH_MATCH_OFFPATH_DATA_count, 0,          3490
 REQBUF_ONPATH_MATCH_OFFPATH_DATA_pct, 0,        0.240
@@ -810,8 +810,8 @@ REQBUF_ONPATH_MATCH_OFFPATH_IFETCH_pct, 0,         -nan
 REQBUF_ONPATH_MATCH_OFFPATH_IFETCH_total_count, 0,             0
 REQBUF_ONPATH_MATCH_OFFPATH_IFETCH_total_pct, 0,         -nan
 
-REQBUF_CREATE_OFFPATH_count, 0,          4781
-REQBUF_CREATE_OFFPATH_total_count, 0,          4781
+REQBUF_CREATE_OFFPATH_count, 0,          4786
+REQBUF_CREATE_OFFPATH_total_count, 0,          4786
 
 ONPATH_KICKED_OUT_OFFPATH_count, 0,             0
 ONPATH_KICKED_OUT_OFFPATH_total_count, 0,             0
@@ -840,8 +840,8 @@ DIST_DCACHE_FILL_OFFPATH_NOTUSED_total_count, 241,             0
 DIST_DCACHE_FILL_ONPATH_PARTIAL_count, 241,          3490
 DIST_DCACHE_FILL_ONPATH_PARTIAL_total_count, 241,          3490
 
-DIST_DCACHE_FILL_ONPATH_count, 241,         14519
-DIST_DCACHE_FILL_ONPATH_total_count, 241,         14519
+DIST_DCACHE_FILL_ONPATH_count, 241,         14518
+DIST_DCACHE_FILL_ONPATH_total_count, 241,         14518
 
 DIST_L1_FILL_OFFPATH_USED_count, 242,            11
 DIST_L1_FILL_OFFPATH_USED_total_count, 242,            11
@@ -852,8 +852,8 @@ DIST_L1_FILL_OFFPATH_NOTUSED_total_count, 242,             0
 DIST_L1_FILL_ONPATH_PARTIAL_count, 242,             3
 DIST_L1_FILL_ONPATH_PARTIAL_total_count, 242,             3
 
-DIST_L1_FILL_ONPATH_count, 242,            14
-DIST_L1_FILL_ONPATH_total_count, 242,            14
+DIST_L1_FILL_ONPATH_count, 242,            13
+DIST_L1_FILL_ONPATH_total_count, 242,            13
 
 DIST_JUST_L1_FILL_OFFPATH_USED_count, 243,             0
 DIST_JUST_L1_FILL_OFFPATH_USED_total_count, 243,             0
@@ -873,8 +873,8 @@ DIST_REQBUF_OFFPATH_USED_total_count, 244,          4703
 DIST_REQBUF_OFFPATH_NOTUSED_count, 244,             0
 DIST_REQBUF_OFFPATH_NOTUSED_total_count, 244,             0
 
-DIST_REQBUF_ONPATH_count, 244,         33747
-DIST_REQBUF_ONPATH_total_count, 244,         33747
+DIST_REQBUF_ONPATH_count, 244,         33746
+DIST_REQBUF_ONPATH_total_count, 244,         33746
 
 DIST2_REQBUF_OFFPATH_USED_PARTIAL_count, 245,          3490
 DIST2_REQBUF_OFFPATH_USED_PARTIAL_total_count, 245,          3490
@@ -885,17 +885,17 @@ DIST2_REQBUF_OFFPATH_USED_FULL_total_count, 245,          1213
 DIST2_REQBUF_OFFPATH_NOTUSED_count, 245,             0
 DIST2_REQBUF_OFFPATH_NOTUSED_total_count, 245,             0
 
-DIST2_REQBUF_ONPATH_count, 245,         33747
-DIST2_REQBUF_ONPATH_total_count, 245,         33747
+DIST2_REQBUF_ONPATH_count, 245,         33746
+DIST2_REQBUF_ONPATH_total_count, 245,         33746
 
-DIST_ICACHE_FILL_count, 0,            85
-DIST_ICACHE_FILL_total_count, 0,            85
+DIST_ICACHE_FILL_count, 0,            87
+DIST_ICACHE_FILL_total_count, 0,            87
 
-DIST_DCACHE_FILL_count, 0,         19216
-DIST_DCACHE_FILL_total_count, 0,         19216
+DIST_DCACHE_FILL_count, 0,         19218
+DIST_DCACHE_FILL_total_count, 0,         19218
 
-DIST_L1_FILL_count, 0,           106
-DIST_L1_FILL_total_count, 0,           106
+DIST_L1_FILL_count, 0,           107
+DIST_L1_FILL_total_count, 0,           107
 
 DIST_USED_OFFPATH_ICACHE_count, 246,             0
 DIST_USED_OFFPATH_ICACHE_total_count, 246,             0
@@ -963,8 +963,8 @@ MLC_MISS_ONPATH_IFETCH_total_count, 254,             1
 MLC_MISS_ONPATH_DFETCH_count, 254,         14515
 MLC_MISS_ONPATH_DFETCH_total_count, 254,         14515
 
-MLC_MISS_ONPATH_DSTORE_count, 254,             5
-MLC_MISS_ONPATH_DSTORE_total_count, 254,             5
+MLC_MISS_ONPATH_DSTORE_count, 254,             4
+MLC_MISS_ONPATH_DSTORE_total_count, 254,             4
 
 MLC_MISS_ONPATH_IPRF_count, 254,             0
 MLC_MISS_ONPATH_IPRF_total_count, 254,             0
@@ -993,8 +993,8 @@ MLC_MISS_OFFPATH_IPRF_total_count, 255,             0
 MLC_MISS_OFFPATH_DPRF_count, 255,             0
 MLC_MISS_OFFPATH_DPRF_total_count, 255,             0
 
-MLC_MISS_OFFPATH_WB_count, 255,            84
-MLC_MISS_OFFPATH_WB_total_count, 255,            84
+MLC_MISS_OFFPATH_WB_count, 255,            86
+MLC_MISS_OFFPATH_WB_total_count, 255,            86
 
 MLC_MISS_OFFPATH_WB_NODIRTY_count, 255,             0
 MLC_MISS_OFFPATH_WB_NODIRTY_total_count, 255,             0
@@ -1017,14 +1017,14 @@ MLC_HIT_ONPATH_DPRF_total_count, 256,             0
 MLC_HIT_ONPATH_WB_count, 256,             0
 MLC_HIT_ONPATH_WB_total_count, 256,             0
 
-MLC_HIT_ONPATH_WB_NODIRTY_count, 256,         14973
-MLC_HIT_ONPATH_WB_NODIRTY_total_count, 256,         14973
+MLC_HIT_ONPATH_WB_NODIRTY_count, 256,         14972
+MLC_HIT_ONPATH_WB_NODIRTY_total_count, 256,         14972
 
 MLC_HIT_OFFPATH_IFETCH_count, 257,             0
 MLC_HIT_OFFPATH_IFETCH_total_count, 257,             0
 
-MLC_HIT_OFFPATH_DFETCH_count, 257,             0
-MLC_HIT_OFFPATH_DFETCH_total_count, 257,             0
+MLC_HIT_OFFPATH_DFETCH_count, 257,             3
+MLC_HIT_OFFPATH_DFETCH_total_count, 257,             3
 
 MLC_HIT_OFFPATH_DSTORE_count, 257,             0
 MLC_HIT_OFFPATH_DSTORE_total_count, 257,             0
@@ -1047,8 +1047,8 @@ L1_MISS_ONPATH_IFETCH_total_count, 258,             1
 L1_MISS_ONPATH_DFETCH_count, 258,            10
 L1_MISS_ONPATH_DFETCH_total_count, 258,            10
 
-L1_MISS_ONPATH_DSTORE_count, 258,             5
-L1_MISS_ONPATH_DSTORE_total_count, 258,             5
+L1_MISS_ONPATH_DSTORE_count, 258,             4
+L1_MISS_ONPATH_DSTORE_total_count, 258,             4
 
 L1_MISS_ONPATH_IPRF_count, 258,             0
 L1_MISS_ONPATH_IPRF_total_count, 258,             0
@@ -1077,8 +1077,8 @@ L1_MISS_OFFPATH_IPRF_total_count, 259,             0
 L1_MISS_OFFPATH_DPRF_count, 259,             0
 L1_MISS_OFFPATH_DPRF_total_count, 259,             0
 
-L1_MISS_OFFPATH_WB_count, 259,            84
-L1_MISS_OFFPATH_WB_total_count, 259,            84
+L1_MISS_OFFPATH_WB_count, 259,            86
+L1_MISS_OFFPATH_WB_total_count, 259,            86
 
 L1_MISS_OFFPATH_WB_NODIRTY_count, 259,             0
 L1_MISS_OFFPATH_WB_NODIRTY_total_count, 259,             0
@@ -1101,8 +1101,8 @@ L1_HIT_ONPATH_DPRF_total_count, 260,             0
 L1_HIT_ONPATH_WB_count, 260,             0
 L1_HIT_ONPATH_WB_total_count, 260,             0
 
-L1_HIT_ONPATH_WB_NODIRTY_count, 260,          3947
-L1_HIT_ONPATH_WB_NODIRTY_total_count, 260,          3947
+L1_HIT_ONPATH_WB_NODIRTY_count, 260,          3945
+L1_HIT_ONPATH_WB_NODIRTY_total_count, 260,          3945
 
 L1_HIT_OFFPATH_IFETCH_count, 261,             0
 L1_HIT_OFFPATH_IFETCH_total_count, 261,             0
@@ -1136,20 +1136,20 @@ DRAM_UNBLOCK_CYCLES_total_pct, 0,         -nan
 DRAM_UNBLOCK_PERIODS_count, 0,             0
 DRAM_UNBLOCK_PERIODS_total_count, 0,             0
 
-MEM_REQ_BUFFER_FULL_count, 0,             0
-MEM_REQ_BUFFER_FULL_total_count, 0,             0
+MEM_REQ_BUFFER_FULL_count, 0,           202
+MEM_REQ_BUFFER_FULL_total_count, 0,           202
 
-MEM_REQ_BUFFER_FULL_DENIED_DEMAND_count, 0,             0
-MEM_REQ_BUFFER_FULL_DENIED_DEMAND_total_count, 0,             0
+MEM_REQ_BUFFER_FULL_DENIED_DEMAND_count, 0,           202
+MEM_REQ_BUFFER_FULL_DENIED_DEMAND_total_count, 0,           202
 
-CORE_MEM_BLOCKED_count, 0,             0
-CORE_MEM_BLOCKED_total_count, 0,             0
+CORE_MEM_BLOCKED_count, 0,           117
+CORE_MEM_BLOCKED_total_count, 0,           117
 
 MEM_REQ_BUFFER_FULL_DENIED_IFETCH_count, 262,             0
 MEM_REQ_BUFFER_FULL_DENIED_IFETCH_total_count, 262,             0
 
-MEM_REQ_BUFFER_FULL_DENIED_DFETCH_count, 262,             0
-MEM_REQ_BUFFER_FULL_DENIED_DFETCH_total_count, 262,             0
+MEM_REQ_BUFFER_FULL_DENIED_DFETCH_count, 262,           202
+MEM_REQ_BUFFER_FULL_DENIED_DFETCH_total_count, 262,           202
 
 MEM_REQ_BUFFER_FULL_DENIED_DSTORE_count, 262,             0
 MEM_REQ_BUFFER_FULL_DENIED_DSTORE_total_count, 262,             0
@@ -1169,17 +1169,17 @@ MEM_REQ_BUFFER_FULL_DENIED_WB_NODIRTY_total_count, 262,             0
 MEM_QUEUE_FULL_count, 0,             0
 MEM_QUEUE_FULL_total_count, 0,             0
 
-MEM_REQ_BUFFER_MISS_count, 263,         57448
-MEM_REQ_BUFFER_MISS_total_count, 263,         57448
+MEM_REQ_BUFFER_MISS_count, 263,         57449
+MEM_REQ_BUFFER_MISS_total_count, 263,         57449
 
-MEM_REQ_BUFFER_HIT_count, 263,        268146
-MEM_REQ_BUFFER_HIT_total_count, 263,        268146
+MEM_REQ_BUFFER_HIT_count, 263,        268125
+MEM_REQ_BUFFER_HIT_total_count, 263,        268125
 
-MEM_REQ_FDIP_BUFFER_HIT_count, 0,            91
-MEM_REQ_FDIP_BUFFER_HIT_total_count, 0,            91
+MEM_REQ_FDIP_BUFFER_HIT_count, 0,            72
+MEM_REQ_FDIP_BUFFER_HIT_total_count, 0,            72
 
-MEM_REQ_FDIP_CYCLE_DELTA_count, 0,         31493
-MEM_REQ_FDIP_CYCLE_DELTA_total_count, 0,         31493
+MEM_REQ_FDIP_CYCLE_DELTA_count, 0,         25485
+MEM_REQ_FDIP_CYCLE_DELTA_total_count, 0,         25485
 
 MEM_REQ_DEMAND_ICACHE_BUFFER_HIT_count, 0,             0
 MEM_REQ_DEMAND_ICACHE_BUFFER_HIT_total_count, 0,             0
@@ -1190,11 +1190,11 @@ MEM_REQ_DEMAND_ICACHE_CYCLE_DELTA_total_count, 0,             0
 MEM_REQ_IFETCH_count, 264,             0
 MEM_REQ_IFETCH_total_count, 264,             0
 
-MEM_REQ_DFETCH_count, 264,         19211
-MEM_REQ_DFETCH_total_count, 264,         19211
+MEM_REQ_DFETCH_count, 264,         19214
+MEM_REQ_DFETCH_total_count, 264,         19214
 
-MEM_REQ_DSTORE_count, 264,             5
-MEM_REQ_DSTORE_total_count, 264,             5
+MEM_REQ_DSTORE_count, 264,             4
+MEM_REQ_DSTORE_total_count, 264,             4
 
 MEM_REQ_IPRF_count, 264,             0
 MEM_REQ_IPRF_total_count, 264,             0
@@ -1202,17 +1202,17 @@ MEM_REQ_IPRF_total_count, 264,             0
 MEM_REQ_DPRF_count, 264,             0
 MEM_REQ_DPRF_total_count, 264,             0
 
-MEM_REQ_WB_count, 264,            85
-MEM_REQ_WB_total_count, 264,            85
+MEM_REQ_WB_count, 264,            87
+MEM_REQ_WB_total_count, 264,            87
 
-MEM_REQ_WB_NODIRTY_count, 264,         38147
-MEM_REQ_WB_NODIRTY_total_count, 264,         38147
+MEM_REQ_WB_NODIRTY_count, 264,         38144
+MEM_REQ_WB_NODIRTY_total_count, 264,         38144
 
-LD_NO_FORWARD_count, 265,       1572517
-LD_NO_FORWARD_total_count, 265,       1572517
+LD_NO_FORWARD_count, 265,       1572519
+LD_NO_FORWARD_total_count, 265,       1572519
 
-FORWARDED_LD_count, 265,        438078
-FORWARDED_LD_total_count, 265,        438078
+FORWARDED_LD_count, 265,        438079
+FORWARDED_LD_total_count, 265,        438079
 
 WRONGPATH_L1Q_REMOVALS_count, 266,             0
 WRONGPATH_L1Q_REMOVALS_total_count, 266,             0
@@ -1268,17 +1268,17 @@ NOPROMOTION_QMLC_FILL_total_count, 269,             0
 PROMOTION_FROM_FDIP_OFF_TO_ON_count, 0,             0
 PROMOTION_FROM_FDIP_OFF_TO_ON_total_count, 0,             0
 
-ICACHE_FILL_CORRECT_REQ_count, 270,             6
-ICACHE_FILL_CORRECT_REQ_total_count, 270,             6
+ICACHE_FILL_CORRECT_REQ_count, 270,            11
+ICACHE_FILL_CORRECT_REQ_total_count, 270,            11
 
-ICACHE_FILL_INCORRECT_REQ_count, 270,            79
-ICACHE_FILL_INCORRECT_REQ_total_count, 270,            79
+ICACHE_FILL_INCORRECT_REQ_count, 270,            76
+ICACHE_FILL_INCORRECT_REQ_total_count, 270,            76
 
-ICACHE_FILL_CORRECT_REQ_BY_FDIP_count, 271,             6
-ICACHE_FILL_CORRECT_REQ_BY_FDIP_total_count, 271,             6
+ICACHE_FILL_CORRECT_REQ_BY_FDIP_count, 271,            11
+ICACHE_FILL_CORRECT_REQ_BY_FDIP_total_count, 271,            11
 
-ICACHE_FILL_INCORRECT_REQ_BY_FDIP_count, 271,            79
-ICACHE_FILL_INCORRECT_REQ_BY_FDIP_total_count, 271,            79
+ICACHE_FILL_INCORRECT_REQ_BY_FDIP_count, 271,            76
+ICACHE_FILL_INCORRECT_REQ_BY_FDIP_total_count, 271,            76
 
 ICACHE_FILL_CORRECT_REQ_BY_ICACHE_DEMAND_count, 271,             0
 ICACHE_FILL_CORRECT_REQ_BY_ICACHE_DEMAND_total_count, 271,             0
@@ -1298,14 +1298,14 @@ ICACHE_FILL_INCORRECT_REQ_BY_ON_FDIP_HIT_BY_DEMAND_LOAD_total_count, 0,         
 ICACHE_FILL_INCORRECT_REQ_BY_OFF_FDIP_HIT_BY_DEMAND_LOAD_count, 0,             0
 ICACHE_FILL_INCORRECT_REQ_BY_OFF_FDIP_HIT_BY_DEMAND_LOAD_total_count, 0,             0
 
-ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_count, 0,          3758
-ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_total_count, 0,          3758
+ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_count, 0,          9731
+ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_total_count, 0,          9731
 
 ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_ICACHE_DEMAND_count, 0,             0
 ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_ICACHE_DEMAND_total_count, 0,             0
 
-ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_FDIP_count, 0,          3548
-ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_FDIP_total_count, 0,          3548
+ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_FDIP_count, 0,          6154
+ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_FDIP_total_count, 0,          6154
 
 ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_ON_FDIP_HIT_BY_DEMAND_LOAD_count, 0,           153
 ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_ON_FDIP_HIT_BY_DEMAND_LOAD_total_count, 0,           153
@@ -1313,14 +1313,14 @@ ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_ON_FDIP_HIT_BY_DEMAND_LOAD_total_count, 0
 ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_OFF_FDIP_HIT_BY_DEMAND_LOAD_count, 0,             0
 ICACHE_FILL_CORRECT_REQ_CYCLE_DELTA_BY_OFF_FDIP_HIT_BY_DEMAND_LOAD_total_count, 0,             0
 
-ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_count, 0,       3818014
-ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_total_count, 0,       3818014
+ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_count, 0,         71445
+ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_total_count, 0,         71445
 
 ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_ICACHE_DEMAND_count, 0,             0
 ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_ICACHE_DEMAND_total_count, 0,             0
 
-ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_FDIP_count, 0,         33195
-ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_FDIP_total_count, 0,         33195
+ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_FDIP_count, 0,         32363
+ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_FDIP_total_count, 0,         32363
 
 ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_ON_FDIP_HIT_BY_DEMAND_LOAD_count, 0,             0
 ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_ON_FDIP_HIT_BY_DEMAND_LOAD_total_count, 0,             0
@@ -1328,12 +1328,12 @@ ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_ON_FDIP_HIT_BY_DEMAND_LOAD_total_count,
 ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_OFF_FDIP_HIT_BY_DEMAND_LOAD_count, 0,             0
 ICACHE_FILL_INCORRECT_REQ_CYCLE_DELTA_BY_OFF_FDIP_HIT_BY_DEMAND_LOAD_total_count, 0,             0
 
-MEM_REQ_INIT_count, 0,         57448
-MEM_REQ_INIT_total_count, 0,         57448
+MEM_REQ_INIT_count, 0,         57449
+MEM_REQ_INIT_total_count, 0,         57449
 
-MEM_REQ_COMPLETE_count, 0,         57447
+MEM_REQ_COMPLETE_count, 0,         57448
 MEM_REQ_COMPLETE_pct, 0,        1.000
-MEM_REQ_COMPLETE_total_count, 0,         57447
+MEM_REQ_COMPLETE_total_count, 0,         57448
 MEM_REQ_COMPLETE_total_pct, 0,        1.000
 
 MEM_REQ_KILLED_count, 0,             0
@@ -1341,49 +1341,49 @@ MEM_REQ_KILLED_pct, 0,        0.000
 MEM_REQ_KILLED_total_count, 0,             0
 MEM_REQ_KILLED_total_pct, 0,        0.000
 
-MEM_REQ_COMPLETE_MLC_count, 0,         14973
+MEM_REQ_COMPLETE_MLC_count, 0,         14975
 MEM_REQ_COMPLETE_MLC_pct, 0,        0.261
-MEM_REQ_COMPLETE_MLC_total_count, 0,         14973
+MEM_REQ_COMPLETE_MLC_total_count, 0,         14975
 MEM_REQ_COMPLETE_MLC_total_pct, 0,        0.261
 
-MEM_REQ_COMPLETE_L1_count, 0,          3947
+MEM_REQ_COMPLETE_L1_count, 0,          3945
 MEM_REQ_COMPLETE_L1_pct, 0,        0.069
-MEM_REQ_COMPLETE_L1_total_count, 0,          3947
+MEM_REQ_COMPLETE_L1_total_count, 0,          3945
 MEM_REQ_COMPLETE_L1_total_pct, 0,        0.069
 
-MEM_REQ_COMPLETE_MEM_count, 0,         38527
+MEM_REQ_COMPLETE_MEM_count, 0,         38528
 MEM_REQ_COMPLETE_MEM_pct, 0,        0.671
-MEM_REQ_COMPLETE_MEM_total_count, 0,         38527
+MEM_REQ_COMPLETE_MEM_total_count, 0,         38528
 MEM_REQ_COMPLETE_MEM_total_pct, 0,        0.671
 
-MEM_REQ_INIT_ONPATH_count, 0,         52667
+MEM_REQ_INIT_ONPATH_count, 0,         52663
 MEM_REQ_INIT_ONPATH_pct, 0,        0.917
-MEM_REQ_INIT_ONPATH_total_count, 0,         52667
+MEM_REQ_INIT_ONPATH_total_count, 0,         52663
 MEM_REQ_INIT_ONPATH_total_pct, 0,        0.917
 
-MEM_REQ_INIT_OFFPATH_count, 0,          4781
+MEM_REQ_INIT_OFFPATH_count, 0,          4786
 MEM_REQ_INIT_OFFPATH_pct, 0,        0.083
-MEM_REQ_INIT_OFFPATH_total_count, 0,          4781
+MEM_REQ_INIT_OFFPATH_total_count, 0,          4786
 MEM_REQ_INIT_OFFPATH_total_pct, 0,        0.083
 
-MEM_REQ_COMPLETE_ONPATH_count, 0,         56156
-MEM_REQ_COMPLETE_ONPATH_pct, 0,        0.978
-MEM_REQ_COMPLETE_ONPATH_total_count, 0,         56156
-MEM_REQ_COMPLETE_ONPATH_total_pct, 0,        0.978
+MEM_REQ_COMPLETE_ONPATH_count, 0,         56152
+MEM_REQ_COMPLETE_ONPATH_pct, 0,        0.977
+MEM_REQ_COMPLETE_ONPATH_total_count, 0,         56152
+MEM_REQ_COMPLETE_ONPATH_total_pct, 0,        0.977
 
-MEM_REQ_COMPLETE_OFFPATH_count, 0,          1291
-MEM_REQ_COMPLETE_OFFPATH_pct, 0,        0.022
-MEM_REQ_COMPLETE_OFFPATH_total_count, 0,          1291
-MEM_REQ_COMPLETE_OFFPATH_total_pct, 0,        0.022
+MEM_REQ_COMPLETE_OFFPATH_count, 0,          1296
+MEM_REQ_COMPLETE_OFFPATH_pct, 0,        0.023
+MEM_REQ_COMPLETE_OFFPATH_total_count, 0,          1296
+MEM_REQ_COMPLETE_OFFPATH_total_pct, 0,        0.023
 
 MEM_REQ_INIT_IFETCH_count, 272,             0
 MEM_REQ_INIT_IFETCH_total_count, 272,             0
 
-MEM_REQ_INIT_DFETCH_count, 272,         19211
-MEM_REQ_INIT_DFETCH_total_count, 272,         19211
+MEM_REQ_INIT_DFETCH_count, 272,         19214
+MEM_REQ_INIT_DFETCH_total_count, 272,         19214
 
-MEM_REQ_INIT_DSTORE_count, 272,             5
-MEM_REQ_INIT_DSTORE_total_count, 272,             5
+MEM_REQ_INIT_DSTORE_count, 272,             4
+MEM_REQ_INIT_DSTORE_total_count, 272,             4
 
 MEM_REQ_INIT_IPRF_count, 272,             0
 MEM_REQ_INIT_IPRF_total_count, 272,             0
@@ -1391,8 +1391,8 @@ MEM_REQ_INIT_IPRF_total_count, 272,             0
 MEM_REQ_INIT_DPRF_count, 272,             0
 MEM_REQ_INIT_DPRF_total_count, 272,             0
 
-MEM_REQ_INIT_WB_count, 272,            85
-MEM_REQ_INIT_WB_total_count, 272,            85
+MEM_REQ_INIT_WB_count, 272,            87
+MEM_REQ_INIT_WB_total_count, 272,            87
 
 MEM_REQ_INIT_WB_NODIRTY_count, 272,             0
 MEM_REQ_INIT_WB_NODIRTY_total_count, 272,             0
@@ -1403,8 +1403,8 @@ MEM_REQ_COMPLETE_IFETCH_total_count, 273,         19228
 MEM_REQ_COMPLETE_DFETCH_count, 273,         38131
 MEM_REQ_COMPLETE_DFETCH_total_count, 273,         38131
 
-MEM_REQ_COMPLETE_DSTORE_count, 273,             5
-MEM_REQ_COMPLETE_DSTORE_total_count, 273,             5
+MEM_REQ_COMPLETE_DSTORE_count, 273,             4
+MEM_REQ_COMPLETE_DSTORE_total_count, 273,             4
 
 MEM_REQ_COMPLETE_IPRF_count, 273,             0
 MEM_REQ_COMPLETE_IPRF_total_count, 273,             0
@@ -1412,14 +1412,14 @@ MEM_REQ_COMPLETE_IPRF_total_count, 273,             0
 MEM_REQ_COMPLETE_DPRF_count, 273,             0
 MEM_REQ_COMPLETE_DPRF_total_count, 273,             0
 
-MEM_REQ_COMPLETE_WB_count, 273,            84
-MEM_REQ_COMPLETE_WB_total_count, 273,            84
+MEM_REQ_COMPLETE_WB_count, 273,            86
+MEM_REQ_COMPLETE_WB_total_count, 273,            86
 
 MEM_REQ_COMPLETE_WB_NODIRTY_count, 273,             0
 MEM_REQ_COMPLETE_WB_NODIRTY_total_count, 273,             0
 
-MEM_REQ_KILLED_IFETCH_count, 274,         38146
-MEM_REQ_KILLED_IFETCH_total_count, 274,         38146
+MEM_REQ_KILLED_IFETCH_count, 274,         38143
+MEM_REQ_KILLED_IFETCH_total_count, 274,         38143
 
 MEM_REQ_KILLED_DFETCH_count, 274,             0
 MEM_REQ_KILLED_DFETCH_total_count, 274,             0
@@ -1442,8 +1442,8 @@ MEM_REQ_KILLED_WB_NODIRTY_total_count, 274,             0
 MEM_REQ_INIT_OFFPATH_IFETCH_count, 275,             0
 MEM_REQ_INIT_OFFPATH_IFETCH_total_count, 275,             0
 
-MEM_REQ_INIT_OFFPATH_DFETCH_count, 275,          4697
-MEM_REQ_INIT_OFFPATH_DFETCH_total_count, 275,          4697
+MEM_REQ_INIT_OFFPATH_DFETCH_count, 275,          4700
+MEM_REQ_INIT_OFFPATH_DFETCH_total_count, 275,          4700
 
 MEM_REQ_INIT_OFFPATH_DSTORE_count, 275,             0
 MEM_REQ_INIT_OFFPATH_DSTORE_total_count, 275,             0
@@ -1454,8 +1454,8 @@ MEM_REQ_INIT_OFFPATH_IPRF_total_count, 275,             0
 MEM_REQ_INIT_OFFPATH_DPRF_count, 275,             0
 MEM_REQ_INIT_OFFPATH_DPRF_total_count, 275,             0
 
-MEM_REQ_INIT_OFFPATH_WB_count, 275,            84
-MEM_REQ_INIT_OFFPATH_WB_total_count, 275,            84
+MEM_REQ_INIT_OFFPATH_WB_count, 275,            86
+MEM_REQ_INIT_OFFPATH_WB_total_count, 275,            86
 
 MEM_REQ_INIT_OFFPATH_WB_NODIRTY_count, 275,             0
 MEM_REQ_INIT_OFFPATH_WB_NODIRTY_total_count, 275,             0
@@ -1466,8 +1466,8 @@ MEM_REQ_INIT_ONPATH_IFETCH_total_count, 276,             0
 MEM_REQ_INIT_ONPATH_DFETCH_count, 276,         14514
 MEM_REQ_INIT_ONPATH_DFETCH_total_count, 276,         14514
 
-MEM_REQ_INIT_ONPATH_DSTORE_count, 276,             5
-MEM_REQ_INIT_ONPATH_DSTORE_total_count, 276,             5
+MEM_REQ_INIT_ONPATH_DSTORE_count, 276,             4
+MEM_REQ_INIT_ONPATH_DSTORE_total_count, 276,             4
 
 MEM_REQ_INIT_ONPATH_IPRF_count, 276,             0
 MEM_REQ_INIT_ONPATH_IPRF_total_count, 276,             0
@@ -1484,11 +1484,11 @@ MEM_REQ_INIT_ONPATH_WB_NODIRTY_total_count, 276,             0
 MEM_REQ_MATCH_IFETCH_count, 277,         19227
 MEM_REQ_MATCH_IFETCH_total_count, 277,         19227
 
-MEM_REQ_MATCH_DFETCH_count, 277,        286881
-MEM_REQ_MATCH_DFETCH_total_count, 277,        286881
+MEM_REQ_MATCH_DFETCH_count, 277,        286879
+MEM_REQ_MATCH_DFETCH_total_count, 277,        286879
 
-MEM_REQ_MATCH_DSTORE_count, 277,            11
-MEM_REQ_MATCH_DSTORE_total_count, 277,            11
+MEM_REQ_MATCH_DSTORE_count, 277,             4
+MEM_REQ_MATCH_DSTORE_total_count, 277,             4
 
 MEM_REQ_MATCH_IPRF_count, 277,             0
 MEM_REQ_MATCH_IPRF_total_count, 277,             0
@@ -1496,8 +1496,8 @@ MEM_REQ_MATCH_IPRF_total_count, 277,             0
 MEM_REQ_MATCH_DPRF_count, 277,             0
 MEM_REQ_MATCH_DPRF_total_count, 277,             0
 
-MEM_REQ_MATCH_WB_count, 277,            12
-MEM_REQ_MATCH_WB_total_count, 277,            12
+MEM_REQ_MATCH_WB_count, 277,            16
+MEM_REQ_MATCH_WB_total_count, 277,            16
 
 MEM_REQ_MATCH_WB_NODIRTY_count, 277,             0
 MEM_REQ_MATCH_WB_NODIRTY_total_count, 277,             0
@@ -1505,8 +1505,8 @@ MEM_REQ_MATCH_WB_NODIRTY_total_count, 277,             0
 MEM_REQ_COMPLETE_OFFPATH_IFETCH_count, 278,             0
 MEM_REQ_COMPLETE_OFFPATH_IFETCH_total_count, 278,             0
 
-MEM_REQ_COMPLETE_OFFPATH_DFETCH_count, 278,          1207
-MEM_REQ_COMPLETE_OFFPATH_DFETCH_total_count, 278,          1207
+MEM_REQ_COMPLETE_OFFPATH_DFETCH_count, 278,          1210
+MEM_REQ_COMPLETE_OFFPATH_DFETCH_total_count, 278,          1210
 
 MEM_REQ_COMPLETE_OFFPATH_DSTORE_count, 278,             0
 MEM_REQ_COMPLETE_OFFPATH_DSTORE_total_count, 278,             0
@@ -1517,8 +1517,8 @@ MEM_REQ_COMPLETE_OFFPATH_IPRF_total_count, 278,             0
 MEM_REQ_COMPLETE_OFFPATH_DPRF_count, 278,             0
 MEM_REQ_COMPLETE_OFFPATH_DPRF_total_count, 278,             0
 
-MEM_REQ_COMPLETE_OFFPATH_WB_count, 278,            84
-MEM_REQ_COMPLETE_OFFPATH_WB_total_count, 278,            84
+MEM_REQ_COMPLETE_OFFPATH_WB_count, 278,            86
+MEM_REQ_COMPLETE_OFFPATH_WB_total_count, 278,            86
 
 MEM_REQ_COMPLETE_OFFPATH_WB_NODIRTY_count, 278,             0
 MEM_REQ_COMPLETE_OFFPATH_WB_NODIRTY_total_count, 278,             0
@@ -1529,8 +1529,8 @@ MEM_REQ_COMPLETE_ONPATH_IFETCH_total_count, 279,             1
 MEM_REQ_COMPLETE_ONPATH_DFETCH_count, 279,         18004
 MEM_REQ_COMPLETE_ONPATH_DFETCH_total_count, 279,         18004
 
-MEM_REQ_COMPLETE_ONPATH_DSTORE_count, 279,             5
-MEM_REQ_COMPLETE_ONPATH_DSTORE_total_count, 279,             5
+MEM_REQ_COMPLETE_ONPATH_DSTORE_count, 279,             4
+MEM_REQ_COMPLETE_ONPATH_DSTORE_total_count, 279,             4
 
 MEM_REQ_COMPLETE_ONPATH_IPRF_count, 279,             0
 MEM_REQ_COMPLETE_ONPATH_IPRF_total_count, 279,             0
@@ -1544,14 +1544,14 @@ MEM_REQ_COMPLETE_ONPATH_WB_total_count, 279,             0
 MEM_REQ_COMPLETE_ONPATH_WB_NODIRTY_count, 279,             0
 MEM_REQ_COMPLETE_ONPATH_WB_NODIRTY_total_count, 279,             0
 
-MEM_REQ_COMPLETE_MEM_IFETCH_count, 280,         38147
-MEM_REQ_COMPLETE_MEM_IFETCH_total_count, 280,         38147
+MEM_REQ_COMPLETE_MEM_IFETCH_count, 280,         38144
+MEM_REQ_COMPLETE_MEM_IFETCH_total_count, 280,         38144
 
 MEM_REQ_COMPLETE_MEM_DFETCH_count, 280,         19211
 MEM_REQ_COMPLETE_MEM_DFETCH_total_count, 280,         19211
 
-MEM_REQ_COMPLETE_MEM_DSTORE_count, 280,             5
-MEM_REQ_COMPLETE_MEM_DSTORE_total_count, 280,             5
+MEM_REQ_COMPLETE_MEM_DSTORE_count, 280,             4
+MEM_REQ_COMPLETE_MEM_DSTORE_total_count, 280,             4
 
 MEM_REQ_COMPLETE_MEM_IPRF_count, 280,             0
 MEM_REQ_COMPLETE_MEM_IPRF_total_count, 280,             0
@@ -1559,8 +1559,8 @@ MEM_REQ_COMPLETE_MEM_IPRF_total_count, 280,             0
 MEM_REQ_COMPLETE_MEM_DPRF_count, 280,             0
 MEM_REQ_COMPLETE_MEM_DPRF_total_count, 280,             0
 
-MEM_REQ_COMPLETE_MEM_WB_count, 280,            84
-MEM_REQ_COMPLETE_MEM_WB_total_count, 280,            84
+MEM_REQ_COMPLETE_MEM_WB_count, 280,            86
+MEM_REQ_COMPLETE_MEM_WB_total_count, 280,            86
 
 MEM_REQ_COMPLETE_MEM_WB_NODIRTY_count, 280,             0
 MEM_REQ_COMPLETE_MEM_WB_NODIRTY_total_count, 280,             0
@@ -1592,11 +1592,11 @@ MEM_REQ_COMPLETE_L1_WB_total_count, 281,             0
 MEM_REQ_COMPLETE_L1_WB_NODIRTY_count, 281,             0
 MEM_REQ_COMPLETE_L1_WB_NODIRTY_total_count, 281,             0
 
-MEM_REQ_COMPLETE_MLC_IFETCH_count, 282,          3947
-MEM_REQ_COMPLETE_MLC_IFETCH_total_count, 282,          3947
+MEM_REQ_COMPLETE_MLC_IFETCH_count, 282,          3945
+MEM_REQ_COMPLETE_MLC_IFETCH_total_count, 282,          3945
 
-MEM_REQ_COMPLETE_MLC_DFETCH_count, 282,             0
-MEM_REQ_COMPLETE_MLC_DFETCH_total_count, 282,             0
+MEM_REQ_COMPLETE_MLC_DFETCH_count, 282,             3
+MEM_REQ_COMPLETE_MLC_DFETCH_total_count, 282,             3
 
 MEM_REQ_COMPLETE_MLC_DSTORE_count, 282,             0
 MEM_REQ_COMPLETE_MLC_DSTORE_total_count, 282,             0
@@ -1613,11 +1613,11 @@ MEM_REQ_COMPLETE_MLC_WB_total_count, 282,             0
 MEM_REQ_COMPLETE_MLC_WB_NODIRTY_count, 282,             0
 MEM_REQ_COMPLETE_MLC_WB_NODIRTY_total_count, 282,             0
 
-CORE_MLP_CLUSTERS_count, 0,         14973
-CORE_MLP_CLUSTERS_total_count, 0,         14973
+CORE_MLP_CLUSTERS_count, 0,         14972
+CORE_MLP_CLUSTERS_total_count, 0,         14972
 
-CORE_MLP_count, 0,       1748008
-CORE_MLP_total_count, 0,       1748008
+CORE_MLP_count, 0,       1752598
+CORE_MLP_total_count, 0,       1752598
 
 CORE_MLP_IFETCH_count, 0,             0
 CORE_MLP_IFETCH_total_count, 0,             0
@@ -1640,98 +1640,98 @@ CORE_MLP_WB_total_count, 0,             0
 CORE_MLP_WB_NODIRTY_count, 0,             0
 CORE_MLP_WB_NODIRTY_total_count, 0,             0
 
-CORE_MLP_0_count, 283,       1867210
-CORE_MLP_0_total_count, 283,       1867210
+CORE_MLP_0_count, 283,       1865774
+CORE_MLP_0_total_count, 283,       1865774
 
-CORE_MLP_1_count, 283,        977079
-CORE_MLP_1_total_count, 283,        977079
+CORE_MLP_1_count, 283,        979912
+CORE_MLP_1_total_count, 283,        979912
 
-CORE_MLP_2_count, 283,         56606
-CORE_MLP_2_total_count, 283,         56606
+CORE_MLP_2_count, 283,         55639
+CORE_MLP_2_total_count, 283,         55639
 
-CORE_MLP_3_count, 283,         21315
-CORE_MLP_3_total_count, 283,         21315
+CORE_MLP_3_count, 283,         20599
+CORE_MLP_3_total_count, 283,         20599
 
-CORE_MLP_4_count, 283,         21457
-CORE_MLP_4_total_count, 283,         21457
+CORE_MLP_4_count, 283,         20136
+CORE_MLP_4_total_count, 283,         20136
 
-CORE_MLP_5_count, 283,         20489
-CORE_MLP_5_total_count, 283,         20489
+CORE_MLP_5_count, 283,         20976
+CORE_MLP_5_total_count, 283,         20976
 
-CORE_MLP_6_count, 283,         19864
-CORE_MLP_6_total_count, 283,         19864
+CORE_MLP_6_count, 283,         20974
+CORE_MLP_6_total_count, 283,         20974
 
-CORE_MLP_7_count, 283,         17134
-CORE_MLP_7_total_count, 283,         17134
+CORE_MLP_7_count, 283,         17291
+CORE_MLP_7_total_count, 283,         17291
 
-CORE_MLP_8_count, 283,          9937
-CORE_MLP_8_total_count, 283,          9937
+CORE_MLP_8_count, 283,         10355
+CORE_MLP_8_total_count, 283,         10355
 
-CORE_MLP_9_count, 283,          4790
-CORE_MLP_9_total_count, 283,          4790
+CORE_MLP_9_count, 283,          4235
+CORE_MLP_9_total_count, 283,          4235
 
-CORE_MLP_10_count, 283,           959
-CORE_MLP_10_total_count, 283,           959
+CORE_MLP_10_count, 283,          1053
+CORE_MLP_10_total_count, 283,          1053
 
-CORE_MLP_11_count, 283,           294
-CORE_MLP_11_total_count, 283,           294
+CORE_MLP_11_count, 283,           125
+CORE_MLP_11_total_count, 283,           125
 
-CORE_MLP_12_count, 283,            12
-CORE_MLP_12_total_count, 283,            12
+CORE_MLP_12_count, 283,            77
+CORE_MLP_12_total_count, 283,            77
 
-CORE_MLP_13_count, 283,            12
-CORE_MLP_13_total_count, 283,            12
+CORE_MLP_13_count, 283,            11
+CORE_MLP_13_total_count, 283,            11
 
 CORE_MLP_14_count, 283,            17
 CORE_MLP_14_total_count, 283,            17
 
-CORE_MLP_15_count, 283,            20
-CORE_MLP_15_total_count, 283,            20
+CORE_MLP_15_count, 283,            24
+CORE_MLP_15_total_count, 283,            24
 
-CORE_MLP_16_count, 283,            37
-CORE_MLP_16_total_count, 283,            37
+CORE_MLP_16_count, 283,            41
+CORE_MLP_16_total_count, 283,            41
 
-CORE_MLP_17_count, 283,            29
-CORE_MLP_17_total_count, 283,            29
+CORE_MLP_17_count, 283,            33
+CORE_MLP_17_total_count, 283,            33
 
-CORE_MLP_18_count, 283,            34
-CORE_MLP_18_total_count, 283,            34
+CORE_MLP_18_count, 283,            33
+CORE_MLP_18_total_count, 283,            33
 
-CORE_MLP_19_count, 283,            49
-CORE_MLP_19_total_count, 283,            49
+CORE_MLP_19_count, 283,            50
+CORE_MLP_19_total_count, 283,            50
 
-CORE_MLP_20_count, 283,            68
-CORE_MLP_20_total_count, 283,            68
+CORE_MLP_20_count, 283,            56
+CORE_MLP_20_total_count, 283,            56
 
-CORE_MLP_21_count, 283,            78
-CORE_MLP_21_total_count, 283,            78
+CORE_MLP_21_count, 283,            72
+CORE_MLP_21_total_count, 283,            72
 
-CORE_MLP_22_count, 283,            85
-CORE_MLP_22_total_count, 283,            85
+CORE_MLP_22_count, 283,            90
+CORE_MLP_22_total_count, 283,            90
 
-CORE_MLP_23_count, 283,           155
-CORE_MLP_23_total_count, 283,           155
+CORE_MLP_23_count, 283,           141
+CORE_MLP_23_total_count, 283,           141
 
-CORE_MLP_24_count, 283,           255
-CORE_MLP_24_total_count, 283,           255
+CORE_MLP_24_count, 283,           331
+CORE_MLP_24_total_count, 283,           331
 
-CORE_MLP_25_count, 283,           132
-CORE_MLP_25_total_count, 283,           132
+CORE_MLP_25_count, 283,           164
+CORE_MLP_25_total_count, 283,           164
 
-CORE_MLP_26_count, 283,            86
-CORE_MLP_26_total_count, 283,            86
+CORE_MLP_26_count, 283,            92
+CORE_MLP_26_total_count, 283,            92
 
-CORE_MLP_27_count, 283,            66
-CORE_MLP_27_total_count, 283,            66
+CORE_MLP_27_count, 283,            64
+CORE_MLP_27_total_count, 283,            64
 
-CORE_MLP_28_count, 283,           114
-CORE_MLP_28_total_count, 283,           114
+CORE_MLP_28_count, 283,           126
+CORE_MLP_28_total_count, 283,           126
 
-CORE_MLP_29_count, 283,            42
-CORE_MLP_29_total_count, 283,            42
+CORE_MLP_29_count, 283,            17
+CORE_MLP_29_total_count, 283,            17
 
-CORE_MLP_30_count, 283,            40
-CORE_MLP_30_total_count, 283,            40
+CORE_MLP_30_count, 283,            66
+CORE_MLP_30_total_count, 283,            66
 
 CORE_MLP_31_count, 283,             0
 CORE_MLP_31_total_count, 283,             0
@@ -1868,14 +1868,14 @@ L0_LD_CACHE_AVAIL_total_count, 288,             0
 MLC_LD_BANK_BLOCK_count, 289,             0
 MLC_LD_BANK_BLOCK_total_count, 289,             0
 
-MLC_LD_BANK_AVAIL_count, 289,         19301
-MLC_LD_BANK_AVAIL_total_count, 289,         19301
+MLC_LD_BANK_AVAIL_count, 289,         19305
+MLC_LD_BANK_AVAIL_total_count, 289,         19305
 
 MLC_ST_BANK_BLOCK_count, 290,             0
 MLC_ST_BANK_BLOCK_total_count, 290,             0
 
-MLC_ST_BANK_AVAIL_count, 290,         14973
-MLC_ST_BANK_AVAIL_total_count, 290,         14973
+MLC_ST_BANK_AVAIL_count, 290,         14972
+MLC_ST_BANK_AVAIL_total_count, 290,         14972
 
 MLC_LD_CACHE_BLOCK_count, 291,             0
 MLC_LD_CACHE_BLOCK_total_count, 291,             0
@@ -1889,17 +1889,17 @@ MLC_ST_CACHE_BLOCK_total_count, 292,             0
 MLC_ST_CACHE_AVAIL_count, 292,             0
 MLC_ST_CACHE_AVAIL_total_count, 292,             0
 
-L1_LD_BANK_BLOCK_count, 293,           440
-L1_LD_BANK_BLOCK_total_count, 293,           440
+L1_LD_BANK_BLOCK_count, 293,           449
+L1_LD_BANK_BLOCK_total_count, 293,           449
 
-L1_LD_BANK_AVAIL_count, 293,         38528
-L1_LD_BANK_AVAIL_total_count, 293,         38528
+L1_LD_BANK_AVAIL_count, 293,         38529
+L1_LD_BANK_AVAIL_total_count, 293,         38529
 
 L1_ST_BANK_BLOCK_count, 294,             0
 L1_ST_BANK_BLOCK_total_count, 294,             0
 
-L1_ST_BANK_AVAIL_count, 294,          3947
-L1_ST_BANK_AVAIL_total_count, 294,          3947
+L1_ST_BANK_AVAIL_count, 294,          3945
+L1_ST_BANK_AVAIL_total_count, 294,          3945
 
 L1_LD_CACHE_BLOCK_count, 295,             0
 L1_LD_CACHE_BLOCK_total_count, 295,             0
@@ -1934,38 +1934,38 @@ MEM_PF_BANK_AVAIL_total_count, 299,             0
 L0_FILL_count, 0,             0
 L0_FILL_total_count, 0,             0
 
-L1_FILL_count, 300,         19332
-L1_FILL_total_count, 300,         19332
+L1_FILL_count, 300,         19333
+L1_FILL_total_count, 300,         19333
 
 L1_WB_FILL_count, 300,             0
 L1_WB_FILL_total_count, 300,             0
 
-L1_DEMAND_FILL_count, 301,           106
-L1_DEMAND_FILL_total_count, 301,           106
+L1_DEMAND_FILL_count, 301,           107
+L1_DEMAND_FILL_total_count, 301,           107
 
 L1_PREF_FILL_count, 301,         19226
 L1_PREF_FILL_total_count, 301,         19226
 
-MLC_FILL_count, 302,         19301
-MLC_FILL_total_count, 302,         19301
+MLC_FILL_count, 302,         19302
+MLC_FILL_total_count, 302,         19302
 
 MLC_WB_FILL_count, 302,             0
 MLC_WB_FILL_total_count, 302,             0
 
-MLC_DEMAND_FILL_count, 303,         19301
-MLC_DEMAND_FILL_total_count, 303,         19301
+MLC_DEMAND_FILL_count, 303,         19302
+MLC_DEMAND_FILL_total_count, 303,         19302
 
 MLC_PREF_FILL_count, 303,             0
 MLC_PREF_FILL_total_count, 303,             0
 
-NORESET_L1_FILL_count, 0,         19332
-NORESET_L1_FILL_total_count, 0,         19332
+NORESET_L1_FILL_count, 0,         19333
+NORESET_L1_FILL_total_count, 0,         19333
 
-NORESET_L1_FILL_NONPREF_count, 0,            22
-NORESET_L1_FILL_NONPREF_total_count, 0,            22
+NORESET_L1_FILL_NONPREF_count, 0,            21
+NORESET_L1_FILL_NONPREF_total_count, 0,            21
 
-NORESET_L1_FILL_PREF_count, 0,         19310
-NORESET_L1_FILL_PREF_total_count, 0,         19310
+NORESET_L1_FILL_PREF_count, 0,         19312
+NORESET_L1_FILL_PREF_total_count, 0,         19312
 
 NORESET_L1_EVICT_count, 0,             0
 NORESET_L1_EVICT_total_count, 0,             0
@@ -2106,8 +2106,8 @@ L1_PREF_MOVE_L1_pct, 0,         -nan
 L1_PREF_MOVE_L1_total_count, 0,             0
 L1_PREF_MOVE_L1_total_pct, 0,         -nan
 
-OFF_PATH_CONFIRMED_count, 0,         32255
-OFF_PATH_CONFIRMED_total_count, 0,         32255
+OFF_PATH_CONFIRMED_count, 0,         32234
+OFF_PATH_CONFIRMED_total_count, 0,         32234
 
 OFF_PATH_NO_FILL_L1_count, 0,             0
 OFF_PATH_NO_FILL_L1_total_count, 0,             0
@@ -2133,22 +2133,22 @@ L1_FILL_SKIPPED_total_count, 0,             0
 MLC_FILL_SKIPPED_count, 0,             0
 MLC_FILL_SKIPPED_total_count, 0,             0
 
-DCACHE_FILL_count, 0,         19216
-DCACHE_FILL_total_count, 0,         19216
+DCACHE_FILL_count, 0,         19218
+DCACHE_FILL_total_count, 0,         19218
 
-DCACHE_WB_REQ_count, 0,         14973
+DCACHE_WB_REQ_count, 0,         14972
 DCACHE_WB_REQ_pct, 0,        0.779
-DCACHE_WB_REQ_total_count, 0,         14973
+DCACHE_WB_REQ_total_count, 0,         14972
 DCACHE_WB_REQ_total_pct, 0,        0.779
 
-DCACHE_WB_REQ_DIRTY_count, 305,         14973
-DCACHE_WB_REQ_DIRTY_total_count, 305,         14973
+DCACHE_WB_REQ_DIRTY_count, 305,         14972
+DCACHE_WB_REQ_DIRTY_total_count, 305,         14972
 
 DCACHE_WB_REQ_NODIRTY_count, 305,             0
 DCACHE_WB_REQ_NODIRTY_total_count, 305,             0
 
-ICACHE_FILL_count, 0,            85
-ICACHE_FILL_total_count, 0,            85
+ICACHE_FILL_count, 0,            87
+ICACHE_FILL_total_count, 0,            87
 
 ICACHE_WB_REQ_count, 0,             0
 ICACHE_WB_REQ_pct, 0,        0.000
@@ -2160,9 +2160,9 @@ L1_FILL_DIRTY_pct, 0,        0.000
 L1_FILL_DIRTY_total_count, 0,             0
 L1_FILL_DIRTY_total_pct, 0,        0.000
 
-MLC_FILL_DIRTY_count, 0,          3947
+MLC_FILL_DIRTY_count, 0,          3945
 MLC_FILL_DIRTY_pct, 0,        0.204
-MLC_FILL_DIRTY_total_count, 0,          3947
+MLC_FILL_DIRTY_total_count, 0,          3945
 MLC_FILL_DIRTY_total_pct, 0,        0.204
 
 ICACHE_UNUSEFUL_CL_CYC_count, 0,             0
@@ -2347,8 +2347,8 @@ WB_MATCH_PREF_total_count, 320,             0
 WB_MATCH_WB_count, 320,             0
 WB_MATCH_WB_total_count, 320,             0
 
-WB_MATCH_WB_FILTERED_count, 320,        210366
-WB_MATCH_WB_FILTERED_total_count, 320,        210366
+WB_MATCH_WB_FILTERED_count, 320,        210364
+WB_MATCH_WB_FILTERED_total_count, 320,        210364
 
 WB_COMING_BACK_FROM_MEM_count, 0,             0
 WB_COMING_BACK_FROM_MEM_total_count, 0,             0
@@ -2362,8 +2362,8 @@ WB_COMING_BACK_FROM_MLC_total_count, 0,             0
 MEM_REQ_MATCH_OFF_PATH_HIT_BY_ON_PATH_count, 321,          3490
 MEM_REQ_MATCH_OFF_PATH_HIT_BY_ON_PATH_total_count, 321,          3490
 
-MEM_REQ_MATCH_OFF_PATH_HIT_BY_ON_PATH_ETC_count, 321,        264565
-MEM_REQ_MATCH_OFF_PATH_HIT_BY_ON_PATH_ETC_total_count, 321,        264565
+MEM_REQ_MATCH_OFF_PATH_HIT_BY_ON_PATH_ETC_count, 321,        264563
+MEM_REQ_MATCH_OFF_PATH_HIT_BY_ON_PATH_ETC_total_count, 321,        264563
 
 TOTAL_ONPATH_ICACHE_FILLS_count, 0,             0
 TOTAL_ONPATH_ICACHE_FILLS_total_count, 0,             0
@@ -2389,9 +2389,9 @@ PER1K_ONPATH_L1_FILLS_pct, 0,        0.000
 PER1K_ONPATH_L1_FILLS_total_count, 0,             0
 PER1K_ONPATH_L1_FILLS_total_pct, 0,        0.000
 
-PER1K_L1_DEMAND_MISS_ONPATH_count, 0,            16
+PER1K_L1_DEMAND_MISS_ONPATH_count, 0,            15
 PER1K_L1_DEMAND_MISS_ONPATH_pct, 0,        0.003
-PER1K_L1_DEMAND_MISS_ONPATH_total_count, 0,            16
+PER1K_L1_DEMAND_MISS_ONPATH_total_count, 0,            15
 PER1K_L1_DEMAND_MISS_ONPATH_total_pct, 0,        0.003
 
 PER1K_L1_DEMAND_MISS_OFFPATH_count, 0,             6
@@ -2543,35 +2543,35 @@ PREF_MLC_TOTAL_DROPPED_total_count, 329,             0
 CORE_MLC_PREF_REQ_MISS_count, 330,             0
 CORE_MLC_PREF_REQ_MISS_total_count, 330,             0
 
-CORE_MLC_DEMAND_MISS_count, 330,         19217
-CORE_MLC_DEMAND_MISS_total_count, 330,         19217
+CORE_MLC_DEMAND_MISS_count, 330,         19216
+CORE_MLC_DEMAND_MISS_total_count, 330,         19216
 
-CORE_MLC_WB_MISS_count, 330,            84
-CORE_MLC_WB_MISS_total_count, 330,            84
+CORE_MLC_WB_MISS_count, 330,            86
+CORE_MLC_WB_MISS_total_count, 330,            86
 
 CORE_MLC_PREF_REQ_HIT_count, 331,             0
 CORE_MLC_PREF_REQ_HIT_total_count, 331,             0
 
-CORE_MLC_DEMAND_HIT_count, 331,             0
-CORE_MLC_DEMAND_HIT_total_count, 331,             0
+CORE_MLC_DEMAND_HIT_count, 331,             3
+CORE_MLC_DEMAND_HIT_total_count, 331,             3
 
-CORE_MLC_WB_HIT_count, 331,         14973
-CORE_MLC_WB_HIT_total_count, 331,         14973
+CORE_MLC_WB_HIT_count, 331,         14972
+CORE_MLC_WB_HIT_total_count, 331,         14972
 
-CORE_MLC_HIT_count, 332,             0
-CORE_MLC_HIT_total_count, 332,             0
+CORE_MLC_HIT_count, 332,             3
+CORE_MLC_HIT_total_count, 332,             3
 
-CORE_MLC_MISS_count, 332,         19217
-CORE_MLC_MISS_total_count, 332,         19217
+CORE_MLC_MISS_count, 332,         19216
+CORE_MLC_MISS_total_count, 332,         19216
 
-CORE_MLC_FILL_count, 333,         19301
-CORE_MLC_FILL_total_count, 333,         19301
+CORE_MLC_FILL_count, 333,         19302
+CORE_MLC_FILL_total_count, 333,         19302
 
 CORE_MLC_WB_FILL_count, 333,             0
 CORE_MLC_WB_FILL_total_count, 333,             0
 
-CORE_MLC_DEMAND_FILL_count, 334,         19301
-CORE_MLC_DEMAND_FILL_total_count, 334,         19301
+CORE_MLC_DEMAND_FILL_count, 334,         19302
+CORE_MLC_DEMAND_FILL_total_count, 334,         19302
 
 CORE_MLC_PREF_FILL_count, 334,             0
 CORE_MLC_PREF_FILL_total_count, 334,             0
@@ -2588,11 +2588,11 @@ CORE_MLC_PREF_FILL_NOT_USED_total_count, 335,             0
 CORE_L1_PREF_REQ_MISS_count, 336,         19227
 CORE_L1_PREF_REQ_MISS_total_count, 336,         19227
 
-CORE_L1_DEMAND_MISS_count, 336,            22
-CORE_L1_DEMAND_MISS_total_count, 336,            22
+CORE_L1_DEMAND_MISS_count, 336,            21
+CORE_L1_DEMAND_MISS_total_count, 336,            21
 
-CORE_L1_WB_MISS_count, 336,            84
-CORE_L1_WB_MISS_total_count, 336,            84
+CORE_L1_WB_MISS_count, 336,            86
+CORE_L1_WB_MISS_total_count, 336,            86
 
 CORE_L1_PREF_REQ_HIT_count, 337,             0
 CORE_L1_PREF_REQ_HIT_total_count, 337,             0
@@ -2600,23 +2600,23 @@ CORE_L1_PREF_REQ_HIT_total_count, 337,             0
 CORE_L1_DEMAND_HIT_count, 337,         19195
 CORE_L1_DEMAND_HIT_total_count, 337,         19195
 
-CORE_L1_WB_HIT_count, 337,          3947
-CORE_L1_WB_HIT_total_count, 337,          3947
+CORE_L1_WB_HIT_count, 337,          3945
+CORE_L1_WB_HIT_total_count, 337,          3945
 
 CORE_L1_HIT_count, 338,         19195
 CORE_L1_HIT_total_count, 338,         19195
 
-CORE_L1_MISS_count, 338,            22
-CORE_L1_MISS_total_count, 338,            22
+CORE_L1_MISS_count, 338,            21
+CORE_L1_MISS_total_count, 338,            21
 
-CORE_L1_FILL_count, 339,         19332
-CORE_L1_FILL_total_count, 339,         19332
+CORE_L1_FILL_count, 339,         19333
+CORE_L1_FILL_total_count, 339,         19333
 
 CORE_L1_WB_FILL_count, 339,             0
 CORE_L1_WB_FILL_total_count, 339,             0
 
-CORE_L1_DEMAND_FILL_count, 340,           106
-CORE_L1_DEMAND_FILL_total_count, 340,           106
+CORE_L1_DEMAND_FILL_count, 340,           107
+CORE_L1_DEMAND_FILL_total_count, 340,           107
 
 CORE_L1_PREF_FILL_count, 340,         19226
 CORE_L1_PREF_FILL_total_count, 340,         19226
@@ -4621,44 +4621,44 @@ CORE_PREF_L1_NOT_USED_total_count, 348,            31
 CORE_PREF_L1_DROPPED_count, 348,             0
 CORE_PREF_L1_DROPPED_total_count, 348,             0
 
-TOTAL_MEM_LATENCY_count, 0,       2534910
-TOTAL_MEM_LATENCY_pct, 0,      131.125
-TOTAL_MEM_LATENCY_total_count, 0,       2534910
-TOTAL_MEM_LATENCY_total_pct, 0,      131.125
+TOTAL_MEM_LATENCY_count, 0,       2541162
+TOTAL_MEM_LATENCY_pct, 0,      131.442
+TOTAL_MEM_LATENCY_total_count, 0,       2541162
+TOTAL_MEM_LATENCY_total_pct, 0,      131.442
 
-TOTAL_MEM_LATENCY_DEMAND_count, 0,        769835
-TOTAL_MEM_LATENCY_DEMAND_pct, 0,     7262.594
-TOTAL_MEM_LATENCY_DEMAND_total_count, 0,        769835
-TOTAL_MEM_LATENCY_DEMAND_total_pct, 0,     7262.594
+TOTAL_MEM_LATENCY_DEMAND_count, 0,        771421
+TOTAL_MEM_LATENCY_DEMAND_pct, 0,     7209.542
+TOTAL_MEM_LATENCY_DEMAND_total_count, 0,        771421
+TOTAL_MEM_LATENCY_DEMAND_total_pct, 0,     7209.542
 
-TOTAL_MEM_LATENCY_PREF_count, 0,       1765075
-TOTAL_MEM_LATENCY_PREF_pct, 0,       91.807
-TOTAL_MEM_LATENCY_PREF_total_count, 0,       1765075
-TOTAL_MEM_LATENCY_PREF_total_pct, 0,       91.807
+TOTAL_MEM_LATENCY_PREF_count, 0,       1769741
+TOTAL_MEM_LATENCY_PREF_pct, 0,       92.049
+TOTAL_MEM_LATENCY_PREF_total_count, 0,       1769741
+TOTAL_MEM_LATENCY_PREF_total_pct, 0,       92.049
 
-CORE_MEM_LATENCY_count, 0,       2534910
-CORE_MEM_LATENCY_pct, 0,      131.125
-CORE_MEM_LATENCY_total_count, 0,       2534910
-CORE_MEM_LATENCY_total_pct, 0,      131.125
+CORE_MEM_LATENCY_count, 0,       2541162
+CORE_MEM_LATENCY_pct, 0,      131.442
+CORE_MEM_LATENCY_total_count, 0,       2541162
+CORE_MEM_LATENCY_total_pct, 0,      131.442
 
-CORE_MEM_LATENCY_DEMAND_count, 0,        769835
-CORE_MEM_LATENCY_DEMAND_pct, 0,     7262.594
-CORE_MEM_LATENCY_DEMAND_total_count, 0,        769835
-CORE_MEM_LATENCY_DEMAND_total_pct, 0,     7262.594
+CORE_MEM_LATENCY_DEMAND_count, 0,        771421
+CORE_MEM_LATENCY_DEMAND_pct, 0,     7209.542
+CORE_MEM_LATENCY_DEMAND_total_count, 0,        771421
+CORE_MEM_LATENCY_DEMAND_total_pct, 0,     7209.542
 
-CORE_MEM_LATENCY_PREF_count, 0,       1765075
-CORE_MEM_LATENCY_PREF_pct, 0,       91.807
-CORE_MEM_LATENCY_PREF_total_count, 0,       1765075
-CORE_MEM_LATENCY_PREF_total_pct, 0,       91.807
+CORE_MEM_LATENCY_PREF_count, 0,       1769741
+CORE_MEM_LATENCY_PREF_pct, 0,       92.049
+CORE_MEM_LATENCY_PREF_total_count, 0,       1769741
+CORE_MEM_LATENCY_PREF_total_pct, 0,       92.049
 
 CORE_MEM_LATENCY_IFETCH_count, 349,            97
 CORE_MEM_LATENCY_IFETCH_total_count, 349,            97
 
-CORE_MEM_LATENCY_DFETCH_count, 349,          1768
-CORE_MEM_LATENCY_DFETCH_total_count, 349,          1768
+CORE_MEM_LATENCY_DFETCH_count, 349,          1761
+CORE_MEM_LATENCY_DFETCH_total_count, 349,          1761
 
-CORE_MEM_LATENCY_DSTORE_count, 349,           379
-CORE_MEM_LATENCY_DSTORE_total_count, 349,           379
+CORE_MEM_LATENCY_DSTORE_count, 349,           330
+CORE_MEM_LATENCY_DSTORE_total_count, 349,           330
 
 CORE_MEM_LATENCY_IPRF_count, 349,             0
 CORE_MEM_LATENCY_IPRF_total_count, 349,             0
@@ -4666,14 +4666,14 @@ CORE_MEM_LATENCY_IPRF_total_count, 349,             0
 CORE_MEM_LATENCY_UOCPRF_count, 349,             0
 CORE_MEM_LATENCY_UOCPRF_total_count, 349,             0
 
-CORE_MEM_LATENCY_FDIPPRF_count, 349,         31593
-CORE_MEM_LATENCY_FDIPPRF_total_count, 349,         31593
+CORE_MEM_LATENCY_FDIPPRF_count, 349,         33249
+CORE_MEM_LATENCY_FDIPPRF_total_count, 349,         33249
 
 CORE_MEM_LATENCY_DPRF_count, 349,             0
 CORE_MEM_LATENCY_DPRF_total_count, 349,             0
 
-CORE_MEM_LATENCY_WB_count, 349,       1733482
-CORE_MEM_LATENCY_WB_total_count, 349,       1733482
+CORE_MEM_LATENCY_WB_count, 349,       1736492
+CORE_MEM_LATENCY_WB_total_count, 349,       1736492
 
 CORE_MEM_LATENCY_WB_NODIRTY_count, 349,             0
 CORE_MEM_LATENCY_WB_NODIRTY_total_count, 349,             0
@@ -4699,35 +4699,35 @@ CORE_MEM_STALLING_LATENCY_WB_total_count, 350,             0
 CORE_MEM_STALLING_LATENCY_WB_NODIRTY_count, 350,             0
 CORE_MEM_STALLING_LATENCY_WB_NODIRTY_total_count, 350,             0
 
-TOTAL_L1_MISS_LATENCY_count, 0,       1767319
-TOTAL_L1_MISS_LATENCY_pct, 0,       91.419
-TOTAL_L1_MISS_LATENCY_total_count, 0,       1767319
-TOTAL_L1_MISS_LATENCY_total_pct, 0,       91.419
+TOTAL_L1_MISS_LATENCY_count, 0,       1771929
+TOTAL_L1_MISS_LATENCY_pct, 0,       91.653
+TOTAL_L1_MISS_LATENCY_total_count, 0,       1771929
+TOTAL_L1_MISS_LATENCY_total_pct, 0,       91.653
 
-TOTAL_L1_MISS_LATENCY_DEMAND_count, 0,         33837
-TOTAL_L1_MISS_LATENCY_DEMAND_pct, 0,      319.217
-TOTAL_L1_MISS_LATENCY_DEMAND_total_count, 0,         33837
-TOTAL_L1_MISS_LATENCY_DEMAND_total_pct, 0,      319.217
+TOTAL_L1_MISS_LATENCY_DEMAND_count, 0,         35437
+TOTAL_L1_MISS_LATENCY_DEMAND_pct, 0,      331.187
+TOTAL_L1_MISS_LATENCY_DEMAND_total_count, 0,         35437
+TOTAL_L1_MISS_LATENCY_DEMAND_total_pct, 0,      331.187
 
-TOTAL_L1_MISS_LATENCY_PREF_count, 0,       1733482
-TOTAL_L1_MISS_LATENCY_PREF_pct, 0,       90.163
-TOTAL_L1_MISS_LATENCY_PREF_total_count, 0,       1733482
-TOTAL_L1_MISS_LATENCY_PREF_total_pct, 0,       90.163
+TOTAL_L1_MISS_LATENCY_PREF_count, 0,       1736492
+TOTAL_L1_MISS_LATENCY_PREF_pct, 0,       90.320
+TOTAL_L1_MISS_LATENCY_PREF_total_count, 0,       1736492
+TOTAL_L1_MISS_LATENCY_PREF_total_pct, 0,       90.320
 
-CORE_L1_MISS_LATENCY_count, 0,       1767319
-CORE_L1_MISS_LATENCY_pct, 0,       91.419
-CORE_L1_MISS_LATENCY_total_count, 0,       1767319
-CORE_L1_MISS_LATENCY_total_pct, 0,       91.419
+CORE_L1_MISS_LATENCY_count, 0,       1771929
+CORE_L1_MISS_LATENCY_pct, 0,       91.653
+CORE_L1_MISS_LATENCY_total_count, 0,       1771929
+CORE_L1_MISS_LATENCY_total_pct, 0,       91.653
 
-CORE_L1_MISS_LATENCY_DEMAND_count, 0,         33837
-CORE_L1_MISS_LATENCY_DEMAND_pct, 0,      319.217
-CORE_L1_MISS_LATENCY_DEMAND_total_count, 0,         33837
-CORE_L1_MISS_LATENCY_DEMAND_total_pct, 0,      319.217
+CORE_L1_MISS_LATENCY_DEMAND_count, 0,         35437
+CORE_L1_MISS_LATENCY_DEMAND_pct, 0,      331.187
+CORE_L1_MISS_LATENCY_DEMAND_total_count, 0,         35437
+CORE_L1_MISS_LATENCY_DEMAND_total_pct, 0,      331.187
 
-CORE_L1_MISS_LATENCY_PREF_count, 0,       1733482
-CORE_L1_MISS_LATENCY_PREF_pct, 0,       90.163
-CORE_L1_MISS_LATENCY_PREF_total_count, 0,       1733482
-CORE_L1_MISS_LATENCY_PREF_total_pct, 0,       90.163
+CORE_L1_MISS_LATENCY_PREF_count, 0,       1736492
+CORE_L1_MISS_LATENCY_PREF_pct, 0,       90.320
+CORE_L1_MISS_LATENCY_PREF_total_count, 0,       1736492
+CORE_L1_MISS_LATENCY_PREF_total_pct, 0,       90.320
 
 CORE_EVICTED_L1_DEMAND_count, 351,             0
 CORE_EVICTED_L1_DEMAND_total_count, 351,             0
@@ -4738,18 +4738,18 @@ CORE_EVICTED_L1_PREF_USED_total_count, 351,             0
 CORE_EVICTED_L1_PREF_NOT_USED_count, 351,             0
 CORE_EVICTED_L1_PREF_NOT_USED_total_count, 351,             0
 
-CORE_EVICTED_MLC_DEMAND_count, 352,          4883
-CORE_EVICTED_MLC_DEMAND_total_count, 352,          4883
+CORE_EVICTED_MLC_DEMAND_count, 352,          4880
+CORE_EVICTED_MLC_DEMAND_total_count, 352,          4880
 
 CORE_EVICTED_MLC_PREF_USED_count, 352,             0
 CORE_EVICTED_MLC_PREF_USED_total_count, 352,             0
 
-CORE_EVICTED_MLC_PREF_NOT_USED_count, 352,            82
-CORE_EVICTED_MLC_PREF_NOT_USED_total_count, 352,            82
+CORE_EVICTED_MLC_PREF_NOT_USED_count, 352,            86
+CORE_EVICTED_MLC_PREF_NOT_USED_total_count, 352,            86
 
-CORE_MEM_LATENCY_AVE_DEMAND_count, 0,        109998
+CORE_MEM_LATENCY_AVE_DEMAND_count, 0,        109864
 CORE_MEM_LATENCY_AVE_DEMAND_pct, 0,          inf
-CORE_MEM_LATENCY_AVE_DEMAND_total_count, 0,        109998
+CORE_MEM_LATENCY_AVE_DEMAND_total_count, 0,        109864
 CORE_MEM_LATENCY_AVE_DEMAND_total_pct, 0,          inf
 
 CORE_MEM_LATENCY_AVE_PREF_USED_count, 0,             0
@@ -4757,9 +4757,9 @@ CORE_MEM_LATENCY_AVE_PREF_USED_pct, 0,         -nan
 CORE_MEM_LATENCY_AVE_PREF_USED_total_count, 0,             0
 CORE_MEM_LATENCY_AVE_PREF_USED_total_pct, 0,         -nan
 
-CORE_MEM_LATENCY_AVE_PREF_NOT_USED_count, 0,         34074
+CORE_MEM_LATENCY_AVE_PREF_NOT_USED_count, 0,         36815
 CORE_MEM_LATENCY_AVE_PREF_NOT_USED_pct, 0,          inf
-CORE_MEM_LATENCY_AVE_PREF_NOT_USED_total_count, 0,         34074
+CORE_MEM_LATENCY_AVE_PREF_NOT_USED_total_count, 0,         36815
 CORE_MEM_LATENCY_AVE_PREF_NOT_USED_total_pct, 0,          inf
 
 DRAM_LATENCY_count, 0,             0
@@ -4795,11 +4795,11 @@ L1_STAY_PREF_NOT_USED_pct, 0,         -nan
 L1_STAY_PREF_NOT_USED_total_count, 0,             0
 L1_STAY_PREF_NOT_USED_total_pct, 0,         -nan
 
-TOTAL_DATA_MISS_LATENCY_count, 0,        733950
-TOTAL_DATA_MISS_LATENCY_total_count, 0,        733950
+TOTAL_DATA_MISS_LATENCY_count, 0,        733887
+TOTAL_DATA_MISS_LATENCY_total_count, 0,        733887
 
-TOTAL_DATA_MISS_COUNT_count, 0,         19232
-TOTAL_DATA_MISS_COUNT_total_count, 0,         19232
+TOTAL_DATA_MISS_COUNT_count, 0,         19231
+TOTAL_DATA_MISS_COUNT_total_count, 0,         19231
 
 CORE_PREF_L1_NOT_USED_LATENCY200_count, 353,             0
 CORE_PREF_L1_NOT_USED_LATENCY200_total_count, 353,             0
@@ -4924,14 +4924,14 @@ CORE_PREF_L1_DEMAND_LATENCY1000_total_count, 357,             0
 CORE_PREF_L1_DEMAND_LATENCY1000MORE_count, 357,             0
 CORE_PREF_L1_DEMAND_LATENCY1000MORE_total_count, 357,             0
 
-CORE_PREF_MLC_NOT_USED_LATENCY200_count, 358,            22
-CORE_PREF_MLC_NOT_USED_LATENCY200_total_count, 358,            22
+CORE_PREF_MLC_NOT_USED_LATENCY200_count, 358,            19
+CORE_PREF_MLC_NOT_USED_LATENCY200_total_count, 358,            19
 
 CORE_PREF_MLC_NOT_USED_LATENCY400_count, 358,             8
 CORE_PREF_MLC_NOT_USED_LATENCY400_total_count, 358,             8
 
-CORE_PREF_MLC_NOT_USED_LATENCY600_count, 358,            38
-CORE_PREF_MLC_NOT_USED_LATENCY600_total_count, 358,            38
+CORE_PREF_MLC_NOT_USED_LATENCY600_count, 358,            45
+CORE_PREF_MLC_NOT_USED_LATENCY600_total_count, 358,            45
 
 CORE_PREF_MLC_NOT_USED_LATENCY800_count, 358,             8
 CORE_PREF_MLC_NOT_USED_LATENCY800_total_count, 358,             8
@@ -4978,8 +4978,8 @@ CORE_PREF_MLC_USED_LATENCY1600_total_count, 359,             0
 CORE_PREF_MLC_USED_LATENCY1600MORE_count, 359,             0
 CORE_PREF_MLC_USED_LATENCY1600MORE_total_count, 359,             0
 
-CORE_PREF_MLC_DEMAND_LATENCY300_count, 360,          4882
-CORE_PREF_MLC_DEMAND_LATENCY300_total_count, 360,          4882
+CORE_PREF_MLC_DEMAND_LATENCY300_count, 360,          4879
+CORE_PREF_MLC_DEMAND_LATENCY300_total_count, 360,          4879
 
 CORE_PREF_MLC_DEMAND_LATENCY400_count, 360,             0
 CORE_PREF_MLC_DEMAND_LATENCY400_total_count, 360,             0
@@ -5089,31 +5089,31 @@ PERF_PRED_NUM_STAT_RESETS_total_count, 0,             0
 PERF_PRED_RESET_STATS_CYCLE_count, 0,             0
 PERF_PRED_RESET_STATS_CYCLE_total_count, 0,             0
 
-PERF_PRED_CYCLE_count, 0,       3018465
-PERF_PRED_CYCLE_total_count, 0,       3018465
+PERF_PRED_CYCLE_count, 0,       3018574
+PERF_PRED_CYCLE_total_count, 0,       3018574
 
 ESTIMATED_ALONE_CYCLES_count, 0,             0
 ESTIMATED_ALONE_CYCLES_pct, 0,        0.000
 ESTIMATED_ALONE_CYCLES_total_count, 0,             0
 ESTIMATED_ALONE_CYCLES_total_pct, 0,        0.000
 
-NUM_WINDOWS_WITH_DCACHE_MISS_count, 0,          8860
-NUM_WINDOWS_WITH_DCACHE_MISS_total_count, 0,          8860
+NUM_WINDOWS_WITH_DCACHE_MISS_count, 0,          8861
+NUM_WINDOWS_WITH_DCACHE_MISS_total_count, 0,          8861
 
-LONGEST_DCACHE_MISS_CHAIN_count, 0,         18054
-LONGEST_DCACHE_MISS_CHAIN_total_count, 0,         18054
+LONGEST_DCACHE_MISS_CHAIN_count, 0,         18056
+LONGEST_DCACHE_MISS_CHAIN_total_count, 0,         18056
 
-NUM_DCACHE_MISSES_IN_WINDOW_1_count, 361,           504
-NUM_DCACHE_MISSES_IN_WINDOW_1_total_count, 361,           504
+NUM_DCACHE_MISSES_IN_WINDOW_1_count, 361,           505
+NUM_DCACHE_MISSES_IN_WINDOW_1_total_count, 361,           505
 
-NUM_DCACHE_MISSES_IN_WINDOW_2_count, 361,          6387
-NUM_DCACHE_MISSES_IN_WINDOW_2_total_count, 361,          6387
+NUM_DCACHE_MISSES_IN_WINDOW_2_count, 361,          6386
+NUM_DCACHE_MISSES_IN_WINDOW_2_total_count, 361,          6386
 
 NUM_DCACHE_MISSES_IN_WINDOW_3_count, 361,          1949
 NUM_DCACHE_MISSES_IN_WINDOW_3_total_count, 361,          1949
 
-NUM_DCACHE_MISSES_IN_WINDOW_4_count, 361,            19
-NUM_DCACHE_MISSES_IN_WINDOW_4_total_count, 361,            19
+NUM_DCACHE_MISSES_IN_WINDOW_4_count, 361,            20
+NUM_DCACHE_MISSES_IN_WINDOW_4_total_count, 361,            20
 
 NUM_DCACHE_MISSES_IN_WINDOW_5_count, 361,             0
 NUM_DCACHE_MISSES_IN_WINDOW_5_total_count, 361,             0
@@ -5154,8 +5154,8 @@ NUM_DCACHE_MISSES_IN_WINDOW_16_OR_MORE_total_count, 361,             0
 DCACHE_MLP_IN_WINDOW_1_0_count, 362,          7707
 DCACHE_MLP_IN_WINDOW_1_0_total_count, 362,          7707
 
-DCACHE_MLP_IN_WINDOW_1_5_count, 362,          1009
-DCACHE_MLP_IN_WINDOW_1_5_total_count, 362,          1009
+DCACHE_MLP_IN_WINDOW_1_5_count, 362,          1010
+DCACHE_MLP_IN_WINDOW_1_5_total_count, 362,          1010
 
 DCACHE_MLP_IN_WINDOW_2_0_count, 362,           144
 DCACHE_MLP_IN_WINDOW_2_0_total_count, 362,           144
@@ -5262,11 +5262,11 @@ MEM_REQ_NON_SCHEDULED_60_total_count, 363,             0
 MEM_REQ_NON_SCHEDULED_64_count, 363,             0
 MEM_REQ_NON_SCHEDULED_64_total_count, 363,             0
 
-MEM_REQ_DEMANDS__0_count, 364,       3018308
-MEM_REQ_DEMANDS__0_total_count, 364,       3018308
+MEM_REQ_DEMANDS__0_count, 364,       3018438
+MEM_REQ_DEMANDS__0_total_count, 364,       3018438
 
-MEM_REQ_DEMANDS__4_count, 364,           157
-MEM_REQ_DEMANDS__4_total_count, 364,           157
+MEM_REQ_DEMANDS__4_count, 364,           136
+MEM_REQ_DEMANDS__4_total_count, 364,           136
 
 MEM_REQ_DEMANDS__8_count, 364,             0
 MEM_REQ_DEMANDS__8_total_count, 364,             0
@@ -5313,29 +5313,29 @@ MEM_REQ_DEMANDS_60_total_count, 364,             0
 MEM_REQ_DEMANDS_64_count, 364,             0
 MEM_REQ_DEMANDS_64_total_count, 364,             0
 
-MEM_REQ_PREFS__0_count, 365,       2916872
-MEM_REQ_PREFS__0_total_count, 365,       2916872
+MEM_REQ_PREFS__0_count, 365,       2916405
+MEM_REQ_PREFS__0_total_count, 365,       2916405
 
-MEM_REQ_PREFS__4_count, 365,         80299
-MEM_REQ_PREFS__4_total_count, 365,         80299
+MEM_REQ_PREFS__4_count, 365,         81118
+MEM_REQ_PREFS__4_total_count, 365,         81118
 
-MEM_REQ_PREFS__8_count, 365,         19892
-MEM_REQ_PREFS__8_total_count, 365,         19892
+MEM_REQ_PREFS__8_count, 365,         19443
+MEM_REQ_PREFS__8_total_count, 365,         19443
 
-MEM_REQ_PREFS_12_count, 365,            80
-MEM_REQ_PREFS_12_total_count, 365,            80
+MEM_REQ_PREFS_12_count, 365,           176
+MEM_REQ_PREFS_12_total_count, 365,           176
 
 MEM_REQ_PREFS_16_count, 365,           127
 MEM_REQ_PREFS_16_total_count, 365,           127
 
-MEM_REQ_PREFS_20_count, 365,           157
-MEM_REQ_PREFS_20_total_count, 365,           157
+MEM_REQ_PREFS_20_count, 365,           152
+MEM_REQ_PREFS_20_total_count, 365,           152
 
-MEM_REQ_PREFS_24_count, 365,           995
-MEM_REQ_PREFS_24_total_count, 365,           995
+MEM_REQ_PREFS_24_count, 365,           972
+MEM_REQ_PREFS_24_total_count, 365,           972
 
-MEM_REQ_PREFS_28_count, 365,            43
-MEM_REQ_PREFS_28_total_count, 365,            43
+MEM_REQ_PREFS_28_count, 365,           181
+MEM_REQ_PREFS_28_total_count, 365,           181
 
 MEM_REQ_PREFS_32_count, 365,             0
 MEM_REQ_PREFS_32_total_count, 365,             0
@@ -5364,8 +5364,8 @@ MEM_REQ_PREFS_60_total_count, 365,             0
 MEM_REQ_PREFS_64_count, 365,             0
 MEM_REQ_PREFS_64_total_count, 365,             0
 
-MEM_REQ_WRITEBACKS__0_count, 366,       3018305
-MEM_REQ_WRITEBACKS__0_total_count, 366,       3018305
+MEM_REQ_WRITEBACKS__0_count, 366,       3018414
+MEM_REQ_WRITEBACKS__0_total_count, 366,       3018414
 
 MEM_REQ_WRITEBACKS__4_count, 366,           160
 MEM_REQ_WRITEBACKS__4_total_count, 366,           160
@@ -5415,14 +5415,14 @@ MEM_REQ_WRITEBACKS_60_total_count, 366,             0
 MEM_REQ_WRITEBACKS_64_count, 366,             0
 MEM_REQ_WRITEBACKS_64_total_count, 366,             0
 
-MEM_REQ_DEMAND_CYCLES_count, 0,       1136067
-MEM_REQ_DEMAND_CYCLES_total_count, 0,       1136067
+MEM_REQ_DEMAND_CYCLES_count, 0,       1136010
+MEM_REQ_DEMAND_CYCLES_total_count, 0,       1136010
 
-MEM_REQ_PREF_CYCLES_count, 0,       2520175
-MEM_REQ_PREF_CYCLES_total_count, 0,       2520175
+MEM_REQ_PREF_CYCLES_count, 0,       2524946
+MEM_REQ_PREF_CYCLES_total_count, 0,       2524946
 
-MEM_REQ_WB_CYCLES_count, 0,        400580
-MEM_REQ_WB_CYCLES_total_count, 0,        400580
+MEM_REQ_WB_CYCLES_count, 0,        400489
+MEM_REQ_WB_CYCLES_total_count, 0,        400489
 
 DRAM_CHANNEL_REQS_count, 0,             0
 DRAM_CHANNEL_REQS_total_count, 0,             0
@@ -8008,8 +8008,8 @@ DRAM_ROW_HIT_GEN_AFTER_ROW_OPEN_STALLING_total_count, 0,             0
 KNOWN_BAD_ADDRESS_count, 386,             0
 KNOWN_BAD_ADDRESS_total_count, 386,             0
 
-GOOD_ADDRESS_count, 386,       6932566
-GOOD_ADDRESS_total_count, 386,       6932566
+GOOD_ADDRESS_count, 386,       6933007
+GOOD_ADDRESS_total_count, 386,       6933007
 
 BBL_LENGTH_1_count, 387,             0
 BBL_LENGTH_1_total_count, 387,             0
@@ -8155,23 +8155,23 @@ BBL_DONT_END_PRED_NT_LENGTH_23_total_count, 388,             0
 BBL_DONT_END_PRED_NT_LENGTH_24_count, 388,             0
 BBL_DONT_END_PRED_NT_LENGTH_24_total_count, 388,             0
 
-DATA_LD_CYCLES_ONPATH_count, 0,       1064397
-DATA_LD_CYCLES_ONPATH_total_count, 0,       1064397
+DATA_LD_CYCLES_ONPATH_count, 0,       1064296
+DATA_LD_CYCLES_ONPATH_total_count, 0,       1064296
 
-DATA_LD_CYCLES_OFFPATH_count, 0,         71517
-DATA_LD_CYCLES_OFFPATH_total_count, 0,         71517
+DATA_LD_CYCLES_OFFPATH_count, 0,         71561
+DATA_LD_CYCLES_OFFPATH_total_count, 0,         71561
 
 DATA_LD_MLC_CYCLES_ONPATH_count, 0,             0
 DATA_LD_MLC_CYCLES_ONPATH_total_count, 0,             0
 
-DATA_LD_MLC_CYCLES_OFFPATH_count, 0,             0
-DATA_LD_MLC_CYCLES_OFFPATH_total_count, 0,             0
+DATA_LD_MLC_CYCLES_OFFPATH_count, 0,            60
+DATA_LD_MLC_CYCLES_OFFPATH_total_count, 0,            60
 
 DATA_LD_MLC_ACCESSES_ONPATH_count, 0,             0
 DATA_LD_MLC_ACCESSES_ONPATH_total_count, 0,             0
 
-DATA_LD_MLC_ACCESSES_OFFPATH_count, 0,             0
-DATA_LD_MLC_ACCESSES_OFFPATH_total_count, 0,             0
+DATA_LD_MLC_ACCESSES_OFFPATH_count, 0,             3
+DATA_LD_MLC_ACCESSES_OFFPATH_total_count, 0,             3
 
 DATA_LD_L1_CYCLES_ONPATH_count, 0,       1061587
 DATA_LD_L1_CYCLES_ONPATH_total_count, 0,       1061587
@@ -8185,14 +8185,14 @@ DATA_LD_L1_ACCESSES_ONPATH_total_count, 0,         17993
 DATA_LD_L1_ACCESSES_OFFPATH_count, 0,          1202
 DATA_LD_L1_ACCESSES_OFFPATH_total_count, 0,          1202
 
-DATA_LD_MEM_CYCLES_ONPATH_count, 0,          2810
-DATA_LD_MEM_CYCLES_ONPATH_total_count, 0,          2810
+DATA_LD_MEM_CYCLES_ONPATH_count, 0,          2709
+DATA_LD_MEM_CYCLES_ONPATH_total_count, 0,          2709
 
-DATA_LD_MEM_CYCLES_OFFPATH_count, 0,           599
-DATA_LD_MEM_CYCLES_OFFPATH_total_count, 0,           599
+DATA_LD_MEM_CYCLES_OFFPATH_count, 0,           583
+DATA_LD_MEM_CYCLES_OFFPATH_total_count, 0,           583
 
-DATA_LD_MEM_ACCESSES_ONPATH_count, 0,            16
-DATA_LD_MEM_ACCESSES_ONPATH_total_count, 0,            16
+DATA_LD_MEM_ACCESSES_ONPATH_count, 0,            15
+DATA_LD_MEM_ACCESSES_ONPATH_total_count, 0,            15
 
 DATA_LD_MEM_ACCESSES_OFFPATH_count, 0,             5
 DATA_LD_MEM_ACCESSES_OFFPATH_total_count, 0,             5

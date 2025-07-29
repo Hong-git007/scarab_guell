@@ -1,19 +1,19 @@
 Core, 0, 0
-Cumulative_Cycles, 0, 3018465             
+Cumulative_Cycles, 0, 3018574             
 Cumulative_Instructions, 0, 5000002             
-Periodic_Cycles, 0, 3018465             
+Periodic_Cycles, 0, 3018574             
 Periodic_Instructions, 0, 5000002             
 ST_OP_INV_count, 429,             0
 ST_OP_INV_total_count, 429,             0
 
-ST_OP_NOP_count, 429,         87706
-ST_OP_NOP_total_count, 429,         87706
+ST_OP_NOP_count, 429,         87813
+ST_OP_NOP_total_count, 429,         87813
 
-ST_OP_CF_count, 429,       3206841
-ST_OP_CF_total_count, 429,       3206841
+ST_OP_CF_count, 429,       3206845
+ST_OP_CF_total_count, 429,       3206845
 
-ST_OP_MOV_count, 429,       2880301
-ST_OP_MOV_total_count, 429,       2880301
+ST_OP_MOV_count, 429,       2880307
+ST_OP_MOV_total_count, 429,       2880307
 
 ST_OP_CMOV_count, 429,         68193
 ST_OP_CMOV_total_count, 429,         68193
@@ -21,14 +21,14 @@ ST_OP_CMOV_total_count, 429,         68193
 ST_OP_LDA_count, 429,         75094
 ST_OP_LDA_total_count, 429,         75094
 
-ST_OP_ILD_count, 429,       2798522
-ST_OP_ILD_total_count, 429,       2798522
+ST_OP_ILD_count, 429,       2798527
+ST_OP_ILD_total_count, 429,       2798527
 
-ST_OP_IST_count, 429,       1474026
-ST_OP_IST_total_count, 429,       1474026
+ST_OP_IST_count, 429,       1474028
+ST_OP_IST_total_count, 429,       1474028
 
-ST_OP_IADD_count, 429,       2657446
-ST_OP_IADD_total_count, 429,       2657446
+ST_OP_IADD_count, 429,       2657452
+ST_OP_IADD_total_count, 429,       2657452
 
 ST_OP_IMUL_count, 429,             2
 ST_OP_IMUL_total_count, 429,             2
@@ -36,11 +36,11 @@ ST_OP_IMUL_total_count, 429,             2
 ST_OP_IDIV_count, 429,             1
 ST_OP_IDIV_total_count, 429,             1
 
-ST_OP_ICMP_count, 429,       1317865
-ST_OP_ICMP_total_count, 429,       1317865
+ST_OP_ICMP_count, 429,       1317866
+ST_OP_ICMP_total_count, 429,       1317866
 
-ST_OP_LOGIC_count, 429,        627434
-ST_OP_LOGIC_total_count, 429,        627434
+ST_OP_LOGIC_count, 429,        627435
+ST_OP_LOGIC_total_count, 429,        627435
 
 ST_OP_SHIFT_count, 429,             1
 ST_OP_SHIFT_total_count, 429,             1
@@ -96,14 +96,14 @@ ST_OP_NOTPIPELINED_SLOW_total_count, 429,             0
 ST_OP_NOTPIPELINED_VERY_SLOW_count, 429,             0
 ST_OP_NOTPIPELINED_VERY_SLOW_total_count, 429,             0
 
-ST_NOT_CF_count, 430,      11986591
-ST_NOT_CF_total_count, 430,      11986591
+ST_NOT_CF_count, 430,      11986719
+ST_NOT_CF_total_count, 430,      11986719
 
 ST_CF_BR_count, 430,         87334
 ST_CF_BR_total_count, 430,         87334
 
-ST_CF_CBR_count, 430,       1877112
-ST_CF_CBR_total_count, 430,       1877112
+ST_CF_CBR_count, 430,       1877114
+ST_CF_CBR_total_count, 430,       1877114
 
 ST_CF_CALL_count, 430,             1
 ST_CF_CALL_total_count, 430,             1
@@ -111,20 +111,20 @@ ST_CF_CALL_total_count, 430,             1
 ST_CF_IBR_count, 430,             0
 ST_CF_IBR_total_count, 430,             0
 
-ST_CF_ICALL_count, 430,        611595
-ST_CF_ICALL_total_count, 430,        611595
+ST_CF_ICALL_count, 430,        611596
+ST_CF_ICALL_total_count, 430,        611596
 
 ST_CF_ICO_count, 430,             0
 ST_CF_ICO_total_count, 430,             0
 
-ST_CF_RET_count, 430,        630799
-ST_CF_RET_total_count, 430,        630799
+ST_CF_RET_count, 430,        630800
+ST_CF_RET_total_count, 430,        630800
 
 ST_CF_SYS_count, 430,             0
 ST_CF_SYS_total_count, 430,             0
 
-ST_BAR_NONE_count, 431,      15193432
-ST_BAR_NONE_total_count, 431,      15193432
+ST_BAR_NONE_count, 431,      15193564
+ST_BAR_NONE_total_count, 431,      15193564
 
 ST_BAR_FETCH_count, 431,             0
 ST_BAR_FETCH_total_count, 431,             0
@@ -135,14 +135,14 @@ ST_BAR_ISSUE_total_count, 431,             0
 ST_BAR_BOTH_count, 431,             0
 ST_BAR_BOTH_total_count, 431,             0
 
-ST_NOT_MEM_count, 432,      10920884
-ST_NOT_MEM_total_count, 432,      10920884
+ST_NOT_MEM_count, 432,      10921009
+ST_NOT_MEM_total_count, 432,      10921009
 
-ST_MEM_LD_count, 432,       2798522
-ST_MEM_LD_total_count, 432,       2798522
+ST_MEM_LD_count, 432,       2798527
+ST_MEM_LD_total_count, 432,       2798527
 
-ST_MEM_ST_count, 432,       1474026
-ST_MEM_ST_total_count, 432,       1474026
+ST_MEM_ST_count, 432,       1474028
+ST_MEM_ST_total_count, 432,       1474028
 
 ST_MEM_PF_count, 432,             0
 ST_MEM_PF_total_count, 432,             0
@@ -171,8 +171,8 @@ ST_MEM_WH_OFFPATH_total_count, 433,             0
 ST_MEM_EVIC_OFFPATHT_count, 433,             0
 ST_MEM_EVIC_OFFPATHT_total_count, 433,             0
 
-ST_OP_ONPATH_count, 0,      15193432
-ST_OP_ONPATH_total_count, 0,      15193432
+ST_OP_ONPATH_count, 0,      15193564
+ST_OP_ONPATH_total_count, 0,      15193564
 
 ST_OP_OFFPATH_count, 0,             0
 ST_OP_OFFPATH_total_count, 0,             0
@@ -201,8 +201,8 @@ ST_FAKE_REASON_NOT_TAKEN_TO_NOT_INSTRUMENTED_total_count, 435,             0
 ST_FAKE_REASON_WRONG_PATH_STORE_TO_NEW_REGION_count, 435,             0
 ST_FAKE_REASON_WRONG_PATH_STORE_TO_NEW_REGION_total_count, 435,             0
 
-ST_INST_ONPATH_count, 0,      12090166
-ST_INST_ONPATH_total_count, 0,      12090166
+ST_INST_ONPATH_count, 0,      12090293
+ST_INST_ONPATH_total_count, 0,      12090293
 
 ST_INST_OFFPATH_count, 0,             0
 ST_INST_OFFPATH_total_count, 0,             0

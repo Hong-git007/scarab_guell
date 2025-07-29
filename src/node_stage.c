@@ -53,6 +53,8 @@
 #include "decoupled_frontend.h"
 #include "exec_ports.h"
 #include "lsq.h"
+#include "fill_buffer.h"
+#include "bp/hbt.h"
 #include "map.h"
 #include "map_rename.h"
 #include "node_issue_queue.h"
@@ -594,6 +596,10 @@ void node_retire() {
     STAT_EVENT(op->proc_id, RET_OP_EXEC_COUNT_0 + MIN2(32, op->exec_count));
 
     op->retire_cycle = cycle_count;
+
+    op->oracle_info.hbt_pred_is_hard = hbt_is_hard_branch(op->inst_info->addr);
+    op->oracle_info.hbt_misp_counter = hbt_get_counter(op->inst_info->addr);
+    fill_buffer_add(op->proc_id, op);
 
     // free the previous register entries with same architectural destination
     reg_file_commit(op);

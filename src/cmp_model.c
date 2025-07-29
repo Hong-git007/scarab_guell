@@ -56,6 +56,8 @@
 #include "freq.h"
 #include "idq_stage.h"
 #include "lsq.h"
+#include "fill_buffer.h"
+#include "dependency_chain_cache.h"
 #include "map_rename.h"
 #include "op_pool.h"
 #include "sim.h"
@@ -122,6 +124,8 @@ void cmp_init(uns mode) {
     init_exec_stage(proc_id, "EXEC");
     init_exec_ports(proc_id, "EXEC_PORTS");
     init_dcache_stage(proc_id, "DCACHE");
+    init_fill_buffer(proc_id, "FILL_BUFFER");
+    init_dependency_chain_cache(proc_id);
 
     /* initialize the common data structures */
     init_bp_recovery_info(proc_id, &cmp_model.bp_recovery_info[proc_id]);
