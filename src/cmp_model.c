@@ -58,6 +58,7 @@
 #include "lsq.h"
 #include "fill_buffer.h"
 #include "dependency_chain_cache.h"
+#include "on_off_path_cache.h"
 #include "map_rename.h"
 #include "op_pool.h"
 #include "sim.h"
@@ -66,6 +67,8 @@
 
 #include "log/recovery_log.h"
 #include "log/op_trace_log.h"
+#include "log/on_off_path_log.h"
+#include "log/dependency_chain_log.h"
 
 /**************************************************************************************/
 /* Global vars */
@@ -126,6 +129,7 @@ void cmp_init(uns mode) {
     init_dcache_stage(proc_id, "DCACHE");
     init_fill_buffer(proc_id, "FILL_BUFFER");
     init_dependency_chain_cache(proc_id);
+    init_on_off_path_cache(proc_id);
 
     /* initialize the common data structures */
     init_bp_recovery_info(proc_id, &cmp_model.bp_recovery_info[proc_id]);
@@ -148,6 +152,8 @@ void cmp_init(uns mode) {
 
   init_op_trace_log();
   init_recovery_log();
+  init_on_off_path_log();
+  init_dependency_chain_log();
 
   if (DVFS_ON)
     dvfs_init();

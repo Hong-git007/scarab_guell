@@ -4,14 +4,17 @@
 #include "globals/global_types.h"
 #include "op.h" // For Op struct definition
 #include "core.param.h"
+#include "table_info.h"
 
 // A simplified structure to hold retired op information
 typedef struct Retired_Op_Info_struct {
   Inst_Info* inst_info;
   Table_Info* table_info;
+  Cf_Type  cf_type;
   Counter op_num;
   Addr    pc;
-  Counter issue_cycle;
+  Counter sched_cycle;
+  Counter exec_cycle;    
   Counter done_cycle;
   Counter retire_cycle;
   Flag    hbt_pred_is_hard;

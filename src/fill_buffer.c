@@ -4,6 +4,7 @@
 #include "globals/assert.h"
 #include "core.param.h"
 #include "dependency_chain_cache.h"
+#include "on_off_path_cache.h"
 
 Fill_Buffer** retired_fill_buffers;
 
@@ -43,6 +44,17 @@ void fill_buffer_add(uns proc_id, Op* op) {
 
     // Buffer is full, overwrite the oldest entry
     if (fb->count == fb->size) {
+        // -----[ 새로운 로직 추가 시작 ]-----
+        // 1. 덮어씌워질, 즉 가장 오래된 op(head 위치)를 가져옵니다.
+        Retired_Op_Info* evicted_op = &fb->entries[fb->head];
+        
+        // 2. 만약 이 op가 H2P 브랜치라면, 경로 기록 함수를 호출합니다.
+        if (evicted_op->hbt_pred_is_hard) {
+            record_on_off_path(proc_id, evicted_op);
+        }
+        // -----[ 새로운 로직 추가 끝 ]-----
+
+        // 기존의 head 포인터 업데이트 로직
         fb->head = (fb->head + 1) % fb->size;
         fb->count--;
     }
@@ -52,18 +64,26 @@ void fill_buffer_add(uns proc_id, Op* op) {
     entry->table_info = op->table_info;
     entry->op_num = op->op_num;
     entry->pc = op->inst_info->addr;
-    entry->issue_cycle = op->issue_cycle;
+    entry->sched_cycle = op->sched_cycle;
+    entry->exec_cycle = op->exec_cycle;
     entry->done_cycle = op->done_cycle;
     entry->retire_cycle = op->retire_cycle;
     entry->hbt_pred_is_hard = op->oracle_info.hbt_pred_is_hard;
     entry->hbt_misp_counter = op->oracle_info.hbt_misp_counter;
-    entry->num_src_regs = op->table_info->num_src_regs;
-    entry->num_dest_regs = op->table_info->num_dest_regs;
-    memcpy(entry->src_reg_id, op->src_reg_id, sizeof(op->src_reg_id));
-    memcpy(entry->dst_reg_id, op->dst_reg_id, sizeof(op->dst_reg_id));
-
+    if (op->table_info) {
+        entry->num_src_regs = op->table_info->num_src_regs;
+        entry->num_dest_regs = op->table_info->num_dest_regs;
+        entry->cf_type = op->table_info->cf_type;
+        ASSERT(proc_id, entry->num_src_regs <= MAX_SRCS);
+        ASSERT(proc_id, entry->num_dest_regs <= MAX_DESTS);
+        memcpy(entry->src_reg_id, op->inst_info->srcs, op->table_info->num_src_regs * sizeof(Reg_Info));
+        memcpy(entry->dst_reg_id, op->inst_info->dests, op->table_info->num_dest_regs * sizeof(Reg_Info));
+    } else {
+        entry->num_src_regs = 0;
+        entry->num_dest_regs = 0;
+    }
     if (entry->hbt_pred_is_hard) {
-        add_dependency_chain(proc_id, op);
+        add_dependency_chain(proc_id);
     }
 
     fb->tail = (fb->tail + 1) % fb->size;
