@@ -2,9 +2,9 @@
 ####################################################################################################
 Core 0
 ####################################################################################################
-Cumulative:        Cycles: 3018465               Instructions: 5000002               IPC: 1.65647
+Cumulative:        Cycles: 3018574               Instructions: 5000002               IPC: 1.65641
 
-Periodic:          Cycles: 3018465               Instructions: 5000002               IPC: 1.65647
+Periodic:          Cycles: 3018574               Instructions: 5000002               IPC: 1.65641
 
 DCACHE_PREF_HIT                                      0                              0              
 
@@ -16,7 +16,7 @@ DEMAND_LAST_SCHEDULE                                 0         -nan%            
                                                      0         -nan%                0         -nan%
                                                   -nan         -nan              -nan         -nan
 
-SEND_MISS_REQ_QUEUE                              19333                          19333              
+SEND_MISS_REQ_QUEUE                              19334                          19334              
 
 L1_DATA_EVICT                                        0                              0              
 
@@ -27,9 +27,9 @@ PREF_SEND_TO_MEM_REQ_FAIL                            0         -nan%            
                                                      0         -nan%                0         -nan%
                                                   -nan         -nan              -nan         -nan
 
-HIT_TRAIN_STREAM                                 19199       99.912%            19199       99.912%
-MISS_TRAIN_STREAM                                   17        0.088%               17        0.088%
-                                                 19216      100.000%            19216      100.000%
+HIT_TRAIN_STREAM                                 19199       99.917%            19199       99.917%
+MISS_TRAIN_STREAM                                   16        0.083%               16        0.083%
+                                                 19215      100.000%            19215      100.000%
                                                   0.00         0.03              0.00         0.03
 
 STREAM_TRAIN_CREATE                                  8                              8              
