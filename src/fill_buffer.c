@@ -70,6 +70,7 @@ void fill_buffer_add(uns proc_id, Op* op) {
     entry->retire_cycle = op->retire_cycle;
     entry->hbt_pred_is_hard = op->oracle_info.hbt_pred_is_hard;
     entry->hbt_misp_counter = op->oracle_info.hbt_misp_counter;
+
     if (op->table_info) {
         entry->num_src_regs = op->table_info->num_src_regs;
         entry->num_dest_regs = op->table_info->num_dest_regs;
@@ -78,6 +79,15 @@ void fill_buffer_add(uns proc_id, Op* op) {
         ASSERT(proc_id, entry->num_dest_regs <= MAX_DESTS);
         memcpy(entry->src_reg_id, op->inst_info->srcs, op->table_info->num_src_regs * sizeof(Reg_Info));
         memcpy(entry->dst_reg_id, op->inst_info->dests, op->table_info->num_dest_regs * sizeof(Reg_Info));
+        if (op->table_info->mem_type != NOT_MEM && op->oracle_info.mem_size > 0) {
+        entry->va = op->oracle_info.va;
+        entry->mem_size = op->oracle_info.mem_size;
+        entry->mem_type = op->table_info->mem_type;
+        } else {
+        entry->va = 0; // 0 또는 유효하지 않음을 나타내는 값으로 초기화
+        entry->mem_size = 0;
+        entry->mem_type = NOT_MEM;
+        }
     } else {
         entry->num_src_regs = 0;
         entry->num_dest_regs = 0;

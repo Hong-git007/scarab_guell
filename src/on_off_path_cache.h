@@ -24,6 +24,9 @@ typedef struct Path_Op_Info_struct {
     uns     num_dests;
     Reg_Info srcs[MAX_SRCS];
     Reg_Info dests[MAX_DESTS];
+    Mem_Type mem_type;
+    Addr     va;
+    uns      mem_size;
     Flag     is_h2p;
     Cf_Type  cf_type;
 } Path_Op_Info;

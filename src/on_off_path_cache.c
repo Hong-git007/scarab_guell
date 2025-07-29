@@ -55,6 +55,9 @@ void record_on_off_path(uns proc_id, Retired_Op_Info* h2p_op_at_head) {
             memcpy(path_op->srcs, op_in_path->src_reg_id, op_in_path->num_src_regs * sizeof(Reg_Info));
             memcpy(path_op->dests, op_in_path->dst_reg_id, op_in_path->num_dest_regs * sizeof(Reg_Info));
             path_op->is_h2p = op_in_path->hbt_pred_is_hard;
+            path_op->mem_type = op_in_path->mem_type;
+            path_op->va = op_in_path->va;
+            path_op->mem_size = op_in_path->mem_size;
         } else {
             path_op->op_type = OP_INV;
             path_op->num_srcs = 0;

@@ -19,6 +19,9 @@ typedef struct Retired_Op_Info_struct {
   Counter retire_cycle;
   Flag    hbt_pred_is_hard;
   uns32   hbt_misp_counter;
+  Mem_Type mem_type;
+  Addr    va;
+  uns     mem_size;
   uns8    num_src_regs;
   uns8    num_dest_regs;
   int     src_reg_id[MAX_SRCS][REG_TABLE_TYPE_NUM];
