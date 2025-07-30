@@ -1,8 +1,8 @@
 Core, 0, 0
-Cumulative_Cycles, 0, 3018465             
-Cumulative_Instructions, 0, 5000002             
-Periodic_Cycles, 0, 3018465             
-Periodic_Instructions, 0, 5000002             
+Cumulative_Cycles, 0, 414845              
+Cumulative_Instructions, 0, 672199              
+Periodic_Cycles, 0, 414845              
+Periodic_Instructions, 0, 672199              
 L2WAY_FILL_L1_count, 0,             0
 L2WAY_FILL_L1_total_count, 0,             0
 

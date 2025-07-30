@@ -1,43 +1,43 @@
 Core, 0, 0
-Cumulative_Cycles, 0, 3018465             
-Cumulative_Instructions, 0, 5000002             
-Periodic_Cycles, 0, 3018465             
-Periodic_Instructions, 0, 5000002             
+Cumulative_Cycles, 0, 414845              
+Cumulative_Instructions, 0, 672199              
+Periodic_Cycles, 0, 414845              
+Periodic_Instructions, 0, 672199              
 MISS_WAIT_TIME_count, 0,          3758
 MISS_WAIT_TIME_total_count, 0,          3758
 
 ICACHE_STAGE_MISS_count, 0,            10
 ICACHE_STAGE_MISS_total_count, 0,            10
 
-ICACHE_CYCLE_count, 0,       3018465
-ICACHE_CYCLE_total_count, 0,       3018465
+ICACHE_CYCLE_count, 0,        414845
+ICACHE_CYCLE_total_count, 0,        414845
 
 TCACHE_CYCLE_count, 0,             0
 TCACHE_CYCLE_total_count, 0,             0
 
-ICACHE_SERVING_CYCLE_ON_PATH_count, 0,            45
-ICACHE_SERVING_CYCLE_ON_PATH_total_count, 0,            45
+ICACHE_SERVING_CYCLE_ON_PATH_count, 0,            44
+ICACHE_SERVING_CYCLE_ON_PATH_total_count, 0,            44
 
-ICACHE_SERVING_CYCLE_OFF_PATH_count, 0,           196
-ICACHE_SERVING_CYCLE_OFF_PATH_total_count, 0,           196
+ICACHE_SERVING_CYCLE_OFF_PATH_count, 0,           186
+ICACHE_SERVING_CYCLE_OFF_PATH_total_count, 0,           186
 
-UCACHE_SERVING_CYCLE_ON_PATH_count, 0,       1719478
-UCACHE_SERVING_CYCLE_ON_PATH_total_count, 0,       1719478
+UCACHE_SERVING_CYCLE_ON_PATH_count, 0,        230687
+UCACHE_SERVING_CYCLE_ON_PATH_total_count, 0,        230687
 
-UCACHE_SERVING_CYCLE_OFF_PATH_count, 0,       1268836
-UCACHE_SERVING_CYCLE_OFF_PATH_total_count, 0,       1268836
+UCACHE_SERVING_CYCLE_OFF_PATH_count, 0,        178921
+UCACHE_SERVING_CYCLE_OFF_PATH_total_count, 0,        178921
 
-ICACHE_CYCLE_ONPATH_count, 1,       1720242
-ICACHE_CYCLE_ONPATH_total_count, 1,       1720242
+ICACHE_CYCLE_ONPATH_count, 1,        231450
+ICACHE_CYCLE_ONPATH_total_count, 1,        231450
 
-ICACHE_CYCLE_OFFPATH_count, 1,       1298223
-ICACHE_CYCLE_OFFPATH_total_count, 1,       1298223
+ICACHE_CYCLE_OFFPATH_count, 1,        183395
+ICACHE_CYCLE_OFFPATH_total_count, 1,        183395
 
-FETCH_ON_PATH_count, 2,       1749104
-FETCH_ON_PATH_total_count, 2,       1749104
+FETCH_ON_PATH_count, 2,        235409
+FETCH_ON_PATH_total_count, 2,        235409
 
-FETCH_OFF_PATH_count, 2,       1269361
-FETCH_OFF_PATH_total_count, 2,       1269361
+FETCH_OFF_PATH_count, 2,        179436
+FETCH_OFF_PATH_total_count, 2,        179436
 
 FETCHED_OPS_ON_PATH_count, 3,             0
 FETCHED_OPS_ON_PATH_total_count, 3,             0
@@ -45,11 +45,11 @@ FETCHED_OPS_ON_PATH_total_count, 3,             0
 FETCHED_OPS_OFF_PATH_count, 3,             0
 FETCHED_OPS_OFF_PATH_total_count, 3,             0
 
-INST_LOST_FETCH_count, 4,       6539162
-INST_LOST_FETCH_total_count, 4,       6539162
+INST_LOST_FETCH_count, 4,        878480
+INST_LOST_FETCH_total_count, 4,        878480
 
-INST_LOST_OFF_PATH_count, 4,       5227587
-INST_LOST_OFF_PATH_total_count, 4,       5227587
+INST_LOST_OFF_PATH_count, 4,        733995
+INST_LOST_OFF_PATH_total_count, 4,        733995
 
 INST_LOST_FULL_WINDOW_count, 4,             0
 INST_LOST_FULL_WINDOW_total_count, 4,             0
@@ -84,8 +84,8 @@ INST_LOST_ROB_BLOCK_ISSUE_GAP_TOO_LARGE_total_count, 4,             0
 INST_LOST_BREAK_DONT_count, 4,             0
 INST_LOST_BREAK_DONT_total_count, 4,             0
 
-INST_LOST_BREAK_FT_UNAVAILABLE_count, 4,        173172
-INST_LOST_BREAK_FT_UNAVAILABLE_total_count, 4,        173172
+INST_LOST_BREAK_FT_UNAVAILABLE_count, 4,         23754
+INST_LOST_BREAK_FT_UNAVAILABLE_total_count, 4,         23754
 
 INST_LOST_BREAK_ICACHE_STAGE_RESTEER_count, 4,             6
 INST_LOST_BREAK_ICACHE_STAGE_RESTEER_total_count, 4,             6
@@ -102,11 +102,11 @@ INST_LOST_BREAK_ICACHE_WAIT_FOR_MISS_total_count, 4,          6264
 INST_LOST_BREAK_ICACHE_STALLED_count, 4,             0
 INST_LOST_BREAK_ICACHE_STALLED_total_count, 4,             0
 
-INST_LOST_BREAK_ICACHE_TO_UOP_CACHE_SWITCH_count, 4,            49
-INST_LOST_BREAK_ICACHE_TO_UOP_CACHE_SWITCH_total_count, 4,            49
+INST_LOST_BREAK_ICACHE_TO_UOP_CACHE_SWITCH_count, 4,            38
+INST_LOST_BREAK_ICACHE_TO_UOP_CACHE_SWITCH_total_count, 4,            38
 
-INST_LOST_BREAK_ICACHE_READ_LIMIT_count, 4,            56
-INST_LOST_BREAK_ICACHE_READ_LIMIT_total_count, 4,            56
+INST_LOST_BREAK_ICACHE_READ_LIMIT_count, 4,            52
+INST_LOST_BREAK_ICACHE_READ_LIMIT_total_count, 4,            52
 
 INST_LOST_BREAK_ICACHE_ISSUE_WIDTH_count, 4,             0
 INST_LOST_BREAK_ICACHE_ISSUE_WIDTH_total_count, 4,             0
@@ -114,17 +114,17 @@ INST_LOST_BREAK_ICACHE_ISSUE_WIDTH_total_count, 4,             0
 INST_LOST_BREAK_UOP_CACHE_STALLED_count, 4,            40
 INST_LOST_BREAK_UOP_CACHE_STALLED_total_count, 4,            40
 
-INST_LOST_BREAK_UOP_CACHE_TO_ICACHE_SWITCH_count, 4,            61
-INST_LOST_BREAK_UOP_CACHE_TO_ICACHE_SWITCH_total_count, 4,            61
+INST_LOST_BREAK_UOP_CACHE_TO_ICACHE_SWITCH_count, 4,            46
+INST_LOST_BREAK_UOP_CACHE_TO_ICACHE_SWITCH_total_count, 4,            46
 
-INST_LOST_BREAK_UOP_CACHE_READ_LIMIT_count, 4,      12140959
-INST_LOST_BREAK_UOP_CACHE_READ_LIMIT_total_count, 4,      12140959
+INST_LOST_BREAK_UOP_CACHE_READ_LIMIT_count, 4,       1665549
+INST_LOST_BREAK_UOP_CACHE_READ_LIMIT_total_count, 4,       1665549
 
 INST_LOST_BREAK_UOP_CACHE_ISSUE_WIDTH_count, 4,             0
 INST_LOST_BREAK_UOP_CACHE_ISSUE_WIDTH_total_count, 4,             0
 
-INST_LOST_TOTAL_count, 0,      24087418
-INST_LOST_TOTAL_total_count, 0,      24087418
+INST_LOST_TOTAL_count, 0,       3308286
+INST_LOST_TOTAL_total_count, 0,       3308286
 
 INST_LOST_WAIT_FOR_ICACHE_MISS_NOT_PREFETCHED_count, 5,             0
 INST_LOST_WAIT_FOR_ICACHE_MISS_NOT_PREFETCHED_total_count, 5,             0
@@ -141,32 +141,32 @@ INST_LOST_WAIT_FOR_ICACHE_MISS_MSHR_HIT_PREF_OFFPATH_total_count, 5,            
 INST_LOST_WAIT_FOR_ICACHE_MISS_MSHR_HIT_PREF_ONPATH_count, 5,          4290
 INST_LOST_WAIT_FOR_ICACHE_MISS_MSHR_HIT_PREF_ONPATH_total_count, 5,          4290
 
-FETCH_0_OPS_count, 6,         29910
-FETCH_0_OPS_total_count, 6,         29910
+FETCH_0_OPS_count, 6,          5007
+FETCH_0_OPS_total_count, 6,          5007
 
-FETCH_1_OPS_count, 6,             7
-FETCH_1_OPS_total_count, 6,             7
+FETCH_1_OPS_count, 6,             6
+FETCH_1_OPS_total_count, 6,             6
 
-FETCH_2_OPS_count, 6,        418304
-FETCH_2_OPS_total_count, 6,        418304
+FETCH_2_OPS_count, 6,         39129
+FETCH_2_OPS_total_count, 6,         39129
 
-FETCH_3_OPS_count, 6,        972323
-FETCH_3_OPS_total_count, 6,        972323
+FETCH_3_OPS_count, 6,        157987
+FETCH_3_OPS_total_count, 6,        157987
 
-FETCH_4_OPS_count, 6,        592143
-FETCH_4_OPS_total_count, 6,        592143
+FETCH_4_OPS_count, 6,         54150
+FETCH_4_OPS_total_count, 6,         54150
 
-FETCH_5_OPS_count, 6,        757698
-FETCH_5_OPS_total_count, 6,        757698
+FETCH_5_OPS_count, 6,        138591
+FETCH_5_OPS_total_count, 6,        138591
 
-FETCH_6_OPS_count, 6,         64253
-FETCH_6_OPS_total_count, 6,         64253
+FETCH_6_OPS_count, 6,          4539
+FETCH_6_OPS_total_count, 6,          4539
 
-FETCH_7_OPS_count, 6,             7
-FETCH_7_OPS_total_count, 6,             7
+FETCH_7_OPS_count, 6,             3
+FETCH_7_OPS_total_count, 6,             3
 
-FETCH_8_OPS_count, 6,        183820
-FETCH_8_OPS_total_count, 6,        183820
+FETCH_8_OPS_count, 6,         15433
+FETCH_8_OPS_total_count, 6,         15433
 
 FETCH_9_OPS_count, 6,             0
 FETCH_9_OPS_total_count, 6,             0
@@ -195,8 +195,8 @@ FETCH_16_OPS_total_count, 6,             0
 ST_BREAK_DONT_count, 7,             0
 ST_BREAK_DONT_total_count, 7,             0
 
-ST_BREAK_FT_UNAVAILABLE_count, 7,         28862
-ST_BREAK_FT_UNAVAILABLE_total_count, 7,         28862
+ST_BREAK_FT_UNAVAILABLE_count, 7,          3959
+ST_BREAK_FT_UNAVAILABLE_total_count, 7,          3959
 
 ST_BREAK_ICACHE_STAGE_RESTEER_count, 7,             1
 ST_BREAK_ICACHE_STAGE_RESTEER_total_count, 7,             1
@@ -213,44 +213,44 @@ ST_BREAK_ICACHE_WAIT_FOR_MISS_total_count, 7,          1044
 ST_BREAK_ICACHE_STALLED_count, 7,             0
 ST_BREAK_ICACHE_STALLED_total_count, 7,             0
 
-ST_BREAK_ICACHE_TO_UOP_CACHE_SWITCH_count, 7,            13
-ST_BREAK_ICACHE_TO_UOP_CACHE_SWITCH_total_count, 7,            13
+ST_BREAK_ICACHE_TO_UOP_CACHE_SWITCH_count, 7,            10
+ST_BREAK_ICACHE_TO_UOP_CACHE_SWITCH_total_count, 7,            10
 
-ST_BREAK_ICACHE_READ_LIMIT_count, 7,            22
-ST_BREAK_ICACHE_READ_LIMIT_total_count, 7,            22
+ST_BREAK_ICACHE_READ_LIMIT_count, 7,            21
+ST_BREAK_ICACHE_READ_LIMIT_total_count, 7,            21
 
-ST_BREAK_ICACHE_ISSUE_WIDTH_count, 7,           200
-ST_BREAK_ICACHE_ISSUE_WIDTH_total_count, 7,           200
+ST_BREAK_ICACHE_ISSUE_WIDTH_count, 7,           193
+ST_BREAK_ICACHE_ISSUE_WIDTH_total_count, 7,           193
 
 ST_BREAK_UOP_CACHE_STALLED_count, 7,             8
 ST_BREAK_UOP_CACHE_STALLED_total_count, 7,             8
 
-ST_BREAK_UOP_CACHE_TO_ICACHE_SWITCH_count, 7,            12
-ST_BREAK_UOP_CACHE_TO_ICACHE_SWITCH_total_count, 7,            12
+ST_BREAK_UOP_CACHE_TO_ICACHE_SWITCH_count, 7,             9
+ST_BREAK_UOP_CACHE_TO_ICACHE_SWITCH_total_count, 7,             9
 
-ST_BREAK_UOP_CACHE_READ_LIMIT_count, 7,       2804473
-ST_BREAK_UOP_CACHE_READ_LIMIT_total_count, 7,       2804473
+ST_BREAK_UOP_CACHE_READ_LIMIT_count, 7,        394157
+ST_BREAK_UOP_CACHE_READ_LIMIT_total_count, 7,        394157
 
-ST_BREAK_UOP_CACHE_ISSUE_WIDTH_count, 7,        183820
-ST_BREAK_UOP_CACHE_ISSUE_WIDTH_total_count, 7,        183820
+ST_BREAK_UOP_CACHE_ISSUE_WIDTH_count, 7,         15433
+ST_BREAK_UOP_CACHE_ISSUE_WIDTH_total_count, 7,         15433
 
-ORACLE_ON_PATH_INST_count, 8,       6539162
-ORACLE_ON_PATH_INST_total_count, 8,       6539162
+ORACLE_ON_PATH_INST_count, 8,        878480
+ORACLE_ON_PATH_INST_total_count, 8,        878480
 
-ORACLE_OFF_PATH_INST_count, 8,       5227587
-ORACLE_OFF_PATH_INST_total_count, 8,       5227587
+ORACLE_OFF_PATH_INST_count, 8,        733995
+ORACLE_OFF_PATH_INST_total_count, 8,        733995
 
-ORACLE_ON_PATH_INST_MEM_count, 9,       1676280
-ORACLE_ON_PATH_INST_MEM_total_count, 9,       1676280
+ORACLE_ON_PATH_INST_MEM_count, 9,        225382
+ORACLE_ON_PATH_INST_MEM_total_count, 9,        225382
 
-ORACLE_ON_PATH_INST_NOTMEM_count, 9,       4862882
-ORACLE_ON_PATH_INST_NOTMEM_total_count, 9,       4862882
+ORACLE_ON_PATH_INST_NOTMEM_count, 9,        653098
+ORACLE_ON_PATH_INST_NOTMEM_total_count, 9,        653098
 
-ORACLE_OFF_PATH_INST_MEM_count, 9,       1587805
-ORACLE_OFF_PATH_INST_MEM_total_count, 9,       1587805
+ORACLE_OFF_PATH_INST_MEM_count, 9,        340733
+ORACLE_OFF_PATH_INST_MEM_total_count, 9,        340733
 
-ORACLE_OFF_PATH_INST_NOTMEM_count, 9,       3639782
-ORACLE_OFF_PATH_INST_NOTMEM_total_count, 9,       3639782
+ORACLE_OFF_PATH_INST_NOTMEM_count, 9,        393262
+ORACLE_OFF_PATH_INST_NOTMEM_total_count, 9,        393262
 
 ICACHE_CYCLE_NONRA_ONPATH_count, 10,             0
 ICACHE_CYCLE_NONRA_ONPATH_total_count, 10,             0
@@ -281,32 +281,32 @@ INACCURATE_OFFPATH_CYCLES_pct, 0,        0.000
 INACCURATE_OFFPATH_CYCLES_total_count, 0,             0
 INACCURATE_OFFPATH_CYCLES_total_pct, 0,        0.000
 
-FETCH_ALL_INST_count, 0,      11766749
-FETCH_ALL_INST_total_count, 0,      11766749
+FETCH_ALL_INST_count, 0,       1612475
+FETCH_ALL_INST_total_count, 0,       1612475
 
-EXEC_ALL_INST_count, 0,      10637681
-EXEC_ALL_INST_total_count, 0,      10637681
+EXEC_ALL_INST_count, 0,       1434056
+EXEC_ALL_INST_total_count, 0,       1434056
 
-RET_ALL_INST_count, 0,       6539114
-RET_ALL_INST_total_count, 0,       6539114
+RET_ALL_INST_count, 0,        878473
+RET_ALL_INST_total_count, 0,        878473
 
-EXEC_ON_PATH_INST_count, 13,       6539131
-EXEC_ON_PATH_INST_total_count, 13,       6539131
+EXEC_ON_PATH_INST_count, 13,        878478
+EXEC_ON_PATH_INST_total_count, 13,        878478
 
-EXEC_OFF_PATH_INST_count, 13,       4098550
-EXEC_OFF_PATH_INST_total_count, 13,       4098550
+EXEC_OFF_PATH_INST_count, 13,        555578
+EXEC_OFF_PATH_INST_total_count, 13,        555578
 
-EXEC_ON_PATH_INST_MEM_count, 14,       1676275
-EXEC_ON_PATH_INST_MEM_total_count, 14,       1676275
+EXEC_ON_PATH_INST_MEM_count, 14,        225382
+EXEC_ON_PATH_INST_MEM_total_count, 14,        225382
 
-EXEC_ON_PATH_INST_NOTMEM_count, 14,       4862856
-EXEC_ON_PATH_INST_NOTMEM_total_count, 14,       4862856
+EXEC_ON_PATH_INST_NOTMEM_count, 14,        653096
+EXEC_ON_PATH_INST_NOTMEM_total_count, 14,        653096
 
-EXEC_OFF_PATH_INST_MEM_count, 14,       1274985
-EXEC_OFF_PATH_INST_MEM_total_count, 14,       1274985
+EXEC_OFF_PATH_INST_MEM_count, 14,        241428
+EXEC_OFF_PATH_INST_MEM_total_count, 14,        241428
 
-EXEC_OFF_PATH_INST_NOTMEM_count, 14,       2823565
-EXEC_OFF_PATH_INST_NOTMEM_total_count, 14,       2823565
+EXEC_OFF_PATH_INST_NOTMEM_count, 14,        314150
+EXEC_OFF_PATH_INST_NOTMEM_total_count, 14,        314150
 
 EXEC_RA_INST_count, 15,             0
 EXEC_RA_INST_total_count, 15,             0

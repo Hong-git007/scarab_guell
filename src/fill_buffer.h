@@ -10,6 +10,7 @@
 typedef struct Retired_Op_Info_struct {
   Inst_Info* inst_info;
   Table_Info* table_info;
+  Op_Type op_type; 
   Cf_Type  cf_type;
   Counter op_num;
   Addr    pc;

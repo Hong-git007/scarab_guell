@@ -69,6 +69,7 @@
 #include "log/op_trace_log.h"
 #include "log/on_off_path_log.h"
 #include "log/dependency_chain_log.h"
+#include "log/fill_buffer_log.h"
 
 /**************************************************************************************/
 /* Global vars */
@@ -154,6 +155,7 @@ void cmp_init(uns mode) {
   init_recovery_log();
   init_on_off_path_log();
   init_dependency_chain_log();
+  init_fill_buffer_log();
 
   if (DVFS_ON)
     dvfs_init();

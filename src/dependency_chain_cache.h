@@ -6,11 +6,17 @@
 #include "table_info.h"
 #include <stdbool.h>
 
+// =================================================================
+// 상수 정의
+// =================================================================
 #define DEPENDENCY_CHAIN_CACHE_SIZE 1024
-#define MAX_CHAIN_LENGTH 64
+#define BLOCK_CACHE_SIZE            1024 // 새로 추가된 블록 캐시 크기
+#define MAX_CHAIN_LENGTH            64   // 체인의 최대 길이
+#define MAX_LIVE_INS                32   // Live-in 목록의 최대 크기
+// =================================================================
+// 자료구조 정의
+// =================================================================
 
-#define MAX_LIVE_INS 128
-// SourceList 구조체에 메모리 주소(addrs) 배열 추가
 typedef struct SourceList_struct {
     Reg_Info regs[MAX_LIVE_INS];
     Addr     addrs[MAX_LIVE_INS];
@@ -43,14 +49,15 @@ typedef struct Dependency_Chain_Cache_Entry_struct {
   Chain_Op_Info chain[MAX_CHAIN_LENGTH];
 } Dependency_Chain_Cache_Entry;
 
-// Function prototypes
+// =================================================================
+// Function prototypes (원형) 선언
+// =================================================================
 void init_dependency_chain_cache(uns proc_id);
 void reset_dependency_chain_cache(uns proc_id);
 void add_dependency_chain(uns proc_id);
-// void trace_and_store_by_block(uns proc_id);
-// bool remove_addr_from_source_list(SourceList* list, Addr addr);
-// void add_addr_to_source_list(SourceList* list, Addr addr);
-// void add_reg_to_source_list(SourceList* list, Reg_Info* reg);
-// bool remove_reg_from_source_list(SourceList* list, Reg_Info* reg);
+Dependency_Chain_Cache_Entry* get_dependency_chain(uns proc_id, Addr pc);
+Dependency_Chain_Cache_Entry* get_dependency_chain_block(uns proc_id, Addr pc);
+extern Dependency_Chain_Cache_Entry** dependency_chain_caches;
+extern Dependency_Chain_Cache_Entry** block_caches;
 
 #endif // __DEPENDENCY_CHAIN_CACHE_H__

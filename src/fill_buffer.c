@@ -5,6 +5,8 @@
 #include "core.param.h"
 #include "dependency_chain_cache.h"
 #include "on_off_path_cache.h"
+#include "node_stage.h"
+#include "log/fill_buffer_log.h"
 
 Fill_Buffer** retired_fill_buffers;
 
@@ -41,10 +43,8 @@ void fill_buffer_add(uns proc_id, Op* op) {
     ASSERT(proc_id < NUM_CORES, "proc_id out of bounds\n");
     Fill_Buffer* fb = retired_fill_buffers[proc_id];
     if (!fb) return;
-
     // Buffer is full, overwrite the oldest entry
     if (fb->count == fb->size) {
-        // -----[ 새로운 로직 추가 시작 ]-----
         // 1. 덮어씌워질, 즉 가장 오래된 op(head 위치)를 가져옵니다.
         Retired_Op_Info* evicted_op = &fb->entries[fb->head];
         
@@ -52,8 +52,6 @@ void fill_buffer_add(uns proc_id, Op* op) {
         if (evicted_op->hbt_pred_is_hard) {
             record_on_off_path(proc_id, evicted_op);
         }
-        // -----[ 새로운 로직 추가 끝 ]-----
-
         // 기존의 head 포인터 업데이트 로직
         fb->head = (fb->head + 1) % fb->size;
         fb->count--;
@@ -75,6 +73,7 @@ void fill_buffer_add(uns proc_id, Op* op) {
         entry->num_src_regs = op->table_info->num_src_regs;
         entry->num_dest_regs = op->table_info->num_dest_regs;
         entry->cf_type = op->table_info->cf_type;
+        entry->op_type = op->table_info->op_type;
         ASSERT(proc_id, entry->num_src_regs <= MAX_SRCS);
         ASSERT(proc_id, entry->num_dest_regs <= MAX_DESTS);
         memcpy(entry->src_reg_id, op->inst_info->srcs, op->table_info->num_src_regs * sizeof(Reg_Info));
@@ -92,9 +91,9 @@ void fill_buffer_add(uns proc_id, Op* op) {
         entry->num_src_regs = 0;
         entry->num_dest_regs = 0;
     }
-    if (entry->hbt_pred_is_hard) {
-        add_dependency_chain(proc_id);
-    }
+    // if (entry->hbt_pred_is_hard) {
+    //     add_dependency_chain(proc_id);
+    // }
 
     fb->tail = (fb->tail + 1) % fb->size;
     fb->count++;

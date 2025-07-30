@@ -7,5 +7,7 @@
 void init_dependency_chain_log(void);
 void finalize_dependency_chain_log(void);
 void log_dependency_chain_entry(uns proc_id, Dependency_Chain_Cache_Entry* entry, Counter cycle_count);
+void log_dependency_chain_block(uns proc_id, Dependency_Chain_Cache_Entry* entry, Counter cycle_count);
+void log_full_cache_state(uns proc_id, Counter cycle_count);
 
 #endif // __DEPENDENCY_CHAIN_LOG_H__
