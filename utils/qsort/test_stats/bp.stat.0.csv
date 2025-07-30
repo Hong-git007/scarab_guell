@@ -1,46 +1,46 @@
 Core, 0, 0
-Cumulative_Cycles, 0, 3018465             
-Cumulative_Instructions, 0, 5000002             
-Periodic_Cycles, 0, 3018465             
-Periodic_Instructions, 0, 5000002             
-BTB_ON_PATH_MISS_count, 27,         26161
-BTB_ON_PATH_MISS_total_count, 27,         26161
+Cumulative_Cycles, 0, 414845              
+Cumulative_Instructions, 0, 672199              
+Periodic_Cycles, 0, 414845              
+Periodic_Instructions, 0, 672199              
+BTB_ON_PATH_MISS_count, 27,          3563
+BTB_ON_PATH_MISS_total_count, 27,          3563
 
-BTB_ON_PATH_HIT_count, 27,       1417466
-BTB_ON_PATH_HIT_total_count, 27,       1417466
+BTB_ON_PATH_HIT_count, 27,        190256
+BTB_ON_PATH_HIT_total_count, 27,        190256
 
-BTB_OFF_PATH_MISS_count, 28,         42063
-BTB_OFF_PATH_MISS_total_count, 28,         42063
+BTB_OFF_PATH_MISS_count, 28,            34
+BTB_OFF_PATH_MISS_total_count, 28,            34
 
-BTB_OFF_PATH_HIT_count, 28,       1721151
-BTB_OFF_PATH_HIT_total_count, 28,       1721151
+BTB_OFF_PATH_HIT_count, 28,        164273
+BTB_OFF_PATH_HIT_total_count, 28,        164273
 
-BTB_ON_PATH_WRITE_count, 29,         62841
-BTB_ON_PATH_WRITE_total_count, 29,         62841
+BTB_ON_PATH_WRITE_count, 29,          6819
+BTB_ON_PATH_WRITE_total_count, 29,          6819
 
-BTB_OFF_PATH_WRITE_count, 29,         43892
-BTB_OFF_PATH_WRITE_total_count, 29,         43892
+BTB_OFF_PATH_WRITE_count, 29,          1050
+BTB_OFF_PATH_WRITE_total_count, 29,          1050
 
-BP_ON_PATH_CORRECT_count, 30,       1414771
-BP_ON_PATH_CORRECT_total_count, 30,       1414771
+BP_ON_PATH_CORRECT_count, 30,        189860
+BP_ON_PATH_CORRECT_total_count, 30,        189860
 
-BP_ON_PATH_MISPREDICT_count, 30,         28856
-BP_ON_PATH_MISPREDICT_total_count, 30,         28856
+BP_ON_PATH_MISPREDICT_count, 30,          3959
+BP_ON_PATH_MISPREDICT_total_count, 30,          3959
 
 BP_ON_PATH_MISFETCH_count, 30,             0
 BP_ON_PATH_MISFETCH_total_count, 30,             0
 
-BP_OFF_PATH_CORRECT_count, 31,       1674338
-BP_OFF_PATH_CORRECT_total_count, 31,       1674338
+BP_OFF_PATH_CORRECT_count, 31,        155577
+BP_OFF_PATH_CORRECT_total_count, 31,        155577
 
-BP_OFF_PATH_MISPREDICT_count, 31,         88876
-BP_OFF_PATH_MISPREDICT_total_count, 31,         88876
+BP_OFF_PATH_MISPREDICT_count, 31,          8730
+BP_OFF_PATH_MISPREDICT_total_count, 31,          8730
 
 BP_OFF_PATH_MISFETCH_count, 31,             0
 BP_OFF_PATH_MISFETCH_total_count, 31,             0
 
-LATE_BP_ON_PATH_CORRECT_count, 32,       1443627
-LATE_BP_ON_PATH_CORRECT_total_count, 32,       1443627
+LATE_BP_ON_PATH_CORRECT_count, 32,        193819
+LATE_BP_ON_PATH_CORRECT_total_count, 32,        193819
 
 LATE_BP_ON_PATH_MISPREDICT_count, 32,             0
 LATE_BP_ON_PATH_MISPREDICT_total_count, 32,             0
@@ -48,8 +48,8 @@ LATE_BP_ON_PATH_MISPREDICT_total_count, 32,             0
 LATE_BP_ON_PATH_MISFETCH_count, 32,             0
 LATE_BP_ON_PATH_MISFETCH_total_count, 32,             0
 
-LATE_BP_OFF_PATH_CORRECT_count, 33,       1763214
-LATE_BP_OFF_PATH_CORRECT_total_count, 33,       1763214
+LATE_BP_OFF_PATH_CORRECT_count, 33,        164307
+LATE_BP_OFF_PATH_CORRECT_total_count, 33,        164307
 
 LATE_BP_OFF_PATH_MISPREDICT_count, 33,             0
 LATE_BP_OFF_PATH_MISPREDICT_total_count, 33,             0
@@ -78,35 +78,35 @@ BP_ON_PATH_CONF_SPEC_BOT_total_count, 36,             0
 CRS_MISS_ON_PATH_count, 37,             0
 CRS_MISS_ON_PATH_total_count, 37,             0
 
-CRS_HIT_ON_PATH_count, 37,        307302
-CRS_HIT_ON_PATH_total_count, 37,        307302
+CRS_HIT_ON_PATH_count, 37,         41179
+CRS_HIT_ON_PATH_total_count, 37,         41179
 
 CRS_MISS_OFF_PATH_count, 38,             0
 CRS_MISS_OFF_PATH_total_count, 38,             0
 
-CRS_HIT_OFF_PATH_count, 38,        323497
-CRS_HIT_OFF_PATH_total_count, 38,        323497
+CRS_HIT_OFF_PATH_count, 38,          7288
+CRS_HIT_OFF_PATH_total_count, 38,          7288
 
 CRS_CLOBBER_count, 0,             0
 CRS_CLOBBER_total_count, 0,             0
 
-TARG_ON_PATH_MISS_count, 39,        125970
-TARG_ON_PATH_MISS_total_count, 39,        125970
+TARG_ON_PATH_MISS_count, 39,         12266
+TARG_ON_PATH_MISS_total_count, 39,         12266
 
-TARG_ON_PATH_HIT_count, 39,        181333
-TARG_ON_PATH_HIT_total_count, 39,        181333
+TARG_ON_PATH_HIT_count, 39,         28914
+TARG_ON_PATH_HIT_total_count, 39,         28914
 
-TARG_OFF_PATH_MISS_count, 40,        175198
-TARG_OFF_PATH_MISS_total_count, 40,        175198
+TARG_OFF_PATH_MISS_count, 40,          3206
+TARG_OFF_PATH_MISS_total_count, 40,          3206
 
-TARG_OFF_PATH_HIT_count, 40,        129094
-TARG_OFF_PATH_HIT_total_count, 40,        129094
+TARG_OFF_PATH_HIT_count, 40,           248
+TARG_OFF_PATH_HIT_total_count, 40,           248
 
-TARG_ON_PATH_WRITE_count, 41,        307295
-TARG_ON_PATH_WRITE_total_count, 41,        307295
+TARG_ON_PATH_WRITE_count, 41,         41180
+TARG_ON_PATH_WRITE_total_count, 41,         41180
 
-TARG_OFF_PATH_WRITE_count, 41,        130981
-TARG_OFF_PATH_WRITE_total_count, 41,        130981
+TARG_OFF_PATH_WRITE_count, 41,          1883
+TARG_OFF_PATH_WRITE_total_count, 41,          1883
 
 TARG_HYBRID_CORRECT_TAGLESS_count, 42,             0
 TARG_HYBRID_CORRECT_TAGLESS_total_count, 42,             0
@@ -132,27 +132,27 @@ TARG_VP_INDIRECT_NOPRED_total_count, 43,             0
 TARG_VP_INDIRECT_CORRECT_count, 43,             0
 TARG_VP_INDIRECT_CORRECT_total_count, 43,             0
 
-CBR_ON_PATH_CORRECT_count, 44,        768757
-CBR_ON_PATH_CORRECT_total_count, 44,        768757
+CBR_ON_PATH_CORRECT_count, 44,        103222
+CBR_ON_PATH_CORRECT_total_count, 44,        103222
 
-CBR_ON_PATH_MISPREDICT_count, 44,         28851
-CBR_ON_PATH_MISPREDICT_total_count, 44,         28851
+CBR_ON_PATH_MISPREDICT_count, 44,          3954
+CBR_ON_PATH_MISPREDICT_total_count, 44,          3954
 
-CBR_OFF_PATH_CORRECT_count, 45,        990631
-CBR_OFF_PATH_CORRECT_total_count, 45,        990631
+CBR_OFF_PATH_CORRECT_count, 45,        144011
+CBR_OFF_PATH_CORRECT_total_count, 45,        144011
 
-CBR_OFF_PATH_MISPREDICT_count, 45,         88873
-CBR_OFF_PATH_MISPREDICT_total_count, 45,         88873
+CBR_OFF_PATH_MISPREDICT_count, 45,          8727
+CBR_OFF_PATH_MISPREDICT_total_count, 45,          8727
 
-CBR_ON_PATH_CORRECT_PER1000INST_count, 0,        768757
-CBR_ON_PATH_CORRECT_PER1000INST_pct, 0,      153.751
-CBR_ON_PATH_CORRECT_PER1000INST_total_count, 0,        768757
-CBR_ON_PATH_CORRECT_PER1000INST_total_pct, 0,      153.751
+CBR_ON_PATH_CORRECT_PER1000INST_count, 0,        103222
+CBR_ON_PATH_CORRECT_PER1000INST_pct, 0,      153.559
+CBR_ON_PATH_CORRECT_PER1000INST_total_count, 0,        103222
+CBR_ON_PATH_CORRECT_PER1000INST_total_pct, 0,      153.559
 
-CBR_ON_PATH_MISPREDICT_PER1000INST_count, 0,         28851
-CBR_ON_PATH_MISPREDICT_PER1000INST_pct, 0,        5.770
-CBR_ON_PATH_MISPREDICT_PER1000INST_total_count, 0,         28851
-CBR_ON_PATH_MISPREDICT_PER1000INST_total_pct, 0,        5.770
+CBR_ON_PATH_MISPREDICT_PER1000INST_count, 0,          3954
+CBR_ON_PATH_MISPREDICT_PER1000INST_pct, 0,        5.882
+CBR_ON_PATH_MISPREDICT_PER1000INST_total_count, 0,          3954
+CBR_ON_PATH_MISPREDICT_PER1000INST_total_pct, 0,        5.882
 
 PRED_TO_UPDATE_CYCLES_0_count, 46,             0
 PRED_TO_UPDATE_CYCLES_0_total_count, 46,             0
@@ -259,8 +259,8 @@ TARG_CORRECTED_total_count, 48,             0
 TARG_NOT_CORRECTED_count, 48,             0
 TARG_NOT_CORRECTED_total_count, 48,             0
 
-BP_MISP_PENALTY_count, 0,        947328
-BP_MISP_PENALTY_total_count, 0,        947328
+BP_MISP_PENALTY_count, 0,        129853
+BP_MISP_PENALTY_total_count, 0,        129853
 
 BP_ON_PATH_CONF_MISPRED_count, 49,             0
 BP_ON_PATH_CONF_MISPRED_total_count, 49,             0
@@ -1009,17 +1009,17 @@ FRAGHIST_BIN_31_total_count, 155,             0
 FRAGHIST_BIN_32_count, 155,             0
 FRAGHIST_BIN_32_total_count, 155,             0
 
-CF_BR_USED_TARGET_CORRECT_count, 156,         31412
-CF_BR_USED_TARGET_CORRECT_total_count, 156,         31412
+CF_BR_USED_TARGET_CORRECT_count, 156,          4282
+CF_BR_USED_TARGET_CORRECT_total_count, 156,          4282
 
 CF_BR_USED_TARGET_INCORRECT_count, 156,             1
 CF_BR_USED_TARGET_INCORRECT_total_count, 156,             1
 
-CF_CBR_USED_TARGET_CORRECT_count, 156,        661574
-CF_CBR_USED_TARGET_CORRECT_total_count, 156,        661574
+CF_CBR_USED_TARGET_CORRECT_count, 156,         88675
+CF_CBR_USED_TARGET_CORRECT_total_count, 156,         88675
 
-CF_CBR_USED_TARGET_INCORRECT_count, 156,         26168
-CF_CBR_USED_TARGET_INCORRECT_total_count, 156,         26168
+CF_CBR_USED_TARGET_INCORRECT_count, 156,          3554
+CF_CBR_USED_TARGET_INCORRECT_total_count, 156,          3554
 
 CF_CALL_USED_TARGET_CORRECT_count, 156,             0
 CF_CALL_USED_TARGET_CORRECT_total_count, 156,             0
@@ -1033,8 +1033,8 @@ CF_IBR_USED_TARGET_CORRECT_total_count, 156,             0
 CF_IBR_USED_TARGET_INCORRECT_count, 156,             0
 CF_IBR_USED_TARGET_INCORRECT_total_count, 156,             0
 
-CF_ICALL_USED_TARGET_CORRECT_count, 156,        307300
-CF_ICALL_USED_TARGET_CORRECT_total_count, 156,        307300
+CF_ICALL_USED_TARGET_CORRECT_count, 156,         41177
+CF_ICALL_USED_TARGET_CORRECT_total_count, 156,         41177
 
 CF_ICALL_USED_TARGET_INCORRECT_count, 156,             3
 CF_ICALL_USED_TARGET_INCORRECT_total_count, 156,             3
@@ -1045,8 +1045,8 @@ CF_ICO_USED_TARGET_CORRECT_total_count, 156,             0
 CF_ICO_USED_TARGET_INCORRECT_count, 156,             0
 CF_ICO_USED_TARGET_INCORRECT_total_count, 156,             0
 
-CF_RET_USED_TARGET_CORRECT_count, 156,        307302
-CF_RET_USED_TARGET_CORRECT_total_count, 156,        307302
+CF_RET_USED_TARGET_CORRECT_count, 156,         41179
+CF_RET_USED_TARGET_CORRECT_total_count, 156,         41179
 
 CF_RET_USED_TARGET_INCORRECT_count, 156,             0
 CF_RET_USED_TARGET_INCORRECT_total_count, 156,             0
@@ -1084,8 +1084,8 @@ BTB_UPDATE_BTB_HIT_JITTED_CF_ICALL_total_count, 158,             0
 BTB_UPDATE_BTB_HIT_JITTED_CF_ICO_count, 158,             0
 BTB_UPDATE_BTB_HIT_JITTED_CF_ICO_total_count, 158,             0
 
-BTB_UPDATE_BTB_HIT_JITTED_CF_RET_count, 158,        106716
-BTB_UPDATE_BTB_HIT_JITTED_CF_RET_total_count, 158,        106716
+BTB_UPDATE_BTB_HIT_JITTED_CF_RET_count, 158,          7852
+BTB_UPDATE_BTB_HIT_JITTED_CF_RET_total_count, 158,          7852
 
 RESTEER_BTB_MISS_NOT_CF_count, 159,             0
 RESTEER_BTB_MISS_NOT_CF_total_count, 159,             0
@@ -1117,8 +1117,8 @@ RESTEER_MISPRED_NOT_CF_total_count, 159,             0
 RESTEER_MISPRED_CF_BR_count, 159,             0
 RESTEER_MISPRED_CF_BR_total_count, 159,             0
 
-RESTEER_MISPRED_CF_CBR_count, 159,         28851
-RESTEER_MISPRED_CF_CBR_total_count, 159,         28851
+RESTEER_MISPRED_CF_CBR_count, 159,          3953
+RESTEER_MISPRED_CF_CBR_total_count, 159,          3953
 
 RESTEER_MISPRED_CF_CALL_count, 159,             0
 RESTEER_MISPRED_CF_CALL_total_count, 159,             0
@@ -1141,8 +1141,8 @@ RESTEER_MISFETCH_NOT_CF_total_count, 159,             0
 RESTEER_MISFETCH_CF_BR_count, 159,             0
 RESTEER_MISFETCH_CF_BR_total_count, 159,             0
 
-RESTEER_MISFETCH_CF_CBR_count, 159,             6
-RESTEER_MISFETCH_CF_CBR_total_count, 159,             6
+RESTEER_MISFETCH_CF_CBR_count, 159,             1
+RESTEER_MISFETCH_CF_CBR_total_count, 159,             1
 
 RESTEER_MISFETCH_CF_CALL_count, 159,             0
 RESTEER_MISFETCH_CF_CALL_total_count, 159,             0
@@ -1171,14 +1171,14 @@ RESTEER_NO_TARGET_CF_ICO_total_count, 159,             0
 RESTEER_NO_TARGET_CF_RET_count, 159,             0
 RESTEER_NO_TARGET_CF_RET_total_count, 159,             0
 
-CBR_CORRECT_count, 160,        742607
-CBR_CORRECT_total_count, 160,        742607
+CBR_CORRECT_count, 160,         99670
+CBR_CORRECT_total_count, 160,         99670
 
-CBR_CORRECT_BTB_MISS_NT_NT_count, 160,         26144
-CBR_CORRECT_BTB_MISS_NT_NT_total_count, 160,         26144
+CBR_CORRECT_BTB_MISS_NT_NT_count, 160,          3551
+CBR_CORRECT_BTB_MISS_NT_NT_total_count, 160,          3551
 
-CBR_RECOVER_MISPREDICT_count, 160,         28847
-CBR_RECOVER_MISPREDICT_total_count, 160,         28847
+CBR_RECOVER_MISPREDICT_count, 160,          3950
+CBR_RECOVER_MISPREDICT_total_count, 160,          3950
 
 CBR_RECOVER_MISFETCH_count, 160,             0
 CBR_RECOVER_MISFETCH_total_count, 160,             0
@@ -1186,23 +1186,23 @@ CBR_RECOVER_MISFETCH_total_count, 160,             0
 CBR_RECOVER_BTB_MISS_T_T_count, 160,             0
 CBR_RECOVER_BTB_MISS_T_T_total_count, 160,             0
 
-CBR_RECOVER_BTB_MISS_T_NT_count, 160,             6
-CBR_RECOVER_BTB_MISS_T_NT_total_count, 160,             6
+CBR_RECOVER_BTB_MISS_T_NT_count, 160,             1
+CBR_RECOVER_BTB_MISS_T_NT_total_count, 160,             1
 
 CBR_RECOVER_BTB_MISS_NT_T_count, 160,             4
 CBR_RECOVER_BTB_MISS_NT_T_total_count, 160,             4
 
-BR_CORRECT_count, 161,         31412
-BR_CORRECT_total_count, 161,         31412
+BR_CORRECT_count, 161,          4282
+BR_CORRECT_total_count, 161,          4282
 
 BR_RECOVER_count, 161,             1
 BR_RECOVER_total_count, 161,             1
 
-ICALL_CORRECT_IBTB_count, 162,        181333
-ICALL_CORRECT_IBTB_total_count, 162,        181333
+ICALL_CORRECT_IBTB_count, 162,         28914
+ICALL_CORRECT_IBTB_total_count, 162,         28914
 
-ICALL_CORRECT_BTB_count, 162,        125967
-ICALL_CORRECT_BTB_total_count, 162,        125967
+ICALL_CORRECT_BTB_count, 162,         12263
+ICALL_CORRECT_BTB_total_count, 162,         12263
 
 ICALL_RECOVER_IBTB_MISFETCH_count, 162,             0
 ICALL_RECOVER_IBTB_MISFETCH_total_count, 162,             0
@@ -1234,8 +1234,8 @@ ICO_CORRECT_total_count, 164,             0
 ICO_RECOVER_count, 164,             0
 ICO_RECOVER_total_count, 164,             0
 
-RET_CORRECT_count, 165,        307302
-RET_CORRECT_total_count, 165,        307302
+RET_CORRECT_count, 165,         41179
+RET_CORRECT_total_count, 165,         41179
 
 RET_RECOVER_count, 165,             0
 RET_RECOVER_total_count, 165,             0
@@ -1249,29 +1249,29 @@ CALL_CORRECT_total_count, 166,             0
 CALL_RECOVER_count, 166,             1
 CALL_RECOVER_total_count, 166,             1
 
-BTB_CORRECT_count, 167,       1110166
-BTB_CORRECT_total_count, 167,       1110166
+BTB_CORRECT_count, 167,        149079
+BTB_CORRECT_total_count, 167,        149079
 
 BTB_INCORRECT_BUT_TARGET_CORRECT_count, 167,             0
 BTB_INCORRECT_BUT_TARGET_CORRECT_total_count, 167,             0
 
-BTB_INCORRECT_count, 167,         26159
-BTB_INCORRECT_total_count, 167,         26159
+BTB_INCORRECT_count, 167,          3561
+BTB_INCORRECT_total_count, 167,          3561
 
-IBTB_CORRECT_count, 168,        181333
-IBTB_CORRECT_total_count, 168,        181333
+IBTB_CORRECT_count, 168,         28914
+IBTB_CORRECT_total_count, 168,         28914
 
-IBTB_INCORRECT_count, 168,        125970
-IBTB_INCORRECT_total_count, 168,        125970
+IBTB_INCORRECT_count, 168,         12266
+IBTB_INCORRECT_total_count, 168,         12266
 
-CBR_CORRECT_OFF_PATH_count, 169,        948574
-CBR_CORRECT_OFF_PATH_total_count, 169,        948574
+CBR_CORRECT_OFF_PATH_count, 169,        143983
+CBR_CORRECT_OFF_PATH_total_count, 169,        143983
 
-CBR_CORRECT_BTB_MISS_NT_NT_OFF_PATH_count, 169,         42021
-CBR_CORRECT_BTB_MISS_NT_NT_OFF_PATH_total_count, 169,         42021
+CBR_CORRECT_BTB_MISS_NT_NT_OFF_PATH_count, 169,            28
+CBR_CORRECT_BTB_MISS_NT_NT_OFF_PATH_total_count, 169,            28
 
-CBR_RECOVER_MISPREDICT_OFF_PATH_count, 169,         88870
-CBR_RECOVER_MISPREDICT_OFF_PATH_total_count, 169,         88870
+CBR_RECOVER_MISPREDICT_OFF_PATH_count, 169,          8724
+CBR_RECOVER_MISPREDICT_OFF_PATH_total_count, 169,          8724
 
 CBR_RECOVER_MISFETCH_OFF_PATH_count, 169,             0
 CBR_RECOVER_MISFETCH_OFF_PATH_total_count, 169,             0
@@ -1279,23 +1279,23 @@ CBR_RECOVER_MISFETCH_OFF_PATH_total_count, 169,             0
 CBR_RECOVER_BTB_MISS_T_T_OFF_PATH_count, 169,             0
 CBR_RECOVER_BTB_MISS_T_T_OFF_PATH_total_count, 169,             0
 
-CBR_RECOVER_BTB_MISS_T_NT_OFF_PATH_count, 169,            36
-CBR_RECOVER_BTB_MISS_T_NT_OFF_PATH_total_count, 169,            36
+CBR_RECOVER_BTB_MISS_T_NT_OFF_PATH_count, 169,             0
+CBR_RECOVER_BTB_MISS_T_NT_OFF_PATH_total_count, 169,             0
 
 CBR_RECOVER_BTB_MISS_NT_T_OFF_PATH_count, 169,             3
 CBR_RECOVER_BTB_MISS_NT_T_OFF_PATH_total_count, 169,             3
 
-BR_CORRECT_OFF_PATH_count, 170,         55919
-BR_CORRECT_OFF_PATH_total_count, 170,         55919
+BR_CORRECT_OFF_PATH_count, 170,           825
+BR_CORRECT_OFF_PATH_total_count, 170,           825
 
 BR_RECOVER_OFF_PATH_count, 170,             2
 BR_RECOVER_OFF_PATH_total_count, 170,             2
 
-ICALL_CORRECT_IBTB_OFF_PATH_count, 171,        129094
-ICALL_CORRECT_IBTB_OFF_PATH_total_count, 171,        129094
+ICALL_CORRECT_IBTB_OFF_PATH_count, 171,           248
+ICALL_CORRECT_IBTB_OFF_PATH_total_count, 171,           248
 
-ICALL_CORRECT_BTB_OFF_PATH_count, 171,        175197
-ICALL_CORRECT_BTB_OFF_PATH_total_count, 171,        175197
+ICALL_CORRECT_BTB_OFF_PATH_count, 171,          3205
+ICALL_CORRECT_BTB_OFF_PATH_total_count, 171,          3205
 
 ICALL_RECOVER_IBTB_MISFETCH_OFF_PATH_count, 171,             0
 ICALL_RECOVER_IBTB_MISFETCH_OFF_PATH_total_count, 171,             0
@@ -1327,8 +1327,8 @@ ICO_CORRECT_OFF_PATH_total_count, 173,             0
 ICO_RECOVER_OFF_PATH_count, 173,             0
 ICO_RECOVER_OFF_PATH_total_count, 173,             0
 
-RET_CORRECT_OFF_PATH_count, 174,        323497
-RET_CORRECT_OFF_PATH_total_count, 174,        323497
+RET_CORRECT_OFF_PATH_count, 174,          7288
+RET_CORRECT_OFF_PATH_total_count, 174,          7288
 
 RET_RECOVER_OFF_PATH_count, 174,             0
 RET_RECOVER_OFF_PATH_total_count, 174,             0
@@ -1342,80 +1342,80 @@ CALL_CORRECT_OFF_PATH_total_count, 175,             0
 CALL_RECOVER_OFF_PATH_count, 175,             0
 CALL_RECOVER_OFF_PATH_total_count, 175,             0
 
-BTB_CORRECT_OFF_PATH_count, 176,       1397654
-BTB_CORRECT_OFF_PATH_total_count, 176,       1397654
+BTB_CORRECT_OFF_PATH_count, 176,        156985
+BTB_CORRECT_OFF_PATH_total_count, 176,        156985
 
 BTB_INCORRECT_BUT_TARGET_CORRECT_OFF_PATH_count, 176,             0
 BTB_INCORRECT_BUT_TARGET_CORRECT_OFF_PATH_total_count, 176,             0
 
-BTB_INCORRECT_OFF_PATH_count, 176,         42063
-BTB_INCORRECT_OFF_PATH_total_count, 176,         42063
+BTB_INCORRECT_OFF_PATH_count, 176,            34
+BTB_INCORRECT_OFF_PATH_total_count, 176,            34
 
-IBTB_CORRECT_OFF_PATH_count, 177,        129094
-IBTB_CORRECT_OFF_PATH_total_count, 177,        129094
+IBTB_CORRECT_OFF_PATH_count, 177,           248
+IBTB_CORRECT_OFF_PATH_total_count, 177,           248
 
-IBTB_INCORRECT_OFF_PATH_count, 177,        175198
-IBTB_INCORRECT_OFF_PATH_total_count, 177,        175198
+IBTB_INCORRECT_OFF_PATH_count, 177,          3206
+IBTB_INCORRECT_OFF_PATH_total_count, 177,          3206
 
-BP_EXEC_RECOVERIES_count, 178,         28860
-BP_EXEC_RECOVERIES_total_count, 178,         28860
+BP_EXEC_RECOVERIES_count, 178,          3958
+BP_EXEC_RECOVERIES_total_count, 178,          3958
 
 BP_DECODE_RECOVERIES_count, 178,             2
 BP_DECODE_RECOVERIES_total_count, 178,             2
 
-SCHEDULED_EXEC_RECOVERIES_count, 179,         28860
-SCHEDULED_EXEC_RECOVERIES_total_count, 179,         28860
+SCHEDULED_EXEC_RECOVERIES_count, 179,          3957
+SCHEDULED_EXEC_RECOVERIES_total_count, 179,          3957
 
 SCHEDULED_DECODE_RECOVERIES_count, 179,             2
 SCHEDULED_DECODE_RECOVERIES_total_count, 179,             2
 
-PERFORMED_EXEC_RECOVERIES_count, 180,         28862
-PERFORMED_EXEC_RECOVERIES_total_count, 180,         28862
+PERFORMED_EXEC_RECOVERIES_count, 180,          3959
+PERFORMED_EXEC_RECOVERIES_total_count, 180,          3959
 
 PERFORMED_DECODE_RECOVERIES_count, 180,             0
 PERFORMED_DECODE_RECOVERIES_total_count, 180,             0
 
-PERFORMED_RECOVERY_LAT_count, 0,       1977839
-PERFORMED_RECOVERY_LAT_total_count, 0,       1977839
+PERFORMED_RECOVERY_LAT_count, 0,        276559
+PERFORMED_RECOVERY_LAT_total_count, 0,        276559
 
 SCHEDULED_DECODE_LAT_count, 0,           166
 SCHEDULED_DECODE_LAT_total_count, 0,           166
 
-SCHEDULED_EXEC_LAT_count, 0,       1487041
-SCHEDULED_EXEC_LAT_total_count, 0,       1487041
+SCHEDULED_EXEC_LAT_count, 0,        209112
+SCHEDULED_EXEC_LAT_total_count, 0,        209112
 
-TAGESCL_COMP_TAGE_BASE_CORRECT_count, 181,         32526
-TAGESCL_COMP_TAGE_BASE_CORRECT_total_count, 181,         32526
+TAGESCL_COMP_TAGE_BASE_CORRECT_count, 181,          7398
+TAGESCL_COMP_TAGE_BASE_CORRECT_total_count, 181,          7398
 
 TAGESCL_COMP_TAGE_BASE_MISPREDICT_count, 181,            12
 TAGESCL_COMP_TAGE_BASE_MISPREDICT_total_count, 181,            12
 
-TAGESCL_COMP_TAGE_SHORT_CORRECT_count, 181,        368848
-TAGESCL_COMP_TAGE_SHORT_CORRECT_total_count, 181,        368848
+TAGESCL_COMP_TAGE_SHORT_CORRECT_count, 181,         58787
+TAGESCL_COMP_TAGE_SHORT_CORRECT_total_count, 181,         58787
 
-TAGESCL_COMP_TAGE_SHORT_MISPREDICT_count, 181,            46
-TAGESCL_COMP_TAGE_SHORT_MISPREDICT_total_count, 181,            46
+TAGESCL_COMP_TAGE_SHORT_MISPREDICT_count, 181,            37
+TAGESCL_COMP_TAGE_SHORT_MISPREDICT_total_count, 181,            37
 
-TAGESCL_COMP_TAGE_LONG_CORRECT_count, 181,        277189
-TAGESCL_COMP_TAGE_LONG_CORRECT_total_count, 181,        277189
+TAGESCL_COMP_TAGE_LONG_CORRECT_count, 181,         36763
+TAGESCL_COMP_TAGE_LONG_CORRECT_total_count, 181,         36763
 
-TAGESCL_COMP_TAGE_LONG_MISPREDICT_count, 181,         28647
-TAGESCL_COMP_TAGE_LONG_MISPREDICT_total_count, 181,         28647
+TAGESCL_COMP_TAGE_LONG_MISPREDICT_count, 181,          3876
+TAGESCL_COMP_TAGE_LONG_MISPREDICT_total_count, 181,          3876
 
-TAGESCL_COMP_LOOP_CORRECT_count, 181,         88834
-TAGESCL_COMP_LOOP_CORRECT_total_count, 181,         88834
+TAGESCL_COMP_LOOP_CORRECT_count, 181,             0
+TAGESCL_COMP_LOOP_CORRECT_total_count, 181,             0
 
 TAGESCL_COMP_LOOP_MISPREDICT_count, 181,             0
 TAGESCL_COMP_LOOP_MISPREDICT_total_count, 181,             0
 
-TAGESCL_COMP_SC_CORRECT_count, 181,          1354
-TAGESCL_COMP_SC_CORRECT_total_count, 181,          1354
+TAGESCL_COMP_SC_CORRECT_count, 181,           273
+TAGESCL_COMP_SC_CORRECT_total_count, 181,           273
 
-TAGESCL_COMP_SC_MISPREDICT_count, 181,           152
-TAGESCL_COMP_SC_MISPREDICT_total_count, 181,           152
+TAGESCL_COMP_SC_MISPREDICT_count, 181,            30
+TAGESCL_COMP_SC_MISPREDICT_total_count, 181,            30
 
-TAGESCL_COMP_BTB_MISS_TAGE_BASE_CORRECT_count, 182,         26132
-TAGESCL_COMP_BTB_MISS_TAGE_BASE_CORRECT_total_count, 182,         26132
+TAGESCL_COMP_BTB_MISS_TAGE_BASE_CORRECT_count, 182,          3551
+TAGESCL_COMP_BTB_MISS_TAGE_BASE_CORRECT_total_count, 182,          3551
 
 TAGESCL_COMP_BTB_MISS_TAGE_BASE_MISPREDICT_count, 182,             4
 TAGESCL_COMP_BTB_MISS_TAGE_BASE_MISPREDICT_total_count, 182,             4
@@ -1426,11 +1426,11 @@ TAGESCL_COMP_BTB_MISS_TAGE_SHORT_CORRECT_total_count, 182,             0
 TAGESCL_COMP_BTB_MISS_TAGE_SHORT_MISPREDICT_count, 182,             0
 TAGESCL_COMP_BTB_MISS_TAGE_SHORT_MISPREDICT_total_count, 182,             0
 
-TAGESCL_COMP_BTB_MISS_TAGE_LONG_CORRECT_count, 182,             2
-TAGESCL_COMP_BTB_MISS_TAGE_LONG_CORRECT_total_count, 182,             2
+TAGESCL_COMP_BTB_MISS_TAGE_LONG_CORRECT_count, 182,             0
+TAGESCL_COMP_BTB_MISS_TAGE_LONG_CORRECT_total_count, 182,             0
 
-TAGESCL_COMP_BTB_MISS_TAGE_LONG_MISPREDICT_count, 182,             6
-TAGESCL_COMP_BTB_MISS_TAGE_LONG_MISPREDICT_total_count, 182,             6
+TAGESCL_COMP_BTB_MISS_TAGE_LONG_MISPREDICT_count, 182,             1
+TAGESCL_COMP_BTB_MISS_TAGE_LONG_MISPREDICT_total_count, 182,             1
 
 TAGESCL_COMP_BTB_MISS_LOOP_CORRECT_count, 182,             0
 TAGESCL_COMP_BTB_MISS_LOOP_CORRECT_total_count, 182,             0
@@ -1438,8 +1438,8 @@ TAGESCL_COMP_BTB_MISS_LOOP_CORRECT_total_count, 182,             0
 TAGESCL_COMP_BTB_MISS_LOOP_MISPREDICT_count, 182,             0
 TAGESCL_COMP_BTB_MISS_LOOP_MISPREDICT_total_count, 182,             0
 
-TAGESCL_COMP_BTB_MISS_SC_CORRECT_count, 182,            10
-TAGESCL_COMP_BTB_MISS_SC_CORRECT_total_count, 182,            10
+TAGESCL_COMP_BTB_MISS_SC_CORRECT_count, 182,             0
+TAGESCL_COMP_BTB_MISS_SC_CORRECT_total_count, 182,             0
 
 TAGESCL_COMP_BTB_MISS_SC_MISPREDICT_count, 182,             0
 TAGESCL_COMP_BTB_MISS_SC_MISPREDICT_total_count, 182,             0
@@ -1456,29 +1456,29 @@ TAGESCL_CONF_2_PER_BASE_MISPREDICT_total_count, 183,             0
 TAGESCL_CONF_3_PER_BASE_MISPREDICT_count, 183,             3
 TAGESCL_CONF_3_PER_BASE_MISPREDICT_total_count, 183,             3
 
-TAGESCL_CONF_0_PER_SHORT_MISPREDICT_count, 183,             5
-TAGESCL_CONF_0_PER_SHORT_MISPREDICT_total_count, 183,             5
+TAGESCL_CONF_0_PER_SHORT_MISPREDICT_count, 183,             4
+TAGESCL_CONF_0_PER_SHORT_MISPREDICT_total_count, 183,             4
 
-TAGESCL_CONF_1_PER_SHORT_MISPREDICT_count, 183,            14
-TAGESCL_CONF_1_PER_SHORT_MISPREDICT_total_count, 183,            14
+TAGESCL_CONF_1_PER_SHORT_MISPREDICT_count, 183,            12
+TAGESCL_CONF_1_PER_SHORT_MISPREDICT_total_count, 183,            12
 
 TAGESCL_CONF_2_PER_SHORT_MISPREDICT_count, 183,             5
 TAGESCL_CONF_2_PER_SHORT_MISPREDICT_total_count, 183,             5
 
-TAGESCL_CONF_3_PER_SHORT_MISPREDICT_count, 183,            22
-TAGESCL_CONF_3_PER_SHORT_MISPREDICT_total_count, 183,            22
+TAGESCL_CONF_3_PER_SHORT_MISPREDICT_count, 183,            16
+TAGESCL_CONF_3_PER_SHORT_MISPREDICT_total_count, 183,            16
 
-TAGESCL_CONF_0_PER_LONG_MISPREDICT_count, 183,           974
-TAGESCL_CONF_0_PER_LONG_MISPREDICT_total_count, 183,           974
+TAGESCL_CONF_0_PER_LONG_MISPREDICT_count, 183,           159
+TAGESCL_CONF_0_PER_LONG_MISPREDICT_total_count, 183,           159
 
-TAGESCL_CONF_1_PER_LONG_MISPREDICT_count, 183,          1898
-TAGESCL_CONF_1_PER_LONG_MISPREDICT_total_count, 183,          1898
+TAGESCL_CONF_1_PER_LONG_MISPREDICT_count, 183,           405
+TAGESCL_CONF_1_PER_LONG_MISPREDICT_total_count, 183,           405
 
-TAGESCL_CONF_2_PER_LONG_MISPREDICT_count, 183,          3401
-TAGESCL_CONF_2_PER_LONG_MISPREDICT_total_count, 183,          3401
+TAGESCL_CONF_2_PER_LONG_MISPREDICT_count, 183,           416
+TAGESCL_CONF_2_PER_LONG_MISPREDICT_total_count, 183,           416
 
-TAGESCL_CONF_3_PER_LONG_MISPREDICT_count, 183,         22374
-TAGESCL_CONF_3_PER_LONG_MISPREDICT_total_count, 183,         22374
+TAGESCL_CONF_3_PER_LONG_MISPREDICT_count, 183,          2896
+TAGESCL_CONF_3_PER_LONG_MISPREDICT_total_count, 183,          2896
 
 TAGESCL_CONF_0_PER_LOOP_MISPREDICT_count, 183,             0
 TAGESCL_CONF_0_PER_LOOP_MISPREDICT_total_count, 183,             0
@@ -1492,20 +1492,20 @@ TAGESCL_CONF_2_PER_LOOP_MISPREDICT_total_count, 183,             0
 TAGESCL_CONF_3_PER_LOOP_MISPREDICT_count, 183,             0
 TAGESCL_CONF_3_PER_LOOP_MISPREDICT_total_count, 183,             0
 
-TAGESCL_CONF_0_PER_SC_MISPREDICT_count, 183,           108
-TAGESCL_CONF_0_PER_SC_MISPREDICT_total_count, 183,           108
+TAGESCL_CONF_0_PER_SC_MISPREDICT_count, 183,            18
+TAGESCL_CONF_0_PER_SC_MISPREDICT_total_count, 183,            18
 
-TAGESCL_CONF_1_PER_SC_MISPREDICT_count, 183,            32
-TAGESCL_CONF_1_PER_SC_MISPREDICT_total_count, 183,            32
+TAGESCL_CONF_1_PER_SC_MISPREDICT_count, 183,            11
+TAGESCL_CONF_1_PER_SC_MISPREDICT_total_count, 183,            11
 
-TAGESCL_CONF_2_PER_SC_MISPREDICT_count, 183,             9
-TAGESCL_CONF_2_PER_SC_MISPREDICT_total_count, 183,             9
+TAGESCL_CONF_2_PER_SC_MISPREDICT_count, 183,             1
+TAGESCL_CONF_2_PER_SC_MISPREDICT_total_count, 183,             1
 
-TAGESCL_CONF_3_PER_SC_MISPREDICT_count, 183,             3
-TAGESCL_CONF_3_PER_SC_MISPREDICT_total_count, 183,             3
+TAGESCL_CONF_3_PER_SC_MISPREDICT_count, 183,             0
+TAGESCL_CONF_3_PER_SC_MISPREDICT_total_count, 183,             0
 
-TAGESCL_SC_SMALLLSUM_count, 184,          1380
-TAGESCL_SC_SMALLLSUM_total_count, 184,          1380
+TAGESCL_SC_SMALLLSUM_count, 184,           288
+TAGESCL_SC_SMALLLSUM_total_count, 184,           288
 
 TAGESCL_SC_SMALLLFIRST_count, 184,             0
 TAGESCL_SC_SMALLLFIRST_total_count, 184,             0
@@ -1513,8 +1513,8 @@ TAGESCL_SC_SMALLLFIRST_total_count, 184,             0
 TAGESCL_SC_SMALLLSECOND_count, 184,             0
 TAGESCL_SC_SMALLLSECOND_total_count, 184,             0
 
-TAGESCL_SC_IDENTICAL_count, 184,        796081
-TAGESCL_SC_IDENTICAL_total_count, 184,        796081
+TAGESCL_SC_IDENTICAL_count, 184,        106872
+TAGESCL_SC_IDENTICAL_total_count, 184,        106872
 
 CRS_UNDERFLOW_ON_PATH_count, 185,             0
 CRS_UNDERFLOW_ON_PATH_total_count, 185,             0

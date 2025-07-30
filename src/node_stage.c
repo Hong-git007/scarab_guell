@@ -65,6 +65,9 @@
 #include "xed-iclass-enum.h"
 #include "log/op_trace_log.h"
 
+#include "log/fill_buffer_log.h"
+#include "dependency_chain_cache.h"
+
 /* Macros */
 
 #define DEBUG(proc_id, args...) _DEBUG(proc_id, DEBUG_NODE_STAGE, ##args)
@@ -620,6 +623,14 @@ void node_retire() {
       node->node_count--;
 
     ASSERT(node->proc_id, node->node_count >= 0);
+  }
+
+  if (ret_count > 0) {
+        Fill_Buffer* fb = retired_fill_buffers[node->proc_id];
+        if (fb) { // Fill Buffer가 유효한 경우에만 호출
+            add_dependency_chain(node->proc_id);
+            log_fill_buffer_entry(node->proc_id, fb, cycle_count);
+        }
   }
 
   STAT_EVENT(node->proc_id, ROW_SIZE_0 + ret_count);

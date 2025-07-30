@@ -1,8 +1,8 @@
 Core, 0, 0
-Cumulative_Cycles, 0, 3018465             
-Cumulative_Instructions, 0, 5000002             
-Periodic_Cycles, 0, 3018465             
-Periodic_Instructions, 0, 5000002             
+Cumulative_Cycles, 0, 414845              
+Cumulative_Instructions, 0, 672199              
+Periodic_Cycles, 0, 414845              
+Periodic_Instructions, 0, 672199              
 PREF_DL0REQ_QUEUE_HIT_BY_DEMAND_count, 0,             0
 PREF_DL0REQ_QUEUE_HIT_BY_DEMAND_total_count, 0,             0
 
@@ -42,8 +42,8 @@ PREF_UL1REQ_SEND_QUEUE_STALL_total_count, 0,             0
 PREF_UMLC_REQ_QUEUE_SENTREQ_count, 0,             0
 PREF_UMLC_REQ_QUEUE_SENTREQ_total_count, 0,             0
 
-PREF_UL1REQ_QUEUE_SENTREQ_count, 0,         19227
-PREF_UL1REQ_QUEUE_SENTREQ_total_count, 0,         19227
+PREF_UL1REQ_QUEUE_SENTREQ_count, 0,          2596
+PREF_UL1REQ_QUEUE_SENTREQ_total_count, 0,          2596
 
 PREF_NEWREQ_MATCHED_count, 0,             0
 PREF_NEWREQ_MATCHED_total_count, 0,             0
@@ -57,11 +57,11 @@ PREF_UL1REQ_QUEUE_MATCHED_REQ_total_count, 0,             0
 PREF_DL0REQ_QUEUE_MATCHED_REQ_count, 0,             0
 PREF_DL0REQ_QUEUE_MATCHED_REQ_total_count, 0,             0
 
-L1_PREF_HIT_count, 0,         19195
-L1_PREF_HIT_total_count, 0,         19195
+L1_PREF_HIT_count, 0,          2564
+L1_PREF_HIT_total_count, 0,          2564
 
-L1_PREF_UNIQUE_HIT_count, 0,         19195
-L1_PREF_UNIQUE_HIT_total_count, 0,         19195
+L1_PREF_UNIQUE_HIT_count, 0,          2564
+L1_PREF_UNIQUE_HIT_total_count, 0,          2564
 
 L1_PREF_LATE_count, 0,             0
 L1_PREF_LATE_total_count, 0,             0
@@ -330,8 +330,8 @@ PREF_TIMELY_9_total_count, 479,             0
 PREF_TIMELY_10_count, 479,             0
 PREF_TIMELY_10_total_count, 479,             0
 
-PREF_UNUSED_EVICT_count, 0,            82
-PREF_UNUSED_EVICT_total_count, 0,            82
+PREF_UNUSED_EVICT_count, 0,             0
+PREF_UNUSED_EVICT_total_count, 0,             0
 
 PREF_REGION_SENT_count, 0,             0
 PREF_REGION_SENT_total_count, 0,             0
@@ -408,23 +408,23 @@ PREF_ACC4_LT_HP_total_count, 480,             0
 PREF_ACC4_LT_LP_count, 480,             0
 PREF_ACC4_LT_LP_total_count, 480,             0
 
-FDIP_DECIDE_PREF_ONPATH_count, 0,       1441050
-FDIP_DECIDE_PREF_ONPATH_total_count, 0,       1441050
+FDIP_DECIDE_PREF_ONPATH_count, 0,        193482
+FDIP_DECIDE_PREF_ONPATH_total_count, 0,        193482
 
-FDIP_DECIDE_PREF_OFFPATH_count, 0,       1847812
-FDIP_DECIDE_PREF_OFFPATH_total_count, 0,       1847812
+FDIP_DECIDE_PREF_OFFPATH_count, 0,        294955
+FDIP_DECIDE_PREF_OFFPATH_total_count, 0,        294955
 
 FDIP_NEW_PREFETCHES_ONPATH_count, 0,             1
 FDIP_NEW_PREFETCHES_ONPATH_total_count, 0,             1
 
-FDIP_NEW_PREFETCHES_OFFPATH_count, 0,            84
-FDIP_NEW_PREFETCHES_OFFPATH_total_count, 0,            84
+FDIP_NEW_PREFETCHES_OFFPATH_count, 0,            82
+FDIP_NEW_PREFETCHES_OFFPATH_total_count, 0,            82
 
-FDIP_PREF_ICACHE_PROBE_HIT_ONPATH_count, 0,       1441045
-FDIP_PREF_ICACHE_PROBE_HIT_ONPATH_total_count, 0,       1441045
+FDIP_PREF_ICACHE_PROBE_HIT_ONPATH_count, 0,        193477
+FDIP_PREF_ICACHE_PROBE_HIT_ONPATH_total_count, 0,        193477
 
-FDIP_PREF_ICACHE_PROBE_HIT_OFFPATH_count, 0,       1847651
-FDIP_PREF_ICACHE_PROBE_HIT_OFFPATH_total_count, 0,       1847651
+FDIP_PREF_ICACHE_PROBE_HIT_OFFPATH_count, 0,        294796
+FDIP_PREF_ICACHE_PROBE_HIT_OFFPATH_total_count, 0,        294796
 
 FDIP_PREF_MSHR_PROBE_HIT_ONPATH_count, 0,             4
 FDIP_PREF_MSHR_PROBE_HIT_ONPATH_total_count, 0,             4
@@ -438,11 +438,11 @@ FDIP_PREF_FAILED_ONPATH_total_count, 0,             0
 FDIP_PREF_FAILED_OFFPATH_count, 0,             0
 FDIP_PREF_FAILED_OFFPATH_total_count, 0,             0
 
-FDIP_ATTEMPTED_PREF_ONPATH_count, 0,       1441050
-FDIP_ATTEMPTED_PREF_ONPATH_total_count, 0,       1441050
+FDIP_ATTEMPTED_PREF_ONPATH_count, 0,        193482
+FDIP_ATTEMPTED_PREF_ONPATH_total_count, 0,        193482
 
-FDIP_ATTEMPTED_PREF_OFFPATH_count, 0,       1848739
-FDIP_ATTEMPTED_PREF_OFFPATH_total_count, 0,       1848739
+FDIP_ATTEMPTED_PREF_OFFPATH_count, 0,        295882
+FDIP_ATTEMPTED_PREF_OFFPATH_total_count, 0,        295882
 
 FDIP_ALT_PATH_PREFETCHES_IC_EMITTED_count, 0,             0
 FDIP_ALT_PATH_PREFETCHES_IC_EMITTED_total_count, 0,             0
@@ -459,14 +459,14 @@ FDIP_ALT_PATH_PREFETCHES_UOC_EMITTED_ON_PATH_total_count, 481,             0
 FDIP_ALT_PATH_PREFETCHES_UOC_TRIGGERED_count, 0,             0
 FDIP_ALT_PATH_PREFETCHES_UOC_TRIGGERED_total_count, 0,             0
 
-FDIP_BREAK_REACH_FTQ_END_count, 482,       2215382
-FDIP_BREAK_REACH_FTQ_END_total_count, 482,       2215382
+FDIP_BREAK_REACH_FTQ_END_count, 482,        304089
+FDIP_BREAK_REACH_FTQ_END_total_count, 482,        304089
 
 FDIP_BREAK_FTQ_EMPTY_count, 482,             0
 FDIP_BREAK_FTQ_EMPTY_total_count, 482,             0
 
-FDIP_BREAK_MAX_FTQ_ENTRY_CYC_count, 482,        802156
-FDIP_BREAK_MAX_FTQ_ENTRY_CYC_total_count, 482,        802156
+FDIP_BREAK_MAX_FTQ_ENTRY_CYC_count, 482,        109829
+FDIP_BREAK_MAX_FTQ_ENTRY_CYC_total_count, 482,        109829
 
 FDIP_BREAK_FULL_MEM_REQ_BUF_count, 482,           927
 FDIP_BREAK_FULL_MEM_REQ_BUF_total_count, 482,           927
@@ -570,17 +570,17 @@ FDIP_BLOOM_4INSERT_total_count, 0,             0
 FDIP_BLOOM_NOSTREAM_count, 0,             0
 FDIP_BLOOM_NOSTREAM_total_count, 0,             0
 
-FDIP_AVG_FTQ_OCCUPANCY_OPS_count, 0,           106
-FDIP_AVG_FTQ_OCCUPANCY_OPS_total_count, 0,           106
+FDIP_AVG_FTQ_OCCUPANCY_OPS_count, 0,           108
+FDIP_AVG_FTQ_OCCUPANCY_OPS_total_count, 0,           108
 
 FDIP_AVG_FTQ_OCCUPANCY_count, 0,            23
 FDIP_AVG_FTQ_OCCUPANCY_total_count, 0,            23
 
-FDIP_FTQ_OCCUPANCY_OPS_ACCUMULATED_count, 0,     321131462
-FDIP_FTQ_OCCUPANCY_OPS_ACCUMULATED_total_count, 0,     321131462
+FDIP_FTQ_OCCUPANCY_OPS_ACCUMULATED_count, 0,      44898618
+FDIP_FTQ_OCCUPANCY_OPS_ACCUMULATED_total_count, 0,      44898618
 
-FDIP_FTQ_OCCUPANCY_BLOCKS_ACCUMULATED_count, 0,      69867700
-FDIP_FTQ_OCCUPANCY_BLOCKS_ACCUMULATED_total_count, 0,      69867700
+FDIP_FTQ_OCCUPANCY_BLOCKS_ACCUMULATED_count, 0,       9588687
+FDIP_FTQ_OCCUPANCY_BLOCKS_ACCUMULATED_total_count, 0,       9588687
 
 FDIP_TRAINING_SAMPLE_count, 0,             0
 FDIP_TRAINING_SAMPLE_total_count, 0,             0
@@ -747,8 +747,8 @@ ICACHE_FIRST_MISS_AFTER_WARMUP_TRAINED_USEFUL_DURING_WARMUP_total_count, 494,   
 FDIP_PREFETCH_EVICT_NO_HIT_ONLY_ONCE_count, 0,             0
 FDIP_PREFETCH_EVICT_NO_HIT_ONLY_ONCE_total_count, 0,             0
 
-FDIP_PREFETCH_HIT_ICACHE_count, 495,       3288696
-FDIP_PREFETCH_HIT_ICACHE_total_count, 495,       3288696
+FDIP_PREFETCH_HIT_ICACHE_count, 495,        488273
+FDIP_PREFETCH_HIT_ICACHE_total_count, 495,        488273
 
 FDIP_PREFETCH_HIT_MLC_count, 495,             1
 FDIP_PREFETCH_HIT_MLC_total_count, 495,             1
@@ -756,8 +756,8 @@ FDIP_PREFETCH_HIT_MLC_total_count, 495,             1
 FDIP_PREFETCH_HIT_L1_count, 495,             1
 FDIP_PREFETCH_HIT_L1_total_count, 495,             1
 
-FDIP_PREFETCH_HIT_DRAM_count, 495,          1091
-FDIP_PREFETCH_HIT_DRAM_total_count, 495,          1091
+FDIP_PREFETCH_HIT_DRAM_count, 495,          1089
+FDIP_PREFETCH_HIT_DRAM_total_count, 495,          1089
 
 FDIP_MEM_BUF_MISS_count, 496,             0
 FDIP_MEM_BUF_MISS_total_count, 496,             0
