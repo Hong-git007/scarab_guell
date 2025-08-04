@@ -626,11 +626,22 @@ void node_retire() {
   }
 
   if (ret_count > 0) {
-        Fill_Buffer* fb = retired_fill_buffers[node->proc_id];
-        if (fb) { // Fill Buffer가 유효한 경우에만 호출
-            add_dependency_chain(node->proc_id);
-            log_fill_buffer_entry(node->proc_id, fb, cycle_count);
+    Fill_Buffer* fb = retired_fill_buffers[node->proc_id];
+    Backward_Walk_Engine* engine = bw_engines[node->proc_id];
+    
+    if (fb && fb->count == fb->size && engine->state == BW_IDLE) {
+        log_fill_buffer_entry(node->proc_id, fb, cycle_count);
+        // --- Snapshot 저장 ---
+        engine->state = BW_WALKING;
+        engine->walk_cycles_remaining = 500;
+
+        engine->snapshot_op_count = fb->count;
+        int current_idx = fb->head;
+        for (int i = 0; i < fb->count; ++i) {
+            engine->snapshot_buffer[i] = fb->entries[current_idx];
+            current_idx = (current_idx + 1) % fb->size;
         }
+    }
   }
 
   STAT_EVENT(node->proc_id, ROW_SIZE_0 + ret_count);

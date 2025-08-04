@@ -16,33 +16,30 @@ static const char* reg_names[NUM_REGS] = {
 };
 #undef REG
 
-static char* disasm_cached_op(Path_Op_Info* op) {
+static char* disasm_cached_op(Op* op) {
     static char buf[512];
     int i = 0;
 
-    // ----- [ 최종 수정 사항 ] -----
-    const char* opcode = Op_Type_str(op->op_type);
-    if (op->op_type == OP_CF) {
-        opcode = cf_type_names[op->cf_type];
-    } else {
-        opcode = Op_Type_str(op->op_type);
+    const char* opcode = Op_Type_str(op->table_info->op_type);
+    if (op->table_info->op_type == OP_CF) {
+        opcode = cf_type_names[op->table_info->cf_type];
     }
     i += sprintf(&buf[i], "%-8s ", opcode);
 
-    for (int j = 0; j < op->num_dests; j++) {
-        i += sprintf(&buf[i], "r%u(%s)%s", op->dests[j].id, reg_names[op->dests[j].id], (j == op->num_dests - 1) ? "" : ",");
+    for (int j = 0; j < op->table_info->num_dest_regs; j++) {
+        i += sprintf(&buf[i], "r%u(%s)%s", op->inst_info->dests[j].id, reg_names[op->inst_info->dests[j].id], (j == op->table_info->num_dest_regs - 1) ? "" : ",");
     }
-    if (op->num_dests > 0 && op->num_srcs > 0) {
+    if (op->table_info->num_dest_regs > 0 && op->table_info->num_src_regs > 0) {
         i += sprintf(&buf[i], " <- ");
     }
-    for (int j = 0; j < op->num_srcs; j++) {
-        i += sprintf(&buf[i], "r%u(%s)%s", op->srcs[j].id, reg_names[op->srcs[j].id], (j == op->num_srcs - 1) ? "" : ",");
+    for (int j = 0; j < op->table_info->num_src_regs; j++) {
+        i += sprintf(&buf[i], "r%u(%s)%s", op->inst_info->srcs[j].id, reg_names[op->inst_info->srcs[j].id], (j == op->table_info->num_src_regs - 1) ? "" : ",");
     }
-    if (op->mem_type == MEM_LD && op->mem_size > 0) {
-      i += sprintf(&buf[i], " %d@%08x", op->mem_size, (int)op->va);
+    if (op->table_info->mem_type == MEM_LD && op->oracle_info.mem_size > 0) {
+      i += sprintf(&buf[i], " %d@%08llx", op->oracle_info.mem_size, op->oracle_info.va);
     }
-    if (op->mem_type == MEM_ST && op->mem_size > 0) {
-      i += sprintf(&buf[i], " %d@%08x", op->mem_size, (int)op->va);
+    if (op->table_info->mem_type == MEM_ST && op->oracle_info.mem_size > 0) {
+      i += sprintf(&buf[i], " %d@%08llx", op->oracle_info.mem_size, op->oracle_info.va);
     }
     buf[i] = '\0';
     return buf;
@@ -73,16 +70,16 @@ void log_on_off_path_entry(uns proc_id, On_Off_Path_Cache_Entry* entry, Counter 
     fprintf(on_off_path_log_file, "------------------------------------------------------------------\n");
 
     for (int i = 0; i < entry->path_length; ++i) {
-        Path_Op_Info* op = &entry->path[i];
+        Op* op = &entry->path[i];
         char* disasm_str = disasm_cached_op(op);
         fprintf(on_off_path_log_file, "[PC: 0x%08llx] OpNum:%-10llu (S/E/D/R: %-4llu/%-4llu/%-4llu/%-4llu) H2p:%s Disasm: %-45s\n",
-            op->pc, 
+            op->inst_info->addr, 
             op->op_num,
             op->sched_cycle,
             op->exec_cycle,
             op->done_cycle,
             op->retire_cycle,
-            op->is_h2p ? "O" : "X", 
+            op->oracle_info.hbt_pred_is_hard ? "O" : "X", 
             disasm_str);
     }
     fprintf(on_off_path_log_file, "-------------------------- END LOG ---------------------------\n\n");

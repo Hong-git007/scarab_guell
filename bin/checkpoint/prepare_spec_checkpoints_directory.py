@@ -60,8 +60,14 @@ def define_benchmarks_and_suites():
         'x264_17_r', 'deepsjeng_17_r', 'leela_17_r', 'exchange2_17_r', 'xz_17_r']
     spec2017_fp_rate_benchmarks = [
         'bwaves_17_r', 'cactuBSSN_17_r', 'namd_17_r', 'parest_17_r', 'povray_17_r', 'lbm_17_r', 'wrf_17_r', 'blender_17_r' ,'cam4_17_r','imagick_17_r', 'nab_17_r', 'fotonik3d_17_r', 'roms_17_r']
-    spec2017_rate_benchmarks = spec2017_int_rate_benchmarks + \
-        spec2017_fp_rate_benchmarks
+    spec2017_rate_benchmarks = spec2017_int_rate_benchmarks + spec2017_fp_rate_benchmarks
+
+    spec2017_int_rate_benchmarks_problem = [
+        'perlbench_17_r', 'gcc_17_r', 'mcf_17_r','xalancbmk_17_r','x264_17_r']
+    spec2017_fp_rate_benchmarks_problem = [
+        'namd_17_r', 'parest_17_r']
+    
+    spec2017_rate_benchmarks_problem = spec2017_int_rate_benchmarks_problem + spec2017_fp_rate_benchmarks_problem
 
     all_benchmarks = spec2006_benchmarks + spec2017_speed_benchmarks + spec2017_rate_benchmarks
 
@@ -73,6 +79,7 @@ def define_benchmarks_and_suites():
         'spec17_int_speed': spec2017_int_speed_benchmarks,
         'spec17_fp_speed': spec2017_fp_speed_benchmarks,
         'spec17_rate': spec2017_rate_benchmarks,
+        'spec17_rate_problem' : spec2017_rate_benchmarks_problem,
         'spec17_int_rate': spec2017_int_rate_benchmarks,
         'spec17_fp_rate': spec2017_fp_rate_benchmarks,
         'spec_all': all_benchmarks,

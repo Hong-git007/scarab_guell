@@ -38,45 +38,31 @@ void finalize_fill_buffer_log(void) {
     close_fill_buffer_log();
 }
 
-static char* disasm_retired_op(Retired_Op_Info* op) {
+static char* disasm_retired_op(Op* op) {
     static char buf[512];
     int i = 0;
 
-    // opcode 문자열은 op->cf_type 등으로 적절히 결정 필요
-    // 예시는 cf_type 존재 시 해당 이름, 없으면 "OP"로 표시
-    const char* opcode = Op_Type_str(op->op_type);
-    if (op->op_type == OP_CF) {
-        opcode = cf_type_names[op->cf_type];
-    } else {
-        opcode = Op_Type_str(op->op_type);
+    const char* opcode = Op_Type_str(op->table_info->op_type);
+    if (op->table_info->op_type == OP_CF) {
+        opcode = cf_type_names[op->table_info->cf_type];
     }
-
     i += sprintf(&buf[i], "%-8s ", opcode);
 
-    // dest 레지스터 출력
-    for (int j = 0; j < op->num_dest_regs; j++) {
-        int reg_id = op->dst_reg_id[j][REG_ARCH];
-        const char* reg_name = (reg_id < NUM_REGS) ? reg_names[reg_id] : "??";
-        i += sprintf(&buf[i], "r%d(%s)%s", reg_id, reg_name, (j == op->num_dest_regs - 1) ? "" : ",");
+    for (int j = 0; j < op->table_info->num_dest_regs; j++) {
+        i += sprintf(&buf[i], "r%u(%s)%s", op->inst_info->dests[j].id, reg_names[op->inst_info->dests[j].id], (j == op->table_info->num_dest_regs - 1) ? "" : ",");
     }
-    if (op->num_dest_regs > 0 && op->num_src_regs > 0) {
+    if (op->table_info->num_dest_regs > 0 && op->table_info->num_src_regs > 0) {
         i += sprintf(&buf[i], " <- ");
     }
-
-    // src 레지스터 출력
-    for (int j = 0; j < op->num_src_regs; j++) {
-        int reg_id = op->src_reg_id[j][REG_ARCH];
-        const char* reg_name = (reg_id < NUM_REGS) ? reg_names[reg_id] : "??";
-        i += sprintf(&buf[i], "r%d(%s)%s", reg_id, reg_name, (j == op->num_src_regs - 1) ? "" : ",");
+    for (int j = 0; j < op->table_info->num_src_regs; j++) {
+        i += sprintf(&buf[i], "r%u(%s)%s", op->inst_info->srcs[j].id, reg_names[op->inst_info->srcs[j].id], (j == op->table_info->num_src_regs - 1) ? "" : ",");
     }
-
-    if (op->mem_type == MEM_LD && op->mem_size > 0) {
-        i += sprintf(&buf[i], " %d@%08x", op->mem_size, (unsigned int)op->va);
+    if (op->table_info->mem_type == MEM_LD && op->oracle_info.mem_size > 0) {
+      i += sprintf(&buf[i], " %d@%08llx", op->oracle_info.mem_size, op->oracle_info.va);
     }
-    if (op->mem_type == MEM_ST && op->mem_size > 0) {
-        i += sprintf(&buf[i], " %d@%08x", op->mem_size, (unsigned int)op->va);
+    if (op->table_info->mem_type == MEM_ST && op->oracle_info.mem_size > 0) {
+      i += sprintf(&buf[i], " %d@%08llx", op->oracle_info.mem_size, op->oracle_info.va);
     }
-
     buf[i] = '\0';
     return buf;
 }
@@ -94,15 +80,15 @@ void log_fill_buffer_entry(uns proc_id, Fill_Buffer* fb, Counter cycle_count) {
 
     for (int i = 0; i < fb->count; ++i) {
         int idx = (fb->head + i) % fb->size;
-        Retired_Op_Info* op = &fb->entries[idx];
+        Op* op = &fb->entries[idx];
         char* disasm_str = disasm_retired_op(op);
 
         fprintf(fill_buffer_log_file,
             "[%3d] PC: 0x%08llx | OpNum: %-10llu | H2P: %s | Disasm: %-45s\n",
             i,
-            op->pc,
+            op->inst_info->addr,
             op->op_num,
-            op->hbt_pred_is_hard ? "O" : "X",
+            op->oracle_info.hbt_pred_is_hard ? "O" : "X",
             disasm_str);
     }
 

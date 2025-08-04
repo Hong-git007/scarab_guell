@@ -21,34 +21,30 @@ static const char* reg_names[NUM_REGS] = {
 #undef REG
 
 // 캐시된 Op 정보를 disasm하는 헬퍼 함수
-static char* disasm_cached_op(Chain_Op_Info* op) {
+static char* disasm_cached_op(Op* op) {
     static char buf[512];
     int i = 0;
 
-    // ----- [ 최종 수정 사항 ] -----
-    const char* opcode = Op_Type_str(op->op_type);
-    if (op->op_type == OP_CF) {
-        opcode = cf_type_names[op->cf_type];
-    } else {
-        opcode = Op_Type_str(op->op_type);
+    const char* opcode = Op_Type_str(op->table_info->op_type);
+    if (op->table_info->op_type == OP_CF) {
+        opcode = cf_type_names[op->table_info->cf_type];
     }
-
     i += sprintf(&buf[i], "%-8s ", opcode);
 
-    for (int j = 0; j < op->num_dests; j++) {
-        i += sprintf(&buf[i], "r%u(%s)%s", op->dests[j].id, reg_names[op->dests[j].id], (j == op->num_dests - 1) ? "" : ",");
+    for (int j = 0; j < op->table_info->num_dest_regs; j++) {
+        i += sprintf(&buf[i], "r%u(%s)%s", op->inst_info->dests[j].id, reg_names[op->inst_info->dests[j].id], (j == op->table_info->num_dest_regs - 1) ? "" : ",");
     }
-    if (op->num_dests > 0 && op->num_srcs > 0) {
+    if (op->table_info->num_dest_regs > 0 && op->table_info->num_src_regs > 0) {
         i += sprintf(&buf[i], " <- ");
     }
-    for (int j = 0; j < op->num_srcs; j++) {
-        i += sprintf(&buf[i], "r%u(%s)%s", op->srcs[j].id, reg_names[op->srcs[j].id], (j == op->num_srcs - 1) ? "" : ",");
+    for (int j = 0; j < op->table_info->num_src_regs; j++) {
+        i += sprintf(&buf[i], "r%u(%s)%s", op->inst_info->srcs[j].id, reg_names[op->inst_info->srcs[j].id], (j == op->table_info->num_src_regs - 1) ? "" : ",");
     }
-    if (op->mem_type == MEM_LD && op->mem_size > 0) {
-      i += sprintf(&buf[i], " %d@%08x", op->mem_size, (int)op->va);
+    if (op->table_info->mem_type == MEM_LD && op->oracle_info.mem_size > 0) {
+      i += sprintf(&buf[i], " %d@%08llx", op->oracle_info.mem_size, op->oracle_info.va);
     }
-    if (op->mem_type == MEM_ST && op->mem_size > 0) {
-      i += sprintf(&buf[i], " %d@%08x", op->mem_size, (int)op->va);
+    if (op->table_info->mem_type == MEM_ST && op->oracle_info.mem_size > 0) {
+      i += sprintf(&buf[i], " %d@%08llx", op->oracle_info.mem_size, op->oracle_info.va);
     }
     
     buf[i] = '\0';
@@ -91,12 +87,12 @@ void log_dependency_chain_entry(uns proc_id, Dependency_Chain_Cache_Entry* entry
     fprintf(dependency_chain_log_file, "------------------------------------------------------------------\n");
 
     for (int i = 0; i < entry->chain_length; ++i) {
-        Chain_Op_Info* op = &entry->chain[i];
+        Op* op = &entry->chain[i];
         char* disasm_str = disasm_cached_op(op);
         fprintf(dependency_chain_log_file, "[PC: 0x%08llx] OpNum:%-10llu H2p:%s Disasm: %-45s\n",
-            op->pc, 
+            op->inst_info->addr, 
             op->op_num,
-            op->is_h2p ? "O" : "X", 
+            op->oracle_info.hbt_pred_is_hard ? "O" : "X", 
             disasm_str);
     }
     fprintf(dependency_chain_log_file, "-------------------------- END LOG ---------------------------\n\n");
@@ -104,22 +100,37 @@ void log_dependency_chain_entry(uns proc_id, Dependency_Chain_Cache_Entry* entry
 }
 
 void log_dependency_chain_block(uns proc_id, Dependency_Chain_Cache_Entry* entry, Counter cycle_count) {
-    if (!block_cache_log_file || !entry || !entry->is_valid||
+    if (!block_cache_log_file || !entry || !entry->is_valid ||
         !(cycle_count >= DEBUG_CYCLE_START && cycle_count <= DEBUG_CYCLE_STOP)) return;
 
     fprintf(block_cache_log_file, "--- [LOG] Dependency Chain Block for Core %u Cycle:%-4llu---\n", proc_id, cycle_count);
-    fprintf(block_cache_log_file, "Index PC(Block Starting PC): 0x%llx, OpNum: %llu, Chain Length: %u\n",
-            entry->h2p_branch_pc, entry->h2p_branch_op_num, entry->chain_length);
+    fprintf(block_cache_log_file, "Index PC(Block Starting PC): 0x%llx, OpNum: %llu\n",
+            entry->h2p_branch_pc, entry->h2p_branch_op_num);
+
+    // --- [ New code to print the bitmask ] ---
+    char mask_str[65]; // 64 bits + null terminator
+    // Iterate from 0 to total_ops_in_block to build the binary string
+    for(int i = 0; i < entry->total_ops_in_block; ++i) {
+        // Check if the i-th bit is set in the mask
+        mask_str[i] = (entry->dependency_mask >> i) & 1 ? '1' : '0';
+    }
+    mask_str[entry->total_ops_in_block] = '\0'; // Add null terminator
+    fprintf(block_cache_log_file, "Block Length: %-3u Dependency Mask: %s\n", 
+            entry->total_ops_in_block, mask_str);
+    // ---------------------------------------------
+    
     fprintf(block_cache_log_file, "------------------------------------------------------------------\n");
+    fprintf(block_cache_log_file, "Instructions in Block (Total: %u):\n", entry->chain_length);
+
 
     for (int i = 0; i < entry->chain_length; ++i) {
-        Chain_Op_Info* op = &entry->chain[i];
+        Op* op = &entry->chain[i];
         char* disasm_str = disasm_cached_op(op);
         fprintf(block_cache_log_file, "[PC: 0x%08llx] OpNum:%-10llu H2p:%s Disasm: %-45s\n",
-            op->pc, 
-            op->op_num,
-            op->is_h2p ? "O" : "X", 
-            disasm_str);
+                op->inst_info->addr, 
+                op->op_num,
+                op->oracle_info.hbt_pred_is_hard ? "O" : "X", 
+                disasm_str);
     }
     fprintf(block_cache_log_file, "-------------------------- END LOG ---------------------------\n\n");
     fflush(block_cache_log_file);
@@ -133,26 +144,38 @@ void log_full_cache_state(uns proc_id, Counter cycle_count) {
 
     fprintf(dependency_chain_log_file, "\n=============== [CACHE DUMP] for Core %u @ Cycle:%-6llu ===============\n", proc_id, cycle_count);
 
-    Dependency_Chain_Cache_Entry* cache = dependency_chain_caches[proc_id];
+    // Assuming you are dumping the block_caches, not dependency_chain_caches
+    Dependency_Chain_Cache_Entry* cache = block_caches[proc_id];
 
-    for (int i = 0; i < DEPENDENCY_CHAIN_CACHE_SIZE; i++) {
+    for (int i = 0; i < BLOCK_CACHE_SIZE; i++) {
         Dependency_Chain_Cache_Entry* entry = &cache[i];
 
         if (entry->is_valid) {
-            fprintf(dependency_chain_log_file, "[Index %-4d] PC: 0x%08llx | OpNum: %-10llu | Len: %u\n",
+            // --- [ Modified Part: Added Mask Info ] ---
+            char mask_str[65];
+            for(int k = 0; k < entry->total_ops_in_block; ++k) {
+                mask_str[k] = (entry->dependency_mask >> k) & 1 ? '1' : '0';
+            }
+            mask_str[entry->total_ops_in_block] = '\0';
+
+            fprintf(dependency_chain_log_file, "[Index %-4d] PC: 0x%08llx | OpNum: %-10llu | BlockLen: %-2u | Mask: %s\n",
                     i,
                     entry->h2p_branch_pc,
                     entry->h2p_branch_op_num,
-                    entry->chain_length);
+                    entry->total_ops_in_block,
+                    mask_str);
+            // ---------------------------------------------
+
+            fprintf(dependency_chain_log_file, "             ChainLen: %u\n", entry->chain_length);
 
             for (int j = 0; j < entry->chain_length; j++) {
-                Chain_Op_Info* op = &entry->chain[j];
-                char* disasm_str = disasm_cached_op(op);
+                Op* op = &entry->chain[j];
+                char* disasm_str = disasm_cached_op(op); // Ensure this helper exists
                 fprintf(dependency_chain_log_file, "             |--> [%3d] PC: 0x%08llx | OpNum: %-10llu | H2P: %c | %s\n",
                         j,
-                        op->pc,
+                        op->inst_info->addr,
                         op->op_num,
-                        op->is_h2p ? 'O' : 'X',
+                        op->oracle_info.hbt_pred_is_hard ? 'O' : 'X',
                         disasm_str);
             }
         }
