@@ -2,9 +2,9 @@
 ####################################################################################################
 Core 0
 ####################################################################################################
-Cumulative:        Cycles: 414845                Instructions: 672199                IPC: 1.62036
+Cumulative:        Cycles: 3018465               Instructions: 5000002               IPC: 1.65647
 
-Periodic:          Cycles: 414845                Instructions: 672199                IPC: 1.62036
+Periodic:          Cycles: 3018465               Instructions: 5000002               IPC: 1.65647
 
 DCACHE_PREF_HIT                                      0                              0              
 
@@ -16,7 +16,7 @@ DEMAND_LAST_SCHEDULE                                 0         -nan%            
                                                      0         -nan%                0         -nan%
                                                   -nan         -nan              -nan         -nan
 
-SEND_MISS_REQ_QUEUE                               2700                           2700              
+SEND_MISS_REQ_QUEUE                              19333                          19333              
 
 L1_DATA_EVICT                                        0                              0              
 
@@ -27,10 +27,10 @@ PREF_SEND_TO_MEM_REQ_FAIL                            0         -nan%            
                                                      0         -nan%                0         -nan%
                                                   -nan         -nan              -nan         -nan
 
-HIT_TRAIN_STREAM                                  2568       99.342%             2568       99.342%
-MISS_TRAIN_STREAM                                   17        0.658%               17        0.658%
-                                                  2585      100.000%             2585      100.000%
-                                                  0.01         0.08              0.01         0.08
+HIT_TRAIN_STREAM                                 19199       99.912%            19199       99.912%
+MISS_TRAIN_STREAM                                   17        0.088%               17        0.088%
+                                                 19216      100.000%            19216      100.000%
+                                                  0.00         0.03              0.00         0.03
 
 STREAM_TRAIN_CREATE                                  8                              8              
 
@@ -152,8 +152,8 @@ CORE_CUM_STREAM_LENGTH_60                            0        0.000%            
 CORE_CUM_STREAM_LENGTH_70                            0        0.000%                0        0.000%
 CORE_CUM_STREAM_LENGTH_80                            0        0.000%                0        0.000%
 CORE_CUM_STREAM_LENGTH_90                            0        0.000%                0        0.000%
-CORE_CUM_STREAM_LENGTH_100_P                      2608      100.000%             2608      100.000%
-                                                  2608      100.000%             2608      100.000%
+CORE_CUM_STREAM_LENGTH_100_P                     19239      100.000%            19239      100.000%
+                                                 19239      100.000%            19239      100.000%
                                                  10.00        10.00             10.00        10.00
 
 CORE_STREAM_TRAIN_HITS_0                             0        0.000%                0        0.000%
@@ -180,8 +180,8 @@ CORE_CUM_STREAM_TRAIN_HITS_60                        0        0.000%            
 CORE_CUM_STREAM_TRAIN_HITS_70                        0        0.000%                0        0.000%
 CORE_CUM_STREAM_TRAIN_HITS_80                        0        0.000%                0        0.000%
 CORE_CUM_STREAM_TRAIN_HITS_90                        0        0.000%                0        0.000%
-CORE_CUM_STREAM_TRAIN_HITS_100_P                  2576      100.000%             2576      100.000%
-                                                  2576      100.000%             2576      100.000%
+CORE_CUM_STREAM_TRAIN_HITS_100_P                 19207      100.000%            19207      100.000%
+                                                 19207      100.000%            19207      100.000%
                                                  10.00        10.00             10.00        10.00
 
 CORE_STREAM_TRAIN_CREATE                             8                              8              

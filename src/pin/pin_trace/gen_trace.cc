@@ -92,7 +92,7 @@ KNOB<BOOL> KnobPinPlayLogger(KNOB_MODE_WRITEONCE, "pintool", "log", "0",
 KNOB<BOOL> KnobPinPlayReplayer(KNOB_MODE_WRITEONCE, "pintool", "replay", "0",
                                "Activate the pinplay replayer");
 
-// Knobs that control trace generation
+//Knobs that control trace generation
 KNOB<string> Knob_output(KNOB_MODE_WRITEONCE, "pintool", "o", "trace.bz2",
                          "trace outputfilename");
 

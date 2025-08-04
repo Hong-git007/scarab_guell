@@ -71,6 +71,42 @@ void get_next_op_buffer_from_pin(uns proc_id) {
   server->send(proc_id, (Message<Scarab_To_Pin_Msg>)msg);                       // blocking
   cached_cop_buffers[proc_id] = server->receive<ScarabOpBuffer_type>(proc_id);  // blocking
 }
+// void get_next_op_buffer_from_pin(uns proc_id) {
+//   // --- 1. Pintool에 데이터 요청 보내기 (기존과 동일) ---
+//   Scarab_To_Pin_Msg msg;
+//   msg.type = FE_FETCH_OP;
+//   msg.inst_addr = 0;
+//   msg.inst_uid = 0;
+//   server->send(proc_id, (Message<Scarab_To_Pin_Msg>)msg);
+
+//   // --- 2. 임시 변수에 데이터 받기 ---
+//   // received_buffer는 instruction 정보(compressed_op) 여러 개가 담긴 '묶음'입니다.
+//   ScarabOpBuffer_type received_buffer = server->receive<ScarabOpBuffer_type>(proc_id);
+
+//   // --- 3. 받은 데이터의 원본 내용을 16진수 바이트 형태로 출력 ---
+//   printf("--- Core %d: Received RAW Message Content (Total Elements: %zu) ---\n",
+//          proc_id,
+//          received_buffer.size());
+
+//   int element_index = 0;
+//   // 데이터 묶음(버퍼) 안의 각 instruction 정보(element)를 하나씩 순회
+//   for (const auto& raw_op_element : received_buffer) {
+//     printf("  Element[%d] Data (%zu bytes): ", element_index++, sizeof(raw_op_element));
+
+//     // instruction 정보 하나를 바이트(byte) 조각으로 취급
+//     const unsigned char* byte_ptr = reinterpret_cast<const unsigned char*>(&raw_op_element);
+
+//     // 해당 instruction 정보를 구성하는 모든 바이트를 16진수로 출력
+//     for (size_t i = 0; i < sizeof(raw_op_element); ++i) {
+//       printf("%02x ", byte_ptr[i]);
+//     }
+//     printf("\n");
+//   }
+//   printf("----------------------------------------------------------------------\n");
+
+//   // --- 4. 원래 버퍼에 데이터 저장하기 ---
+//   cached_cop_buffers[proc_id] = received_buffer;
+// }
 
 void update_op_buffer_if_empty(uns proc_id) {
   if (cached_cop_buffers[proc_id].size() == 0) {

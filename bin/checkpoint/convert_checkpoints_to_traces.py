@@ -25,9 +25,9 @@ from scarab_globals import *
 from scarab_globals.scarab_batch_types import *
 
 # Set the following variables before running.
-CHECKPOINT_DESCRIPTOR_PATH = ''
-OUTPUT_DIR = ''
-SUITE_NAME = ''
+CHECKPOINT_DESCRIPTOR_PATH = '/home/hong/project/scarab/cpt_spec2017_s200_2/descriptor.def'
+OUTPUT_DIR = '/home/hong/project/scarab/traces/spec2017'
+SUITE_NAME = 'spec2017'
 
 def checkpoint_start_rip(path):
   with open (path + '/main') as f:

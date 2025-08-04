@@ -266,6 +266,8 @@ void cmp_cores(void) {
       update_eip();
 
       cmp_measure_chip_util();
+      // 매 사이클 Backward Walk 엔진 구동
+      cycle_backward_walk_engine(proc_id);
     }
   }
 }
@@ -367,8 +369,6 @@ void cmp_recover() {
   ASSERT(bp_recovery_info->proc_id, bp_recovery_info->recovery_cycle != MAX_CTR);
   ASSERT(bp_recovery_info->proc_id, bp_recovery_info->proc_id == g_bp_data->proc_id);
   ASSERT(bp_recovery_info->proc_id, bp_recovery_info->proc_id == map_data->proc_id);
-  bp_recovery_info->recovery_cycle = MAX_CTR;
-  bp_recovery_info->redirect_cycle = MAX_CTR;
   bp_recover_op(g_bp_data, bp_recovery_info->recovery_cf_type, &bp_recovery_info->recovery_info);
 
   if (USE_LATE_BP && bp_recovery_info->late_bp_recovery) {
@@ -403,6 +403,8 @@ void cmp_recover() {
   recover_memory();
 
   log_recovery_end(node, cycle_count, bp_recovery_info);
+  bp_recovery_info->recovery_cycle = MAX_CTR;
+  bp_recovery_info->redirect_cycle = MAX_CTR;
 }
 
 /**************************************************************************************/

@@ -145,13 +145,13 @@ void bp_sched_recovery(Bp_Recovery_Info* bp_recovery_info, Op* op, Counter cycle
   if (bp_recovery_info->recovery_cycle == MAX_CTR || op->op_num <= bp_recovery_info->recovery_op_num) {
     const Addr next_fetch_addr = op->oracle_info.npc;
     ASSERT(0, op->oracle_info.npc);
-    const uns latency = late_bp_recovery ? LATE_BP_LATENCY : 1 + penalty;
+    const uns latency = late_bp_recovery ? LATE_BP_LATENCY : 1;
     DEBUG(bp_recovery_info->proc_id, "Recovery signaled for op_num:%s @ 0x%s  next_fetch:0x%s offpath:%d\n",
           unsstr64(op->op_num), hexstr64s(op->inst_info->addr), hexstr64s(next_fetch_addr), op->off_path);
     inc_bstat_miss(op);
     ASSERT(op->proc_id, !op->oracle_info.recovery_sch);
     op->oracle_info.recovery_sch = TRUE;
-    bp_recovery_info->recovery_cycle = cycle + latency;
+    bp_recovery_info->recovery_cycle = cycle + latency + penalty;
     bp_recovery_info->recovery_fetch_addr = next_fetch_addr;
     if (op->proc_id)
       ASSERT(op->proc_id, bp_recovery_info->recovery_fetch_addr);
@@ -495,6 +495,7 @@ Addr bp_predict_op(Bp_Data* bp_data, Op* op, uns br_num, Addr fetch_addr) {
           op->oracle_info.late_pred = bp_data->late_bp->pred_func(op);
         }
       }
+      
       // Update history used by the rest of Scarab.
       bp_data->global_hist = (bp_data->global_hist >> 1) | (op->oracle_info.pred << 31);
 
@@ -825,6 +826,44 @@ Addr bp_predict_op(Bp_Data* bp_data, Op* op, uns br_num, Addr fetch_addr) {
     if (!(op->oracle_info.recover_at_exec || op->oracle_info.recover_at_decode))
       ASSERT(op->proc_id, op->oracle_info.recover_at_exec || op->oracle_info.recover_at_decode);
   }
+  // =========================================================================
+  // [ 추가할 코드: 완벽한 예측기(Perfect Predictor) 로직 ]
+  // =========================================================================
+
+  // PERFECT_TARGET 옵션이 켜져 있으면, 예측된 타겟 주소를 실제 정답으로 강제 설정합니다.
+  // 이는 방향 예측(pred)은 실제 예측기의 것을 따르되, 타겟 주소만 완벽하게 만듭니다.
+  if (PERFECT_TARGET) {
+    if (op->oracle_info.pred == TAKEN) {
+      // 방향이 Taken으로 예측되었다면, 타겟을 실제 타겟 주소(npc)로 덮어씁니다.
+      op->oracle_info.pred_npc = op->oracle_info.npc;
+    } else {
+      // 방향이 Not-Taken으로 예측되었다면, 타겟을 실제 순차 주소로 덮어씁니다.
+      op->oracle_info.pred_npc = ADDR_PLUS_OFFSET(op->inst_info->addr, op->inst_info->trace_info.inst_size);
+    }
+    // 타겟 예측 실패(misfetch) 및 BTB Miss 페널티 가능성을 원천 차단합니다.
+    op->oracle_info.btb_miss = FALSE; 
+  }
+    
+  // PERFECT_BP 옵션이 켜져 있으면, 방향과 타겟 예측 모두를 실제 정답으로 강제 설정합니다.
+  // 이 옵션은 PERFECT_TARGET보다 더 강력하며, 모든 예측 실패를 제거합니다.
+  if (PERFECT_BP) {
+    // 1. 방향을 실제 정답으로 강제 설정
+    op->oracle_info.pred = op->oracle_info.dir;
+
+    // 2. 이제 완벽해진 방향에 맞춰 타겟 주소를 실제 정답으로 강제 설정
+    if (op->oracle_info.pred == TAKEN) {
+      op->oracle_info.pred_npc = op->oracle_info.npc;
+    } else {
+      op->oracle_info.pred_npc = ADDR_PLUS_OFFSET(op->inst_info->addr, op->inst_info->trace_info.inst_size);
+    }
+
+    // 3. 모든 예측 실패 가능성(mispred, misfetch, btb_miss)을 원천 차단
+    op->oracle_info.btb_miss = FALSE;
+    op->oracle_info.recover_at_decode = FALSE;
+    op->oracle_info.recover_at_exec = FALSE;
+  }
+  // =========================================================================
+
 
   ASSERT_PROC_ID_IN_ADDR(op->proc_id, op->oracle_info.pred_npc);
   bp_predict_op_evaluate(bp_data, op, op->oracle_info.pred_npc);
