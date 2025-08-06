@@ -4,11 +4,11 @@ import re
 # ==================== 설정 변수 ====================
 
 # 1. 분석할 로그 파일의 전체 경로를 지정하세요.
-file_path = '../../results/Baseline/leela_17_r_ref/leela_17_r_ref0/leela_17_r_ref0_ckpt3/retired_op_per_cycle.out'
+file_path = '/home/HHD/hong/scarab/results/Baseline/leela_17_r_ref/leela_17_r_ref0/leela_17_r_ref0_ckpt3/retired_op_per_cycle.out'
 
 # 2. 그래프로 그릴 사이클 시작/종료 구간을 설정하세요.
-start_cycle = 2000000
-end_cycle = 2000300  # 로그 파일 전체를 보려면 더 큰 값으로 설정
+start_cycle = 120300
+end_cycle = 120450  # 로그 파일 전체를 보려면 더 큰 값으로 설정
 
 # ===================================================
 
@@ -84,8 +84,8 @@ for i, c in enumerate(recovery_filtered):
 # 그래프 꾸미기
 plt.title(f'Retired Ops and Branch Prediction Events (Cycles: {start_cycle} to {end_cycle})', fontsize=16)
 plt.xlabel('Cycle', fontsize=12)
-plt.ylabel('Number of Retired Ops', fontsize=12)
-plt.legend(loc='upper left')
+plt.ylabel('Number of Retired Ops', fontsize=14)
+plt.legend(loc='upper right', fontsize=14)
 plt.xlim(start_cycle, end_cycle) # X축 범위 고정
 plt.ylim(bottom=0) # Y축 최솟값 0으로 고정
 
