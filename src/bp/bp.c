@@ -991,6 +991,12 @@ void bp_target_known_op(Bp_Data* bp_data, Op* op) {
   ASSERT(bp_data->proc_id, bp_data->proc_id == op->proc_id);
   ASSERT(bp_data->proc_id, op->table_info->cf_type);
 
+  // Do not update BTB with invalid target addresses.
+  const Addr MIN_VALID_PC = 0x40;
+  if (op->oracle_info.target < MIN_VALID_PC || op->oracle_info.npc >= 0xffffffffffff) {
+    return;
+  }
+
   // if it was a btb miss, it is time to write it into the btb
   if (op->oracle_info.btb_miss && op->oracle_info.dir == TAKEN) {
     bp_data->bp_btb->update_func(bp_data, op);

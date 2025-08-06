@@ -24,7 +24,7 @@ import sys
 from scarab_globals import *
 from scarab_globals.scarab_batch_types import *
 
-import_descriptor(scarab_paths.sim_dir + "/cpt_spec2017_s200_2/descriptor.def")
+import_descriptor(scarab_paths.sim_dir + "/cpt_spec2017_s200_5/descriptor.def")
 
 #SystemConfig.submission_system = command.SubmissionSystems.PBS
 
@@ -33,7 +33,7 @@ baseline_params += "--heartbeat 1000"
 perfect_bp_params="--perfect_bp 1 --perfect_target 1"
 perfect_params = baseline_params + perfect_bp_params
 
-ScarabRun("Baseline", spec17_rate_problem, baseline_params, results_dir="/home/HHD/hong/scarab/results")
-ScarabRun("Perfect",  spec17_rate_problem, perfect_params,  results_dir="/home/HHD/hong/scarab/results")
+ScarabRun("Baseline", gcc_17_r_ref, baseline_params, results_dir="/home/HHD/hong/scarab/results")
+ScarabRun("Perfect",  gcc_17_r_ref, perfect_params,  results_dir="/home/HHD/hong/scarab/results")
 
 BatchManager()
