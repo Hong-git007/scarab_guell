@@ -3,7 +3,7 @@ syntax: regexp
 # Files matching these patterns will be ignored by hg
 # if they are not tracked already
 spec2017_run_dir_rate/
-cpt_spec2017_s200/
+cpt_spec2017_s200*/
 results/
 utils/qsort/
 # experiment result directories
