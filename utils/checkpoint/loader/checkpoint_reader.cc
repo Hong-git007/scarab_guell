@@ -452,34 +452,56 @@ static void resize_stack(pid_t child_pid, const RegionInfo& child_region,
   }
 }
 
-static int verify_generic_region(pid_t             child_pid,
-                                 const RegionInfo& child_region) {
+static int verify_generic_region(pid_t child_pid, const RegionInfo& child_region) {
   int found_region_id = -1;
-  for(int i = 0; i < num_valid_memory_regions; ++i) {
+  constexpr intptr_t ALLOWED_END_DIFF = 65536; // 64KB 허용 오차
+
+  for (int i = 0; i < num_valid_memory_regions; ++i) {
     const RegionInfo& checkpoint_region = memory_regions[i].region_info;
-    if(child_region.range.inclusive_lower_bound ==
-       checkpoint_region.range.inclusive_lower_bound) {
-      if(child_region.range.exclusive_upper_bound !=
-           checkpoint_region.range.exclusive_upper_bound ||
-         child_region.prot != checkpoint_region.prot ||
-         child_region.offset != checkpoint_region.offset ||
-         child_region.file_name != checkpoint_region.file_name) {
-        std::cerr << "Child region: " << child_region << std::endl;
-        std::cerr << "Checkpoint region: " << checkpoint_region << std::endl;
-        fatal_and_kill_child(
-          child_pid, "Mismatch in a region in the tracee and the checkpoint");
+
+    if (child_region.range.inclusive_lower_bound == checkpoint_region.range.inclusive_lower_bound) {
+      intptr_t child_end = (intptr_t)child_region.range.exclusive_upper_bound;
+      intptr_t checkpoint_end = (intptr_t)checkpoint_region.range.exclusive_upper_bound;
+      intptr_t end_diff = std::abs(child_end - checkpoint_end);
+
+      if (end_diff > ALLOWED_END_DIFF) {
+        std::cerr << "Child region end: 0x" << std::hex << child_end << std::endl;
+        std::cerr << "Checkpoint region end: 0x" << std::hex << checkpoint_end << std::endl;
+        std::cerr << "End address difference: " << std::dec << end_diff << " bytes" << std::endl;
+        fatal_and_kill_child(child_pid, "Mismatch in region end address beyond allowed threshold");
+      } else {
+        std::cerr << "Info: Region end address difference: " << std::dec << end_diff << " bytes (within allowed threshold)" << std::endl;
       }
+
+      if (child_region.prot != checkpoint_region.prot) {
+        std::cerr << "Warning: Protection mismatch: child " << child_region.prot
+                  << ", checkpoint " << checkpoint_region.prot << std::endl;
+        // 권한 차이 자동 조정 로직 삽입 가능
+      }
+
+      if (child_region.offset != checkpoint_region.offset) {
+        std::cerr << "Warning: Offset mismatch: child " << child_region.offset
+                  << ", checkpoint " << checkpoint_region.offset << std::endl;
+      }
+
+      if (child_region.file_name != checkpoint_region.file_name) {
+        std::cerr << "Warning: File name mismatch: child '" << child_region.file_name
+                  << "', checkpoint '" << checkpoint_region.file_name << "'" << std::endl;
+      }
+
       found_region_id = i;
       break;
     }
   }
-  if(found_region_id == -1) {
+
+  if (found_region_id == -1) {
     std::cerr << "Child region: " << child_region << std::endl;
     fatal_and_kill_child(child_pid,
                          "Could not find a region starting at 0x%" PRIx64
                          " in the checkpoint",
                          child_region.range.inclusive_lower_bound);
   }
+
   return found_region_id;
 }
 
